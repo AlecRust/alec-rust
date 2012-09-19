@@ -5,17 +5,20 @@
     ul {}
 
     li {
+        #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
         .border-top-left-radius(@borderRadius);
         .border-bottom-left-radius(@borderRadius);
         background-color: lighten(@brandColor, .5%);
         margin: 0 0 10px 15%;
 
         &:hover {
-            background-color: darken(@brandColor, 1%);
+            #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
+            background-color: darken(@brandColor, 2%);
         }
 
         &:active {
-            background-color: darken(@brandColor, 2%);
+            #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
+            background-color: lighten(@brandColor, 9%);
         }
     }
 

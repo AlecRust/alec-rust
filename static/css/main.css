@@ -275,24 +275,24 @@ button,
 input,
 select,
 textarea {
-  color: #333333;
+  color: #383838;
 }
 body {
-  color: #333333;
-  font-family: sans-serif;
+  color: #383838;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #d8d8d8 url("../img/body-bg-tile.png") fixed;
   background-size: 100%;
 }
 a {
-  color: #333333;
+  color: #383838;
 }
 a:hover {
-  color: #0d0d0d;
+  color: #121212;
 }
 a:visited {
-  color: #595959;
+  color: #5e5e5e;
 }
 p {
   margin: 0 0 1em;
@@ -322,7 +322,7 @@ nav ol {
   padding: 0;
 }
 .chromeframe {
-  color: #333333;
+  color: #383838;
   background-color: #f2efc4;
   text-align: center;
   margin: 0;
@@ -338,9 +338,6 @@ nav ol {
   margin: 36px 0 -2px;
 }
 .global-header .global-header-logo:first-letter {
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
   background-color: #3e3e3e;
   background-image: -moz-linear-gradient(top, #454545, #333333);
   background-image: -ms-linear-gradient(top, #454545, #333333);
@@ -350,6 +347,9 @@ nav ol {
   background-image: linear-gradient(top, #454545, #333333);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#333333', GradientType=0);
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
   font-size: 35px;
   color: #c5c5c5;
   background-color: #333333;
@@ -380,6 +380,15 @@ nav ol {
   
 }
 .global-navigation li {
+  background-color: #3e3e3e;
+  background-image: -moz-linear-gradient(top, #454545, #343434);
+  background-image: -ms-linear-gradient(top, #454545, #343434);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#343434));
+  background-image: -webkit-linear-gradient(top, #454545, #343434);
+  background-image: -o-linear-gradient(top, #454545, #343434);
+  background-image: linear-gradient(top, #454545, #343434);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
   -webkit-border-top-left-radius: 2px;
   -moz-border-radius-topleft: 2px;
   border-top-left-radius: 2px;
@@ -390,10 +399,28 @@ nav ol {
   margin: 0 0 10px 15%;
 }
 .global-navigation li:hover {
-  background-color: #303030;
+  background-color: #434343;
+  background-image: -moz-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -ms-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a4a4a), to(#383838));
+  background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -o-linear-gradient(top, #4a4a4a, #383838);
+  background-image: linear-gradient(top, #4a4a4a, #383838);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a4a4a', endColorstr='#383838', GradientType=0);
+  background-color: #2e2e2e;
 }
 .global-navigation li:active {
-  background-color: #2e2e2e;
+  background-color: #454545;
+  background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -ms-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#424242), to(#4a4a4a));
+  background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -o-linear-gradient(top, #424242, #4a4a4a);
+  background-image: linear-gradient(top, #424242, #4a4a4a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
+  background-color: #4a4a4a;
 }
 .global-navigation a {
   display: block;
@@ -409,6 +436,10 @@ nav ol {
 }
 .global-content {
   padding: 0 20px;
+}
+.global-content h1 {
+  font-weight: normal;
+  font-size: 34px;
 }
 @media only screen and (min-width: 30em) {
   
@@ -434,6 +465,9 @@ nav ol {
 }
 .global-footer a:hover {
   text-decoration: underline;
+}
+.global-footer a:active {
+  color: #eee;
 }
 @media only screen and (min-width: 30em) {
   

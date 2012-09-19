@@ -5,7 +5,7 @@
 @brandColor:                    #333;
 @bodyBackground:                #fff;
 @footerBackground:              #525252;
-@textColor:                     @brandColor;
+@textColor:                     lighten(@brandColor, 2%);
 @borderRadius:                  2px;
 
 // Links
@@ -14,7 +14,7 @@
 @linkColorVisited:              lighten(@linkColor, 15%);
 
 // Typography
-@sansFontFamily:                sans-serif;
+@sansFontFamily:                'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @serifFontFamily:               serif;
 @brandFontFamily:               'stalin_oneregular', sans-serif;
 
@@ -23,7 +23,15 @@
 @baseLineHeight:                1.4;
 
 // Images path
-@imgPath:                       "../img/";
+@imgPath:                       '../img/';
 
 // Selection highlight
 @selectionHightlightColor:      #b3d4fc;
+
+// Page colours
+@homeColor:                     #2ec239;
+@aboutColor:                    #3e7fd7;
+@workColor:                     #d13a3a;
+@projectsColor:                 #d57300;
+@blogColor:                     #47c6bf;
+@contactColor:                  #d5db3a;
