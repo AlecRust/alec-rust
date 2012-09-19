@@ -4,9 +4,31 @@
 
     ul {}
 
-    li {}
+    li {
+        .border-top-left-radius(@borderRadius);
+        .border-bottom-left-radius(@borderRadius);
+        background-color: lighten(@brandColor, .5%);
+        margin: 0 0 10px 15%;
 
-    a {}
+        &:hover {
+            background-color: darken(@brandColor, 1%);
+        }
+
+        &:active {
+            background-color: darken(@brandColor, 2%);
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #e5e5e5;
+        padding: 11px 16px;
+
+        &.current {
+            text-decoration: underline;
+        }
+    }
 }
 
 // 30em devices and up
