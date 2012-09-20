@@ -2,11 +2,29 @@
 // -------------------------
 .global-social-links {
 
-    ul {}
+    ul {
+        list-style: none;
+        margin: 0 0 20px;
+        padding-left: 0;
+    }
 
-    li {}
+    li {
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        margin: 0 0 20px -4px;
 
-    a {}
+        &:last-child {
+            width: 100%;
+        }
+    }
+
+    a {
+        display: inline-block;
+        min-height: 25px;
+        text-decoration: none;
+        padding: 4px 0 0 35px;
+    }
 
     // GitHub
     .github a {}

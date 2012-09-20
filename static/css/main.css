@@ -513,6 +513,7 @@ nav ol {
   
 }
 .global-content {
+  margin-bottom: 20px;
   padding: 0 20px;
 }
 .global-content h1 {
@@ -522,6 +523,26 @@ nav ol {
 }
 @media only screen and (min-width: 30em) {
   
+}
+.global-social-links ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding-left: 0;
+}
+.global-social-links li {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  margin: 0 0 20px -4px;
+}
+.global-social-links li:last-child {
+  width: 100%;
+}
+.global-social-links a {
+  display: inline-block;
+  min-height: 25px;
+  text-decoration: none;
+  padding: 4px 0 0 35px;
 }
 @media only screen and (min-width: 30em) {
   
@@ -560,9 +581,10 @@ nav ol {
   font-size: 16px;
   font-weight: bold;
   margin: 0 0 14px;
-  padding: 0 30px 3px 0;
+  padding: 0 30px 4px 0;
 }
 .module ul {
+  list-style: none;
   margin: 0;
 }
 .module dl {
@@ -572,7 +594,6 @@ nav ol {
   margin-left: 0;
 }
 .module-heros ul {
-  list-style: none;
   padding-left: 14px;
 }
 .module-heros li {
@@ -608,6 +629,7 @@ nav ol {
   box-shadow: 1px 1px 1px #aaaaaa;
 }
 .module-list ul {
+  list-style: disc;
   padding-left: 30px;
 }
 .module-list li {
@@ -616,6 +638,22 @@ nav ol {
 .module-list li a {
   display: block;
   text-decoration: none;
+}
+.module-thumbs ul {
+  text-align: center;
+  padding-left: 14px;
+}
+.module-thumbs li {
+  display: inline-block;
+  margin: 0 16px 16px 0;
+}
+.module-thumbs img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
+  -moz-box-shadow: 1px 1px 1px #aaaaaa;
+  box-shadow: 1px 1px 1px #aaaaaa;
 }
 @media only screen and (min-width: 30em) {
   

@@ -9,10 +9,11 @@
         font-size: @baseFontSize + 2;
         font-weight: bold;
         margin: 0 0 14px;
-        padding: 0 30px 3px 0;
+        padding: 0 30px 4px 0;
     }
 
     ul {
+        list-style: none;
         margin: 0;
     }
 
@@ -31,7 +32,6 @@
 .module-heros {
 
     ul {
-        list-style: none;
         padding-left: 14px;
     }
 
@@ -75,6 +75,7 @@
 .module-list {
 
     ul {
+        list-style: disc;
         padding-left: 30px;
     }
 
@@ -91,13 +92,22 @@
 // "Thumbs" type
 .module-thumbs {
 
-    ul {}
+    ul {
+        text-align: center;
+        padding-left: 14px;
+    }
 
-    li {}
+    li {
+        display: inline-block;
+        margin: 0 16px 16px 0;
+    }
 
     a {}
 
-    img {}
+    img {
+        .border-radius(@borderRadius);
+        .box-shadow(1px 1px 1px #aaa)
+    }
 }
 
 // "Wide" type
