@@ -10,7 +10,7 @@ body.home {
 
 // Site introduction
 .home-intro {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     h1 {
         text-shadow: 0 0 5px #fff;
@@ -27,7 +27,10 @@ body.home {
     }
 
     a {
+        display: inline-block;
+        min-height: 23px;
         text-decoration: none;
+        padding: 4px 0 0 35px;
     }
 
     .about {}
@@ -37,4 +40,47 @@ body.home {
 
 // 30em devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {}
+@media only screen and (min-width: 30em) {
+
+    body.home {
+
+        // "Companies I've worked with" module
+        .module-thumbs {
+
+            li {
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// 700px devices and up
+// -------------------------
+@media only screen and (min-width: 700px) {
+
+    body.home {
+
+        // "Recent work/projects" module
+        .module-heros {
+            float: left;
+        }
+
+        // "Recent blog posts" module
+        .module-list {
+            float: right;
+        }
+
+        // "Companies I've worked with" module
+        .module-thumbs {
+            float: left;
+            width: 100%;
+
+            ul {
+                text-align: left;
+            }
+        }
+    }
+}

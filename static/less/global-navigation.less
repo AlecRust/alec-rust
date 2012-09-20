@@ -3,7 +3,9 @@
 .global-navigation {
     margin-bottom: 20px;
 
-    ul {}
+    ul {
+        text-align: right;
+    }
 
     li {
         #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
@@ -11,7 +13,10 @@
         .border-bottom-left-radius(@borderRadius);
         .box-shadow(-1px 1px 1px #aaa);
         background-color: lighten(@brandColor, .5%);
-        margin: 0 0 10px 15%;
+        width: 70%;
+        text-align: left;
+        display: inline-block;
+        margin-bottom: 10px;
 
         &:hover {
             #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
@@ -42,4 +47,37 @@
 
 // 30em devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {}
+@media only screen and (min-width: 30em) {
+
+    .global-navigation {
+
+        ul {
+            text-align: center;
+        }
+
+        li {
+            .box-shadow(none);
+            .border-top-left-radius(0);
+            .border-bottom-left-radius(0);
+            text-align: center;
+            border: 1px solid #ddd;
+            width: 31%;
+            margin-left: -4px;
+        }
+    }
+}
+
+// 700px devices and up
+// -------------------------
+@media only screen and (min-width: 700px) {
+
+    .global-navigation {
+        clear: left;
+
+        ul {}
+
+        li {
+            width: 16%;
+        }
+    }
+}

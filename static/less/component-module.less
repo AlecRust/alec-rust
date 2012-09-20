@@ -28,7 +28,7 @@
     }
 }
 
-// "Heros" type
+// "Heros" module type
 .module-heros {
 
     ul {
@@ -56,6 +56,7 @@
     }
 
     .hero-description {
+        font-size: @baseFontSize - 1;
         padding-left: 75px;
     }
 
@@ -71,7 +72,7 @@
     }
 }
 
-// "List" type
+// "List" module type
 .module-list {
 
     ul {
@@ -85,11 +86,15 @@
         a {
             display: block;
             text-decoration: none;
+
+            &:active {
+                text-decoration: underline;
+            }
         }
     }
 }
 
-// "Thumbs" type
+// "Thumbs" module type
 .module-thumbs {
 
     ul {
@@ -99,7 +104,7 @@
 
     li {
         display: inline-block;
-        margin: 0 16px 16px 0;
+        margin: 0 16px 16px -4px;
     }
 
     a {}
@@ -110,10 +115,10 @@
     }
 }
 
-// "Wide" type
+// "Wide" module type
 .module-wide {}
 
-// "Commits" type
+// "Commits" module type
 .module-commits {
 
     ul {}
@@ -123,7 +128,7 @@
     a {}
 }
 
-// "Tweets" type
+// "Tweets" module type
 .module-tweets {
 
     ul {}
@@ -139,3 +144,12 @@
 // 30em devices and up
 // -------------------------
 @media only screen and (min-width: 30em) {}
+
+// 700px devices and up
+// -------------------------
+@media only screen and (min-width: 700px) {
+
+    .module {
+        width: 40%;
+    }
+}
