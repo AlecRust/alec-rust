@@ -331,13 +331,13 @@ nav ol {
 .global-header {
   position: relative;
 }
-.global-header .global-header-logo {
+.global-header-logo {
   font-size: 23px;
   font-family: 'stalin_oneregular', sans-serif;
   text-align: center;
   margin: 36px 0 -2px;
 }
-.global-header .global-header-logo:first-letter {
+.global-header-logo:first-letter {
   background-color: #3e3e3e;
   background-image: -moz-linear-gradient(top, #454545, #333333);
   background-image: -ms-linear-gradient(top, #454545, #333333);
@@ -359,15 +359,15 @@ nav ol {
   text-shadow: -1px -1px 0 #222222;
   padding: 7px 10px;
 }
-.global-header .global-header-logo a {
+.global-header-logo a {
   color: #333333;
   text-decoration: none;
   text-shadow: 1px 1px 1px #aaa;
 }
-.global-header .global-header-logo a:hover {
+.global-header-logo a:hover {
   color: #404040;
 }
-.global-header .global-header-tagline {
+.global-header-tagline {
   width: 226px;
   color: #7b7b7b;
   font-size: 12px;
@@ -382,7 +382,7 @@ nav ol {
   text-align: center;
   margin-bottom: 30px;
 }
-.global-search input {
+.global-search-input {
   -webkit-border-top-left-radius: 2px;
   -moz-border-radius-topleft: 2px;
   border-top-left-radius: 2px;
@@ -396,7 +396,7 @@ nav ol {
   border: 0;
   padding: 11px 14px;
 }
-.global-search button {
+.global-search-button {
   background-color: #3e3e3e;
   background-image: -moz-linear-gradient(top, #454545, #343434);
   background-image: -ms-linear-gradient(top, #454545, #343434);
@@ -419,7 +419,7 @@ nav ol {
   margin-left: -4px;
   padding: 9px 12px 10px;
 }
-.global-search button:hover {
+.global-search-button:hover {
   background-color: #434343;
   background-image: -moz-linear-gradient(top, #4a4a4a, #383838);
   background-image: -ms-linear-gradient(top, #4a4a4a, #383838);
@@ -432,7 +432,7 @@ nav ol {
   color: #eee;
   background-color: #2e2e2e;
 }
-.global-search button:active {
+.global-search-button:active {
   background-color: #454545;
   background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
   background-image: -ms-linear-gradient(top, #424242, #4a4a4a);
@@ -447,6 +447,9 @@ nav ol {
 }
 @media only screen and (min-width: 30em) {
   
+}
+.global-navigation {
+  margin-bottom: 20px;
 }
 .global-navigation li {
   background-color: #3e3e3e;
@@ -515,6 +518,7 @@ nav ol {
 .global-content h1 {
   font-weight: normal;
   font-size: 34px;
+  margin: 0 0 20px;
 }
 @media only screen and (min-width: 30em) {
   
@@ -547,6 +551,72 @@ nav ol {
 @media only screen and (min-width: 30em) {
   
 }
+.module {
+  margin-bottom: 20px;
+}
+.module h1 {
+  display: inline-block;
+  border-bottom: 1px solid #b8b8b8;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 14px;
+  padding: 0 30px 3px 0;
+}
+.module ul {
+  margin: 0;
+}
+.module dl {
+  margin: 0;
+}
+.module dd {
+  margin-left: 0;
+}
+.module-heros ul {
+  list-style: none;
+  padding-left: 14px;
+}
+.module-heros li {
+  margin-bottom: 15px;
+}
+.module-heros .hero {
+  display: block;
+  min-height: 60px;
+  position: relative;
+  text-decoration: none;
+}
+.module-heros .hero:active {
+  text-decoration: underline;
+}
+.module-heros .hero-title {
+  font-weight: bold;
+  padding: 10px 0 5px 75px;
+}
+.module-heros .hero-description {
+  padding-left: 75px;
+}
+.module-heros .hero-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.module-heros .hero-thumb img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
+  -moz-box-shadow: 1px 1px 1px #aaaaaa;
+  box-shadow: 1px 1px 1px #aaaaaa;
+}
+.module-list ul {
+  padding-left: 30px;
+}
+.module-list li {
+  margin-bottom: 11px;
+}
+.module-list li a {
+  display: block;
+  text-decoration: none;
+}
 @media only screen and (min-width: 30em) {
   
 }
@@ -559,6 +629,23 @@ nav ol {
 }
 body.home .global-header .global-header-logo:hover:first-letter {
   color: #2ec239;
+}
+.home-intro {
+  margin-bottom: 20px;
+}
+.home-intro h1 {
+  text-shadow: 0 0 5px #fff;
+}
+.home-intro ul {
+  list-style: none;
+  padding: 0 30px;
+}
+.home-intro li {
+  font-size: 15px;
+  text-shadow: 0 0 5px #fff;
+}
+.home-intro a {
+  text-decoration: none;
 }
 @media only screen and (min-width: 30em) {
   

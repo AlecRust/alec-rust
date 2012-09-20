@@ -2,44 +2,44 @@
 // -------------------------
 .global-header {
     position: relative;
+}
 
-    .global-header-logo {
-        font-size: @baseFontSize + 9;
-        font-family: @brandFontFamily;
-        text-align: center;
-        margin: 36px 0 -2px;
+.global-header-logo {
+    font-size: @baseFontSize + 9;
+    font-family: @brandFontFamily;
+    text-align: center;
+    margin: 36px 0 -2px;
 
-        // Target the "A"
-        &:first-letter {
-            #gradient > .vertical(lighten(@brandColor, 7%), @brandColor);
-            .border-radius(30px);
-            .box-shadow(1px 1px 1px #aaa);
-            font-size: @baseFontSize + 21;
-            color: #c5c5c5;
-            background-color: @brandColor;
-            text-shadow: -1px -1px 0 #222;
-            padding: 7px 10px;
-        }
-
-        a {
-            color: @brandColor;
-            text-decoration: none;
-            text-shadow: 1px 1px 1px #aaa;
-
-            &:hover {
-                color: lighten(@brandColor, 5%);
-            }
-        }
+    // Target the "A"
+    &:first-letter {
+        #gradient > .vertical(lighten(@brandColor, 7%), @brandColor);
+        .border-radius(30px);
+        .box-shadow(1px 1px 1px #aaa);
+        font-size: @baseFontSize + 21;
+        color: #c5c5c5;
+        background-color: @brandColor;
+        text-shadow: -1px -1px 0 #222;
+        padding: 7px 10px;
     }
 
-    .global-header-tagline {
-        width: 226px;
-        color: #7b7b7b;
-        font-size: @baseFontSize - 2;
-        font-weight: normal;
-        margin: auto auto 30px;
-        padding-left: 60px;
+    a {
+        color: @brandColor;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #aaa;
+
+        &:hover {
+            color: lighten(@brandColor, 5%);
+        }
     }
+}
+
+.global-header-tagline {
+    width: 226px;
+    color: #7b7b7b;
+    font-size: @baseFontSize - 2;
+    font-weight: normal;
+    margin: auto auto 30px;
+    padding-left: 60px;
 }
 
 // 30em devices and up

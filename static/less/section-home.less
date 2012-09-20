@@ -2,27 +2,37 @@
 // -------------------------
 body.home {
 
-// -------------------------
     // Global header
     .global-header .global-header-logo:hover:first-letter {
         color: @homeColor;
     }
+}
 
-    // Site introduction
-    .home-intro {
+// Site introduction
+.home-intro {
+    margin-bottom: 20px;
 
-        h1 {}
-
-        ul {}
-
-        li {}
-
-        a {}
-
-        .about {}
-
-        .work {}
+    h1 {
+        text-shadow: 0 0 5px #fff;
     }
+
+    ul {
+        list-style: none;
+        padding: 0 30px;
+    }
+
+    li {
+        font-size: @baseFontSize + 1;
+        text-shadow: 0 0 5px #fff;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .about {}
+
+    .work {}
 }
 
 // 30em devices and up

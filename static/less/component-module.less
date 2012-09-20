@@ -1,72 +1,129 @@
 // "Module" page component
 // -------------------------
 .module {
+    margin-bottom: 20px;
 
-    h1 {}
-
-    // "Heros" type
-    .module-heros {
-
-        ul {}
-
-        li {}
-
-        .hero {}
-
-        .hero-title {}
-
-        .hero-description {}
-
-        .hero-thumb {}
+    h1 {
+        display: inline-block;
+        border-bottom: 1px solid #b8b8b8;
+        font-size: @baseFontSize + 2;
+        font-weight: bold;
+        margin: 0 0 14px;
+        padding: 0 30px 3px 0;
     }
 
-    // "List" type
-    .module-list {
-
-        ul {}
-
-        li {}
-
-        a {}
+    ul {
+        margin: 0;
     }
 
-    // "Thumbs" type
-    .module-thumbs {
+    li {}
 
-        ul {}
-
-        li {}
-
-        a {}
-
-        img {}
+    dl {
+        margin: 0;
     }
 
-    // "Wide" type
-    .module-wide {}
+    dd {
+        margin-left: 0;
+    }
+}
 
-    // "Commits" type
-    .module-commits {
+// "Heros" type
+.module-heros {
 
-        ul {}
-
-        li {}
-
-        a {}
+    ul {
+        list-style: none;
+        padding-left: 14px;
     }
 
-    // "Tweets" type
-    .module-tweets {
-
-        ul {}
-
-        li {}
-
-        a {}
-
-        // Clear timestamp to next line in this scenario
-        .timestamp {}
+    li {
+        margin-bottom: 15px;
     }
+
+    .hero {
+        display: block;
+        min-height: 60px;
+        position: relative;
+        text-decoration: none;
+
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .hero-title {
+        font-weight: bold;
+        padding: 10px 0 5px 75px;
+    }
+
+    .hero-description {
+        padding-left: 75px;
+    }
+
+    .hero-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            .border-radius(@borderRadius);
+            .box-shadow(1px 1px 1px #aaa)
+        }
+    }
+}
+
+// "List" type
+.module-list {
+
+    ul {
+        padding-left: 30px;
+    }
+
+    li {
+        margin-bottom: 11px;
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+    }
+}
+
+// "Thumbs" type
+.module-thumbs {
+
+    ul {}
+
+    li {}
+
+    a {}
+
+    img {}
+}
+
+// "Wide" type
+.module-wide {}
+
+// "Commits" type
+.module-commits {
+
+    ul {}
+
+    li {}
+
+    a {}
+}
+
+// "Tweets" type
+.module-tweets {
+
+    ul {}
+
+    li {}
+
+    a {}
+
+    // Clear timestamp to next line in this scenario
+    .timestamp {}
 }
 
 // 30em devices and up
