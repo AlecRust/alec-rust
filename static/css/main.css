@@ -282,7 +282,7 @@ body {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
-  background: #d8d8d8 url("../img/body-bg-tile.png") fixed;
+  background: #d8d8d8 url("../images/body-bg-tile.png") fixed;
   background-size: 100%;
 }
 a {
@@ -350,16 +350,22 @@ nav ol {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
+  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
+  -moz-box-shadow: 1px 1px 1px #aaaaaa;
+  box-shadow: 1px 1px 1px #aaaaaa;
   font-size: 35px;
   color: #c5c5c5;
   background-color: #333333;
-  text-shadow: #222222 -1px -1px 0;
+  text-shadow: -1px -1px 0 #222222;
   padding: 7px 10px;
 }
 .global-header .global-header-logo a {
   color: #333333;
   text-decoration: none;
-  text-shadow: #ccc 1px 1px 0;
+  text-shadow: 1px 1px 1px #aaa;
+}
+.global-header .global-header-logo a:hover {
+  color: #404040;
 }
 .global-header .global-header-tagline {
   width: 226px;
@@ -375,6 +381,69 @@ nav ol {
 .global-search {
   text-align: center;
   margin-bottom: 30px;
+}
+.global-search input {
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 4px #777777;
+  -moz-box-shadow: inset 0 1px 4px #777777;
+  box-shadow: inset 0 1px 4px #777777;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border: 0;
+  padding: 11px 14px;
+}
+.global-search button {
+  background-color: #3e3e3e;
+  background-image: -moz-linear-gradient(top, #454545, #343434);
+  background-image: -ms-linear-gradient(top, #454545, #343434);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#343434));
+  background-image: -webkit-linear-gradient(top, #454545, #343434);
+  background-image: -o-linear-gradient(top, #454545, #343434);
+  background-image: linear-gradient(top, #454545, #343434);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-right-radius: 2px;
+  color: #d8dada;
+  background-color: #343434;
+  font-family: 'stalin_oneregular', sans-serif;
+  border: 0;
+  margin-left: -4px;
+  padding: 9px 12px 10px;
+}
+.global-search button:hover {
+  background-color: #434343;
+  background-image: -moz-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -ms-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a4a4a), to(#383838));
+  background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -o-linear-gradient(top, #4a4a4a, #383838);
+  background-image: linear-gradient(top, #4a4a4a, #383838);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a4a4a', endColorstr='#383838', GradientType=0);
+  color: #eee;
+  background-color: #2e2e2e;
+}
+.global-search button:active {
+  background-color: #454545;
+  background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -ms-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#424242), to(#4a4a4a));
+  background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -o-linear-gradient(top, #424242, #4a4a4a);
+  background-image: linear-gradient(top, #424242, #4a4a4a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
+  color: #fff;
+  background-color: #4a4a4a;
 }
 @media only screen and (min-width: 30em) {
   
@@ -395,6 +464,9 @@ nav ol {
   -webkit-border-bottom-left-radius: 2px;
   -moz-border-radius-bottomleft: 2px;
   border-bottom-left-radius: 2px;
+  -webkit-box-shadow: -1px 1px 1px #aaaaaa;
+  -moz-box-shadow: -1px 1px 1px #aaaaaa;
+  box-shadow: -1px 1px 1px #aaaaaa;
   background-color: #343434;
   margin: 0 0 10px 15%;
 }
@@ -427,6 +499,9 @@ nav ol {
   text-decoration: none;
   color: #e5e5e5;
   padding: 11px 16px;
+}
+.global-navigation a:active {
+  color: #fff;
 }
 .global-navigation a.current {
   text-decoration: underline;
@@ -481,6 +556,9 @@ nav ol {
 }
 @media only screen and (min-width: 30em) {
   
+}
+body.home .global-header .global-header-logo:hover:first-letter {
+  color: #2ec239;
 }
 @media only screen and (min-width: 30em) {
   
