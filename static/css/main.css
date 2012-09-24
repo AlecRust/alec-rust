@@ -571,7 +571,16 @@ nav ol {
 }
 @media only screen and (min-width: 700px) {
   .global-content {
+    *zoom: 1;
     padding: 0 40px;
+  }
+  .global-content:before,
+  .global-content:after {
+    content: " ";
+    display: table;
+  }
+  .global-content:after {
+    clear: both;
   }
 }
 .global-social-links ul {
@@ -765,6 +774,12 @@ body.home .global-header .global-header-logo:hover:first-letter {
   }
   body.home .module-thumbs ul {
     text-align: left;
+  }
+  body.home .module-commits {
+    float: left;
+  }
+  body.home .module-tweets {
+    float: right;
   }
 }
 .hidden {
