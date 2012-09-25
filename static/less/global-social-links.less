@@ -4,48 +4,66 @@
 
     ul {
         list-style: none;
-        margin: 0 0 20px;
+        margin: 0 0 20px 40%;
         padding-left: 0;
     }
 
     li {
-        display: inline-block;
-        text-align: center;
-        width: 50%;
-        margin: 0 0 20px -4px;
-
-        &:last-child {
-            width: 100%;
-        }
+        margin: 0 0 20px;
     }
 
     a {
+        .opacity(50);
         display: inline-block;
         min-height: 25px;
         text-decoration: none;
-        padding: 4px 0 0 35px;
+        background: url("@{imgPath}global-sprite.png") no-repeat;
+        padding: 4px 4px 0 35px;
+
+        &:hover {
+            .opacity(60);
+        }
+
+        &:active {
+            .opacity(70);
+            text-decoration: underline;
+        }
     }
 
     // GitHub
-    .github a {}
+    .github a {
+        background-position: 0 -221px;
+    }
 
     // Twitter
-    .twitter a {}
+    .twitter a {
+        background-position: 0 -250px;
+    }
 
     // LinkedIn
-    .linkedin a {}
+    .linkedin a {
+        background-position: 0 -280px;
+    }
 
     // Quora
-    .quora a {}
+    .quora a {
+        background-position: 0 -309px;
+    }
 
     // Facebook
-    .facebook a {}
+    .facebook a {
+        background-position: 0 -250px;
+    }
 
     // Last.fm
-    .lastfm a {}
+    .lastfm a {
+        background-position: 0 -368px;
+    }
 
     // Email
-    .email a {}
+    .email a {
+        background-position: 0 -398px;
+    }
 }
 
 // 30em devices and up

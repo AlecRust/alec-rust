@@ -625,8 +625,8 @@ nav ol {
   display: block;
   text-decoration: none;
   color: #e5e5e5;
-  padding: 10px 16px;
   background: url("../images/global-sprite.png") no-repeat;
+  padding: 10px 16px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation a {
@@ -793,23 +793,50 @@ nav ol {
 }
 .global-social-links ul {
   list-style: none;
-  margin: 0 0 20px;
+  margin: 0 0 20px 40%;
   padding-left: 0;
 }
 .global-social-links li {
-  display: inline-block;
-  text-align: center;
-  width: 50%;
-  margin: 0 0 20px -4px;
-}
-.global-social-links li:last-child {
-  width: 100%;
+  margin: 0 0 20px;
 }
 .global-social-links a {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
   display: inline-block;
   min-height: 25px;
   text-decoration: none;
-  padding: 4px 0 0 35px;
+  background: url("../images/global-sprite.png") no-repeat;
+  padding: 4px 4px 0 35px;
+}
+.global-social-links a:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+.global-social-links a:active {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  text-decoration: underline;
+}
+.global-social-links .github a {
+  background-position: 0 -221px;
+}
+.global-social-links .twitter a {
+  background-position: 0 -250px;
+}
+.global-social-links .linkedin a {
+  background-position: 0 -280px;
+}
+.global-social-links .quora a {
+  background-position: 0 -309px;
+}
+.global-social-links .facebook a {
+  background-position: 0 -250px;
+}
+.global-social-links .lastfm a {
+  background-position: 0 -368px;
+}
+.global-social-links .email a {
+  background-position: 0 -398px;
 }
 @media only screen and (min-width: 30em) {
   
