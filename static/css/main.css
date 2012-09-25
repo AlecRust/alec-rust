@@ -625,13 +625,71 @@ nav ol {
   display: block;
   text-decoration: none;
   color: #e5e5e5;
-  padding: 11px 16px;
+  padding: 10px 16px;
+  background: url("../images/global-sprite.png") no-repeat;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation a {
+    background-image: url("../images/global-sprite-x2.png");
+    -webkit-background-size: 48px auto;
+    -moz-background-size: 48px auto;
+    -o-background-size: 48px auto;
+    background-size: 48px auto;
+  }
 }
 .global-navigation a:active {
   color: #fff;
 }
 .global-navigation a.current {
   text-decoration: underline;
+}
+.global-navigation .home a {
+  background-position: 110% 13%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .home a {
+    background-position: 110% 11%;
+  }
+}
+.global-navigation .about a {
+  background-position: 110% 20%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .about a {
+    background-position: 110% 16.5%;
+  }
+}
+.global-navigation .work a {
+  background-position: 110% 27%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .work a {
+    background-position: 110% 22.5%;
+  }
+}
+.global-navigation .projects a {
+  background-position: 110% 34%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .projects a {
+    background-position: 110% 28%;
+  }
+}
+.global-navigation .blog a {
+  background-position: 110% 41%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .blog a {
+    background-position: 110% 34%;
+  }
+}
+.global-navigation .contact a {
+  background-position: 110% 47.5%;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-navigation .contact a {
+    background-position: 110% 39.5%;
+  }
 }
 @media only screen and (min-width: 30em) {
   .global-navigation ul {
@@ -700,6 +758,9 @@ nav ol {
     -webkit-border-bottom-right-radius: 2px;
     -moz-border-radius-bottomright: 2px;
     border-bottom-right-radius: 2px;
+  }
+  .global-navigation a {
+    background-image: none;
   }
 }
 .global-content {

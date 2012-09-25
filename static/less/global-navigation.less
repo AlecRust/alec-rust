@@ -33,7 +33,14 @@
         display: block;
         text-decoration: none;
         color: #e5e5e5;
-        padding: 11px 16px;
+        padding: 10px 16px;
+        background: url("@{imgPath}global-sprite.png") no-repeat;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-image: url("@{imgPath}global-sprite-x2.png");
+            .background-size(48px auto);
+        }
 
         &:active {
             color: #fff;
@@ -41,6 +48,60 @@
 
         &.current {
             text-decoration: underline;
+        }
+    }
+
+    .home a {
+        background-position: 110% 13%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 11%;
+        }
+    }
+
+    .about a {
+        background-position: 110% 20%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 16.5%;
+        }
+    }
+
+    .work a {
+        background-position: 110% 27%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 22.5%;
+        }
+    }
+
+    .projects a {
+        background-position: 110% 34%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 28%;
+        }
+    }
+
+    .blog a {
+        background-position: 110% 41%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 34%;
+        }
+    }
+
+    .contact a {
+        background-position: 110% 47.5%;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-position: 110% 39.5%;
         }
     }
 }
@@ -106,6 +167,10 @@
                 .border-top-right-radius(@borderRadius);
                 .border-bottom-right-radius(@borderRadius);
             }
+        }
+
+        a {
+            background-image: none;
         }
     }
 }
