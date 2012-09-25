@@ -388,13 +388,29 @@ nav ol {
   text-align: center;
   margin-bottom: 30px;
 }
+.show-search {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.show-search.focusable:active,
+.show-search.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
 .global-search-input {
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-left-radius: 2px;
-  -webkit-border-bottom-left-radius: 2px;
-  -moz-border-radius-bottomleft: 2px;
-  border-bottom-left-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 4px #777777;
   -moz-box-shadow: inset 0 1px 4px #777777;
   box-shadow: inset 0 1px 4px #777777;
@@ -412,17 +428,14 @@ nav ol {
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
-  -webkit-border-top-right-radius: 2px;
-  -moz-border-radius-topright: 2px;
-  border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -moz-border-radius-bottomright: 2px;
-  border-bottom-right-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   color: #d8dada;
   background-color: #343434;
   font-family: 'stalin_oneregular', sans-serif;
   border: 0;
-  margin-left: -4px;
+  margin-left: -6px;
   padding: 9px 12px 10px;
 }
 .global-search-button:hover {
@@ -458,6 +471,99 @@ nav ol {
   .global-search {
     float: right;
     margin: 46px 40px 0 0;
+  }
+  .global-search form {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .global-search form.focusable:active,
+  .global-search form.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+  .show-search {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    margin-bottom: 0;
+  }
+  .show-search a {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-image: url("../images/global-sprite.png");
+  }
+  .show-search a:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+  .show-search a:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
+  .show-search a:active {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+  }
+  body.search-visible .global-search {
+    overflow: hidden;
+  }
+  body.search-visible .global-search form {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+  body.search-visible .show-search {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  body.search-visible .show-search.focusable:active,
+  body.search-visible .show-search.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .show-search a {
+    background-image: url("../images/global-sprite-x2.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 }
 .global-navigation {
@@ -546,6 +652,24 @@ nav ol {
     width: 31%;
     margin-left: -4px;
   }
+  .global-navigation li:first-child,
+  .global-navigation li:nth-child(4) {
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .global-navigation li:nth-child(3),
+  .global-navigation li:nth-child(6) {
+    -webkit-border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    border-bottom-right-radius: 2px;
+  }
 }
 @media only screen and (min-width: 700px) {
   .global-navigation {
@@ -553,6 +677,29 @@ nav ol {
   }
   .global-navigation li {
     width: 16%;
+  }
+  .global-navigation li:first-child {
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .global-navigation li:nth-child(3),
+  .global-navigation li:nth-child(4),
+  .global-navigation li:nth-child(6) {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+  .global-navigation li:last-child {
+    -webkit-border-top-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    border-bottom-right-radius: 2px;
   }
 }
 .global-content {
@@ -798,6 +945,14 @@ body.home .global-header .global-header-logo:hover:first-letter {
 }
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.visible {
   clip: auto;
   height: auto;
   margin: 0;

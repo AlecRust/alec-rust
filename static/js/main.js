@@ -1,3 +1,9 @@
+// Show search
+$('.show-search a').click(function() {
+    $('body').addClass('search-visible');
+    return false;
+});
+
 // Hide address bar on mobile devices
 (function (win) {
     if (!/mobile/i.test(navigator.userAgent)) return;
