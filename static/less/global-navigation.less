@@ -4,7 +4,19 @@
     margin-bottom: 20px;
 
     ul {
+        .visuallyhidden;
         text-align: right;
+    }
+
+    &.navigation-visible {
+
+        ul {
+            .visible;
+        }
+
+        .show-navigation {
+            .visuallyhidden;
+        }
     }
 
     li {
@@ -13,9 +25,7 @@
         .border-bottom-left-radius(@borderRadius);
         .box-shadow(-1px 1px 1px #aaa);
         background-color: lighten(@brandColor, .5%);
-        width: 70%;
         text-align: left;
-        display: inline-block;
         margin-bottom: 10px;
 
         &:hover {
@@ -52,56 +62,78 @@
     }
 
     .home a {
-        background-position: 110% 13%;
+        background-position: 108% 13%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 11%;
+            background-position: 108% 11%;
         }
     }
 
     .about a {
-        background-position: 110% 20%;
+        background-position: 108% 20%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 16.5%;
+            background-position: 108% 16.5%;
         }
     }
 
     .work a {
-        background-position: 110% 27%;
+        background-position: 108% 27%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 22.5%;
+            background-position: 108% 22.5%;
         }
     }
 
     .projects a {
-        background-position: 110% 34%;
+        background-position: 108% 34%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 28%;
+            background-position: 108% 28%;
         }
     }
 
     .blog a {
-        background-position: 110% 41%;
+        background-position: 108% 41%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 34%;
+            background-position: 108% 34%;
         }
     }
 
     .contact a {
-        background-position: 110% 47.5%;
+        background-position: 108% 47.5%;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-position: 110% 39.5%;
+            background-position: 108% 39.5%;
+        }
+    }
+}
+
+// "Show Navigation" link
+.show-navigation {
+    text-align: center;
+    margin-bottom: 10px;
+
+    a {
+        #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+        .box-shadow(-1px 1px 1px #aaa);
+        background-color: lighten(@brandColor, .5%);
+
+        &:hover {
+            #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
+            background-color: darken(@brandColor, 2%);
+        }
+
+        &:active {
+            #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
+            background-color: lighten(@brandColor, 9%);
         }
     }
 }
@@ -113,13 +145,19 @@
     .global-navigation {
 
         ul {
+            .visible;
             text-align: center;
+        }
+
+        .show-navigation {
+            .visuallyhidden;
         }
 
         li {
             .box-shadow(none);
             .border-top-left-radius(0);
             .border-bottom-left-radius(0);
+            display: inline-block;
             text-align: center;
             border: 1px solid #ddd;
             width: 31%;

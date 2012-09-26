@@ -1,6 +1,12 @@
 // Show search
 $('.show-search a').click(function() {
-    $('body').addClass('search-visible');
+    $('.global-search').addClass('search-visible');
+    return false;
+});
+
+// Show navigation
+$('.show-navigation a').click(function() {
+    $('.global-navigation').addClass('navigation-visible');
     return false;
 });
 

@@ -491,6 +491,36 @@ nav ol {
     position: static;
     width: auto;
   }
+  .global-search.search-visible {
+    overflow: hidden;
+  }
+  .global-search.search-visible form {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+  .global-search.search-visible .show-search {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .global-search.search-visible .show-search.focusable:active,
+  .global-search.search-visible .show-search.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
   .show-search {
     clip: auto;
     height: auto;
@@ -526,36 +556,6 @@ nav ol {
     opacity: 0.6;
     filter: alpha(opacity=60);
   }
-  body.search-visible .global-search {
-    overflow: hidden;
-  }
-  body.search-visible .global-search form {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
-  body.search-visible .show-search {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  body.search-visible .show-search.focusable:active,
-  body.search-visible .show-search.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .show-search a {
@@ -570,7 +570,51 @@ nav ol {
   margin-bottom: 20px;
 }
 .global-navigation ul {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
   text-align: right;
+}
+.global-navigation ul.focusable:active,
+.global-navigation ul.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.global-navigation.navigation-visible ul {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.global-navigation.navigation-visible .show-navigation {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.global-navigation.navigation-visible .show-navigation.focusable:active,
+.global-navigation.navigation-visible .show-navigation.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 .global-navigation li {
   background-color: #3e3e3e;
@@ -592,9 +636,7 @@ nav ol {
   -moz-box-shadow: -1px 1px 1px #aaaaaa;
   box-shadow: -1px 1px 1px #aaaaaa;
   background-color: #343434;
-  width: 70%;
   text-align: left;
-  display: inline-block;
   margin-bottom: 10px;
 }
 .global-navigation li:hover {
@@ -644,56 +686,124 @@ nav ol {
   text-decoration: underline;
 }
 .global-navigation .home a {
-  background-position: 110% 13%;
+  background-position: 108% 13%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .home a {
-    background-position: 110% 11%;
+    background-position: 108% 11%;
   }
 }
 .global-navigation .about a {
-  background-position: 110% 20%;
+  background-position: 108% 20%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .about a {
-    background-position: 110% 16.5%;
+    background-position: 108% 16.5%;
   }
 }
 .global-navigation .work a {
-  background-position: 110% 27%;
+  background-position: 108% 27%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .work a {
-    background-position: 110% 22.5%;
+    background-position: 108% 22.5%;
   }
 }
 .global-navigation .projects a {
-  background-position: 110% 34%;
+  background-position: 108% 34%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .projects a {
-    background-position: 110% 28%;
+    background-position: 108% 28%;
   }
 }
 .global-navigation .blog a {
-  background-position: 110% 41%;
+  background-position: 108% 41%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .blog a {
-    background-position: 110% 34%;
+    background-position: 108% 34%;
   }
 }
 .global-navigation .contact a {
-  background-position: 110% 47.5%;
+  background-position: 108% 47.5%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .global-navigation .contact a {
-    background-position: 110% 39.5%;
+    background-position: 108% 39.5%;
   }
+}
+.show-navigation {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.show-navigation a {
+  background-color: #3e3e3e;
+  background-image: -moz-linear-gradient(top, #454545, #343434);
+  background-image: -ms-linear-gradient(top, #454545, #343434);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#454545), to(#343434));
+  background-image: -webkit-linear-gradient(top, #454545, #343434);
+  background-image: -o-linear-gradient(top, #454545, #343434);
+  background-image: linear-gradient(top, #454545, #343434);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
+  -webkit-box-shadow: -1px 1px 1px #aaaaaa;
+  -moz-box-shadow: -1px 1px 1px #aaaaaa;
+  box-shadow: -1px 1px 1px #aaaaaa;
+  background-color: #343434;
+}
+.show-navigation a:hover {
+  background-color: #434343;
+  background-image: -moz-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -ms-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a4a4a), to(#383838));
+  background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
+  background-image: -o-linear-gradient(top, #4a4a4a, #383838);
+  background-image: linear-gradient(top, #4a4a4a, #383838);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a4a4a', endColorstr='#383838', GradientType=0);
+  background-color: #2e2e2e;
+}
+.show-navigation a:active {
+  background-color: #454545;
+  background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -ms-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#424242), to(#4a4a4a));
+  background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
+  background-image: -o-linear-gradient(top, #424242, #4a4a4a);
+  background-image: linear-gradient(top, #424242, #4a4a4a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
+  background-color: #4a4a4a;
 }
 @media only screen and (min-width: 30em) {
   .global-navigation ul {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
     text-align: center;
+  }
+  .global-navigation .show-navigation {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .global-navigation .show-navigation.focusable:active,
+  .global-navigation .show-navigation.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
   }
   .global-navigation li {
     -webkit-box-shadow: none;
@@ -705,6 +815,7 @@ nav ol {
     -webkit-border-bottom-left-radius: 0;
     -moz-border-radius-bottomleft: 0;
     border-bottom-left-radius: 0;
+    display: inline-block;
     text-align: center;
     border: 1px solid #ddd;
     width: 31%;
