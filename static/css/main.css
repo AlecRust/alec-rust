@@ -596,6 +596,7 @@ nav ol {
   overflow: visible;
   position: static;
   width: auto;
+  width: 100%;
 }
 .global-navigation.navigation-visible .show-navigation {
   border: 0;
@@ -686,52 +687,22 @@ nav ol {
   text-decoration: underline;
 }
 .global-navigation .home a {
-  background-position: 108% 13%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .home a {
-    background-position: 108% 11%;
-  }
+  background-position: 105% -50px;
 }
 .global-navigation .about a {
-  background-position: 108% 20%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .about a {
-    background-position: 108% 16.5%;
-  }
+  background-position: 105% -77px;
 }
 .global-navigation .work a {
-  background-position: 108% 27%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .work a {
-    background-position: 108% 22.5%;
-  }
+  background-position: 105% -103px;
 }
 .global-navigation .projects a {
-  background-position: 108% 34%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .projects a {
-    background-position: 108% 28%;
-  }
+  background-position: 105% -129px;
 }
 .global-navigation .blog a {
-  background-position: 108% 41%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .blog a {
-    background-position: 108% 34%;
-  }
+  background-position: 105% -156px;
 }
 .global-navigation .contact a {
-  background-position: 108% 47.5%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation .contact a {
-    background-position: 108% 39.5%;
-  }
+  background-position: 105% -182px;
 }
 .show-navigation {
   text-align: center;
@@ -844,8 +815,14 @@ nav ol {
   .global-navigation {
     clear: left;
   }
+  .global-navigation ul {
+    display: table;
+    width: 100%;
+  }
   .global-navigation li {
-    width: 16%;
+    width: auto;
+    display: table-cell;
+    margin-left: 0;
   }
   .global-navigation li:first-child {
     -webkit-border-top-left-radius: 2px;
@@ -904,11 +881,13 @@ nav ol {
 }
 .global-social-links ul {
   list-style: none;
-  margin: 0 0 20px 40%;
-  padding-left: 0;
+  text-align: center;
+  margin: 0 0 20px;
+  padding: 0 20px;
 }
 .global-social-links li {
-  margin: 0 0 20px;
+  margin: 13px 2%;
+  display: inline-block;
 }
 .global-social-links a {
   opacity: 0.5;
@@ -917,7 +896,16 @@ nav ol {
   min-height: 25px;
   text-decoration: none;
   background: url("../images/global-sprite.png") no-repeat;
-  padding: 4px 4px 0 35px;
+  padding: 3px 4px 0 35px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .global-social-links a {
+    background-image: url("../images/global-sprite-x2.png");
+    -webkit-background-size: 48px auto;
+    -moz-background-size: 48px auto;
+    -o-background-size: 48px auto;
+    background-size: 48px auto;
+  }
 }
 .global-social-links a:hover {
   opacity: 0.6;
@@ -929,25 +917,25 @@ nav ol {
   text-decoration: underline;
 }
 .global-social-links .github a {
-  background-position: 0 -221px;
+  background-position: 0 -225px;
 }
 .global-social-links .twitter a {
-  background-position: 0 -250px;
+  background-position: 0 -255px;
 }
 .global-social-links .linkedin a {
-  background-position: 0 -280px;
+  background-position: 0 -284px;
 }
 .global-social-links .quora a {
-  background-position: 0 -309px;
+  background-position: 0 -314px;
 }
 .global-social-links .facebook a {
-  background-position: 0 -339px;
+  background-position: 0 -343px;
 }
 .global-social-links .lastfm a {
-  background-position: 0 -368px;
+  background-position: 0 -373px;
 }
 .global-social-links .email a {
-  background-position: 0 -398px;
+  background-position: 0 -402px;
 }
 @media only screen and (min-width: 30em) {
   
@@ -1064,6 +1052,36 @@ nav ol {
   -moz-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
+.module-tweets ul {
+  padding-left: 0;
+}
+.module-tweets li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 44px;
+}
+.module-tweets li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  width: 26px;
+  height: 21px;
+  background: url("../images/global-sprite.png") 0 -432px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .module-tweets li:before {
+    background-image: url("../images/global-sprite-x2.png");
+    -webkit-background-size: 48px auto;
+    -moz-background-size: 48px auto;
+    -o-background-size: 48px auto;
+    background-size: 48px auto;
+  }
+}
+.module-tweets .timestamp {
+  display: block;
+}
 @media only screen and (min-width: 30em) {
   
 }
@@ -1075,6 +1093,10 @@ nav ol {
 .view-more {
   text-align: right;
   font-weight: bold;
+}
+.timestamp {
+  color: #858585;
+  font-size: 13px;
 }
 @media only screen and (min-width: 30em) {
   
@@ -1117,9 +1139,6 @@ body.home .global-header .global-header-logo:hover:first-letter {
   body.home .module-thumbs {
     float: left;
     width: 100%;
-  }
-  body.home .module-thumbs ul {
-    text-align: left;
   }
   body.home .module-commits {
     float: left;
