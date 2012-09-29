@@ -1132,7 +1132,7 @@ body.home .global-header .global-header-logo:hover:first-letter {
 .home-intro li {
   font-size: 15px;
   text-shadow: 0 0 5px #fff;
-  margin: 0 35px 5px 0;
+  margin-bottom: 10px;
 }
 .home-intro a {
   display: inline-block;
@@ -1162,6 +1162,7 @@ body.home .global-header .global-header-logo:hover:first-letter {
 @media only screen and (min-width: 30em) {
   body.home .home-intro li {
     display: inline-block;
+    margin: 0 35px 0 0;
   }
   body.home .module-thumbs li:last-child {
     margin-right: 0;
