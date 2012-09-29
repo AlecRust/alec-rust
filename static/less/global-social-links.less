@@ -1,11 +1,12 @@
 // Global social links
 // -------------------------
 .global-social-links {
+    margin-bottom: 30px;
 
     ul {
         list-style: none;
         text-align: center;
-        margin: 0 0 20px;
+        margin: 0;
         padding: 0 20px;
     }
 
@@ -19,12 +20,12 @@
         display: inline-block;
         min-height: 25px;
         text-decoration: none;
-        background: url("@{imgPath}global-sprite.png") no-repeat;
+        background: url("@{spritePath}") no-repeat;
         padding: 3px 4px 0 35px;
 
         // If HiDPI
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-image: url("@{imgPath}global-sprite-x2.png");
+            background-image: url("@{spriteX2Path}");
             .background-size(48px auto);
         }
 

@@ -1,7 +1,7 @@
 // "Module" page component
 // -------------------------
 .module {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     h1 {
         display: inline-block;
@@ -134,15 +134,15 @@
             content: "";
             display: block;
             position: absolute;
-            top: 8px;
-            left: 11px;
+            top: 0;
+            left: 12px;
             width: 17px;
             height: 22px;
-            background: url("@{imgPath}global-sprite.png") 0 -458px;
+            background: url("@{spritePath}") 0 -458px;
 
             // If HiDPI
             @media screen and (-webkit-min-device-pixel-ratio: 2) {
-                background-image: url("@{imgPath}global-sprite-x2.png");
+                background-image: url("@{spriteX2Path}");
                 .background-size(48px auto);
             }
         }
@@ -167,26 +167,21 @@
             content: "";
             display: block;
             position: absolute;
-            top: 8px;
+            top: 0;
             left: 7px;
             width: 26px;
             height: 21px;
-            background: url("@{imgPath}global-sprite.png") 0 -432px;
+            background: url("@{spritePath}") 0 -432px;
 
             // If HiDPI
             @media screen and (-webkit-min-device-pixel-ratio: 2) {
-                background-image: url("@{imgPath}global-sprite-x2.png");
+                background-image: url("@{spriteX2Path}");
                 .background-size(48px auto);
             }
         }
     }
 
     a {}
-
-    // Clear timestamp to next line in this scenario
-    .timestamp {
-        display: block;
-    }
 }
 
 // 30em devices and up

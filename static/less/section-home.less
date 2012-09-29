@@ -24,18 +24,34 @@ body.home {
     li {
         font-size: @baseFontSize + 1;
         text-shadow: 0 0 5px #fff;
+        margin: 0 35px 5px 0;
     }
 
     a {
         display: inline-block;
-        min-height: 23px;
+        min-height: 24px;
         text-decoration: none;
+        background: url("@{spritePath}") no-repeat;
         padding: 4px 0 0 35px;
+
+        // If HiDPI
+        @media screen and (-webkit-min-device-pixel-ratio: 2) {
+            background-image: url("@{spriteX2Path}");
+            .background-size(48px auto);
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
     }
 
-    .about {}
+    .about a {
+        background-position: 0 -484px;
+    }
 
-    .work {}
+    .work a {
+        background-position: 0 -510px;
+    }
 }
 
 // 30em devices and up
@@ -43,6 +59,14 @@ body.home {
 @media only screen and (min-width: 30em) {
 
     body.home {
+
+        // Site introduction
+        .home-intro {
+
+            li {
+                display: inline-block;
+            }
+        }
 
         // "Companies I've worked with" module
         .module-thumbs {
