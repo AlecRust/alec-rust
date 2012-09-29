@@ -190,6 +190,25 @@
 @media only screen and (min-width: 780px) {
 
     .global-navigation {
-        margin-bottom: 40px;
+        width: 780px;
+        margin: auto auto 40px;
+    }
+}
+
+// 1300px devices and up
+// -------------------------
+@media only screen and (min-width: 1300px) {
+
+    .global-navigation {
+        position: fixed;
+        right: 0;
+        top: 180px;
+        width: 185px;
+        margin-bottom: 60px;
+
+        li {
+            text-align: left;
+            display: list-item;
+        }
     }
 }
