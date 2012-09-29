@@ -673,13 +673,20 @@ nav ol {
 }
 .global-navigation a {
   display: block;
+  position: relative;
   text-decoration: none;
   color: #e5e5e5;
-  background: url("../images/global-sprite.png") no-repeat;
   padding: 10px 16px;
 }
+.global-navigation a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 13px;
+  background-image: url("../images/global-sprite.png");
+}
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .global-navigation a {
+  .global-navigation a:before {
     background-image: url("../images/global-sprite-x2.png");
     -webkit-background-size: 48px auto;
     -moz-background-size: 48px auto;
@@ -693,23 +700,41 @@ nav ol {
 .global-navigation a.current {
   text-decoration: underline;
 }
-.global-navigation .home a {
-  background-position: 105% -50px;
+.global-navigation .home a:before {
+  top: 12px;
+  width: 14px;
+  height: 14px;
+  background-position: 0 -62px;
 }
-.global-navigation .about a {
-  background-position: 105% -77px;
+.global-navigation .about a:before {
+  top: 13px;
+  width: 12px;
+  height: 12px;
+  background-position: 0 -90px;
 }
-.global-navigation .work a {
-  background-position: 105% -103px;
+.global-navigation .work a:before {
+  top: 14px;
+  width: 13px;
+  height: 11px;
+  background-position: 0 -117px;
 }
-.global-navigation .projects a {
-  background-position: 105% -129px;
+.global-navigation .projects a:before {
+  top: 13px;
+  width: 12px;
+  height: 13px;
+  background-position: 0 -143px;
 }
-.global-navigation .blog a {
-  background-position: 105% -156px;
+.global-navigation .blog a:before {
+  top: 13px;
+  width: 11px;
+  height: 13px;
+  background-position: 0 -170px;
 }
-.global-navigation .contact a {
-  background-position: 105% -182px;
+.global-navigation .contact a:before {
+  top: 15px;
+  width: 13px;
+  height: 9px;
+  background-position: 0 -197px;
 }
 .show-navigation {
   text-align: center;
@@ -848,9 +873,6 @@ nav ol {
     -moz-border-radius-bottomright: 3px;
     border-bottom-right-radius: 3px;
   }
-  .global-navigation a {
-    background-image: none;
-  }
 }
 @media only screen and (min-width: 780px) {
   .global-navigation {
@@ -867,8 +889,22 @@ nav ol {
     margin-bottom: 60px;
   }
   .global-navigation li {
+    -webkit-border-top-left-radius: 3px !important;
+    -moz-border-radius-topleft: 3px !important;
+    border-top-left-radius: 3px !important;
+    -webkit-border-bottom-left-radius: 3px !important;
+    -moz-border-radius-bottomleft: 3px !important;
+    border-bottom-left-radius: 3px !important;
     text-align: left;
     display: list-item;
+  }
+  .global-navigation li:last-child {
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
   }
 }
 .global-content {

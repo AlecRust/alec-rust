@@ -40,15 +40,24 @@
 
     a {
         display: block;
+        position: relative;
         text-decoration: none;
         color: #e5e5e5;
-        background: url("@{spritePath}") no-repeat;
         padding: 10px 16px;
 
-        // If HiDPI
-        @media screen and (-webkit-min-device-pixel-ratio: 2) {
-            background-image: url("@{spriteX2Path}");
-            .background-size(48px auto);
+        // Icons
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 13px;
+            background-image: url("@{spritePath}");
+
+            // If HiDPI
+            @media screen and (-webkit-min-device-pixel-ratio: 2) {
+                background-image: url("@{spriteX2Path}");
+                .background-size(48px auto);
+            }
         }
 
         &:active {
@@ -60,28 +69,46 @@
         }
     }
 
-    .home a {
-        background-position: 105% -50px;
+    .home a:before {
+        top: 12px;
+        width: 14px;
+        height: 14px;
+        background-position: 0 -62px;
     }
 
-    .about a {
-        background-position: 105% -77px;
+    .about a:before {
+        top: 13px;
+        width: 12px;
+        height: 12px;
+        background-position: 0 -90px;
     }
 
-    .work a {
-        background-position: 105% -103px;
+    .work a:before {
+        top: 14px;
+        width: 13px;
+        height: 11px;
+        background-position: 0 -117px;
     }
 
-    .projects a {
-        background-position: 105% -129px;
+    .projects a:before {
+        top: 13px;
+        width: 12px;
+        height: 13px;
+        background-position: 0 -143px;
     }
 
-    .blog a {
-        background-position: 105% -156px;
+    .blog a:before {
+        top: 13px;
+        width: 11px;
+        height: 13px;
+        background-position: 0 -170px;
     }
 
-    .contact a {
-        background-position: 105% -182px;
+    .contact a:before {
+        top: 15px;
+        width: 13px;
+        height: 9px;
+        background-position: 0 -197px;
     }
 }
 
@@ -178,10 +205,6 @@
                 .border-bottom-right-radius(@borderRadius);
             }
         }
-
-        a {
-            background-image: none;
-        }
     }
 }
 
@@ -207,8 +230,15 @@
         margin-bottom: 60px;
 
         li {
+            .border-top-left-radius(@borderRadius) !important; // Override smaller screen size styles
+            .border-bottom-left-radius(@borderRadius) !important; // Override smaller screen size styles
             text-align: left;
             display: list-item;
+
+            &:last-child {
+                .border-top-right-radius(0);
+                .border-bottom-right-radius(0);
+            }
         }
     }
 }
