@@ -99,15 +99,17 @@
 
     ul {
         text-align: center;
-        padding-left: 14px;
+        padding-left: 0;
+        width: auto;
+        display: table;
+        margin-bottom: 11px;
     }
 
     li {
-        display: inline-block;
-        margin: 0 16px 16px -4px;
+        display: table-cell;
+        margin: 0;
+        padding: 0 10px;
     }
-
-    a {}
 
     img {
         .border-radius(@borderRadius);
@@ -118,40 +120,8 @@
 // "Wide" module type
 .module-wide {}
 
-// "Commits" module type
-.module-commits {
-
-    ul {
-        padding-left: 0;
-    }
-
-    li {
-        position: relative;
-        margin-bottom: 10px;
-        padding-left: 44px;
-
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 12px;
-            width: 17px;
-            height: 22px;
-            background: url("@{spritePath}") 0 -458px;
-
-            // If HiDPI
-            @media screen and (-webkit-min-device-pixel-ratio: 2) {
-                background-image: url("@{spriteX2Path}");
-                .background-size(48px auto);
-            }
-        }
-    }
-
-    a {}
-}
-
-// "Tweets" module type
+// "Commits" and "Tweets" module type
+.module-commits,
 .module-tweets {
 
     ul {
@@ -167,11 +137,11 @@
             content: "";
             display: block;
             position: absolute;
-            top: 0;
-            left: 7px;
-            width: 26px;
-            height: 21px;
-            background: url("@{spritePath}") 0 -432px;
+            top: 3px;
+            left: 12px;
+            width: 17px;
+            height: 22px;
+            background: url("@{spritePath}") 0 -458px;
 
             // If HiDPI
             @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -181,7 +151,21 @@
         }
     }
 
-    a {}
+    // Clear timestamp in this scenario
+    .timestamp {
+        display: block;
+    }
+}
+
+// "Tweets" module type
+.module-tweets {
+
+    li:before {
+        width: 26px;
+        height: 21px;
+        left: 7px;
+        background-position: 0 -432px;
+    }
 }
 
 // 30em devices and up
@@ -194,5 +178,14 @@
 
     .module {
         width: 40%;
+    }
+}
+
+// 780px devices and up
+// -------------------------
+@media only screen and (min-width: 780px) {
+
+    .module {
+        margin-bottom: 40px;
     }
 }

@@ -4,6 +4,12 @@
     margin-bottom: 30px;
     padding: 0 20px;
 
+    // Responsive images
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     h1 {
         font-weight: normal;
         font-size: @baseFontSize + 20;
@@ -41,5 +47,16 @@
     .global-content {
         .clearfix;
         padding: 0 40px;
+    }
+}
+
+// 780px devices and up
+// -------------------------
+@media only screen and (min-width: 780px) {
+
+    .global-content {
+        width: 700px;
+        padding: 0;
+        margin: auto auto 30px;
     }
 }

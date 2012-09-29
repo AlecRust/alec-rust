@@ -839,9 +839,18 @@ nav ol {
     background-image: none;
   }
 }
+@media only screen and (min-width: 780px) {
+  .global-navigation {
+    margin-bottom: 40px;
+  }
+}
 .global-content {
   margin-bottom: 30px;
   padding: 0 20px;
+}
+.global-content img {
+  max-width: 100%;
+  height: auto;
 }
 .global-content h1 {
   font-weight: normal;
@@ -865,6 +874,13 @@ nav ol {
   }
   .global-content:after {
     clear: both;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .global-content {
+    width: 700px;
+    padding: 0;
+    margin: auto auto 30px;
   }
 }
 .global-social-links {
@@ -1029,11 +1045,15 @@ nav ol {
 }
 .module-thumbs ul {
   text-align: center;
-  padding-left: 14px;
+  padding-left: 0;
+  width: auto;
+  display: table;
+  margin-bottom: 11px;
 }
 .module-thumbs li {
-  display: inline-block;
-  margin: 0 16px 16px -4px;
+  display: table-cell;
+  margin: 0;
+  padding: 0 10px;
 }
 .module-thumbs img {
   -webkit-border-radius: 2px;
@@ -1043,52 +1063,29 @@ nav ol {
   -moz-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
-.module-commits ul {
+.module-commits ul,
+.module-tweets ul {
   padding-left: 0;
 }
-.module-commits li {
+.module-commits li,
+.module-tweets li {
   position: relative;
   margin-bottom: 10px;
   padding-left: 44px;
 }
-.module-commits li:before {
+.module-commits li:before,
+.module-tweets li:before {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
+  top: 3px;
   left: 12px;
   width: 17px;
   height: 22px;
   background: url("../images/global-sprite.png") 0 -458px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .module-commits li:before {
-    background-image: url("../images/global-sprite-x2.png");
-    -webkit-background-size: 48px auto;
-    -moz-background-size: 48px auto;
-    -o-background-size: 48px auto;
-    background-size: 48px auto;
-  }
-}
-.module-tweets ul {
-  padding-left: 0;
-}
-.module-tweets li {
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 44px;
-}
-.module-tweets li:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 7px;
-  width: 26px;
-  height: 21px;
-  background: url("../images/global-sprite.png") 0 -432px;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .module-commits li:before,
   .module-tweets li:before {
     background-image: url("../images/global-sprite-x2.png");
     -webkit-background-size: 48px auto;
@@ -1097,12 +1094,27 @@ nav ol {
     background-size: 48px auto;
   }
 }
+.module-commits .timestamp,
+.module-tweets .timestamp {
+  display: block;
+}
+.module-tweets li:before {
+  width: 26px;
+  height: 21px;
+  left: 7px;
+  background-position: 0 -432px;
+}
 @media only screen and (min-width: 30em) {
   
 }
 @media only screen and (min-width: 700px) {
   .module {
     width: 40%;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .module {
+    margin-bottom: 40px;
   }
 }
 .view-more {
@@ -1184,6 +1196,11 @@ body.home .global-header .global-header-logo:hover:first-letter {
   }
   body.home .module-tweets {
     float: right;
+  }
+}
+@media only screen and (min-width: 780px) {
+  body.home .home-intro {
+    margin-bottom: 60px;
   }
 }
 .hidden {
