@@ -121,9 +121,32 @@
 // "Commits" module type
 .module-commits {
 
-    ul {}
+    ul {
+        padding-left: 0;
+    }
 
-    li {}
+    li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 44px;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 11px;
+            width: 17px;
+            height: 22px;
+            background: url("@{imgPath}global-sprite.png") 0 -458px;
+
+            // If HiDPI
+            @media screen and (-webkit-min-device-pixel-ratio: 2) {
+                background-image: url("@{imgPath}global-sprite-x2.png");
+                .background-size(48px auto);
+            }
+        }
+    }
 
     a {}
 }

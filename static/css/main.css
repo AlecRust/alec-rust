@@ -1052,6 +1052,33 @@ nav ol {
   -moz-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
+.module-commits ul {
+  padding-left: 0;
+}
+.module-commits li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 44px;
+}
+.module-commits li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+  width: 17px;
+  height: 22px;
+  background: url("../images/global-sprite.png") 0 -458px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .module-commits li:before {
+    background-image: url("../images/global-sprite-x2.png");
+    -webkit-background-size: 48px auto;
+    -moz-background-size: 48px auto;
+    -o-background-size: 48px auto;
+    background-size: 48px auto;
+  }
+}
 .module-tweets ul {
   padding-left: 0;
 }
