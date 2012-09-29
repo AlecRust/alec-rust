@@ -1,6 +1,7 @@
 // Global search
 // -------------------------
 .global-search {
+    .transition(@transition);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -12,7 +13,7 @@
 
 // Input
 .global-search-input {
-    .border-radius(@borderRadius);
+    .border-radius(@borderRadius + 1);
     .box-shadow(inset 0 1px 4px #777);
     font-family: @baseFontFamily;
     border: 0;
@@ -22,7 +23,7 @@
 // Button
 .global-search-button {
     #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
-    .border-radius(@borderRadius);
+    .border-radius(@borderRadius + 1);
     color: #d8dada;
     background-color: lighten(@brandColor, .5%);
     font-family: @brandFontFamily;

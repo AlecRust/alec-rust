@@ -360,6 +360,10 @@ nav ol {
   padding: 7px 10px;
 }
 .global-header-logo a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   color: #333333;
   text-decoration: none;
   text-shadow: 1px 1px 1px #aaa;
@@ -391,6 +395,10 @@ nav ol {
   }
 }
 .global-search {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -682,7 +690,7 @@ nav ol {
   content: "";
   display: block;
   position: absolute;
-  right: 13px;
+  right: 15px;
   background-image: url("../images/global-sprite.png");
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -882,6 +890,10 @@ nav ol {
 }
 @media only screen and (min-width: 1300px) {
   .global-navigation {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     position: fixed;
     right: 0;
     top: 180px;
@@ -965,6 +977,10 @@ nav ol {
   display: inline-block;
 }
 .global-social-links a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   opacity: 0.5;
   filter: alpha(opacity=50);
   display: inline-block;
@@ -1104,9 +1120,9 @@ nav ol {
   left: 0;
 }
 .module-heros .hero-thumb img {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   -moz-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
@@ -1138,9 +1154,9 @@ nav ol {
   padding: 0 5px;
 }
 .module-thumbs img {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   -moz-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;

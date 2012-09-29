@@ -50,7 +50,7 @@
             content: "";
             display: block;
             position: absolute;
-            right: 13px;
+            right: 15px;
             background-image: url("@{spritePath}");
 
             // If HiDPI
@@ -159,14 +159,14 @@
 
             &:first-child,
             &:nth-child(4) {
-                .border-top-left-radius(@borderRadius);
-                .border-bottom-left-radius(@borderRadius);
+                .border-top-left-radius(@borderRadius + 1);
+                .border-bottom-left-radius(@borderRadius + 1);
             }
 
             &:nth-child(3),
             &:nth-child(6) {
-                .border-top-right-radius(@borderRadius);
-                .border-bottom-right-radius(@borderRadius);
+                .border-top-right-radius(@borderRadius + 1);
+                .border-bottom-right-radius(@borderRadius + 1);
             }
         }
     }
@@ -190,8 +190,8 @@
             margin-left: 0;
 
             &:first-child {
-                .border-top-left-radius(@borderRadius);
-                .border-bottom-left-radius(@borderRadius);
+                .border-top-left-radius(@borderRadius + 1);
+                .border-bottom-left-radius(@borderRadius + 1);
             }
 
             &:nth-child(3),
@@ -201,8 +201,8 @@
             }
 
             &:last-child {
-                .border-top-right-radius(@borderRadius);
-                .border-bottom-right-radius(@borderRadius);
+                .border-top-right-radius(@borderRadius + 1);
+                .border-bottom-right-radius(@borderRadius + 1);
             }
         }
     }
@@ -223,6 +223,7 @@
 @media only screen and (min-width: 1300px) {
 
     .global-navigation {
+        .transition(@transition);
         position: fixed;
         right: 0;
         top: 180px;
@@ -230,8 +231,8 @@
         margin-bottom: 60px;
 
         li {
-            .border-top-left-radius(@borderRadius) !important; // Override smaller screen size styles
-            .border-bottom-left-radius(@borderRadius) !important; // Override smaller screen size styles
+            .border-top-left-radius(@borderRadius + 1) !important; // Override smaller screen size styles
+            .border-bottom-left-radius(@borderRadius + 1) !important; // Override smaller screen size styles
             text-align: left;
             display: list-item;
 
