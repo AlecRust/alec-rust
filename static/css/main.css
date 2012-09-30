@@ -941,7 +941,7 @@ nav ol {
 @media only screen and (min-width: 700px) {
   .global-content {
     *zoom: 1;
-    padding: 20px 40px 40px;
+    padding: 40px;
   }
   .global-content:before,
   .global-content:after {
@@ -961,7 +961,7 @@ nav ol {
 @media only screen and (min-width: 1300px) {
   .global-content {
     min-height: 450px;
-    margin: 120px auto 100px;
+    margin: 100px auto;
   }
 }
 .global-social-links {
