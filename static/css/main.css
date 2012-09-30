@@ -848,6 +848,7 @@ nav ol {
 @media only screen and (min-width: 700px) {
   .global-navigation {
     clear: left;
+    margin-bottom: 0;
   }
   .global-navigation ul {
     display: table;
@@ -885,7 +886,7 @@ nav ol {
 @media only screen and (min-width: 780px) {
   .global-navigation {
     width: 780px;
-    margin: auto auto 40px;
+    margin: auto;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -921,7 +922,7 @@ nav ol {
 }
 .global-content {
   margin-bottom: 30px;
-  padding: 0 20px;
+  padding: 10px 20px 20px;
 }
 .global-content img {
   max-width: 100%;
@@ -934,13 +935,13 @@ nav ol {
 }
 @media only screen and (min-width: 30em) {
   .global-content {
-    padding: 0 30px;
+    padding: 15px 30px 30px;
   }
 }
 @media only screen and (min-width: 700px) {
   .global-content {
     *zoom: 1;
-    padding: 0 40px;
+    padding: 20px 40px 40px;
   }
   .global-content:before,
   .global-content:after {
@@ -953,14 +954,14 @@ nav ol {
 }
 @media only screen and (min-width: 780px) {
   .global-content {
-    width: 700px;
-    padding: 0;
+    width: 780px;
     margin: auto auto 30px;
   }
 }
 @media only screen and (min-width: 1300px) {
   .global-content {
-    margin: 140px auto 30px;
+    min-height: 450px;
+    margin: 120px auto 100px;
   }
 }
 .global-social-links {
@@ -1068,6 +1069,18 @@ nav ol {
   color: #eee;
 }
 @media only screen and (min-width: 30em) {
+  
+}
+.page .global-content {
+  background-color: #f2f2f2;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
   
 }
 .module {
@@ -1302,6 +1315,66 @@ body.home .global-header .global-header-logo:hover:first-letter {
   body.home .home-intro {
     margin-bottom: 60px;
   }
+}
+body.about .global-header .global-header-logo:hover:first-letter {
+  color: #3e7fd7;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
+  
+}
+body.work .global-header .global-header-logo:hover:first-letter {
+  color: #d13a3a;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
+  
+}
+body.projects .global-header .global-header-logo:hover:first-letter {
+  color: #d57300;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
+  
+}
+body.blog .global-header .global-header-logo:hover:first-letter {
+  color: #47c6bf;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
+  
+}
+body.contact .global-header .global-header-logo:hover:first-letter {
+  color: #d5db3a;
+}
+@media only screen and (min-width: 30em) {
+  
+}
+@media only screen and (min-width: 700px) {
+  
+}
+@media only screen and (min-width: 780px) {
+  
 }
 .hidden {
   display: none !important;
