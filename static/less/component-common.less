@@ -5,14 +5,35 @@
 .view-more {
     text-align: right;
     font-weight: bold;
+
+    a {
+        display: inline-block;
+
+        &:after {
+            content: "";
+            display: inline-block;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 10px solid @brandColor;
+            margin: 0 0 -1px 8px;
+        }
+
+        &:hover {
+
+            &:after {
+                border-left-color: lighten(@brandColor, 8%);
+            }
+        }
+    }
 }
 
 // Timestamp
 .timestamp {
     color: lighten(@textColor, 30%);
     font-size: @baseFontSize - 1;
-}
 
-// 30em devices and up
-// -------------------------
-@media only screen and (min-width: 30em) {}
+    a {
+        color: lighten(@textColor, 30%);
+        text-decoration: none;
+    }
+}

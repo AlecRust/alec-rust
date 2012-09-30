@@ -328,6 +328,11 @@ nav ol {
   margin: 0;
   padding: 10px;
 }
+@media only screen and (min-width: 1350px) {
+  body {
+    background-size: auto;
+  }
+}
 .global-header {
   position: relative;
 }
@@ -379,16 +384,13 @@ nav ol {
   margin: auto auto 30px;
   padding-left: 60px;
 }
-@media only screen and (min-width: 30em) {
-  
-}
 @media only screen and (min-width: 700px) {
   .global-header {
     float: left;
     margin-left: 40px;
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .global-header {
     position: fixed;
     top: 0;
@@ -477,9 +479,6 @@ nav ol {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
   color: #fff;
   background-color: #4a4a4a;
-}
-@media only screen and (min-width: 30em) {
-  
 }
 @media only screen and (min-width: 700px) {
   .global-search {
@@ -571,7 +570,7 @@ nav ol {
     filter: alpha(opacity=60);
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .global-search {
     position: fixed;
     top: 0;
@@ -889,7 +888,7 @@ nav ol {
     margin: auto;
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .global-navigation {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -921,6 +920,9 @@ nav ol {
   }
 }
 .global-content {
+  -webkit-box-shadow: 0 2px 2px #cccccc;
+  -moz-box-shadow: 0 2px 2px #cccccc;
+  box-shadow: 0 2px 2px #cccccc;
   margin-bottom: 30px;
   padding: 10px 20px 20px;
 }
@@ -941,7 +943,7 @@ nav ol {
 @media only screen and (min-width: 700px) {
   .global-content {
     *zoom: 1;
-    padding: 40px;
+    padding: 30px 40px 40px;
   }
   .global-content:before,
   .global-content:after {
@@ -954,14 +956,26 @@ nav ol {
 }
 @media only screen and (min-width: 780px) {
   .global-content {
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-bottom-right-radius: 3px;
     width: 780px;
     margin: auto auto 30px;
   }
 }
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .global-content {
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-right-radius: 3px;
     min-height: 450px;
-    margin: 100px auto;
+    margin: 110px auto;
   }
 }
 .global-social-links {
@@ -1029,10 +1043,7 @@ nav ol {
 .global-social-links .email a {
   background-position: 0 -402px;
 }
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
   .global-social-links {
     position: fixed;
     top: 250px;
@@ -1068,20 +1079,8 @@ nav ol {
 .global-footer a:active {
   color: #eee;
 }
-@media only screen and (min-width: 30em) {
-  
-}
 .page .global-content {
   background-color: #f2f2f2;
-}
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
 }
 .module {
   margin-bottom: 30px;
@@ -1234,15 +1233,35 @@ nav ol {
   text-align: right;
   font-weight: bold;
 }
+.view-more a {
+  display: inline-block;
+}
+.view-more a:after {
+  content: "";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #333333;
+  margin: 0 0 -1px 8px;
+}
+.view-more a:hover:after {
+  border-left-color: #474747;
+}
 .timestamp {
   color: #858585;
   font-size: 13px;
 }
-@media only screen and (min-width: 30em) {
-  
+.timestamp a {
+  color: #858585;
+  text-decoration: none;
 }
 body.home .global-header .global-header-logo:hover:first-letter {
   color: #2ec239;
+}
+body.home .global-content {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 .home-intro {
   margin-bottom: 30px;

@@ -1,6 +1,7 @@
 // Global content
 // -------------------------
 .global-content {
+    .box-shadow(0 2px 2px #ccc);
     margin-bottom: 30px;
     padding: 10px 20px 20px;
 
@@ -16,13 +17,13 @@
         margin: 0 0 20px;
     }
 
-    h1 {}
+    h2 {}
 
-    h1 {}
+    h3 {}
 
-    h1 {}
+    h4 {}
 
-    h1 {}
+    h5 {}
 
     p {}
 
@@ -46,7 +47,7 @@
 
     .global-content {
         .clearfix;
-        padding: 40px;
+        padding: 30px 40px 40px;
     }
 }
 
@@ -55,17 +56,21 @@
 @media only screen and (min-width: 780px) {
 
     .global-content {
+        .border-bottom-left-radius(@borderRadius + 1);
+        .border-bottom-right-radius(@borderRadius + 1);
         width: 780px;
         margin: auto auto 30px;
     }
 }
 
-// 1300px devices and up
+// 1350px devices and up
 // -------------------------
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1350px) {
 
     .global-content {
+        .border-top-left-radius(@borderRadius + 1);
+        .border-top-right-radius(@borderRadius + 1);
         min-height: 450px;
-        margin: 100px auto;
+        margin: 110px auto;
     }
 }
