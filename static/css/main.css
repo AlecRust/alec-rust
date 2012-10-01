@@ -923,6 +923,7 @@ nav ol {
   -webkit-box-shadow: 0 2px 2px #cccccc;
   -moz-box-shadow: 0 2px 2px #cccccc;
   box-shadow: 0 2px 2px #cccccc;
+  background-color: #f8f8f8;
   margin-bottom: 30px;
   padding: 10px 20px 20px;
 }
@@ -935,6 +936,25 @@ nav ol {
   font-size: 35px;
   margin: 0 0 20px;
 }
+.global-content .entry-meta {
+  font-size: 13px;
+  color: #919191;
+}
+.global-content .entry-meta a {
+  color: #919191;
+  text-decoration: none;
+}
+.global-content .entry-meta a:hover {
+  text-decoration: underline;
+}
+.global-content blockquote {
+  font-style: italic;
+  margin: 0;
+  padding: 20px;
+}
+.global-content blockquote small {
+  font-style: normal;
+}
 @media only screen and (min-width: 30em) {
   .global-content {
     padding: 15px 30px 30px;
@@ -943,6 +963,7 @@ nav ol {
 @media only screen and (min-width: 700px) {
   .global-content {
     *zoom: 1;
+    position: relative;
     padding: 30px 40px 40px;
   }
   .global-content:before,
@@ -952,6 +973,11 @@ nav ol {
   }
   .global-content:after {
     clear: both;
+  }
+  .global-content .entry-meta {
+    position: absolute;
+    top: 12px;
+    right: 17px;
   }
 }
 @media only screen and (min-width: 780px) {
@@ -1079,17 +1105,14 @@ nav ol {
 .global-footer a:active {
   color: #eee;
 }
-.page .global-content {
-  background-color: #f2f2f2;
-}
 .module {
   margin-bottom: 30px;
 }
 .module h1 {
   display: inline-block;
-  border-bottom: 1px solid #b8b8b8;
   font-size: 16px;
   font-weight: bold;
+  border-bottom: 1px solid #b8b8b8;
   margin: 0 0 14px;
   padding: 0 30px 4px 0;
 }
@@ -1262,6 +1285,7 @@ body.home .global-content {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  background-color: transparent;
 }
 .home-intro {
   margin-bottom: 30px;

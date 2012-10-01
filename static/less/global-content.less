@@ -2,6 +2,7 @@
 // -------------------------
 .global-content {
     .box-shadow(0 2px 2px #ccc);
+    background-color: @contentBackground;
     margin-bottom: 30px;
     padding: 10px 20px 20px;
 
@@ -17,6 +18,20 @@
         margin: 0 0 20px;
     }
 
+    .entry-meta {
+        font-size: @baseFontSize - 1;
+        color: lighten(@textColor, 35%);
+
+        a {
+            color: lighten(@textColor, 35%);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
     h2 {}
 
     h3 {}
@@ -30,6 +45,16 @@
     ul {}
 
     li {}
+
+    blockquote {
+        font-style: italic;
+        margin: 0;
+        padding: 20px;
+
+        small {
+            font-style: normal;
+        }
+    }
 }
 
 // 30em devices and up
@@ -47,7 +72,14 @@
 
     .global-content {
         .clearfix;
+        position: relative;
         padding: 30px 40px 40px;
+
+        .entry-meta {
+            position: absolute;
+            top: 12px;
+            right: 17px;
+        }
     }
 }
 

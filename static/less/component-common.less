@@ -9,6 +9,7 @@
     a {
         display: inline-block;
 
+        // CSS arrow
         &:after {
             content: "";
             display: inline-block;
@@ -18,11 +19,8 @@
             margin: 0 0 -1px 8px;
         }
 
-        &:hover {
-
-            &:after {
-                border-left-color: lighten(@brandColor, 8%);
-            }
+        &:hover:after {
+            border-left-color: lighten(@brandColor, 8%);
         }
     }
 }
