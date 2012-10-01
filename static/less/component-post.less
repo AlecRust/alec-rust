@@ -1,0 +1,53 @@
+// "Post Item" page component
+// -------------------------
+.post-item {
+    .box-shadow(0 2px 2px #ccc);
+    background-color: @contentBackground;
+    margin-bottom: 30px;
+    padding: 10px 20px 20px;
+}
+
+// 30em devices and up
+// -------------------------
+@media only screen and (min-width: 30em) {
+
+    .post-item {
+        padding: 15px 30px 30px;
+    }
+}
+
+// 700px devices and up
+// -------------------------
+@media only screen and (min-width: 700px) {
+
+    .post-item {
+        padding: 30px 40px 40px;
+
+        &:first-child {
+            margin-top: 30px;
+        }
+    }
+}
+
+// 780px devices and up
+// -------------------------
+@media only screen and (min-width: 780px) {
+
+    .post-item {
+        .border-radius(@borderRadius + 1);
+        padding: 30px 40px 40px;
+    }
+}
+
+// 1350px devices and up
+// -------------------------
+@media only screen and (min-width: 1350px) {
+
+    .post-item {
+        padding: 30px 40px 40px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

@@ -920,12 +920,7 @@ nav ol {
   }
 }
 .global-content {
-  -webkit-box-shadow: 0 2px 2px #cccccc;
-  -moz-box-shadow: 0 2px 2px #cccccc;
-  box-shadow: 0 2px 2px #cccccc;
-  background-color: #f8f8f8;
   margin-bottom: 30px;
-  padding: 10px 20px 20px;
 }
 .global-content img {
   max-width: 100%;
@@ -935,6 +930,21 @@ nav ol {
   font-weight: normal;
   font-size: 35px;
   margin: 0 0 20px;
+}
+.global-content h2 {
+  font-weight: normal;
+  font-size: 30px;
+  margin: 0 0 15px;
+}
+.global-content h3 {
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+.global-content h4 {
+  font-weight: normal;
+  font-size: 20px;
+  margin: 0 0 10px;
 }
 .global-content .entry-meta {
   font-size: 13px;
@@ -955,16 +965,21 @@ nav ol {
 .global-content blockquote small {
   font-style: normal;
 }
+.global-content-page {
+  -webkit-box-shadow: 0 2px 2px #cccccc;
+  -moz-box-shadow: 0 2px 2px #cccccc;
+  box-shadow: 0 2px 2px #cccccc;
+  background-color: #f8f8f8;
+  padding: 10px 20px 20px;
+}
 @media only screen and (min-width: 30em) {
-  .global-content {
+  .global-content-page {
     padding: 15px 30px 30px;
   }
 }
 @media only screen and (min-width: 700px) {
   .global-content {
     *zoom: 1;
-    position: relative;
-    padding: 30px 40px 40px;
   }
   .global-content:before,
   .global-content:after {
@@ -974,34 +989,35 @@ nav ol {
   .global-content:after {
     clear: both;
   }
-  .global-content .entry-meta {
-    position: absolute;
-    top: 12px;
-    right: 17px;
+  .global-content-page {
+    padding: 30px 40px 40px;
   }
 }
 @media only screen and (min-width: 780px) {
   .global-content {
+    width: 780px;
+    margin: auto auto 30px;
+  }
+  .global-content-page {
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-bottomleft: 3px;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
     -moz-border-radius-bottomright: 3px;
     border-bottom-right-radius: 3px;
-    width: 780px;
-    margin: auto auto 30px;
   }
 }
 @media only screen and (min-width: 1350px) {
   .global-content {
+    margin: 110px auto;
+  }
+  .global-content-page {
     -webkit-border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
     border-top-left-radius: 3px;
     -webkit-border-top-right-radius: 3px;
     -moz-border-radius-topright: 3px;
     border-top-right-radius: 3px;
-    min-height: 450px;
-    margin: 110px auto;
   }
 }
 .global-social-links {
@@ -1104,6 +1120,43 @@ nav ol {
 }
 .global-footer a:active {
   color: #eee;
+}
+.post-item {
+  -webkit-box-shadow: 0 2px 2px #cccccc;
+  -moz-box-shadow: 0 2px 2px #cccccc;
+  box-shadow: 0 2px 2px #cccccc;
+  background-color: #f8f8f8;
+  margin-bottom: 30px;
+  padding: 10px 20px 20px;
+}
+@media only screen and (min-width: 30em) {
+  .post-item {
+    padding: 15px 30px 30px;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .post-item {
+    padding: 30px 40px 40px;
+  }
+  .post-item:first-child {
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .post-item {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 30px 40px 40px;
+  }
+}
+@media only screen and (min-width: 1350px) {
+  .post-item {
+    padding: 30px 40px 40px;
+  }
+  .post-item:first-child {
+    margin-top: 0;
+  }
 }
 .module {
   margin-bottom: 30px;
@@ -1246,6 +1299,9 @@ nav ol {
   .module {
     width: 40%;
   }
+  .module-thumbs {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 780px) {
   .module {
@@ -1281,7 +1337,7 @@ nav ol {
 body.home .global-header .global-header-logo:hover:first-letter {
   color: #2ec239;
 }
-body.home .global-content {
+body.home .global-content-page {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -1345,7 +1401,6 @@ body.home .global-content {
   }
   body.home .module-thumbs {
     float: left;
-    width: 100%;
   }
   body.home .module-commits {
     float: left;
