@@ -289,6 +289,10 @@ a {
   color: #383838;
 }
 a:hover {
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  transition: color 0.1s linear;
   color: #121212;
 }
 a:visited {
