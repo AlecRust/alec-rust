@@ -35,3 +35,50 @@
         text-decoration: none;
     }
 }
+
+// Post navigation
+.post-navigation {
+
+    ul {
+        .clearfix;
+    }
+
+    li {
+        font-size: @baseFontSize + 2;
+        font-family: @brandFontFamily;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .prev {
+        float: left;
+
+        a {
+
+            &:before {
+                content: "< ";
+            }
+        }
+    }
+
+    .next {
+        text-align: right;
+        float: right;
+
+        a {
+
+            &:after {
+                content: " >";
+            }
+        }
+    }
+
+}

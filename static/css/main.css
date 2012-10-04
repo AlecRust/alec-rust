@@ -930,6 +930,12 @@ nav ol {
   max-width: 100%;
   height: auto;
 }
+.global-content .entry-title a {
+  text-decoration: none;
+}
+.global-content .entry-title a:hover {
+  text-decoration: underline;
+}
 .global-content h1 {
   font-weight: normal;
   font-size: 35px;
@@ -1337,6 +1343,42 @@ nav ol {
 .timestamp a {
   color: #858585;
   text-decoration: none;
+}
+.post-navigation ul {
+  *zoom: 1;
+}
+.post-navigation ul:before,
+.post-navigation ul:after {
+  content: " ";
+  display: table;
+}
+.post-navigation ul:after {
+  clear: both;
+}
+.post-navigation li {
+  font-size: 16px;
+  font-family: 'stalin_oneregular', sans-serif;
+}
+.post-navigation a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+.post-navigation a:hover {
+  text-decoration: underline;
+}
+.post-navigation .prev {
+  float: left;
+}
+.post-navigation .prev a:before {
+  content: "< ";
+}
+.post-navigation .next {
+  text-align: right;
+  float: right;
+}
+.post-navigation .next a:after {
+  content: " >";
 }
 body.home .global-header .global-header-logo:hover:first-letter {
   color: #2ec239;
