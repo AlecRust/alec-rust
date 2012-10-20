@@ -3,7 +3,7 @@
 body.home {
 
     // "A" logo colour
-    .global-header .global-header-logo:hover:first-letter {
+    .global-header .global-header-logo:hover span {
         color: @homeColor;
     }
 
@@ -59,9 +59,9 @@ body.home {
     }
 }
 
-// 30em devices and up
+// @smartphoneLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: @smartphoneLandscape) {
 
     body.home {
 
@@ -84,11 +84,16 @@ body.home {
     }
 }
 
-// 700px devices and up
+// @tabletPortrait devices and up
 // -------------------------
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: @tabletPortrait) {
 
     body.home {
+
+        // Site introduction
+        .home-intro {
+            margin-bottom: 60px;
+        }
 
         // "Recent work/projects" module
         .module-heros {
@@ -113,19 +118,6 @@ body.home {
         // "Recent tweets" module
         .module-tweets {
             float: right;
-        }
-    }
-}
-
-// 780px devices and up
-// -------------------------
-@media only screen and (min-width: 780px) {
-
-    body.home {
-
-        // Site introduction
-        .home-intro {
-            margin-bottom: 60px;
         }
     }
 }

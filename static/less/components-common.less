@@ -15,12 +15,16 @@
             display: inline-block;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
-            border-left: 10px solid @brandColor;
+            border-left: 10px solid @linkColor;
             margin: 0 0 -1px 8px;
         }
 
+        &:visited:after {
+            border-left-color: @linkColorVisited;
+        }
+
         &:hover:after {
-            border-left-color: lighten(@brandColor, 8%);
+            border-left-color: @linkColorHover;
         }
     }
 }
@@ -61,11 +65,8 @@
     .prev {
         float: left;
 
-        a {
-
-            &:before {
-                content: "< ";
-            }
+        a:before {
+            content: "< ";
         }
     }
 
@@ -73,12 +74,8 @@
         text-align: right;
         float: right;
 
-        a {
-
-            &:after {
-                content: " >";
-            }
+        a:after {
+            content: " >";
         }
     }
-
 }

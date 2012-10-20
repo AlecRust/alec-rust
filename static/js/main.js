@@ -1,3 +1,12 @@
+// Add class to body when scrolling
+$(window).scroll(function() {
+    $('body').addClass('scrolling');
+    var scroll = $(window).scrollTop();
+    if (scroll <= 1) {
+        $('body').removeClass('scrolling');
+    }
+});
+
 // Show search
 $('.show-search a').click(function() {
     $('.global-search').addClass('search-visible');
@@ -36,3 +45,12 @@ $('.show-navigation a').click(function() {
         }, false);
     }
 })(this);
+
+// Open external links in new tab
+$('a[href^=http]').click(function () {
+    var a = new RegExp('/' + window.location.host + '/');
+    if (!a.test(this.href)) {
+        window.open(this.href);
+        return false;
+    }
+});

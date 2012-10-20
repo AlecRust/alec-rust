@@ -39,8 +39,8 @@
 
     .hero {
         display: block;
-        min-height: 60px;
         position: relative;
+        min-height: 60px;
         text-decoration: none;
 
         &:active {
@@ -96,11 +96,11 @@
 .module-thumbs {
 
     ul {
-        text-align: center;
-        padding-left: 0;
         width: auto;
         display: table;
+        text-align: center;
         margin-bottom: 11px;
+        padding-left: 0;
     }
 
     li {
@@ -156,16 +156,16 @@
 .module-tweets {
 
     li:before {
+        left: 7px;
         width: 26px;
         height: 21px;
-        left: 7px;
         background-position: 0 -432px;
     }
 }
 
-// 30em devices and up
+// @smartphoneLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: @smartphoneLandscape) {
 
     // "Thumbs" module type
     .module-thumbs {
@@ -176,24 +176,16 @@
     }
 }
 
-// 700px devices and up
+// @tabletPortrait devices and up
 // -------------------------
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: @tabletPortrait) {
 
     .module {
         width: 40%;
+        margin-bottom: 40px;
     }
 
     .module-thumbs {
         width: 100%;
-    }
-}
-
-// 780px devices and up
-// -------------------------
-@media only screen and (min-width: 780px) {
-
-    .module {
-        margin-bottom: 40px;
     }
 }

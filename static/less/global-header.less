@@ -1,18 +1,23 @@
 // Global header
 // -------------------------
 .global-header {
+    .transition(@transition);
     position: relative;
+    margin: 36px 0 30px;
 }
 
 .global-header-logo {
     font-size: @baseFontSize + 9;
     font-family: @brandFontFamily;
     text-align: center;
-    margin: 36px 0 -2px;
+    margin: 0 0 -2px;
 
-    // Target the "A"
-    &:first-letter {
+    // Create the "A"
+    // Note: Switch this to target :first-letter when browser
+    // support is better for transitioning pseudo-elements
+    span {
         #gradient > .vertical(lighten(@brandColor, 7%), @brandColor);
+        .transition(@transition);
         .border-radius(30px);
         .box-shadow(1px 1px 1px #aaa);
         font-size: @baseFontSize + 21;
@@ -39,13 +44,13 @@
     color: #7b7b7b;
     font-size: @baseFontSize - 2;
     font-weight: normal;
-    margin: auto auto 30px;
+    margin: auto;
     padding-left: 60px;
 }
 
-// 700px devices and up
+// @tabletPortrait devices and up
 // -------------------------
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: @tabletPortrait) {
 
     .global-header {
         float: left;
@@ -53,12 +58,42 @@
     }
 }
 
-// 1350px devices and up
+// @tabletLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: @tabletLandscape) {
 
     .global-header {
         position: fixed;
         top: 0;
+    }
+
+    // Rotate header -90deg when scrolling
+    body.scrolling .global-header {
+        .rotate(-90deg);
+        top: 99px;
+        left: -73px;
+    }
+}
+
+// @desktopWidth devices and up
+// -------------------------
+@media only screen and (min-width: @desktopWidth) {
+
+    // Prevent -90deg header rotationwhen scrolling
+    // 2. Move header left when scrolling
+    body.scrolling .global-header {
+        .rotate(0);
+        top: 0;
+        left: -25px;
+    }
+}
+
+// @desktopWidthSecondary devices and up
+// -------------------------
+@media only screen and (min-width: @desktopWidthSecondary) {
+
+    // Prevent move header left when scrolling
+    body.scrolling .global-header {
+        left: 0;
     }
 }

@@ -332,21 +332,26 @@ nav ol {
   margin: 0;
   padding: 10px;
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   body {
     background-size: auto;
   }
 }
 .global-header {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
+  margin: 36px 0 30px;
 }
 .global-header-logo {
   font-size: 23px;
   font-family: 'stalin_oneregular', sans-serif;
   text-align: center;
-  margin: 36px 0 -2px;
+  margin: 0 0 -2px;
 }
-.global-header-logo:first-letter {
+.global-header-logo span {
   background-color: #3e3e3e;
   background-image: -moz-linear-gradient(top, #454545, #333333);
   background-image: -ms-linear-gradient(top, #454545, #333333);
@@ -356,6 +361,10 @@ nav ol {
   background-image: linear-gradient(top, #454545, #333333);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#333333', GradientType=0);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -385,19 +394,44 @@ nav ol {
   color: #7b7b7b;
   font-size: 12px;
   font-weight: normal;
-  margin: auto auto 30px;
+  margin: auto;
   padding-left: 60px;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .global-header {
     float: left;
     margin-left: 40px;
   }
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .global-header {
     position: fixed;
     top: 0;
+  }
+  body.scrolling .global-header {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: 99px;
+    left: -73px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  body.scrolling .global-header {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    top: 0;
+    left: -25px;
+  }
+}
+@media only screen and (min-width: 1424px) {
+  body.scrolling .global-header {
+    left: 0;
   }
 }
 .global-search {
@@ -484,7 +518,7 @@ nav ol {
   color: #fff;
   background-color: #4a4a4a;
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .global-search {
     float: right;
     margin: 46px 40px 0 0;
@@ -574,7 +608,7 @@ nav ol {
     filter: alpha(opacity=60);
   }
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .global-search {
     position: fixed;
     top: 0;
@@ -685,8 +719,8 @@ nav ol {
 .global-navigation a {
   display: block;
   position: relative;
-  text-decoration: none;
   color: #e5e5e5;
+  text-decoration: none;
   padding: 10px 16px;
 }
 .global-navigation a:before {
@@ -749,7 +783,7 @@ nav ol {
 }
 .show-navigation {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 .show-navigation a {
   background-color: #3e3e3e;
@@ -790,7 +824,7 @@ nav ol {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
   background-color: #4a4a4a;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 480px) {
   .global-navigation ul {
     clip: auto;
     height: auto;
@@ -848,10 +882,10 @@ nav ol {
     border-bottom-right-radius: 3px;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .global-navigation {
     clear: left;
-    margin-bottom: 0;
+    margin: auto;
   }
   .global-navigation ul {
     display: table;
@@ -886,13 +920,7 @@ nav ol {
     border-bottom-right-radius: 3px;
   }
 }
-@media only screen and (min-width: 780px) {
-  .global-navigation {
-    width: 780px;
-    margin: auto;
-  }
-}
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .global-navigation {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -901,7 +929,7 @@ nav ol {
     position: fixed;
     right: 0;
     top: 180px;
-    width: 185px;
+    width: 12%;
     margin-bottom: 60px;
   }
   .global-navigation li {
@@ -982,14 +1010,15 @@ nav ol {
   background-color: #f8f8f8;
   padding: 10px 20px 20px;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 480px) {
   .global-content-page {
     padding: 15px 30px 30px;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .global-content {
     *zoom: 1;
+    margin: auto auto 30px;
   }
   .global-content:before,
   .global-content:after {
@@ -1000,25 +1029,18 @@ nav ol {
     clear: both;
   }
   .global-content-page {
-    padding: 30px 40px 40px;
-  }
-}
-@media only screen and (min-width: 780px) {
-  .global-content {
-    width: 780px;
-    margin: auto auto 30px;
-  }
-  .global-content-page {
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-bottomleft: 3px;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-right-radius: 3px;
     -moz-border-radius-bottomright: 3px;
     border-bottom-right-radius: 3px;
+    padding: 30px 40px 40px;
   }
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .global-content {
+    width: 69%;
     margin: 110px auto;
   }
   .global-content-page {
@@ -1028,6 +1050,11 @@ nav ol {
     -webkit-border-top-right-radius: 3px;
     -moz-border-radius-topright: 3px;
     border-top-right-radius: 3px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .global-content {
+    width: 57%;
   }
 }
 .global-social-links {
@@ -1095,18 +1122,33 @@ nav ol {
 .global-social-links .email a {
   background-position: 0 -402px;
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .global-social-links {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     position: fixed;
     top: 250px;
     width: 150px;
-    margin-left: 110px;
+    margin-left: 2%;
   }
   .global-social-links ul {
     text-align: left;
   }
   .global-social-links li {
     margin: 0 0 20px;
+  }
+  body.scrolling .global-social-links {
+    top: 350px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  .global-social-links {
+    margin-left: 6%;
+  }
+  body.scrolling .global-social-links {
+    top: 250px;
   }
 }
 .global-footer {
@@ -1139,28 +1181,23 @@ nav ol {
   margin-bottom: 30px;
   padding: 10px 20px 20px;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 480px) {
   .post-item {
     padding: 15px 30px 30px;
   }
 }
-@media only screen and (min-width: 700px) {
-  .post-item {
-    padding: 30px 40px 40px;
-  }
-  .post-item:first-child {
-    margin-top: 30px;
-  }
-}
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 768px) {
   .post-item {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     padding: 30px 40px 40px;
   }
+  .post-item:first-child {
+    margin-top: 30px;
+  }
 }
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: 1024px) {
   .post-item {
     padding: 30px 40px 40px;
   }
@@ -1197,8 +1234,8 @@ nav ol {
 }
 .module-heros .hero {
   display: block;
-  min-height: 60px;
   position: relative;
+  min-height: 60px;
   text-decoration: none;
 }
 .module-heros .hero:active {
@@ -1240,11 +1277,11 @@ nav ol {
   text-decoration: underline;
 }
 .module-thumbs ul {
-  text-align: center;
-  padding-left: 0;
   width: auto;
   display: table;
+  text-align: center;
   margin-bottom: 11px;
+  padding-left: 0;
 }
 .module-thumbs li {
   display: table-cell;
@@ -1295,27 +1332,23 @@ nav ol {
   display: block;
 }
 .module-tweets li:before {
+  left: 7px;
   width: 26px;
   height: 21px;
-  left: 7px;
   background-position: 0 -432px;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 480px) {
   .module-thumbs li {
     padding: 0 10px;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
   .module {
     width: 40%;
+    margin-bottom: 40px;
   }
   .module-thumbs {
     width: 100%;
-  }
-}
-@media only screen and (min-width: 780px) {
-  .module {
-    margin-bottom: 40px;
   }
 }
 .view-more {
@@ -1330,11 +1363,14 @@ nav ol {
   display: inline-block;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 10px solid #333333;
+  border-left: 10px solid #383838;
   margin: 0 0 -1px 8px;
 }
+.view-more a:visited:after {
+  border-left-color: #5e5e5e;
+}
 .view-more a:hover:after {
-  border-left-color: #474747;
+  border-left-color: #121212;
 }
 .timestamp {
   color: #858585;
@@ -1380,7 +1416,7 @@ nav ol {
 .post-navigation .next a:after {
   content: " >";
 }
-body.home .global-header .global-header-logo:hover:first-letter {
+body.home .global-header .global-header-logo:hover span {
   color: #2ec239;
 }
 body.home .global-content-page {
@@ -1429,7 +1465,7 @@ body.home .global-content-page {
 .home-intro .work a {
   background-position: 0 -510px;
 }
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: 480px) {
   body.home .home-intro li {
     display: inline-block;
     margin: 0 35px 0 0;
@@ -1438,7 +1474,10 @@ body.home .global-content-page {
     margin-right: 0;
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 768px) {
+  body.home .home-intro {
+    margin-bottom: 60px;
+  }
   body.home .module-heros {
     float: left;
   }
@@ -1455,70 +1494,20 @@ body.home .global-content-page {
     float: right;
   }
 }
-@media only screen and (min-width: 780px) {
-  body.home .home-intro {
-    margin-bottom: 60px;
-  }
-}
-body.about .global-header .global-header-logo:hover:first-letter {
+body.about .global-header .global-header-logo:hover span {
   color: #3e7fd7;
 }
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
-}
-body.work .global-header .global-header-logo:hover:first-letter {
+body.work .global-header .global-header-logo:hover span {
   color: #d13a3a;
 }
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
-}
-body.projects .global-header .global-header-logo:hover:first-letter {
+body.projects .global-header .global-header-logo:hover span {
   color: #d57300;
 }
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
-}
-body.blog .global-header .global-header-logo:hover:first-letter {
+body.blog .global-header .global-header-logo:hover span {
   color: #47c6bf;
 }
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
-}
-body.contact .global-header .global-header-logo:hover:first-letter {
+body.contact .global-header .global-header-logo:hover span {
   color: #d5db3a;
-}
-@media only screen and (min-width: 30em) {
-  
-}
-@media only screen and (min-width: 700px) {
-  
-}
-@media only screen and (min-width: 780px) {
-  
 }
 .hidden {
   display: none !important;

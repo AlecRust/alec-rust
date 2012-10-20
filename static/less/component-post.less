@@ -7,20 +7,21 @@
     padding: 10px 20px 20px;
 }
 
-// 30em devices and up
+// @smartphoneLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: @smartphoneLandscape) {
 
     .post-item {
         padding: 15px 30px 30px;
     }
 }
 
-// 700px devices and up
+// @tabletPortrait devices and up
 // -------------------------
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: @tabletPortrait) {
 
     .post-item {
+        .border-radius(@borderRadius + 1);
         padding: 30px 40px 40px;
 
         &:first-child {
@@ -29,19 +30,9 @@
     }
 }
 
-// 780px devices and up
+// @tabletLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 780px) {
-
-    .post-item {
-        .border-radius(@borderRadius + 1);
-        padding: 30px 40px 40px;
-    }
-}
-
-// 1350px devices and up
-// -------------------------
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: @tabletLandscape) {
 
     .post-item {
         padding: 30px 40px 40px;

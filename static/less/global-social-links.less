@@ -76,15 +76,16 @@
     }
 }
 
-// 1350px devices and up
+// @tabletLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: @tabletLandscape) {
 
     .global-social-links {
+        .transition(@transition);
         position: fixed;
         top: 250px;
         width: 150px;
-        margin-left: 110px;
+        margin-left: 2%;
 
         ul {
             text-align: left;
@@ -93,5 +94,24 @@
         li {
             margin: 0 0 20px;
         }
+    }
+
+    // Move down when scrolling
+    body.scrolling .global-social-links {
+        top: 350px;
+    }
+}
+
+// @desktopWidth devices and up
+// -------------------------
+@media only screen and (min-width: @desktopWidth) {
+
+    .global-social-links {
+        margin-left: 6%;
+    }
+
+    // Prevent move down when scrolling
+    body.scrolling .global-social-links {
+        top: 250px;
     }
 }

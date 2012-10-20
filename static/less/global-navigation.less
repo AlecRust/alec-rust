@@ -41,8 +41,8 @@
     a {
         display: block;
         position: relative;
-        text-decoration: none;
         color: #e5e5e5;
+        text-decoration: none;
         padding: 10px 16px;
 
         // Icons
@@ -115,7 +115,7 @@
 // "Show Navigation" link
 .show-navigation {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 
     a {
         #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
@@ -134,9 +134,9 @@
     }
 }
 
-// 30em devices and up
+// @smartphoneLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 30em) {
+@media only screen and (min-width: @smartphoneLandscape) {
 
     .global-navigation {
 
@@ -172,13 +172,13 @@
     }
 }
 
-// 700px devices and up
+// @tabletPortrait devices and up
 // -------------------------
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: @tabletPortrait) {
 
     .global-navigation {
         clear: left;
-        margin-bottom: 0;
+        margin: auto;
 
         ul {
             display: table;
@@ -209,26 +209,16 @@
     }
 }
 
-// 780px devices and up
+// @tabletLandscape devices and up
 // -------------------------
-@media only screen and (min-width: 780px) {
-
-    .global-navigation {
-        width: 780px;
-        margin: auto;
-    }
-}
-
-// 1350px devices and up
-// -------------------------
-@media only screen and (min-width: 1350px) {
+@media only screen and (min-width: @tabletLandscape) {
 
     .global-navigation {
         .transition(@transition);
         position: fixed;
         right: 0;
         top: 180px;
-        width: 185px;
+        width: 12%;
         margin-bottom: 60px;
 
         li {
