@@ -286,13 +286,13 @@ body {
   background-size: 100%;
 }
 a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   color: #383838;
 }
 a:hover {
-  -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
-  -o-transition: color 0.1s linear;
-  transition: color 0.1s linear;
   color: #121212;
 }
 a:visited {
@@ -378,10 +378,6 @@ nav ol {
   padding: 7px 10px;
 }
 .global-header-logo a {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
   color: #333333;
   text-decoration: none;
   text-shadow: 1px 1px 1px #aaa;
@@ -1071,10 +1067,6 @@ nav ol {
   display: inline-block;
 }
 .global-social-links a {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
   opacity: 0.5;
   filter: alpha(opacity=50);
   display: inline-block;

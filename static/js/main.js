@@ -1,9 +1,10 @@
 // Add class to body when scrolling
+var $body = $('body');
 $(window).scroll(function() {
-    $('body').addClass('scrolling');
+    $body.addClass('scrolling');
     var scroll = $(window).scrollTop();
     if (scroll <= 1) {
-        $('body').removeClass('scrolling');
+        $body.removeClass('scrolling');
     }
 });
 
@@ -18,6 +19,33 @@ $('.show-navigation a').click(function() {
     $('.global-navigation').addClass('navigation-visible');
     return false;
 });
+
+// Open external links in new tab
+$('a[href^=http]').click(function () {
+    var a = new RegExp('/' + window.location.host + '/');
+    if (!a.test(this.href)) {
+        window.open(this.href);
+        return false;
+    }
+});
+
+// Fix for the iOS viewport scaling bug: https://gist.github.com/901295
+(function(doc) {
+    var addEvent = 'addEventListener',
+        type = 'gesturestart',
+        qsa = 'querySelectorAll',
+        scales = [1, 1],
+        meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+    function fix() {
+        meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+        doc.removeEventListener(type, fix, true);
+    }
+    if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+        fix();
+        scales = [.25, 1.6];
+        doc[addEvent](type, fix, true);
+    }
+}(document));
 
 // Hide address bar on mobile devices
 (function (win) {
@@ -45,12 +73,3 @@ $('.show-navigation a').click(function() {
         }, false);
     }
 })(this);
-
-// Open external links in new tab
-$('a[href^=http]').click(function () {
-    var a = new RegExp('/' + window.location.host + '/');
-    if (!a.test(this.href)) {
-        window.open(this.href);
-        return false;
-    }
-});

@@ -25,10 +25,10 @@ body {
 
 // Links
 a {
+    .transition(@transition);
     color: @linkColor;
 
     &:hover {
-        .transition(color .1s linear);
         color: @linkColorHover;
     }
 
