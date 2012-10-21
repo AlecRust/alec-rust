@@ -1348,13 +1348,44 @@ nav ol {
     margin-top: 0;
   }
 }
+.work-list ul {
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.work-list li {
+  display: inline-block;
+  min-height: 60px;
+  margin: 0 20px 20px 0;
+}
+.work-list a {
+  display: block;
+  text-decoration: none;
+}
+.work-list dl {
+  position: relative;
+  margin: 0;
+}
+.work-list dt {
+  font-weight: bold;
+  padding: 20px 0 0 70px;
+}
+.work-list dd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+}
+.work-list dd img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
+  -moz-box-shadow: 1px 1px 1px #aaaaaa;
+  box-shadow: 1px 1px 1px #aaaaaa;
+}
 @media only screen and (min-width: 480px) {
-  
-}
-@media only screen and (min-width: 768px) {
-  
-}
-@media only screen and (min-width: 1024px) {
   
 }
 .view-more {
