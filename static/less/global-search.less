@@ -103,6 +103,22 @@
         top: 0;
         right: 10px;
     }
+
+    // Box shadow if opened over scrolling content
+    body.scrolling .search-visible {
+        .border-radius(@borderRadius + 1);
+        .box-shadow(-2px 2px 6px #aaa);
+    }
+}
+
+// @desktopWidthSecondary devices and up
+// -------------------------
+@media only screen and (min-width: @desktopWidthSecondary) {
+
+    // Prevent box shadow if opened over scrolling content
+    body.scrolling .search-visible {
+        .box-shadow(none);
+    }
 }
 
 // If HiDPI
