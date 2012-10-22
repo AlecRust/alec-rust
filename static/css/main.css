@@ -982,7 +982,7 @@ nav ol {
 }
 .global-content h2 {
   font-weight: normal;
-  font-size: 30px;
+  font-size: 28px;
   margin: 0 0 15px;
 }
 .global-content h3 {
@@ -1349,18 +1349,16 @@ nav ol {
   }
 }
 .work-list ul {
-  text-align: center;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 .work-list li {
-  display: inline-block;
-  min-height: 60px;
-  margin: 0 20px 20px 0;
+  margin-bottom: 20px;
 }
 .work-list a {
   display: block;
+  min-height: 60px;
   text-decoration: none;
 }
 .work-list dl {
@@ -1386,7 +1384,13 @@ nav ol {
   box-shadow: 1px 1px 1px #aaaaaa;
 }
 @media only screen and (min-width: 480px) {
-  
+  .work-list ul {
+    text-align: center;
+  }
+  .work-list li {
+    display: inline-block;
+    margin: 0 20px 30px 0;
+  }
 }
 .view-more {
   text-align: right;
