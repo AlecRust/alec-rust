@@ -165,13 +165,16 @@
         <script src="js/cycle-text.js"></script>
 
         <script>
-            // Cycle intro text
-            $('.home-intro h1 span').cycle([
-                ' specialise in Responsive Web Design and modern web technologies.',
-                ' have industry experience in building large-scale websites.',
-                ' have worked with many of the leading tech companies.',
-                '\'ve spent the last 9 years building awesome things on the internet.'
-            ]);
+            // Cycle intro text at @tabletLandscape and up
+            var mq = window.matchMedia('(min-width: 1024px)');
+            if (mq.matches) {
+                $('.home-intro h1 span').cycle([
+                    ' specialise in Responsive Web Design and modern web technologies.',
+                    ' have industry experience building large-scale websites.',
+                    ' have worked with many of the leading tech companies.',
+                    '\'ve spent the last 9 years building awesome things on the internet.'
+                ]);
+            }
         </script>
 
         <script src="js/main.js"></script>

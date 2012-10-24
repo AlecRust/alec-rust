@@ -32,7 +32,10 @@
                             .animate({ opacity: 1 }, o.transitionDuration, o.transitionEasing, function () {
 
                                 // Set a timeout from here, so we can avoid timing errors
-                                w.setTimeout(function () { switchText((idx + 1) % aLen); }, o.delay);
+                                // Only run for length of array
+                                if (aLen !== (idx + 1)) {
+                                    w.setTimeout(function () { switchText((idx + 1) % aLen); }, o.delay);
+                                }
                             });
                     });
                 }
