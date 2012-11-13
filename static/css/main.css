@@ -279,7 +279,7 @@ textarea {
 }
 body {
   color: #383838;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #d8d8d8 url("../images/body-bg-tile.png") fixed;
@@ -464,7 +464,7 @@ nav ol {
   -webkit-box-shadow: inset 0 1px 4px #777777;
   -moz-box-shadow: inset 0 1px 4px #777777;
   box-shadow: inset 0 1px 4px #777777;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
   border: 0;
   padding: 11px 14px;
 }
