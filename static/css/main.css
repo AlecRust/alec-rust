@@ -969,12 +969,6 @@ nav ol {
   max-width: 100%;
   height: auto;
 }
-.global-content .entry-title a {
-  text-decoration: none;
-}
-.global-content .entry-title a:hover {
-  text-decoration: underline;
-}
 .global-content h1 {
   font-weight: normal;
   font-size: 35px;
@@ -994,17 +988,6 @@ nav ol {
   font-weight: normal;
   font-size: 20px;
   margin: 0 0 10px;
-}
-.global-content .entry-meta {
-  font-size: 13px;
-  color: #919191;
-}
-.global-content .entry-meta a {
-  color: #919191;
-  text-decoration: none;
-}
-.global-content .entry-meta a:hover {
-  text-decoration: underline;
 }
 .global-content blockquote {
   font-style: italic;
@@ -1212,7 +1195,6 @@ nav ol {
   padding: 10px 0 5px 75px;
 }
 .module-heros .hero-description {
-  font-size: 13px;
   padding-left: 75px;
 }
 .module-heros .hero-thumb {
@@ -1325,6 +1307,27 @@ nav ol {
   margin-bottom: 30px;
   padding: 10px 20px;
 }
+.post-item .entry-title a {
+  text-decoration: none;
+}
+.post-item .entry-title a:hover {
+  text-decoration: underline;
+}
+.post-item .entry-meta {
+  text-align: right;
+  font-size: 13px;
+  color: #919191;
+}
+.post-item .entry-meta a {
+  color: #919191;
+  text-decoration: none;
+}
+.post-item .entry-meta a:hover {
+  text-decoration: underline;
+}
+.post-item .entry-content p {
+  font-size: 15px;
+}
 @media only screen and (min-width: 480px) {
   .post-item {
     padding: 15px 30px;
@@ -1332,10 +1335,20 @@ nav ol {
 }
 @media only screen and (min-width: 768px) {
   .post-item {
+    position: relative;
     padding: 30px 40px;
   }
   .post-item:first-child {
     margin-top: 30px;
+  }
+  .post-item .entry-title {
+    padding-right: 110px;
+  }
+  .post-item .entry-meta {
+    position: absolute;
+    top: 52px;
+    right: 40px;
+    text-align: left;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -1347,6 +1360,44 @@ nav ol {
   .post-item:first-child {
     margin-top: 0;
   }
+}
+.post .entry-meta {
+  text-align: right;
+  font-size: 13px;
+  color: #919191;
+}
+.post .entry-meta a {
+  color: #919191;
+  text-decoration: none;
+}
+.post .entry-meta a:hover {
+  text-decoration: underline;
+}
+.post .entry-content p {
+  font-size: 15px;
+}
+@media only screen and (min-width: 480px) {
+  
+}
+@media only screen and (min-width: 768px) {
+  .post {
+    position: relative;
+  }
+  .post .entry-title {
+    padding-right: 110px;
+  }
+  .post .entry-meta {
+    position: absolute;
+    top: 22px;
+    right: 40px;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  
+}
+@media only screen and (min-width: 480px) {
+  
 }
 .work-list ul {
   list-style: none;
