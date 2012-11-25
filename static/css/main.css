@@ -1544,8 +1544,13 @@ nav ol {
   color: #858585;
   text-decoration: none;
 }
+.post-navigation {
+  margin-top: -20px;
+}
 .post-navigation ul {
   *zoom: 1;
+  max-width: 75%;
+  margin: auto;
 }
 .post-navigation ul:before,
 .post-navigation ul:after {
@@ -1556,8 +1561,7 @@ nav ol {
   clear: both;
 }
 .post-navigation li {
-  font-size: 16px;
-  font-family: 'stalin_oneregular', sans-serif;
+  font-size: 18px;
 }
 .post-navigation a {
   display: block;
@@ -1569,16 +1573,48 @@ nav ol {
 }
 .post-navigation .prev {
   float: left;
+  margin-left: 10px;
 }
 .post-navigation .prev a:before {
-  content: "< ";
+  content: "";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid #383838;
+  margin: 0 8px 0px 0;
+}
+.post-navigation .prev a:visited:before {
+  border-left-color: #5e5e5e;
+}
+.post-navigation .prev a:hover:before {
+  border-left-color: #121212;
 }
 .post-navigation .next {
   text-align: right;
   float: right;
+  margin-right: 10px;
 }
 .post-navigation .next a:after {
-  content: " >";
+  content: "";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #383838;
+  margin: 0 0 0px 8px;
+}
+.post-navigation .next a:visited:after {
+  border-left-color: #5e5e5e;
+}
+.post-navigation .next a:hover:after {
+  border-left-color: #121212;
+}
+@media only screen and (min-width: 1024px) {
+  .post-navigation {
+    margin: -85px 0 40px;
+  }
+  .post-navigation ul {
+    max-width: 50%;
+  }
 }
 body.home .global-header .global-header-logo:hover span {
   color: #2ec239;
