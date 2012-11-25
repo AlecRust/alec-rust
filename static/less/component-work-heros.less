@@ -1,7 +1,53 @@
 // "Work Heros" page component
 // -------------------------
 .work-heros {
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 
+    li {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 40px;
+
+        a {
+            .box-shadow(1px 1px 2px #bbb);
+            display: block;
+
+            &:hover {
+                .box-shadow(1px 1px 2px #999);
+
+                h3 {
+                    .opacity(100);
+                }
+            }
+
+            &:active {
+
+                h3 {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        h3 {
+            .transition(@transition);
+            .opacity(90);
+            #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: left;
+            font-size: @baseFontSize + 5;
+            color: #fff;
+            margin-bottom: 0;
+            padding: 15px 20px;
+        }
+
+        img {}
+    }
 }
 
 // @smartphoneLandscape devices and up
@@ -9,6 +55,25 @@
 @media only screen and (min-width: @smartphoneLandscape) {
 
     .work-heros {
+        text-align: left;
 
+        li {
+
+            &:nth-child(2n - 1) {
+                margin-right: 4%;
+            }
+        }
+    }
+}
+
+// @desktopWidthSecondary devices and up
+// -------------------------
+@media only screen and (min-width: @desktopWidthSecondary) {
+
+    .work-heros {
+
+        li {
+            margin-right: 4%;
+        }
     }
 }
