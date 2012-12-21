@@ -159,9 +159,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.clearfix {
-  *zoom: 1;
-}
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -174,17 +171,12 @@ table {
   background-color: transparent;
   border: 0;
   overflow: hidden;
-  *text-indent: -9999px;
 }
 .ir:before {
   content: "";
   display: block;
   width: 0;
   height: 100%;
-}
-.ie7-inline-block {
-  *display: inline;
-  *zoom: 1;
 }
 @font-face {
   font-family: 'stalin_oneregular';
@@ -194,7 +186,6 @@ table {
   font-style: normal;
 }
 * {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -296,7 +287,6 @@ nav ol {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
   font-size: 35px;
   color: #c5c5c5;
@@ -387,7 +377,6 @@ nav ol {
   width: auto;
 }
 .global-search-input {
-  -webkit-box-shadow: inset 0 1px 4px #777777;
   box-shadow: inset 0 1px 4px #777777;
   font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
   border: 0;
@@ -505,7 +494,6 @@ nav ol {
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    *text-indent: -9999px;
     opacity: 0.4;
     filter: alpha(opacity=40);
     display: block;
@@ -535,14 +523,12 @@ nav ol {
     right: 10px;
   }
   body.scrolling .search-visible {
-    -webkit-box-shadow: -2px 2px 6px #aaaaaa;
     box-shadow: -2px 2px 6px #aaaaaa;
     border-radius: 3px;
   }
 }
 @media only screen and (min-width: 1424px) {
   body.scrolling .search-visible {
-    -webkit-box-shadow: none;
     box-shadow: none;
   }
 }
@@ -617,7 +603,6 @@ nav ol {
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
-  -webkit-box-shadow: -1px 1px 1px #aaaaaa;
   box-shadow: -1px 1px 1px #aaaaaa;
   background-color: #343434;
   text-align: left;
@@ -726,7 +711,6 @@ nav ol {
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
-  -webkit-box-shadow: -1px 1px 1px #aaaaaa;
   box-shadow: -1px 1px 1px #aaaaaa;
   background-color: #343434;
 }
@@ -784,7 +768,6 @@ nav ol {
     width: auto;
   }
   .global-navigation li {
-    -webkit-box-shadow: none;
     box-shadow: none;
     display: inline-block;
     text-align: center;
@@ -914,7 +897,6 @@ nav ol {
   font-style: normal;
 }
 .global-content-page {
-  -webkit-box-shadow: 0 2px 2px #cccccc;
   box-shadow: 0 2px 2px #cccccc;
   background-color: #f8f8f8;
   padding: 10px 20px;
@@ -926,7 +908,6 @@ nav ol {
 }
 @media only screen and (min-width: 768px) {
   .global-content {
-    *zoom: 1;
     margin: auto auto 30px;
   }
   .global-content:before,
@@ -1046,7 +1027,6 @@ nav ol {
   }
 }
 .global-footer {
-  -webkit-box-shadow: inset 0 4px 8px #454545;
   box-shadow: inset 0 4px 8px #454545;
   color: #cdcfcf;
   background-color: #525252;
@@ -1116,7 +1096,6 @@ nav ol {
 }
 .module-heros .hero-thumb img {
   border-radius: 2px;
-  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
 .module-list ul {
@@ -1147,7 +1126,6 @@ nav ol {
 }
 .module-thumbs img {
   border-radius: 2px;
-  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
 .module-commits ul,
@@ -1206,7 +1184,6 @@ nav ol {
   }
 }
 .post-item {
-  -webkit-box-shadow: 0 2px 2px #cccccc;
   box-shadow: 0 2px 2px #cccccc;
   background-color: #f8f8f8;
   margin-bottom: 30px;
@@ -1311,12 +1288,10 @@ nav ol {
   margin-bottom: 40px;
 }
 .work-heros li a {
-  -webkit-box-shadow: 1px 1px 2px #bbbbbb;
   box-shadow: 1px 1px 2px #bbbbbb;
   display: block;
 }
 .work-heros li a:hover {
-  -webkit-box-shadow: 1px 1px 2px #999999;
   box-shadow: 1px 1px 2px #999999;
 }
 .work-heros li a:hover h3 {
@@ -1397,7 +1372,6 @@ nav ol {
 }
 .work-list dd img {
   border-radius: 2px;
-  -webkit-box-shadow: 1px 1px 1px #aaaaaa;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
 @media only screen and (min-width: 480px) {
@@ -1442,7 +1416,6 @@ nav ol {
   margin-top: -20px;
 }
 .post-navigation ul {
-  *zoom: 1;
   max-width: 75%;
   margin: auto;
 }
@@ -1514,7 +1487,6 @@ body.home .global-header .global-header-logo:hover span {
   color: #2ec239;
 }
 body.home .global-content-page {
-  -webkit-box-shadow: none;
   box-shadow: none;
   background-color: transparent;
 }

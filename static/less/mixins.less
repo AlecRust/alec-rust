@@ -3,7 +3,6 @@
 
 // Clearfix
 .clearfix {
-    *zoom: 1; // IE 6/7 only
     &:before,
     &:after {
         content: " ";
@@ -19,7 +18,6 @@
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    *text-indent: -9999px; // IE 6/7 only
 
     &:before {
         content: "";
@@ -27,12 +25,6 @@
         width: 0;
         height: 100%;
     }
-}
-
-// IE7 inline-block
-.ie7-inline-block {
-    *display: inline;
-    *zoom: 1;
 }
 
 // Single Corner Border Radius
@@ -60,7 +52,6 @@
 // Drop shadows
 .box-shadow(@shadowA, @shadowB:X, ...){
     @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
-    -webkit-box-shadow: @props;
     box-shadow: @props;
 }
 
@@ -97,7 +88,6 @@
 
 // Box sizing
 .box-sizing(@boxmodel) {
-    -webkit-box-sizing: @boxmodel;
     -moz-box-sizing: @boxmodel;
     box-sizing: @boxmodel;
 }
