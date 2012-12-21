@@ -35,13 +35,6 @@
     *zoom: 1;
 }
 
-// Border radius
-.border-radius(@radius) {
-    -webkit-border-radius: @radius;
-    -moz-border-radius: @radius;
-    border-radius: @radius;
-}
-
 // Single Corner Border Radius
 .border-top-left-radius(@radius) {
     -webkit-border-top-left-radius: @radius;
@@ -68,7 +61,6 @@
 .box-shadow(@shadowA, @shadowB:X, ...){
     @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
     -webkit-box-shadow: @props;
-    -moz-box-shadow: @props;
     box-shadow: @props;
 }
 
