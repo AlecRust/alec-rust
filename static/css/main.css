@@ -1416,6 +1416,7 @@ nav ol {
   margin-top: -20px;
 }
 .post-navigation ul {
+  list-style: none;
   max-width: 75%;
   margin: auto;
 }
