@@ -176,7 +176,7 @@ table {
   content: "";
   display: block;
   width: 0;
-  height: 100%;
+  height: 150%;
 }
 @font-face {
   font-family: 'stalin_oneregular';
@@ -505,7 +505,7 @@ nav ol {
     content: "";
     display: block;
     width: 0;
-    height: 100%;
+    height: 150%;
   }
   .show-search a:hover {
     opacity: 0.5;
