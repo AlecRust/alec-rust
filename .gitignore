@@ -6,5 +6,6 @@
 Thumbs.db
 
 # Specific folders and files
+.htaccess
 static/_assets
 wp-config.php
