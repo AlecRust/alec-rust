@@ -17,6 +17,7 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content">
+
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
 
@@ -40,7 +41,7 @@ get_header(); ?>
 
 				<div class="entry-content">
 					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'alecrust' ), admin_url( 'post-new.php' ) ); ?></p>
-				</div><!-- .entry-content -->
+				</div>
 
 			<?php else :
 				// Show the default message to everyone else.
@@ -52,15 +53,16 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'alecrust' ); ?></p>
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
+				</div>
 			<?php endif; // end current_user_can() check ?>
 
-			</article><!-- #post-0 -->
+			</article>
 
 		<?php endif; // end have_posts() check ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+		</div>
+
+	</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

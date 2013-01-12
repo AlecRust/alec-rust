@@ -10,6 +10,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
+
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -37,13 +38,14 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'alecrust' ); ?></p>
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
+				</div>
+			</article>
 
 		<?php endif; ?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
+		</div>
+
+	</section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -14,6 +14,7 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
+
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -23,7 +24,7 @@ get_header(); ?>
 			<?php if ( tag_description() ) : // Show an optional tag description ?>
 				<div class="archive-meta"><?php echo tag_description(); ?></div>
 			<?php endif; ?>
-			</header><!-- .archive-header -->
+			</header>
 
 			<?php
 			/* Start the Loop */
@@ -44,8 +45,9 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
-	</section><!-- #primary -->
+		</div>
+
+	</section>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

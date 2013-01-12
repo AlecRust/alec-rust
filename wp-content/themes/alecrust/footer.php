@@ -11,12 +11,16 @@
  */
 ?>
 	</div><!-- #main .wrapper -->
+
 	<footer id="colophon" role="contentinfo">
+
 		<div class="site-info">
 			<?php do_action( 'alecrust_credits' ); ?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'alecrust' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'alecrust' ); ?>"><?php printf( __( 'Proudly powered by %s', 'alecrust' ), 'WordPress' ); ?></a>
-		</div><!-- .site-info -->
+		</div>
+
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

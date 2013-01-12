@@ -35,13 +35,13 @@ get_header(); ?>
 								);
 							?>
 							<?php edit_post_link( __( 'Edit', 'alecrust' ), '<span class="edit-link">', '</span>' ); ?>
-						</footer><!-- .entry-meta -->
+						</footer>
 
 						<nav id="image-navigation" class="navigation" role="navigation">
 							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', 'alecrust' ) ); ?></span>
 							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', 'alecrust' ) ); ?></span>
-						</nav><!-- #image-navigation -->
-					</header><!-- .entry-header -->
+						</nav>
+					</header>
 
 					<div class="entry-content">
 
@@ -83,24 +83,24 @@ endif;
 									<?php the_excerpt(); ?>
 								</div>
 								<?php endif; ?>
-							</div><!-- .attachment -->
+							</div>
 
-						</div><!-- .entry-attachment -->
+						</div>
 
 						<div class="entry-description">
 							<?php the_content(); ?>
 							<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alecrust' ), 'after' => '</div>' ) ); ?>
-						</div><!-- .entry-description -->
+						</div>
 
-					</div><!-- .entry-content -->
+					</div>
 
-				</article><!-- #post -->
+				</article>
 
 				<?php comments_template(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+		</div>
+	</div>
 
 <?php get_footer(); ?>
