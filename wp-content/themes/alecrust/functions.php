@@ -298,7 +298,7 @@ function alecrust_comment( $comment, $args, $depth ) {
 						sprintf( __( '%1$s at %2$s', 'alecrust' ), get_comment_date(), get_comment_time() )
 					);
 				?>
-			</header><!-- .comment-meta -->
+			</header>
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'alecrust' ); ?></p>
@@ -307,12 +307,12 @@ function alecrust_comment( $comment, $args, $depth ) {
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
 				<?php edit_comment_link( __( 'Edit', 'alecrust' ), '<p class="edit-link">', '</p>' ); ?>
-			</section><!-- .comment-content -->
+			</section>
 
 			<div class="reply">
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'alecrust' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-## -->
+			</div>
+		</article>
 	<?php
 		break;
 	endswitch; // end comment_type check
@@ -448,18 +448,3 @@ function alecrust_customize_preview_js() {
 	wp_enqueue_script( 'alecrust-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'alecrust_customize_preview_js' );
-
-// Custom Projects post type
-add_action( 'init', 'create__projects_post_type' );
-function create_post_type() {
-    register_post_type( 'project',
-        array(
-            'labels' => array(
-                'name' => __( 'Projects' ),
-                'singular_name' => __( 'Project' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-        )
-    );
-}
