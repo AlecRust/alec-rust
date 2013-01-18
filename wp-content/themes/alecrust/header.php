@@ -1,54 +1,59 @@
 <?php
 /**
- * The Header for our theme.
+ * The Header for the theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays the <head> section and everything up to main content wrapper
  *
  * @package WordPress
  * @subpackage Alec_Rust
  * @since Alec Rust 1.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html <?php language_attributes(); ?>>
-<!--<![endif]-->
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<?php wp_head(); ?>
-</head>
+<html lang="en-GB">
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <!--[if lt IE 9]>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/html5shiv.min.js"></script>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/respond.min.js"></script>
+        <![endif]-->
+        <?php wp_head(); ?>
+    </head>
+    <body <?php body_class(); ?>>
 
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'alecrust' ); ?></h3>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'alecrust' ); ?>"><?php _e( 'Skip to content', 'alecrust' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav>
+        <div class="wrap">
 
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
-		<?php endif; ?>
-	</header>
+            <header class="global-header" role="banner">
+                <h1 class="global-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>A</span>lec Rust</a></h1>
+                <h2 class="global-header-tagline"><?php bloginfo( 'description' ); ?></h2>
+            </header>
 
-	<div id="main" class="wrapper">
+            <section class="global-search" role="search">
+                <p class="show-search">
+                    <a href="#">Show Search</a>
+                </p>
+                <form role="search" method="get" action="#">
+                    <h1 class="visuallyhidden">Search</h1>
+                    <label for="s" class="visuallyhidden">Search</label>
+                    <input type="search" name="s" id="s" class="global-search-input" placeholder="Search&hellip;" required>
+                    <button type="submit" class="global-search-button">Go</button>
+                </form>
+            </section>
+
+            <nav class="global-navigation">
+                <h1 class="visuallyhidden"><?php _e( 'Main Navigation', 'alecrust' ); ?></h1>
+                <p class="show-navigation">
+                    <a href="#"><?php _e( 'Show Navigation', 'alecrust' ); ?></a>
+                </p>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+            </nav>
+
+            <div class="global-content global-content-page" role="main">
+
