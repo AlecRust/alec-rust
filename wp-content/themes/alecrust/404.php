@@ -19,7 +19,7 @@ get_header(); ?>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.' ); ?></p>
+					<p><?php _e( 'It seems what you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help.' ); ?></p>
 					<?php get_search_form(); ?>
 				</div>
 			</article>

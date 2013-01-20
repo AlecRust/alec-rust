@@ -1,9 +1,8 @@
 <?php
 /**
- * The main template file.
+ * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
+ * This is the most generic template file in a WordPress theme.
  * It is used to display a page when nothing more specific matches a query.
  * For example, it puts together the home page when no home.php file exists.
  *
@@ -33,7 +32,7 @@ get_header(); ?>
 			<article id="post-0" class="post no-results not-found">
 
 			<?php if ( current_user_can( 'edit_posts' ) ) :
-				// Show a different message to a logged-in user who can add posts.
+				// Show a different message to a logged-in user who can add posts
 			?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'No posts to display' ); ?></h1>
@@ -44,7 +43,7 @@ get_header(); ?>
 				</div>
 
 			<?php else :
-				// Show the default message to everyone else.
+				// Show the default message to everyone else
 			?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Nothing Found' ); ?></h1>

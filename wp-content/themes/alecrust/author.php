@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying Author Archive pages.
+ * The template for displaying Author Archive pages
  *
- * Used to display archive-type pages for posts by an author.
+ * Used to display archive-type pages for posts by an author
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -21,10 +21,10 @@ get_header(); ?>
 
 			<?php
 				/* Queue the first post, that way we know
-				 * what author we're dealing with (if that is the case).
+				 * what author we're dealing with (if that is the case)
 				 *
 				 * We reset this later so we can run the loop
-				 * properly with a call to rewind_posts().
+				 * properly with a call to rewind_posts()
 				 */
 				the_post();
 			?>
@@ -36,7 +36,7 @@ get_header(); ?>
 			<?php
 				/* Since we called the_post() above, we need to
 				 * rewind the loop back to the beginning that way
-				 * we can run the loop properly, in full.
+				 * we can run the loop properly, in full
 				 */
 				rewind_posts();
 			?>
@@ -44,7 +44,7 @@ get_header(); ?>
 			<?php alecrust_content_nav( 'nav-above' ); ?>
 
 			<?php
-			// If a user has filled out their description, show a bio on their entries.
+			// If a user has filled out their description, show a bio on their entries
 			if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-info">
 				<div class="author-avatar">

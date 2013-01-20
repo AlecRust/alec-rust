@@ -1,9 +1,6 @@
 <?php
 /**
- * The template for displaying the footer.
- *
- * Contains footer content and the closing of the
- * #main and #page div elements.
+ * The template for displaying the footer
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -15,12 +12,12 @@
             <aside class="global-social-links" role="complementary">
                 <h1 class="visuallyhidden">Social Links</h1>
                 <ul>
-                    <li class="github"><a href="#">GitHub</a></li>
-                    <li class="twitter"><a href="#">Twitter</a></li>
-                    <li class="linkedin"><a href="#">LinkedIn</a></li>
-                    <li class="quora"><a href="#">Quora</a></li>
-                    <li class="facebook"><a href="#">Facebook</a></li>
-                    <li class="lastfm"><a href="#">Last.fm</a></li>
+                    <li class="github"><a href="https://github.com/AlecRust">GitHub</a></li>
+                    <li class="twitter"><a href="https://twitter.com/AlecRust">Twitter</a></li>
+                    <li class="linkedin"><a href="http://uk.linkedin.com/in/alecrust/">LinkedIn</a></li>
+                    <li class="quora"><a href="http://www.quora.com/Alec-Rust">Quora</a></li>
+                    <li class="facebook"><a href="http://www.facebook.com/alec.rust">Facebook</a></li>
+                    <li class="lastfm"><a href="http://www.last.fm/user/ace5p1d0r">Last.fm</a></li>
                     <li class="email"><a href="#">Email</a></li>
                 </ul>
             </aside>

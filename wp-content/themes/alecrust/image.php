@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying image attachments.
+ * The template for displaying image attachments
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -98,7 +98,7 @@ endif;
 
 				<?php comments_template(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop ?>
 
 		</div>
 	</div>

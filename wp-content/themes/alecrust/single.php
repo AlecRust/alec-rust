@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The Template for displaying all single posts
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -25,7 +25,7 @@ get_header(); ?>
 
 				<?php comments_template( '', true ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop ?>
 
 		</div>
 
