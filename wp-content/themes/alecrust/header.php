@@ -37,14 +37,9 @@
 
             <section class="global-search" role="search">
                 <p class="show-search">
-                    <a href="#">Show Search</a>
+                    <a href="#"><?php _e( 'Show Search' ); ?></a>
                 </p>
-                <form role="search" method="get" action="#">
-                    <h1 class="visuallyhidden">Search</h1>
-                    <label for="s" class="visuallyhidden">Search</label>
-                    <input type="search" name="s" id="s" class="global-search-input" placeholder="Search&hellip;" required>
-                    <button type="submit" class="global-search-button">Go</button>
-                </form>
+                <?php get_search_form(); ?>
             </section>
 
             <nav class="global-navigation">
