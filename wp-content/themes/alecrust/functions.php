@@ -78,11 +78,6 @@ function alecrust_setup() {
 add_action( 'after_setup_theme', 'alecrust_setup' );
 
 /**
- * Adds support for a custom header image.
- */
-require( get_template_directory() . '/inc/custom-header.php' );
-
-/**
  * Enqueues scripts and styles for front-end.
  *
  * @since Alec Rust 1.0
