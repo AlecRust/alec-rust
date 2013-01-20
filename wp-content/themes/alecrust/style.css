@@ -896,13 +896,13 @@ nav ol {
 .global-content blockquote small {
   font-style: normal;
 }
-.global-content-page {
+.page .global-content {
   box-shadow: 0 2px 2px #cccccc;
   background-color: #f8f8f8;
   padding: 10px 20px;
 }
 @media only screen and (min-width: 480px) {
-  .global-content-page {
+  .page .global-content {
     padding: 15px 30px;
   }
 }
@@ -918,7 +918,7 @@ nav ol {
   .global-content:after {
     clear: both;
   }
-  .global-content-page {
+  .page .global-content {
     padding: 30px 40px;
   }
 }
@@ -927,7 +927,7 @@ nav ol {
     width: 69%;
     margin: 110px auto;
   }
-  .global-content-page {
+  .page .global-content {
     border-radius: 3px;
   }
 }
@@ -1487,7 +1487,7 @@ nav ol {
 body.home .global-header .global-header-logo:hover span {
   color: #2ec239;
 }
-body.home .global-content-page {
+body.home.page .global-content {
   box-shadow: none;
   background-color: transparent;
 }
