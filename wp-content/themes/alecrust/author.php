@@ -30,7 +30,7 @@ get_header(); ?>
 			?>
 
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'alecrust' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
 			</header>
 
 			<?php
@@ -49,12 +49,12 @@ get_header(); ?>
 			<div class="author-info">
 				<div class="author-avatar">
 					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'alecrust_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
+				</div>
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'alecrust' ), get_the_author() ); ?></h2>
+					<h2><?php printf( __( 'About %s' ), get_the_author() ); ?></h2>
 					<p><?php the_author_meta( 'description' ); ?></p>
-				</div><!-- .author-description	-->
-			</div><!-- .author-info -->
+				</div>
+			</div>
 			<?php endif; ?>
 
 			<?php /* Start the Loop */ ?>

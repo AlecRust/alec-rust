@@ -16,10 +16,10 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alecrust' ), 'after' => '</div>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
 		</div>
 		<footer class="entry-meta">
-			<?php edit_post_link( __( 'Edit', 'alecrust' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer>
 
 	</article>

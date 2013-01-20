@@ -21,7 +21,7 @@ get_header(); ?>
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="entry-page-image">
 						<?php the_post_thumbnail(); ?>
-					</div><!-- .entry-page-image -->
+					</div>
 				<?php endif; ?>
 
 				<?php get_template_part( 'content', 'page' ); ?>

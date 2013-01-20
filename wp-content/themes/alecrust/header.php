@@ -48,9 +48,9 @@
             </section>
 
             <nav class="global-navigation">
-                <h1 class="visuallyhidden"><?php _e( 'Main Navigation', 'alecrust' ); ?></h1>
+                <h1 class="visuallyhidden"><?php _e( 'Main Navigation' ); ?></h1>
                 <p class="show-navigation">
-                    <a href="#"><?php _e( 'Show Navigation', 'alecrust' ); ?></a>
+                    <a href="#"><?php _e( 'Show Navigation' ); ?></a>
                 </p>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
             </nav>

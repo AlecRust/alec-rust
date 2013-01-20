@@ -12,7 +12,7 @@
 
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
-			<?php _e( 'Featured post', 'alecrust' ); ?>
+			<?php _e( 'Featured post' ); ?>
 		</div>
 		<?php endif; ?>
 		<header class="entry-header">
@@ -21,12 +21,12 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php else : ?>
 			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'alecrust' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 			<?php endif; // is_single() ?>
 			<?php if ( comments_open() ) : ?>
 				<div class="comments-link">
-					<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'alecrust' ) . '</span>', __( '1 Reply', 'alecrust' ), __( '% Replies', 'alecrust' ) ); ?>
+					<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply' ) . '</span>', __( '1 Reply' ), __( '% Replies' ) ); ?>
 				</div>
 			<?php endif; // comments_open() ?>
 		</header>
@@ -37,8 +37,8 @@
 		</div>
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'alecrust' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'alecrust' ), 'after' => '</div>' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
 		</div>
 		<?php endif; ?>
 
@@ -51,11 +51,11 @@
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'alecrust_author_bio_avatar_size', 68 ) ); ?>
 					</div>
 					<div class="author-description">
-						<h2><?php printf( __( 'About %s', 'alecrust' ), get_the_author() ); ?></h2>
+						<h2><?php printf( __( 'About %s' ), get_the_author() ); ?></h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'alecrust' ), get_the_author() ); ?>
+								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>' ), get_the_author() ); ?>
 							</a>
 						</div>
 					</div>
