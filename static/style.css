@@ -10,6 +10,7 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
 section,
 summary {
@@ -44,6 +45,7 @@ a:hover {
 }
 h1 {
   font-size: 2em;
+  margin: 0.67em 0;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -54,6 +56,11 @@ strong {
 }
 dfn {
   font-style: italic;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
 mark {
   background: #ff0;
@@ -67,9 +74,7 @@ samp {
   font-size: 1em;
 }
 pre {
-  white-space: pre;
   white-space: pre-wrap;
-  word-wrap: break-word;
 }
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
@@ -121,6 +126,10 @@ input {
   line-height: normal;
 }
 button,
+select {
+  text-transform: none;
+}
+button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -128,7 +137,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 button[disabled],
-input[disabled] {
+html input[disabled] {
   cursor: default;
 }
 input[type="checkbox"],
