@@ -114,8 +114,39 @@
     }
 }
 
-// "GitHub Activity" and "Tweets" module type
-.module-activity,
+// "GitHub Activity" module type
+.module-activity {
+
+    ul {
+        list-style: disc;
+        padding-left: 30px;
+
+        // Loading state
+        &.loading {
+            min-height: 32px;
+            background: url("@{imgPath}github-spinner.gif") no-repeat 50% 50%;
+        }
+    }
+
+    li {
+        margin-bottom: 11px;
+
+        a {
+            text-decoration: none;
+
+            &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Clear timestamp in this scenario
+    .timestamp {
+        display: block;
+    }
+}
+
+// "Tweets" module type
 .module-tweets {
 
     ul {
@@ -132,10 +163,10 @@
             display: block;
             position: absolute;
             top: 3px;
-            left: 12px;
-            width: 17px;
-            height: 22px;
-            background: url("@{spritePath}") 0 -458px;
+            left: 7px;
+            width: 26px;
+            height: 21px;
+            background: url("@{spritePath}") 0 -432px;
 
             // If HiDPI
             @media screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -148,17 +179,6 @@
     // Clear timestamp in this scenario
     .timestamp {
         display: block;
-    }
-}
-
-// "Tweets" module type
-.module-tweets {
-
-    li:before {
-        left: 7px;
-        width: 26px;
-        height: 21px;
-        background-position: 0 -432px;
     }
 }
 

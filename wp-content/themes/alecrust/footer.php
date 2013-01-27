@@ -32,7 +32,7 @@
         <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.min.js"></script>
 
-
+        <?php wp_reset_query(); ?>
         <?php if (is_page('home') ) { ?>
         <script src="<?php echo get_template_directory_uri(); ?>/js/cycle-text.js"></script>
         <script>
@@ -46,6 +46,13 @@
                     '\'ve spent a decade building awesome things on the internet.'
                 ]);
             }
+        </script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/github-activity.js"></script>
+        <script>
+            // Output GitHub activity feed
+            $(document).ready(function() {
+                $('#github-activity').ghActivity();
+            });
         </script>
         <?php } ?>
 

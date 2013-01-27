@@ -123,11 +123,7 @@
 
                 <section class="module module-activity">
                     <h1>Recent GitHub activity</h1>
-                    <ul>
-                        <li><a href="#">alecrust</a> pushed to master at <a href="#">RebelCMS/rebelcmswebsite</a> <span class="timestamp">5 days ago</span></li>
-                        <li><a href="#">alecrust</a> pushed to master at <a href="#">alecrust/alec-rust</a> <span class="timestamp">5 days ago</span></li>
-                        <li><a href="#">alecrust</a> pushed to master at <a href="#">alecrust/alec-rust</a> <span class="timestamp">5 days ago</span></li>
-                    </ul>
+                    <ul id="github-activity"></ul>
                 </section>
 
                 <section class="module module-tweets">
@@ -162,8 +158,8 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="js/plugins.min.js"></script>
-        <script src="js/cycle-text.js"></script>
 
+        <script src="js/cycle-text.js"></script>
         <script>
             // Cycle intro text at @tabletLandscape and up
             var mq = window.matchMedia('(min-width: 1024px)');
@@ -175,6 +171,14 @@
                     '\'ve spent the last decade building awesome things on the internet.'
                 ]);
             }
+        </script>
+
+        <script src="js/github-activity.js"></script>
+        <script>
+            // Output GitHub activity feed
+            $(document).ready(function() {
+                $('#github-activity').ghActivity();
+            });
         </script>
 
         <script src="js/main.js"></script>

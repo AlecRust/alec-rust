@@ -1124,29 +1124,45 @@ nav ol {
   border-radius: 2px;
   box-shadow: 1px 1px 1px #aaaaaa;
 }
-.module-activity ul,
+.module-activity ul {
+  list-style: disc;
+  padding-left: 30px;
+}
+.module-activity ul.loading {
+  min-height: 32px;
+  background: url("images/github-spinner.gif") no-repeat 50% 50%;
+}
+.module-activity li {
+  margin-bottom: 11px;
+}
+.module-activity li a {
+  text-decoration: none;
+}
+.module-activity li a:active {
+  text-decoration: underline;
+}
+.module-activity .timestamp {
+  display: block;
+}
 .module-tweets ul {
   padding-left: 0;
 }
-.module-activity li,
 .module-tweets li {
   position: relative;
   margin-bottom: 10px;
   padding-left: 44px;
 }
-.module-activity li:before,
 .module-tweets li:before {
   content: "";
   display: block;
   position: absolute;
   top: 3px;
-  left: 12px;
-  width: 17px;
-  height: 22px;
-  background: url("images/global-sprite.png") 0 -458px;
+  left: 7px;
+  width: 26px;
+  height: 21px;
+  background: url("images/global-sprite.png") 0 -432px;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .module-activity li:before,
   .module-tweets li:before {
     background-image: url("images/global-sprite-x2.png");
     -webkit-background-size: 48px auto;
@@ -1155,15 +1171,8 @@ nav ol {
     background-size: 48px auto;
   }
 }
-.module-activity .timestamp,
 .module-tweets .timestamp {
   display: block;
-}
-.module-tweets li:before {
-  left: 7px;
-  width: 26px;
-  height: 21px;
-  background-position: 0 -432px;
 }
 @media only screen and (min-width: 480px) {
   .module-thumbs li {
@@ -1522,10 +1531,10 @@ body.page-home.page .global-content {
   text-decoration: underline;
 }
 .home-intro .about a {
-  background-position: 0 -484px;
+  background-position: 0 -457px;
 }
 .home-intro .work a {
-  background-position: 0 -510px;
+  background-position: 0 -483px;
 }
 @media only screen and (min-width: 480px) {
   body.page-home .home-intro li {

@@ -74,13 +74,9 @@ get_header(); ?>
         <p class="view-more"><a href="/work/">See my work</a></p>
     </section>
 
-    <section class="module module-commits">
-        <h1>Recent commits</h1>
-        <ul>
-            <li><a href="#">alecrust</a> pushed to master at <a href="#">RebelCMS/rebelcmswebsite</a> <span class="timestamp">5 days ago</span></li>
-            <li><a href="#">alecrust</a> pushed to master at <a href="#">alecrust/alec-rust</a> <span class="timestamp">5 days ago</span></li>
-            <li><a href="#">alecrust</a> pushed to master at <a href="#">alecrust/alec-rust</a> <span class="timestamp">5 days ago</span></li>
-        </ul>
+    <section class="module module-activity">
+        <h1>Recent GitHub activity</h1>
+        <ul id="github-activity"></ul>
     </section>
 
     <section class="module module-tweets">

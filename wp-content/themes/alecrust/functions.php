@@ -237,10 +237,10 @@ function alecrust_entry_meta() {
 endif;
 
 /**
- * Adds Google Analytics to footer
+ * Adds Google Analytics JS to footer
  */
-add_action('wp_footer', 'add_googleanalytics');
-function add_googleanalytics() { ?>
+add_action('wp_footer', 'add_google_analytics');
+function add_google_analytics() { ?>
     <script>
         var _gaq=[['_setAccount','UA-3217267-1'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
