@@ -48,21 +48,18 @@ get_header(); ?>
                 </a>
             </li>
         </ul>
-        <p class="view-more"><a href="#">See my work</a></p>
+        <p class="view-more"><a href="/work/">See my work</a></p>
     </section>
 
     <section class="module module-list">
         <h1>Recent blog posts</h1>
         <ul>
-            <li><a href="#">Setting up a Dropbox-synced local development environment</a></li>
-            <li><a href="#">Common version control questions</a></li>
-            <li><a href="#">Basic introduction to LESS</a></li>
-            <li><a href="#">Some exciting new to share</a></li>
-            <li><a href="#">"position: sticky" is now here!</a></li>
-            <li><a href="#">My iPhone 5 review</a></li>
-            <li><a href="#">A new beginning!</a></li>
+            <?php query_posts('category_name=blog&showposts=7'); ?>
+            <?php while (have_posts()) : the_post(); ?>
+            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="index-blog.html">See more posts</a></p>
+        <p class="view-more"><a href="/blog/">See more posts</a></p>
     </section>
 
     <section class="module module-thumbs">
@@ -74,7 +71,7 @@ get_header(); ?>
             <li><a href="#"><img src="images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
             <li><a href="#"><img src="images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
-        <p class="view-more"><a href="#">See my work</a></p>
+        <p class="view-more"><a href="/work/">See my work</a></p>
     </section>
 
     <section class="module module-commits">

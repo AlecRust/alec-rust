@@ -115,42 +115,6 @@ function alecrust_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'alecrust_page_menu_args' );
 
-/**
- * Registers our main widget area and the front page widget areas
- */
-function alecrust_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Main Sidebar' ),
-		'id' => 'sidebar-1',
-		'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'First Front Page Widget Area' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Second Front Page Widget Area' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'Appears when using the optional Front Page template with a page set as Static Front Page' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-}
-add_action( 'widgets_init', 'alecrust_widgets_init' );
-
 if ( ! function_exists( 'alecrust_content_nav' ) ) :
 /**
  * Displays navigation to next/previous pages when applicable
