@@ -11,7 +11,7 @@
 ?><!DOCTYPE html>
 <html lang="en-GB">
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta charset="utf-8">
         <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -22,7 +22,8 @@
         <![endif]-->
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?>>
+    <?php if(is_page()) { $page_slug = 'page-'.$post->post_name; } ?>
+    <body <?php body_class($page_slug); ?>>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -47,7 +48,12 @@
                 <p class="show-navigation">
                     <a href="#"><?php _e( 'Show Navigation' ); ?></a>
                 </p>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+                <?php wp_nav_menu( array(
+                    'theme_location'  => 'primary',
+                    'menu'            => 'primary',
+                    'container'       => false,
+                    'items_wrap'      => '<ul>%3$s</ul>'
+                ) ); ?>
             </nav>
 
             <div class="global-content" role="main">

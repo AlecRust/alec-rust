@@ -277,10 +277,6 @@ nav ol {
     }
 }
 .global-header {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     position: relative;
     margin: 36px 0 30px;
 }
@@ -369,10 +365,6 @@ nav ol {
     }
 }
 .global-search {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     text-align: center;
     z-index: 1;
     margin-bottom: 30px;
@@ -652,6 +644,9 @@ nav ol {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
     background-color: #4a4a4a;
 }
+.global-navigation li.current-menu-item a {
+    text-decoration: underline;
+}
 .global-navigation a {
     display: block;
     position: relative;
@@ -677,9 +672,6 @@ nav ol {
 }
 .global-navigation a:active {
     color: #fff;
-}
-.global-navigation a.current {
-    text-decoration: underline;
 }
 .global-navigation .home a:before {
     top: 12px;
@@ -852,10 +844,6 @@ nav ol {
 }
 @media only screen and (min-width: 1024px) {
     .global-navigation {
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
         position: fixed;
         right: 0;
         top: 180px;
@@ -1019,10 +1007,6 @@ nav ol {
 }
 @media only screen and (min-width: 1024px) {
     .global-social-links {
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        transition: all 0.3s ease;
         position: fixed;
         top: 250px;
         width: 150px;
@@ -1504,10 +1488,10 @@ nav ol {
         max-width: 50%;
     }
 }
-body.home .global-header .global-header-logo:hover span {
+body.page-home .global-header .global-header-logo:hover span {
     color: #2ec239;
 }
-body.home.page .global-content {
+body.page-home.page .global-content {
     box-shadow: none;
     background-color: transparent;
 }
@@ -1552,47 +1536,47 @@ body.home.page .global-content {
     background-position: 0 -510px;
 }
 @media only screen and (min-width: 480px) {
-    body.home .home-intro li {
+    body.page-home .home-intro li {
         display: inline-block;
         margin: 0 35px 0 0;
     }
-    body.home .module-thumbs li:last-child {
+    body.page-home .module-thumbs li:last-child {
         margin-right: 0;
     }
 }
 @media only screen and (min-width: 768px) {
-    body.home .home-intro {
+    body.page-home .home-intro {
         margin-bottom: 60px;
     }
-    body.home .module-heros {
+    body.page-home .module-heros {
         float: left;
     }
-    body.home .module-list {
+    body.page-home .module-list {
         float: right;
     }
-    body.home .module-thumbs {
+    body.page-home .module-thumbs {
         float: left;
     }
-    body.home .module-commits {
+    body.page-home .module-commits {
         float: left;
     }
-    body.home .module-tweets {
+    body.page-home .module-tweets {
         float: right;
     }
 }
-body.page-id-2 .global-header .global-header-logo:hover span {
+body.page-about .global-header .global-header-logo:hover span {
     color: #3e7fd7;
 }
-body.work .global-header .global-header-logo:hover span {
+body.page-work .global-header .global-header-logo:hover span {
     color: #d13a3a;
 }
-body.projects .global-header .global-header-logo:hover span {
+body.page-projects .global-header .global-header-logo:hover span {
     color: #d57300;
 }
-body.blog .global-header .global-header-logo:hover span {
+body.page-blog .global-header .global-header-logo:hover span {
     color: #47c6bf;
 }
-body.contact .global-header .global-header-logo:hover span {
+body.page-contact .global-header .global-header-logo:hover span {
     color: #d5db3a;
 }
 .hidden {

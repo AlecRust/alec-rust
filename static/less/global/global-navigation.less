@@ -37,6 +37,10 @@
             #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
             background-color: lighten(@brandColor, 9%);
         }
+
+        &.current-menu-item a {
+            text-decoration: underline;
+        }
     }
 
     a {
@@ -63,10 +67,6 @@
 
         &:active {
             color: #fff;
-        }
-
-        &.current {
-            text-decoration: underline;
         }
     }
 
@@ -215,7 +215,6 @@
 @media only screen and (min-width: @tabletLandscape) {
 
     .global-navigation {
-        .transition(@transition);
         position: fixed;
         right: 0;
         top: 180px;
