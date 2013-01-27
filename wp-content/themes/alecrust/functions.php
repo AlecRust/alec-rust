@@ -273,36 +273,6 @@ function alecrust_entry_meta() {
 endif;
 
 /**
- * Extends the default WordPress body class to denote:
- * 1. Using a full-width layout, when no active widgets in the sidebar or full-width template
- * 2. Front Page template: thumbnail in use and number of sidebars for widget areas
- * 5. Single or multiple authors
- *
- * @param array Existing class values
- * @return array Filtered class values
- */
-function alecrust_body_class( $classes ) {
-	$background_color = get_background_color();
-
-	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
-		$classes[] = 'full-width';
-
-	if ( is_page_template( 'page-templates/front-page.php' ) ) {
-		$classes[] = 'template-front-page';
-		if ( has_post_thumbnail() )
-			$classes[] = 'has-post-thumbnail';
-		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) )
-			$classes[] = 'two-sidebars';
-	}
-
-	if ( ! is_multi_author() )
-		$classes[] = 'single-author';
-
-	return $classes;
-}
-add_filter( 'body_class', 'alecrust_body_class' );
-
-/**
  * Adds Google Analytics to footer
  */
 add_action('wp_footer', 'add_googleanalytics');

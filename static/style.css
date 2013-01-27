@@ -304,6 +304,9 @@ nav ol {
   text-shadow: -1px -1px 0 #222222;
   padding: 7px 10px;
 }
+.global-header-logo:hover span {
+  color: #2ec239;
+}
 .global-header-logo a {
   color: #333333;
   text-decoration: none;
@@ -1569,7 +1572,7 @@ body.home.page .global-content {
     float: right;
   }
 }
-body.about .global-header .global-header-logo:hover span {
+body.page-id-2 .global-header .global-header-logo:hover span {
   color: #3e7fd7;
 }
 body.work .global-header .global-header-logo:hover span {

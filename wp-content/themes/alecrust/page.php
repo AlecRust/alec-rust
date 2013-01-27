@@ -14,17 +14,26 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
+    <?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="content" role="main">
+        <article <?php post_class(); ?>>
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'page' ); ?>
-				<?php comments_template( '', true ); ?>
-			<?php endwhile; // end of the loop ?>
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+            </header>
 
-		</div>
+            <div class="entry-content">
+                <?php the_content(); ?>
+                <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
+            </div>
+            <footer class="entry-meta">
+                <?php edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+            </footer>
 
-	</div>
+        </article>
+
+        <?php comments_template( '', true ); ?>
+
+    <?php endwhile; // end of the loop ?>
 
 <?php get_footer(); ?>
