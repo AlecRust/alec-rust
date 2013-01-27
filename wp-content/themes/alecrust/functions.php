@@ -106,6 +106,14 @@ function alecrust_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 
 /**
+ * Changes the default feed cache recreation period to 2 hours
+ */
+function filter_handler( $seconds ) {
+    return 7200;
+}
+add_filter( 'wp_feed_cache_transient_lifetime', 'filter_handler' );
+
+/**
  * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link
  */
 function alecrust_page_menu_args( $args ) {

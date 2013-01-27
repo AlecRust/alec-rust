@@ -47,13 +47,6 @@
                 ]);
             }
         </script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/github-activity.js"></script>
-        <script>
-            // Output GitHub activity feed
-            $(document).ready(function() {
-                $('#github-activity').ghActivity();
-            });
-        </script>
         <?php } ?>
 
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>

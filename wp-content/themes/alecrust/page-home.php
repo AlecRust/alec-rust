@@ -61,14 +61,49 @@ get_header(); ?>
 
     <section class="module module-activity">
         <h1>Recent GitHub activity</h1>
-        <ul id="github-activity"></ul>
+        <?php
+            include_once(ABSPATH . WPINC . '/feed.php');
+            $rss = fetch_feed('https://github.com/AlecRust.atom');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
+        ?>
+        <ul>
+        <?php if ($maxitems == 0) echo '<li>No activity to display.</li>';
+        else
+        foreach ( $rss_items as $item ) : ?>
+            <li>
+                <a href="<?php echo $item->get_permalink(); ?>">
+                <?php echo $item->get_title(); ?>
+                <span class="timestamp">
+                    <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
+                </span>
+                </a>
+            </li>
+        <?php endforeach; ?>
+        </ul>
     </section>
 
     <section class="module module-tweets">
         <h1>Recent tweets</h1>
+        <?php
+            include_once(ABSPATH . WPINC . '/feed.php');
+            $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
+        ?>
         <ul>
-            <li><a href="#">@rustyrambles</a> just because: <a href="#">http://reddit.com/r/pics/comm...</a> <span class="timestamp"><a href="#">2 days ago</a></span></li>
-            <li>Some exciting changes over at Rusty Rambles, courtesy of <a href="#">@alecrust</a>: <a href="#">http://www.rustyrambles.com/</a> <span class="timestamp"><a href="#">2 days ago</a></span></li>
+        <?php if ($maxitems == 0) echo '<li>No tweets to display.</li>';
+        else
+        foreach ( $rss_items as $item ) : ?>
+            <li>
+                <a href="<?php echo $item->get_permalink(); ?>">
+                <?php echo $item->get_title(); ?>
+                <span class="timestamp">
+                    <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
+                </span>
+                </a>
+            </li>
+        <?php endforeach; ?>
         </ul>
     </section>
 

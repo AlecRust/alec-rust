@@ -42,7 +42,7 @@ $('a[href^=http]').click(function () {
     }
     if ((meta = meta[meta.length - 1]) && addEvent in doc) {
         fix();
-        scales = [.25, 1.6];
+        scales = [0.25, 1.6];
         doc[addEvent](type, fix, true);
     }
 }(document));

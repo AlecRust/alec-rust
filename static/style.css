@@ -1128,10 +1128,6 @@ nav ol {
   list-style: disc;
   padding-left: 30px;
 }
-.module-activity ul.loading {
-  min-height: 32px;
-  background: url("images/github-spinner.gif") no-repeat 50% 50%;
-}
 .module-activity li {
   margin-bottom: 11px;
 }
@@ -1170,6 +1166,12 @@ nav ol {
     -o-background-size: 48px auto;
     background-size: 48px auto;
   }
+}
+.module-tweets li a {
+  text-decoration: none;
+}
+.module-tweets li a:active {
+  text-decoration: underline;
 }
 .module-tweets .timestamp {
   display: block;
