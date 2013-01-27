@@ -8,4 +8,5 @@ Thumbs.db
 # Specific folders and files
 .htaccess
 static/_assets
+wp-content/uploads
 wp-config.php

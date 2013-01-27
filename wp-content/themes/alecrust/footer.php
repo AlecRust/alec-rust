@@ -43,7 +43,7 @@
                     ' specialise in Responsive Web Design and modern web technologies.',
                     ' have industry experience building large-scale websites.',
                     ' have worked with many of the leading tech companies.',
-                    '\'ve spent a decade building awesome things on the internet.'
+                    '\'ve spent the last decade building awesome things on the internet.'
                 ]);
             }
         </script>

@@ -20,33 +20,18 @@ get_header(); ?>
     <section class="module module-heros">
         <h1>Recent work/projects</h1>
         <ul>
+            <?php query_posts('category_name=work,projects&showposts=3'); ?>
+            <?php while (have_posts()) : the_post(); ?>
             <li>
-                <a href="#" class="hero">
+                <a href="<?php the_permalink(); ?>" class="hero">
                     <dl>
-                        <dt class="hero-title">Rebel CMS</dt>
-                        <dd class="hero-description">Open-source ASP.NET CMS</dd>
-                        <dd class="hero-thumb"><img src="images/temp/project-thumb-rebel-cms.png" width="60" height="60" alt="Rebel CMS"></dd>
+                        <dt class="hero-title"><?php the_title(); ?></dt>
+                        <dd class="hero-description"><?php the_content( 'More', '...' ); ?></dd>
+                        <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
                     </dl>
                 </a>
             </li>
-            <li>
-                <a href="#" class="hero">
-                    <dl>
-                        <dt class="hero-title">Rusty Rambles</dt>
-                        <dd class="hero-description">Ramblings from an Island life</dd>
-                        <dd class="hero-thumb"><img src="images/temp/project-thumb-rusty-rambles.png" width="60" height="60" alt="Rusty Rambles"></dd>
-                    </dl>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="hero">
-                    <dl>
-                        <dt class="hero-title">Magentapink</dt>
-                        <dd class="hero-description">Interior furnishing and sourcing</dd>
-                        <dd class="hero-thumb"><img src="images/temp/project-thumb-magentapink.png" width="60" height="60" alt="Magentapink"></dd>
-                    </dl>
-                </a>
-            </li>
+            <?php endwhile; ?>
         </ul>
         <p class="view-more"><a href="/work/">See my work</a></p>
     </section>
@@ -65,11 +50,11 @@ get_header(); ?>
     <section class="module module-thumbs">
         <h1>Companies I've worked with</h1>
         <ul>
-            <li><a href="#"><img src="images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
-            <li><a href="#"><img src="images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
-            <li><a href="#"><img src="images/temp/company-thumb-apple.png" width="120" height="60" alt="Apple"></a></li>
-            <li><a href="#"><img src="images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
-            <li><a href="#"><img src="images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
+            <li><a href="/work/universal-music/"><img src="images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
+            <li><a href="/work/bbc/"><img src="images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
+            <li><a href="/work/apple/"><img src="images/temp/company-thumb-apple.png" width="120" height="60" alt="Apple"></a></li>
+            <li><a href="/work/disney/"><img src="images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
+            <li><a href="/work/bbc-worldwide/"><img src="images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
         <p class="view-more"><a href="/work/">See my work</a></p>
     </section>
