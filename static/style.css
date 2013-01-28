@@ -214,10 +214,6 @@ body {
   background-size: 100%;
 }
 a {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
   color: #383838;
 }
 a:hover {
@@ -1190,63 +1186,17 @@ nav ol {
     width: 100%;
   }
 }
-.post-item {
+.post {
   box-shadow: 0 2px 2px #cccccc;
   background-color: #f8f8f8;
   margin-bottom: 30px;
   padding: 10px 20px;
 }
-.post-item .entry-title a {
+.post .entry-title a {
   text-decoration: none;
 }
-.post-item .entry-title a:hover {
+.post .entry-title a:hover {
   text-decoration: underline;
-}
-.post-item .entry-meta {
-  text-align: right;
-  font-size: 13px;
-  color: #919191;
-}
-.post-item .entry-meta a {
-  color: #919191;
-  text-decoration: none;
-}
-.post-item .entry-meta a:hover {
-  text-decoration: underline;
-}
-.post-item .entry-content p {
-  font-size: 15px;
-}
-@media only screen and (min-width: 480px) {
-  .post-item {
-    padding: 15px 30px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .post-item {
-    position: relative;
-    padding: 30px 40px;
-  }
-  .post-item:first-child {
-    margin-top: 30px;
-  }
-  .post-item .entry-title {
-    padding-right: 110px;
-  }
-  .post-item .entry-meta {
-    position: absolute;
-    top: 52px;
-    right: 40px;
-    text-align: left;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .post-item {
-    border-radius: 3px;
-  }
-  .post-item:first-child {
-    margin-top: 0;
-  }
 }
 .post .entry-meta {
   text-align: right;
@@ -1264,24 +1214,35 @@ nav ol {
   font-size: 15px;
 }
 @media only screen and (min-width: 480px) {
-  
+  .post {
+    padding: 15px 30px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .post {
     position: relative;
+    padding: 30px 40px;
+  }
+  .post:first-child {
+    margin-top: 30px;
   }
   .post .entry-title {
     padding-right: 110px;
   }
   .post .entry-meta {
     position: absolute;
-    top: 22px;
-    right: 0;
+    top: 52px;
+    right: 40px;
     text-align: left;
   }
 }
 @media only screen and (min-width: 1024px) {
-  
+  .post {
+    border-radius: 3px;
+  }
+  .post:first-child {
+    margin-top: 0;
+  }
 }
 .work-heros {
   text-align: center;

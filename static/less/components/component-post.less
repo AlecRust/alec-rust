@@ -1,8 +1,21 @@
-// "Post" page component
+// "Post Item" page component
 // -------------------------
 .post {
+    .box-shadow(0 2px 2px #ccc);
+    background-color: @contentBackground;
+    margin-bottom: 30px;
+    padding: 10px 20px;
 
-    .entry-title {}
+    .entry-title {
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 
     .entry-meta {
         text-align: right;
@@ -31,7 +44,9 @@
 // -------------------------
 @media only screen and (min-width: @smartphoneLandscape) {
 
-    .post {}
+    .post {
+        padding: 15px 30px;
+    }
 }
 
 // @tabletPortrait devices and up
@@ -40,6 +55,11 @@
 
     .post {
         position: relative;
+        padding: 30px 40px;
+
+        &:first-child {
+            margin-top: 30px;
+        }
 
         .entry-title {
             padding-right: 110px;
@@ -47,8 +67,8 @@
 
         .entry-meta {
             position: absolute;
-            top: 22px;
-            right: 0;
+            top: 52px;
+            right: 40px;
             text-align: left;
         }
     }
@@ -58,5 +78,11 @@
 // -------------------------
 @media only screen and (min-width: @tabletLandscape) {
 
-    .post {}
+    .post {
+        border-radius: @borderRadius + 1;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 }
