@@ -11,15 +11,12 @@
 
             <aside class="global-social-links" role="complementary">
                 <h1 class="visuallyhidden">Social Links</h1>
-                <ul>
-                    <li class="github"><a href="https://github.com/AlecRust">GitHub</a></li>
-                    <li class="twitter"><a href="https://twitter.com/AlecRust">Twitter</a></li>
-                    <li class="linkedin"><a href="http://uk.linkedin.com/in/alecrust/">LinkedIn</a></li>
-                    <li class="quora"><a href="http://www.quora.com/Alec-Rust">Quora</a></li>
-                    <li class="facebook"><a href="http://www.facebook.com/alec.rust">Facebook</a></li>
-                    <li class="lastfm"><a href="http://www.last.fm/user/ace5p1d0r">Last.fm</a></li>
-                    <li class="email"><a href="#">Email</a></li>
-                </ul>
+                <?php wp_nav_menu( array(
+                    'theme_location'  => 'social-menu',
+                    'menu'            => 'social-menu',
+                    'container'       => false,
+                    'items_wrap'      => '<ul>%3$s</ul>'
+                ) ); ?>
             </aside>
 
         </div>

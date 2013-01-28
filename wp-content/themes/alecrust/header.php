@@ -49,8 +49,8 @@
                     <a href="#"><?php _e( 'Show Navigation' ); ?></a>
                 </p>
                 <?php wp_nav_menu( array(
-                    'theme_location'  => 'primary',
-                    'menu'            => 'primary',
+                    'theme_location'  => 'primary-menu',
+                    'menu'            => 'primary-menu',
                     'container'       => false,
                     'items_wrap'      => '<ul>%3$s</ul>'
                 ) ); ?>
