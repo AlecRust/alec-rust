@@ -74,9 +74,9 @@ get_header(); ?>
             <li>
                 <a href="<?php echo $item->get_permalink(); ?>">
                 <?php echo $item->get_title(); ?>
-                <span class="timestamp">
+                <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
                     <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
-                </span>
+                </time>
                 </a>
             </li>
         <?php endforeach; ?>
@@ -99,9 +99,9 @@ get_header(); ?>
             <li>
                 <a href="<?php echo $item->get_permalink(); ?>">
                 <?php echo $item->get_title(); ?>
-                <span class="timestamp">
+                <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
                     <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
-                </span>
+                </time>
                 </a>
             </li>
         <?php endforeach; ?>
