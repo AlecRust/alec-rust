@@ -81,6 +81,7 @@ get_header(); ?>
             </li>
         <?php endforeach; ?>
         </ul>
+        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile</a></p>
     </section>
 
     <section class="module module-tweets">
@@ -105,6 +106,7 @@ get_header(); ?>
             </li>
         <?php endforeach; ?>
         </ul>
+        <p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>
     </section>
 
 <?php get_footer(); ?>
