@@ -56,5 +56,5 @@
                 ) ); ?>
             </nav>
 
-            <div class="global-content" role="main">
+            <main class="global-content" role="main">
 

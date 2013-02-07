@@ -7,7 +7,7 @@
  * @since Alec Rust 1.0
  */
 ?>
-            </div>
+            </main>
 
             <aside class="global-social-links" role="complementary">
                 <h1 class="visuallyhidden">Social Links</h1>
