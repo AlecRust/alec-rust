@@ -11,24 +11,24 @@ button,
 input,
 select,
 textarea {
-    color: @textColor;
+    color: @text-color;
 }
 
 body {
-    color: @textColor;
-    font-family: @baseFontFamily;
-    font-size: @baseFontSize;
-    line-height: @baseLineHeight;
-    background: #d8d8d8 url("@{imgPath}body-bg-tile.png") fixed;
+    color: @text-color;
+    font-family: @base-font-family;
+    font-size: @base-font-size;
+    line-height: @base-line-height;
+    background: #d8d8d8 url("@{img-path}body-bg-tile.png") fixed;
     background-size: 100%;
 }
 
 // Links
 a {
-    color: @linkColor;
+    color: @link-color;
 
     &:hover {
-        color: @linkColorHover;
+        color: @link-color-hover;
     }
 
     &:active {
@@ -36,7 +36,7 @@ a {
     }
 
     &:visited {
-        color: @linkColorVisited;
+        color: @link-color-visited;
     }
 }
 
@@ -47,12 +47,12 @@ p {
 
 // Selection highlight
 ::-moz-selection {
-    background: @selectionHightlightColor;
+    background: @selection-hightlight-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: @selectionHightlightColor;
+    background: @selection-hightlight-color;
     text-shadow: none;
 }
 
@@ -85,7 +85,7 @@ nav {
 
 // Chrome Frame prompt
 .chromeframe {
-    color: @textColor;
+    color: @text-color;
     background-color: #f2efc4;
     text-align: center;
     margin: 0;
@@ -95,9 +95,9 @@ nav {
 // Global wrapper
 .wrap {}
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     body {
         background-size: auto;

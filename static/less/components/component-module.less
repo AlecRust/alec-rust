@@ -5,7 +5,7 @@
 
     h1 {
         display: inline-block;
-        font-size: @baseFontSize + 2;
+        font-size: @base-font-size + 2;
         font-weight: bold;
         border-bottom: 1px solid #b8b8b8;
         margin: 0 0 14px;
@@ -63,7 +63,7 @@
         left: 0;
 
         img {
-            border-radius: @borderRadius;
+            border-radius: @border-radius;
             .box-shadow(1px 1px 1px #aaa)
         }
     }
@@ -109,7 +109,7 @@
     }
 
     img {
-        border-radius: @borderRadius;
+        border-radius: @border-radius;
         .box-shadow(1px 1px 1px #aaa)
     }
 }
@@ -160,14 +160,14 @@
             left: 7px;
             width: 26px;
             height: 21px;
-            background: url("@{spritePath}") 0 -432px;
+            background: url("@{sprite-path}") 0 -432px;
 
             // If HiDPI
             @media print,
                 (-o-min-device-pixel-ratio: 5/4),
                 (-webkit-min-device-pixel-ratio: 1.25),
                 (min-resolution: 120dpi) {
-                background-image: url("@{spriteX2Path}");
+                background-image: url("@{sprite-x2-path}");
                 .background-size(48px auto);
             }
         }
@@ -187,9 +187,9 @@
     }
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     // "Thumbs" module type
     .module-thumbs {
@@ -200,9 +200,9 @@
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .module {
         width: 40%;

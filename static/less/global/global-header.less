@@ -6,8 +6,8 @@
 }
 
 .global-header-logo {
-    font-size: @baseFontSize + 9;
-    font-family: @brandFontFamily;
+    font-size: @base-font-size + 9;
+    font-family: @brand-font-family;
     text-align: center;
     margin: 0 0 -2px;
 
@@ -15,29 +15,29 @@
     // Note: Switch this to target :first-letter when browser
     // support is better for transitioning pseudo-elements
     span {
-        #gradient > .vertical(lighten(@brandColor, 7%), @brandColor);
+        #gradient > .vertical(lighten(@brand-color, 7%), @brand-color);
         .transition(@transition);
         .box-shadow(1px 1px 1px #aaa);
-        font-size: @baseFontSize + 21;
+        font-size: @base-font-size + 21;
         color: #c5c5c5;
         border-radius: 30px;
-        background-color: @brandColor;
+        background-color: @brand-color;
         text-shadow: -1px -1px 0 #222;
         padding: 7px 10px;
     }
 
     // "A" logo colour
     &:hover span {
-        color: @homeColor;
+        color: @home-color;
     }
 
     a {
-        color: @brandColor;
+        color: @brand-color;
         text-decoration: none;
         text-shadow: 1px 1px 1px #aaa;
 
         &:hover {
-            color: lighten(@brandColor, 5%);
+            color: lighten(@brand-color, 5%);
         }
     }
 }
@@ -45,15 +45,15 @@
 .global-header-tagline {
     width: 226px;
     color: #7b7b7b;
-    font-size: @baseFontSize - 2;
+    font-size: @base-font-size - 2;
     font-weight: normal;
     margin: auto;
     padding-left: 60px;
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .global-header {
         float: left;
@@ -61,9 +61,9 @@
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .global-header {
         position: fixed;
@@ -78,9 +78,9 @@
     }
 }
 
-// @desktopWidth devices and up
+// @desktop-width devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidth) {
+@media only screen and (min-width: @desktop-width) {
 
     // Prevent -90deg header rotationwhen scrolling
     // 2. Move header left when scrolling
@@ -91,9 +91,9 @@
     }
 }
 
-// @desktopWidthSecondary devices and up
+// @desktop-width-secondary devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidthSecondary) {
+@media only screen and (min-width: @desktop-width-secondary) {
 
     // Prevent move header left when scrolling
     body.scrolling .global-header {

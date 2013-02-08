@@ -4,7 +4,7 @@ body.page-home {
 
     // "A" logo colour
     .global-header .global-header-logo:hover span {
-        color: @homeColor;
+        color: @home-color;
     }
 
     &.page .global-content {
@@ -27,7 +27,7 @@ body.page-home {
     }
 
     li {
-        font-size: @baseFontSize + 1;
+        font-size: @base-font-size + 1;
         text-shadow: 0 0 5px #fff;
         margin-bottom: 10px;
     }
@@ -36,7 +36,7 @@ body.page-home {
         display: inline-block;
         min-height: 24px;
         text-decoration: none;
-        background: url("@{spritePath}") no-repeat;
+        background: url("@{sprite-path}") no-repeat;
         padding: 4px 0 0 35px;
 
         // If HiDPI
@@ -44,7 +44,7 @@ body.page-home {
             (-o-min-device-pixel-ratio: 5/4),
             (-webkit-min-device-pixel-ratio: 1.25),
             (min-resolution: 120dpi) {
-            background-image: url("@{spriteX2Path}");
+            background-image: url("@{sprite-x2-path}");
             .background-size(48px auto);
         }
 
@@ -62,9 +62,9 @@ body.page-home {
     }
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     body.page-home {
 
@@ -87,9 +87,9 @@ body.page-home {
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     body.page-home {
 

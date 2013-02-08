@@ -22,20 +22,20 @@
     }
 
     li {
-        #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+        #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
         .box-shadow(-1px 1px 1px #aaa);
-        background-color: lighten(@brandColor, .5%);
+        background-color: lighten(@brand-color, .5%);
         text-align: left;
         margin-bottom: 10px;
 
         &:hover {
-            #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
-            background-color: darken(@brandColor, 2%);
+            #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
+            background-color: darken(@brand-color, 2%);
         }
 
         &:active {
-            #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
-            background-color: lighten(@brandColor, 9%);
+            #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
+            background-color: lighten(@brand-color, 9%);
         }
 
         &.current-menu-item a {
@@ -56,14 +56,14 @@
             display: block;
             position: absolute;
             right: 15px;
-            background-image: url("@{spritePath}");
+            background-image: url("@{sprite-path}");
 
             // If HiDPI
             @media print,
                 (-o-min-device-pixel-ratio: 5/4),
                 (-webkit-min-device-pixel-ratio: 1.25),
                 (min-resolution: 120dpi) {
-                background-image: url("@{spriteX2Path}");
+                background-image: url("@{sprite-x2-path}");
                 .background-size(48px auto);
             }
         }
@@ -122,25 +122,25 @@
     margin-bottom: 0;
 
     a {
-        #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+        #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
         .box-shadow(-1px 1px 1px #aaa);
-        background-color: lighten(@brandColor, .5%);
+        background-color: lighten(@brand-color, .5%);
 
         &:hover {
-            #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
-            background-color: darken(@brandColor, 2%);
+            #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
+            background-color: darken(@brand-color, 2%);
         }
 
         &:active {
-            #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
-            background-color: lighten(@brandColor, 9%);
+            #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
+            background-color: lighten(@brand-color, 9%);
         }
     }
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     .global-navigation {
 
@@ -163,22 +163,22 @@
 
             &:first-child,
             &:nth-child(4) {
-                .border-top-left-radius(@borderRadius + 1);
-                .border-bottom-left-radius(@borderRadius + 1);
+                .border-top-left-radius(@border-radius + 1);
+                .border-bottom-left-radius(@border-radius + 1);
             }
 
             &:nth-child(3),
             &:nth-child(6) {
-                .border-top-right-radius(@borderRadius + 1);
-                .border-bottom-right-radius(@borderRadius + 1);
+                .border-top-right-radius(@border-radius + 1);
+                .border-bottom-right-radius(@border-radius + 1);
             }
         }
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .global-navigation {
         clear: left;
@@ -195,8 +195,8 @@
             margin-left: 0;
 
             &:first-child {
-                .border-top-left-radius(@borderRadius + 1);
-                .border-bottom-left-radius(@borderRadius + 1);
+                .border-top-left-radius(@border-radius + 1);
+                .border-bottom-left-radius(@border-radius + 1);
             }
 
             &:nth-child(3),
@@ -206,16 +206,16 @@
             }
 
             &:last-child {
-                .border-top-right-radius(@borderRadius + 1);
-                .border-bottom-right-radius(@borderRadius + 1);
+                .border-top-right-radius(@border-radius + 1);
+                .border-bottom-right-radius(@border-radius + 1);
             }
         }
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .global-navigation {
         position: fixed;
@@ -225,8 +225,8 @@
         margin-bottom: 60px;
 
         li {
-            .border-top-left-radius(@borderRadius + 1) !important; // Override smaller screen size styles
-            .border-bottom-left-radius(@borderRadius + 1) !important; // Override smaller screen size styles
+            .border-top-left-radius(@border-radius + 1) !important; // Override smaller screen size styles
+            .border-bottom-left-radius(@border-radius + 1) !important; // Override smaller screen size styles
             text-align: left;
             display: list-item;
 

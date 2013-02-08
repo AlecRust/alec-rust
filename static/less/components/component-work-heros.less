@@ -34,13 +34,13 @@
         h3 {
             .transition(@transition);
             .opacity(90);
-            #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+            #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             text-align: left;
-            font-size: @baseFontSize + 5;
+            font-size: @base-font-size + 5;
             color: #fff;
             margin-bottom: 0;
             padding: 15px 20px;
@@ -50,9 +50,9 @@
     }
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     .work-heros {
         text-align: left;
@@ -66,9 +66,9 @@
     }
 }
 
-// @desktopWidthSecondary devices and up
+// @desktop-width-secondary devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidthSecondary) {
+@media only screen and (min-width: @desktop-width-secondary) {
 
     .work-heros {
 

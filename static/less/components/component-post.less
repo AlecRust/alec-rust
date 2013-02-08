@@ -2,7 +2,7 @@
 // -------------------------
 .post {
     .box-shadow(0 2px 2px #ccc);
-    background-color: @contentBackground;
+    background-color: @content-background;
     margin-bottom: 30px;
     padding: 10px 20px;
 
@@ -19,11 +19,11 @@
 
     .entry-meta {
         text-align: right;
-        font-size: @baseFontSize - 1;
-        color: lighten(@textColor, 35%);
+        font-size: @base-font-size - 1;
+        color: lighten(@text-color, 35%);
 
         a {
-            color: lighten(@textColor, 35%);
+            color: lighten(@text-color, 35%);
             text-decoration: none;
 
             &:hover {
@@ -35,23 +35,23 @@
     .entry-content {
 
         p {
-            font-size: @baseFontSize + 1;
+            font-size: @base-font-size + 1;
         }
     }
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     .post {
         padding: 15px 30px;
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .post {
         position: relative;
@@ -74,12 +74,12 @@
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .post {
-        border-radius: @borderRadius + 1;
+        border-radius: @border-radius + 1;
 
         &:first-child {
             margin-top: 0;

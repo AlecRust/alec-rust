@@ -11,25 +11,25 @@
 
     h1 {
         font-weight: normal;
-        font-size: @baseFontSize + 21;
+        font-size: @base-font-size + 21;
         margin: 0 0 20px;
     }
 
     h2 {
         font-weight: normal;
-        font-size: @baseFontSize + 12;
+        font-size: @base-font-size + 12;
         margin: 0 0 25px;
     }
 
     h3 {
         font-weight: normal;
-        font-size: @baseFontSize + 10;
+        font-size: @base-font-size + 10;
         margin: 0 0 10px;
     }
 
     h4 {
         font-weight: normal;
-        font-size: @baseFontSize + 6;
+        font-size: @base-font-size + 6;
         margin: 0 0 10px;
     }
 
@@ -52,22 +52,22 @@
 
 .page .global-content {
     .box-shadow(0 2px 2px #ccc);
-    background-color: @contentBackground;
+    background-color: @content-background;
     padding: 10px 20px;
 }
 
-// @smartphoneLandscape devices and up
+// @smartphone-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @smartphoneLandscape) {
+@media only screen and (min-width: @smartphone-landscape) {
 
     .page .global-content {
         padding: 15px 30px;
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .global-content {
         .clearfix;
@@ -79,9 +79,9 @@
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .global-content {
         width: 69%;
@@ -89,13 +89,13 @@
     }
 
     .page .global-content {
-        border-radius: @borderRadius + 1;
+        border-radius: @border-radius + 1;
     }
 }
 
-// @desktopWidth devices and up
+// @desktop-width devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidth) {
+@media only screen and (min-width: @desktop-width) {
 
     .global-content {
         width: 57%;

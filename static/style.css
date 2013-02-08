@@ -207,7 +207,7 @@ textarea {
 }
 body {
   color: #383838;
-  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #d8d8d8 url("images/body-bg-tile.png") fixed;
@@ -270,7 +270,7 @@ nav ol {
 }
 .global-header-logo {
   font-size: 23px;
-  font-family: 'stalin_oneregular', sans-serif;
+  font-family: "stalin_oneregular", sans-serif;
   text-align: center;
   margin: 0 0 -2px;
 }
@@ -378,7 +378,7 @@ nav ol {
 }
 .global-search-input {
   box-shadow: inset 0 1px 4px #777777;
-  font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   border: 0;
   border-radius: 3px;
   padding: 11px 14px;
@@ -395,7 +395,7 @@ nav ol {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
   color: #d8dada;
   background-color: #343434;
-  font-family: 'stalin_oneregular', sans-serif;
+  font-family: "stalin_oneregular", sans-serif;
   border: 0;
   border-radius: 3px;
   margin-left: -6px;

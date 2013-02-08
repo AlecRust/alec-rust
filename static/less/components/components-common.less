@@ -15,27 +15,27 @@
             display: inline-block;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
-            border-left: 10px solid @linkColor;
+            border-left: 10px solid @link-color;
             margin: 0 0 -1px 8px;
         }
 
         &:visited:after {
-            border-left-color: @linkColorVisited;
+            border-left-color: @link-color-visited;
         }
 
         &:hover:after {
-            border-left-color: @linkColorHover;
+            border-left-color: @link-color-hover;
         }
     }
 }
 
 // Timestamp
 .timestamp {
-    color: lighten(@textColor, 30%);
-    font-size: @baseFontSize - 1;
+    color: lighten(@text-color, 30%);
+    font-size: @base-font-size - 1;
 
     a {
-        color: lighten(@textColor, 30%);
+        color: lighten(@text-color, 30%);
         text-decoration: none;
     }
 }
@@ -52,7 +52,7 @@
     }
 
     li {
-        font-size: @baseFontSize + 4;
+        font-size: @base-font-size + 4;
     }
 
     a {
@@ -76,16 +76,16 @@
                 display: inline-block;
                 border-top: 5px solid transparent;
                 border-bottom: 5px solid transparent;
-                border-right: 10px solid @linkColor;
+                border-right: 10px solid @link-color;
                 margin: 0 8px 0px 0;
             }
 
             &:visited:before {
-                border-left-color: @linkColorVisited;
+                border-left-color: @link-color-visited;
             }
 
             &:hover:before {
-                border-left-color: @linkColorHover;
+                border-left-color: @link-color-hover;
             }
         }
     }
@@ -102,24 +102,24 @@
                 display: inline-block;
                 border-top: 5px solid transparent;
                 border-bottom: 5px solid transparent;
-                border-left: 10px solid @linkColor;
+                border-left: 10px solid @link-color;
                 margin: 0 0 0px 8px;
             }
 
             &:visited:after {
-                border-left-color: @linkColorVisited;
+                border-left-color: @link-color-visited;
             }
 
             &:hover:after {
-                border-left-color: @linkColorHover;
+                border-left-color: @link-color-hover;
             }
         }
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     // Post navigation
     .post-navigation {

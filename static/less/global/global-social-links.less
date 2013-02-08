@@ -20,7 +20,7 @@
         display: inline-block;
         min-height: 25px;
         text-decoration: none;
-        background: url("@{spritePath}") no-repeat;
+        background: url("@{sprite-path}") no-repeat;
         padding: 3px 4px 0 35px;
 
         // If HiDPI
@@ -28,7 +28,7 @@
             (-o-min-device-pixel-ratio: 5/4),
             (-webkit-min-device-pixel-ratio: 1.25),
             (min-resolution: 120dpi) {
-            background-image: url("@{spriteX2Path}");
+            background-image: url("@{sprite-x2-path}");
             .background-size(48px auto);
         }
 
@@ -78,9 +78,9 @@
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .global-social-links {
         position: fixed;
@@ -103,9 +103,9 @@
     }
 }
 
-// @desktopWidth devices and up
+// @desktop-width devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidth) {
+@media only screen and (min-width: @desktop-width) {
 
     .global-social-links {
         margin-left: 6%;

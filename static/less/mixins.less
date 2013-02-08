@@ -95,7 +95,7 @@
 // Opacity
 .opacity(@opacity) {
     opacity: @opacity / 100;
-    filter: ~"alpha(opacity=@{opacity})";
+    filter: ~"alpha(opacity=@{opacity})"; // For IE8
 }
 
 // Gradients

@@ -14,39 +14,39 @@
 // Input
 .global-search-input {
     .box-shadow(inset 0 1px 4px #777);
-    font-family: @baseFontFamily;
+    font-family: @base-font-family;
     border: 0;
-    border-radius: @borderRadius + 1;
+    border-radius: @border-radius + 1;
     padding: 11px 14px;
 }
 
 // Button
 .global-search-button {
-    #gradient > .vertical(lighten(@brandColor, 7%), lighten(@brandColor, .5%));
+    #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
     color: #d8dada;
-    background-color: lighten(@brandColor, .5%);
-    font-family: @brandFontFamily;
+    background-color: lighten(@brand-color, .5%);
+    font-family: @brand-font-family;
     border: 0;
-    border-radius: @borderRadius + 1;
+    border-radius: @border-radius + 1;
     margin-left: -6px;
     padding: 9px 12px 10px;
 
     &:hover {
-        #gradient > .vertical(lighten(@brandColor, 9%), lighten(@brandColor, 2%));
+        #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
         color: #eee;
-        background-color: darken(@brandColor, 2%);
+        background-color: darken(@brand-color, 2%);
     }
 
     &:active {
-        #gradient > .vertical(lighten(@brandColor, 6%), lighten(@brandColor, 9%));
+        #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
         color: #fff;
-        background-color: lighten(@brandColor, 9%);
+        background-color: lighten(@brand-color, 9%);
     }
 }
 
-// @tabletPortrait devices and up
+// @tablet-portrait devices and up
 // -------------------------
-@media only screen and (min-width: @tabletPortrait) {
+@media only screen and (min-width: @tablet-portrait) {
 
     .global-search {
         float: right;
@@ -81,7 +81,7 @@
             display: block;
             width: 48px;
             height: 48px;
-            background-image: url("@{spritePath}");
+            background-image: url("@{sprite-path}");
 
             &:hover {
                 .opacity(50);
@@ -94,9 +94,9 @@
     }
 }
 
-// @tabletLandscape devices and up
+// @tablet-landscape devices and up
 // -------------------------
-@media only screen and (min-width: @tabletLandscape) {
+@media only screen and (min-width: @tablet-landscape) {
 
     .global-search {
         position: fixed;
@@ -107,13 +107,13 @@
     // Box shadow if opened over scrolling content
     body.scrolling .search-visible {
         .box-shadow(-2px 2px 6px #aaa);
-        border-radius: @borderRadius + 1;
+        border-radius: @border-radius + 1;
     }
 }
 
-// @desktopWidthSecondary devices and up
+// @desktop-width-secondary devices and up
 // -------------------------
-@media only screen and (min-width: @desktopWidthSecondary) {
+@media only screen and (min-width: @desktop-width-secondary) {
 
     // Prevent box shadow if opened over scrolling content
     body.scrolling .search-visible {
@@ -132,7 +132,7 @@
     .show-search {
 
         a {
-            background-image: url("@{spriteX2Path}");
+            background-image: url("@{sprite-x2-path}");
             .background-size(cover);
         }
     }
