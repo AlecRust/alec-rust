@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search forms
+ * Template for displaying search forms
  *
  * @package WordPress
  * @subpackage Alec_Rust

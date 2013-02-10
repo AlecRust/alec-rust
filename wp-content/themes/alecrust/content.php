@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content. Used for both single and index/archive/search
+ * Default template for displaying content. Used for both single and index/archive/search
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -22,12 +22,12 @@
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
-			<?php endif; // is_single() ?>
+			<?php endif; ?>
 			<?php if ( comments_open() ) : ?>
 				<div class="comments-link">
 					<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply' ) . '</span>', __( '1 Reply' ), __( '% Replies' ) ); ?>
 				</div>
-			<?php endif; // comments_open() ?>
+			<?php endif; ?>
 		</header>
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>

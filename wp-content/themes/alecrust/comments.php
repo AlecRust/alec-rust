@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Comments
+ * Template for displaying Comments
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
@@ -50,7 +50,7 @@ if ( post_password_required() )
 		<p class="nocomments"><?php _e( 'Comments are closed.' ); ?></p>
 		<?php endif; ?>
 
-	<?php endif; // have_comments() ?>
+	<?php endif; ?>
 
 	<?php comment_form(); ?>
 

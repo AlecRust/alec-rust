@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying image attachments
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * Template for displaying image attachments
  *
  * @package WordPress
  * @subpackage Alec_Rust

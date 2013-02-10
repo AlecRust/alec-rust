@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying posts in the Aside post format
+ * Template for displaying posts in the Aside post format
  *
  * @package WordPress
  * @subpackage Alec_Rust

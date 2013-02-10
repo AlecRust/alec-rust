@@ -1,8 +1,6 @@
 <?php
 /**
- * The Header for the theme
- *
- * Displays the <head> section and everything up to main content wrapper
+ * Template for displaying the header
  *
  * @package WordPress
  * @subpackage Alec_Rust

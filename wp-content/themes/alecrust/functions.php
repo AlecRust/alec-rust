@@ -30,7 +30,7 @@ function alecrust_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme supports a variety of post formats
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote' ) );
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts
 	add_theme_support( 'post-thumbnails' );
@@ -149,10 +149,10 @@ function alecrust_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'alecrust_page_menu_args' );
 
-if ( ! function_exists( 'alecrust_content_nav' ) ) :
 /**
  * Displays navigation to next/previous pages when applicable
  */
+if ( ! function_exists( 'alecrust_content_nav' ) ) :
 function alecrust_content_nav( $html_id ) {
 	global $wp_query;
 
@@ -168,12 +168,12 @@ function alecrust_content_nav( $html_id ) {
 }
 endif;
 
-if ( ! function_exists( 'alecrust_comment' ) ) :
 /**
  * Template for comments and pingbacks
  *
  * Used as a callback by wp_list_comments() for displaying the comments
  */
+if ( ! function_exists( 'alecrust_comment' ) ) :
 function alecrust_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -227,10 +227,10 @@ function alecrust_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'alecrust_entry_meta' ) ) :
 /**
- * Prints HTML with meta information for current post: categories, tags, permalink, author, and date
+ * Prints HTML with meta information for current post
  */
+if ( ! function_exists( 'alecrust_entry_meta' ) ) :
 function alecrust_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ' ) );
@@ -253,11 +253,11 @@ function alecrust_entry_meta() {
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.' );
+		$utility_text = __( 'Posted in %1$s and tagged %2$s on %3$s' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.' );
+		$utility_text = __( 'Posted in %1$s on %3$s' );
 	} else {
-		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.' );
+		$utility_text = __( 'Posted on %3$s' );
 	}
 
 	printf(

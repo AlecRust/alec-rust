@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Tag pages
+ * Template for displaying Tag pages
  *
  * Used to display archive-type pages for posts in a tag
  *

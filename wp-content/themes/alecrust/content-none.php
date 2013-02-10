@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying a "No posts found" message
+ * Template for displaying a "No posts found" message
  *
  * @package WordPress
  * @subpackage Alec_Rust

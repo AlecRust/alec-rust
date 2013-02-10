@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying posts in the Image post format
+ * Template for displaying posts in the Image post format
  *
  * @package WordPress
  * @subpackage Alec_Rust
