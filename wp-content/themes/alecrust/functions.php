@@ -64,6 +64,19 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
+ * Removes .page class from <body> on Work Index template
+ */
+add_filter('body_class', 'remove_work_body_class', 20, 2);
+function remove_work_body_class($wp_classes) {
+    if( is_page_template('page-templates/work-index.php') ) :
+        foreach($wp_classes as $key => $value) {
+            if ($value == 'page') unset($wp_classes[$key]);
+        }
+    endif;
+    return $wp_classes;
+}
+
+/**
  * Enqueues scripts and styles for front-end
  */
 function alecrust_scripts_styles() {

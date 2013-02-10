@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying the Work page
+ * Template Name: Work Index
+ *
+ * Description: Work Index page template
  *
  * @package WordPress
  * @subpackage Alec_Rust

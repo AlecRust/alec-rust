@@ -1,6 +1,8 @@
 <?php
 /**
- * The template for displaying the Home page
+ * Template Name: Home Page
+ *
+ * Description: Home Page template
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -21,15 +23,15 @@ get_header(); ?>
         <ul>
             <?php query_posts('category_name=work,projects&showposts=3'); ?>
             <?php while (have_posts()) : the_post(); ?>
-            <li>
-                <a href="<?php the_permalink(); ?>" class="hero">
-                    <dl>
-                        <dt class="hero-title"><?php the_title(); ?></dt>
-                        <dd class="hero-description"><?php the_content( 'More', '...' ); ?></dd>
-                        <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
-                    </dl>
-                </a>
-            </li>
+                <li>
+                    <a href="<?php the_permalink(); ?>" class="hero">
+                        <dl>
+                            <dt class="hero-title"><?php the_title(); ?></dt>
+                            <dd class="hero-description"><?php the_content( 'More', '...' ); ?></dd>
+                            <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                        </dl>
+                    </a>
+                </li>
             <?php endwhile; ?>
         </ul>
         <p class="view-more"><a href="/work/">See my work</a></p>
@@ -40,7 +42,7 @@ get_header(); ?>
         <ul>
             <?php query_posts('category_name=blog&showposts=7'); ?>
             <?php while (have_posts()) : the_post(); ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
             <?php endwhile; ?>
         </ul>
         <p class="view-more"><a href="/blog/">See more posts</a></p>
@@ -61,24 +63,24 @@ get_header(); ?>
     <section class="module module-activity">
         <h1>Recent GitHub activity</h1>
         <?php
-            include_once(ABSPATH . WPINC . '/feed.php');
-            $rss = fetch_feed('https://github.com/AlecRust.atom');
-            $maxitems = $rss->get_item_quantity(3);
-            $rss_items = $rss->get_items(0, $maxitems);
+        include_once(ABSPATH . WPINC . '/feed.php');
+        $rss = fetch_feed('https://github.com/AlecRust.atom');
+        $maxitems = $rss->get_item_quantity(3);
+        $rss_items = $rss->get_items(0, $maxitems);
         ?>
         <ul>
-        <?php if ($maxitems == 0) echo '<li>No activity to display.</li>';
-        else
-        foreach ( $rss_items as $item ) : ?>
-            <li>
-                <a href="<?php echo $item->get_permalink(); ?>">
-                <?php echo $item->get_title(); ?>
-                <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
-                    <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
-                </time>
-                </a>
-            </li>
-        <?php endforeach; ?>
+            <?php if ($maxitems == 0) echo '<li>No activity to display.</li>';
+            else
+                foreach ( $rss_items as $item ) : ?>
+                    <li>
+                        <a href="<?php echo $item->get_permalink(); ?>">
+                            <?php echo $item->get_title(); ?>
+                            <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
+                                <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
+                            </time>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
         </ul>
         <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile</a></p>
     </section>
@@ -86,24 +88,24 @@ get_header(); ?>
     <section class="module module-tweets">
         <h1>Recent tweets</h1>
         <?php
-            include_once(ABSPATH . WPINC . '/feed.php');
-            $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
-            $maxitems = $rss->get_item_quantity(3);
-            $rss_items = $rss->get_items(0, $maxitems);
+        include_once(ABSPATH . WPINC . '/feed.php');
+        $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
+        $maxitems = $rss->get_item_quantity(3);
+        $rss_items = $rss->get_items(0, $maxitems);
         ?>
         <ul>
-        <?php if ($maxitems == 0) echo '<li>No tweets to display.</li>';
-        else
-        foreach ( $rss_items as $item ) : ?>
-            <li>
-                <a href="<?php echo $item->get_permalink(); ?>">
-                <?php echo $item->get_title(); ?>
-                <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
-                    <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
-                </time>
-                </a>
-            </li>
-        <?php endforeach; ?>
+            <?php if ($maxitems == 0) echo '<li>No tweets to display.</li>';
+            else
+                foreach ( $rss_items as $item ) : ?>
+                    <li>
+                        <a href="<?php echo $item->get_permalink(); ?>">
+                            <?php echo $item->get_title(); ?>
+                            <time datetime="<?php echo $item->get_local_date('%Y-%m-%d %H:%M'); ?>" class="timestamp">
+                                <?php echo $item->get_local_date('%A %d %b %H:%M'); ?>
+                            </time>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
         </ul>
         <p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>
     </section>
