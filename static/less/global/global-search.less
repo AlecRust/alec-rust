@@ -23,6 +23,7 @@
 // Button
 .global-search-button {
     #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
+    .transition(@transition);
     color: #d8dada;
     background-color: lighten(@brand-color, .5%);
     font-family: @brand-font-family;
@@ -77,6 +78,7 @@
 
         a {
             .ir;
+            .transition(@transition);
             .opacity(40);
             display: block;
             width: 48px;
