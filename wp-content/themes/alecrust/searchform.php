@@ -4,7 +4,6 @@
  *
  * @package WordPress
  * @subpackage Alec_Rust
- * @since Alec Rust 1.0
  */
 ?>
     <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" id="searchform">

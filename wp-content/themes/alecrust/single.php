@@ -4,7 +4,6 @@
  *
  * @package WordPress
  * @subpackage Alec_Rust
- * @since Alec Rust 1.0
  */
 
 get_header(); ?>
@@ -21,6 +20,6 @@ get_header(); ?>
 
         <?php comments_template( '', true ); ?>
 
-    <?php endwhile; // end of the loop ?>
+    <?php endwhile; ?>
 
 <?php get_footer(); ?>

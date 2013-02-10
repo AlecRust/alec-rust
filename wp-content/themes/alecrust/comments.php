@@ -9,7 +9,6 @@
  *
  * @package WordPress
  * @subpackage Alec_Rust
- * @since Alec Rust 1.0
  */
 
 /*
