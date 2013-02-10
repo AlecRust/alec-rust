@@ -10,6 +10,25 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: mobile-first, responsive
 Text Domain: alecrust
 */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+}
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
 article,
 aside,
 details,
@@ -176,25 +195,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-}
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
 @font-face {
     font-family: 'stalin_oneregular';
     src: url('fonts/stalinone-regular-webfont.eot');
@@ -215,7 +215,7 @@ textarea {
 }
 body {
     color: #383838;
-    font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.4;
     background: #d8d8d8 url("images/body-bg-tile.png") fixed;
@@ -278,7 +278,7 @@ nav ol {
 }
 .global-header-logo {
     font-size: 23px;
-    font-family: 'stalin_oneregular', sans-serif;
+    font-family: "stalin_oneregular", sans-serif;
     text-align: center;
     margin: 0 0 -2px;
 }
@@ -386,7 +386,7 @@ nav ol {
 }
 .global-search-input {
     box-shadow: inset 0 1px 4px #777777;
-    font-family: 'Myriad Pro', Helvetica, Arial, sans-serif;
+    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
     border: 0;
     border-radius: 3px;
     padding: 11px 14px;
@@ -401,9 +401,13 @@ nav ol {
     background-image: linear-gradient(top, #454545, #343434);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#454545', endColorstr='#343434', GradientType=0);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     color: #d8dada;
     background-color: #343434;
-    font-family: 'stalin_oneregular', sans-serif;
+    font-family: "stalin_oneregular", sans-serif;
     border: 0;
     border-radius: 3px;
     margin-left: -6px;
@@ -502,6 +506,10 @@ nav ol {
         background-color: transparent;
         border: 0;
         overflow: hidden;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
         opacity: 0.4;
         filter: alpha(opacity=40);
         display: block;
@@ -956,6 +964,10 @@ nav ol {
 .global-social-links a {
     opacity: 0.5;
     filter: alpha(opacity=50);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     display: inline-block;
     min-height: 25px;
     text-decoration: none;
@@ -1067,6 +1079,9 @@ nav ol {
 .module dd {
     margin-left: 0;
 }
+.module .timestamp {
+    display: block;
+}
 .module-heros ul {
     padding-left: 14px;
 }
@@ -1141,9 +1156,6 @@ nav ol {
 .module-activity li a:active {
     text-decoration: underline;
 }
-.module-activity .timestamp {
-    display: block;
-}
 .module-tweets ul {
     padding-left: 0;
 }
@@ -1177,9 +1189,6 @@ nav ol {
 .module-tweets li a:active {
     text-decoration: underline;
 }
-.module-tweets .timestamp {
-    display: block;
-}
 @media only screen and (min-width: 480px) {
     .module-thumbs li {
         padding: 0 10px;
@@ -1192,6 +1201,78 @@ nav ol {
     }
     .module-thumbs {
         width: 100%;
+    }
+}
+.post-navigation {
+    margin-top: -20px;
+}
+.post-navigation ul {
+    list-style: none;
+    max-width: 75%;
+    margin: auto;
+}
+.post-navigation ul:before,
+.post-navigation ul:after {
+    content: " ";
+    display: table;
+}
+.post-navigation ul:after {
+    clear: both;
+}
+.post-navigation li {
+    font-size: 18px;
+}
+.post-navigation a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+}
+.post-navigation a:hover {
+    text-decoration: underline;
+}
+.post-navigation .prev {
+    float: left;
+    margin-left: 10px;
+}
+.post-navigation .prev a:before {
+    content: "";
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid #383838;
+    margin: 0 8px 0px 0;
+}
+.post-navigation .prev a:visited:before {
+    border-left-color: #5e5e5e;
+}
+.post-navigation .prev a:hover:before {
+    border-left-color: #121212;
+}
+.post-navigation .next {
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+}
+.post-navigation .next a:after {
+    content: "";
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #383838;
+    margin: 0 0 0px 8px;
+}
+.post-navigation .next a:visited:after {
+    border-left-color: #5e5e5e;
+}
+.post-navigation .next a:hover:after {
+    border-left-color: #121212;
+}
+@media only screen and (min-width: 1024px) {
+    .post-navigation {
+        margin: -85px 0 40px;
+    }
+    .post-navigation ul {
+        max-width: 50%;
     }
 }
 .post {
@@ -1387,78 +1468,6 @@ nav ol {
 .timestamp a {
     color: #858585;
     text-decoration: none;
-}
-.post-navigation {
-    margin-top: -20px;
-}
-.post-navigation ul {
-    list-style: none;
-    max-width: 75%;
-    margin: auto;
-}
-.post-navigation ul:before,
-.post-navigation ul:after {
-    content: " ";
-    display: table;
-}
-.post-navigation ul:after {
-    clear: both;
-}
-.post-navigation li {
-    font-size: 18px;
-}
-.post-navigation a {
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-}
-.post-navigation a:hover {
-    text-decoration: underline;
-}
-.post-navigation .prev {
-    float: left;
-    margin-left: 10px;
-}
-.post-navigation .prev a:before {
-    content: "";
-    display: inline-block;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-right: 10px solid #383838;
-    margin: 0 8px 0px 0;
-}
-.post-navigation .prev a:visited:before {
-    border-left-color: #5e5e5e;
-}
-.post-navigation .prev a:hover:before {
-    border-left-color: #121212;
-}
-.post-navigation .next {
-    text-align: right;
-    float: right;
-    margin-right: 10px;
-}
-.post-navigation .next a:after {
-    content: "";
-    display: inline-block;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 10px solid #383838;
-    margin: 0 0 0px 8px;
-}
-.post-navigation .next a:visited:after {
-    border-left-color: #5e5e5e;
-}
-.post-navigation .next a:hover:after {
-    border-left-color: #121212;
-}
-@media only screen and (min-width: 1024px) {
-    .post-navigation {
-        margin: -85px 0 40px;
-    }
-    .post-navigation ul {
-        max-width: 50%;
-    }
 }
 body.page-home .global-header .global-header-logo:hover span {
     color: #2ec239;

@@ -64,11 +64,16 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
- * Removes .page class from <body> on Work Index template
+ * Removes .page class from <body> on Work and Projects index
  */
-add_filter('body_class', 'remove_work_body_class', 20, 2);
-function remove_work_body_class($wp_classes) {
-    if( is_page_template('page-templates/work-index.php') ) :
+add_filter('body_class', 'remove_body_classes', 20, 2);
+function remove_body_classes($wp_classes) {
+    if ( is_page_template('page-templates/work-index.php') ) :
+        foreach($wp_classes as $key => $value) {
+            if ($value == 'page') unset($wp_classes[$key]);
+        }
+    endif;
+    if ( is_page_template('page-templates/projects-index.php') ) :
         foreach($wp_classes as $key => $value) {
             if ($value == 'page') unset($wp_classes[$key]);
         }

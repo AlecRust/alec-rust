@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Work Index
+ * Template Name: Projects Index
  *
- * Description: Work Index page template
+ * Description: Projects Index page template
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -11,14 +11,14 @@
 get_header(); ?>
 
     <article class="post">
-        <h1>Work</h1>
-        <p>Choose a company below to browse some of my past work.</p>
+        <h1>Projects</h1>
+        <p>Browse the personal and open-source projects I've been involved in below.</p>
     </article>
 
     <section class="post work-list">
-        <h2>Large Corporations</h2>
+        <h2>Personal Projects</h2>
         <ul>
-            <?php query_posts('category_name=large-corporations'); ?>
+            <?php query_posts('category_name=personal-projects'); ?>
             <?php while (have_posts()) : the_post(); ?>
                 <li>
                     <a href="<?php the_permalink(); ?>">
@@ -33,9 +33,9 @@ get_header(); ?>
     </section>
 
     <section class="post work-list">
-        <h2>Small Businesses</h2>
+        <h2>Open-source Projects</h2>
         <ul>
-            <?php query_posts('category_name=small-businesses'); ?>
+            <?php query_posts('category_name=open-source-projects'); ?>
             <?php while (have_posts()) : the_post(); ?>
                 <li>
                     <a href="<?php the_permalink(); ?>">
