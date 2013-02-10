@@ -2,6 +2,25 @@
  * Compiled stylesheet for AlecRust.com
  * View source at: https://github.com/AlecRust/alec-rust
  */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
 article,
 aside,
 details,
@@ -167,25 +186,6 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.ir {
-  background-color: transparent;
-  border: 0;
-  overflow: hidden;
-}
-.ir:before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 150%;
 }
 @font-face {
   font-family: 'stalin_oneregular';
@@ -1071,6 +1071,9 @@ nav ol {
 .module dd {
   margin-left: 0;
 }
+.module .timestamp {
+  display: block;
+}
 .module-heros ul {
   padding-left: 14px;
 }
@@ -1145,9 +1148,6 @@ nav ol {
 .module-activity li a:active {
   text-decoration: underline;
 }
-.module-activity .timestamp {
-  display: block;
-}
 .module-tweets ul {
   padding-left: 0;
 }
@@ -1181,9 +1181,6 @@ nav ol {
 .module-tweets li a:active {
   text-decoration: underline;
 }
-.module-tweets .timestamp {
-  display: block;
-}
 @media only screen and (min-width: 480px) {
   .module-thumbs li {
     padding: 0 10px;
@@ -1196,6 +1193,78 @@ nav ol {
   }
   .module-thumbs {
     width: 100%;
+  }
+}
+.post-navigation {
+  margin-top: -20px;
+}
+.post-navigation ul {
+  list-style: none;
+  max-width: 75%;
+  margin: auto;
+}
+.post-navigation ul:before,
+.post-navigation ul:after {
+  content: " ";
+  display: table;
+}
+.post-navigation ul:after {
+  clear: both;
+}
+.post-navigation li {
+  font-size: 18px;
+}
+.post-navigation a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+.post-navigation a:hover {
+  text-decoration: underline;
+}
+.post-navigation .prev {
+  float: left;
+  margin-left: 10px;
+}
+.post-navigation .prev a:before {
+  content: "";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid #383838;
+  margin: 0 8px 0px 0;
+}
+.post-navigation .prev a:visited:before {
+  border-left-color: #5e5e5e;
+}
+.post-navigation .prev a:hover:before {
+  border-left-color: #121212;
+}
+.post-navigation .next {
+  text-align: right;
+  float: right;
+  margin-right: 10px;
+}
+.post-navigation .next a:after {
+  content: "";
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #383838;
+  margin: 0 0 0px 8px;
+}
+.post-navigation .next a:visited:after {
+  border-left-color: #5e5e5e;
+}
+.post-navigation .next a:hover:after {
+  border-left-color: #121212;
+}
+@media only screen and (min-width: 1024px) {
+  .post-navigation {
+    margin: -85px 0 40px;
+  }
+  .post-navigation ul {
+    max-width: 50%;
   }
 }
 .post {
@@ -1391,78 +1460,6 @@ nav ol {
 .timestamp a {
   color: #858585;
   text-decoration: none;
-}
-.post-navigation {
-  margin-top: -20px;
-}
-.post-navigation ul {
-  list-style: none;
-  max-width: 75%;
-  margin: auto;
-}
-.post-navigation ul:before,
-.post-navigation ul:after {
-  content: " ";
-  display: table;
-}
-.post-navigation ul:after {
-  clear: both;
-}
-.post-navigation li {
-  font-size: 18px;
-}
-.post-navigation a {
-  display: block;
-  text-decoration: none;
-  padding: 10px;
-}
-.post-navigation a:hover {
-  text-decoration: underline;
-}
-.post-navigation .prev {
-  float: left;
-  margin-left: 10px;
-}
-.post-navigation .prev a:before {
-  content: "";
-  display: inline-block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 10px solid #383838;
-  margin: 0 8px 0px 0;
-}
-.post-navigation .prev a:visited:before {
-  border-left-color: #5e5e5e;
-}
-.post-navigation .prev a:hover:before {
-  border-left-color: #121212;
-}
-.post-navigation .next {
-  text-align: right;
-  float: right;
-  margin-right: 10px;
-}
-.post-navigation .next a:after {
-  content: "";
-  display: inline-block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 10px solid #383838;
-  margin: 0 0 0px 8px;
-}
-.post-navigation .next a:visited:after {
-  border-left-color: #5e5e5e;
-}
-.post-navigation .next a:hover:after {
-  border-left-color: #121212;
-}
-@media only screen and (min-width: 1024px) {
-  .post-navigation {
-    margin: -85px 0 40px;
-  }
-  .post-navigation ul {
-    max-width: 50%;
-  }
 }
 body.page-home .global-header .global-header-logo:hover span {
   color: #2ec239;

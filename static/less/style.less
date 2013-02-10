@@ -3,20 +3,20 @@
  * View source at: https://github.com/AlecRust/alec-rust
  */
 
-// Normalize
-@import "normalize.less";
-
 // Variables
-@import "variables.less";
+@import "variables";
 
 // Mixins
-@import "mixins.less";
+@import "mixins";
+
+// Reset
+@import "normalize";
 
 // Web fonts
-@import "fonts.less";
+@import "fonts";
 
 // Base
-@import "base.less";
+@import "base";
 
 // Global structure
 @import "global/global-header";
@@ -28,6 +28,7 @@
 
 // Page components
 @import "components/component-module";
+@import "components/component-post-navigation";
 @import "components/component-post";
 @import "components/component-work-heros";
 @import "components/component-work-list";
@@ -42,7 +43,7 @@
 @import "section/section-contact";
 
 // Utility classes
-@import "utilities.less";
+@import "utilities";
 
 // Print styles
-@import "print.less";
+@import "print";
