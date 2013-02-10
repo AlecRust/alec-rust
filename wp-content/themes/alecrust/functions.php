@@ -118,9 +118,9 @@ function alecrust_wp_title( $title, $sep ) {
 	// Add the site name
 	$title .= get_bloginfo( 'name' );
 
-	// Add the site description for the home/front page
+	// Add the site description for the front page
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	if ( $site_description && ( is_front_page() ) )
 		$title = "$title $sep $site_description";
 
 	// Add a page number if necessary
