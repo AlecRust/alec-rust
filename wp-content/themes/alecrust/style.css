@@ -1554,7 +1554,7 @@ body.page-work .global-header .global-header-logo:hover span {
 body.page-projects .global-header .global-header-logo:hover span {
     color: #d57300;
 }
-body.page-blog .global-header .global-header-logo:hover span {
+body.blog .global-header .global-header-logo:hover span {
     color: #47c6bf;
 }
 body.page-contact .global-header .global-header-logo:hover span {

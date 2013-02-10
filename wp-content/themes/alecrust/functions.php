@@ -140,6 +140,14 @@ function filter_handler( $seconds ) {
 add_filter( 'wp_feed_cache_transient_lifetime', 'filter_handler' );
 
 /**
+ * Adds a class to the "Read more" link wrapper
+ */
+function add_more_wrapper($link) {
+    return "<p class='view-more'>$link</p>";
+}
+add_filter('the_content_more_link', 'add_more_wrapper');
+
+/**
  * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link
  */
 function alecrust_page_menu_args( $args ) {
@@ -161,8 +169,8 @@ function alecrust_content_nav( $html_id ) {
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
 			<h3 class="visuallyhidden"><?php _e( 'Post navigation' ); ?></h3>
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>' ) ); ?></div>
+			<div class="nav-previous alignleft"><?php next_posts_link( __( 'Older posts' ) ); ?></div>
+			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts' ) ); ?></div>
 		</nav>
 	<?php endif;
 }

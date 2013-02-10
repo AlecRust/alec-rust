@@ -36,7 +36,7 @@
 		</div>
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) ); ?>
+			<?php the_content( __( 'Read more' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
 		</div>
 		<?php endif; ?>
@@ -54,7 +54,7 @@
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>' ), get_the_author() ); ?>
+								<?php printf( __( 'View all posts by %s' ), get_the_author() ); ?>
 							</a>
 						</div>
 					</div>
