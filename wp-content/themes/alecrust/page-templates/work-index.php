@@ -11,12 +11,12 @@
 get_header(); ?>
 
     <article class="post">
-        <h1>Work</h1>
-        <p>Choose a company below to browse some of my past work.</p>
+        <h1><?php _e( 'Work' ); ?></h1>
+        <p><?php _e( 'Choose a company below to browse some of my past work.' ); ?></p>
     </article>
 
     <section class="post work-list">
-        <h2>Large Corporations</h2>
+        <h2><?php _e( 'Large Corporations' ); ?></h2>
         <ul>
             <?php query_posts('category_name=large-corporations'); ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -33,7 +33,7 @@ get_header(); ?>
     </section>
 
     <section class="post work-list">
-        <h2>Small Businesses</h2>
+        <h2><?php _e( 'Small Businesses' ); ?></h2>
         <ul>
             <?php query_posts('category_name=small-businesses'); ?>
             <?php while (have_posts()) : the_post(); ?>

@@ -1,6 +1,7 @@
 <?php
 /**
- * Template for displaying posts in the Image post format
+ * Template for displaying posts in the "Image" post format
+ * TODO: Is this template needed?
  *
  * @package WordPress
  * @subpackage Alec_Rust

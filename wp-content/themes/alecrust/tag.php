@@ -4,8 +4,6 @@
  *
  * Used to display archive-type pages for posts in a tag
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package WordPress
  * @subpackage Alec_Rust
  */

@@ -16,7 +16,7 @@
  */
 
 /**
- * Sets up theme defaults and registers the various WordPress features that Alec Rust supports
+ * Sets up theme defaults and registers the various WordPress features supported
  *
  * @uses add_editor_style() To add a Visual Editor stylesheet
  * @uses add_theme_support() To add support for post thumbnails, automatic feed links and post formats
@@ -29,8 +29,8 @@ function alecrust_setup() {
 	// Adds RSS feed links to <head> for posts and comments
 	add_theme_support( 'automatic-feed-links' );
 
-	// This theme supports a variety of post formats
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote' ) );
+	// This theme supports the "Image" post format
+	add_theme_support( 'post-formats', array( 'image' ) );
 
 	// This theme uses a custom image size for featured images, displayed on "standard" posts
 	add_theme_support( 'post-thumbnails' );
@@ -87,16 +87,11 @@ function remove_body_classes($wp_classes) {
 function alecrust_scripts_styles() {
 	global $wp_styles;
 
-	/*
-	 * Adds JavaScript to pages with the comment form to support
-	 * sites with threaded comments (when in use)
-	 */
+	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-	/*
-	 * Loads our main stylesheet.
-	 */
+	// Loads the main stylesheet
 	wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
@@ -115,15 +110,15 @@ function alecrust_wp_title( $title, $sep ) {
 	if ( is_feed() )
 		return $title;
 
-	// Add the site name
+	// Adds the site name
 	$title .= get_bloginfo( 'name' );
 
-	// Add the site description for the front page
+	// Adds the site description for the front page
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_front_page() ) )
 		$title = "$title $sep $site_description";
 
-	// Add a page number if necessary
+	// Adds a page number if necessary
 	if ( $paged >= 2 || $page >= 2 )
 		$title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 
@@ -240,10 +235,10 @@ endif;
  */
 if ( ! function_exists( 'alecrust_entry_meta' ) ) :
 function alecrust_entry_meta() {
-	// Translators: used between list items, there is a space after the comma.
+	// Translators: used between list items, there is a space after the comma
 	$categories_list = get_the_category_list( __( ', ' ) );
 
-	// Translators: used between list items, there is a space after the comma.
+	// Translators: used between list items, there is a space after the comma
 	$tag_list = get_the_tag_list( '', __( ', ' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
@@ -259,7 +254,7 @@ function alecrust_entry_meta() {
 		get_the_author()
 	);
 
-	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
+	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
 	if ( $tag_list ) {
 		$utility_text = __( 'Posted in %1$s and tagged %2$s on %3$s' );
 	} elseif ( $categories_list ) {
@@ -279,7 +274,7 @@ function alecrust_entry_meta() {
 endif;
 
 /**
- * Adds Google Analytics JS to footer
+ * Adds Google Analytics JS snippet to footer
  */
 add_action('wp_footer', 'add_google_analytics');
 function add_google_analytics() { ?>

@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to alecrust_comment() which is
- * located in the functions.php file
+ * located in functions.php
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -36,7 +36,7 @@ if ( post_password_required() )
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation' ); ?></h1>
+			<h1 class="visuallyhidden section-heading"><?php _e( 'Comment navigation' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;' ) ); ?></div>
 		</nav>

@@ -12,10 +12,12 @@ get_header(); ?>
 
         <?php get_template_part( 'content', get_post_format() ); ?>
 
-        <nav class="nav-single">
-            <h3 class="assistive-text"><?php _e( 'Post navigation' ); ?></h3>
-            <span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></span>
-            <span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></span>
+        <nav class="post-navigation">
+            <h1 class="visuallyhidden"><?php _e( 'Post Navigation' ); ?></h1>
+            <ul>
+                <li class="prev"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link' ) . '</span> %title' ); ?></li>
+                <li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link' ) . '</span>' ); ?></li>
+            </ul>
         </nav>
 
         <?php comments_template( '', true ); ?>

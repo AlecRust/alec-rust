@@ -11,12 +11,12 @@
 get_header(); ?>
 
     <article class="post">
-        <h1>Projects</h1>
-        <p>Browse the personal and open-source projects I've been involved in below.</p>
+        <h1><?php _e( 'Projects' ); ?></h1>
+        <p><?php _e( 'Browse the personal and open-source projects I\'ve been involved in below.' ); ?></p>
     </article>
 
     <section class="post work-list">
-        <h2>Personal Projects</h2>
+        <h2><?php _e( 'Personal Projects' ); ?></h2>
         <ul>
             <?php query_posts('category_name=personal-projects'); ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -33,7 +33,7 @@ get_header(); ?>
     </section>
 
     <section class="post work-list">
-        <h2>Open-source Projects</h2>
+        <h2><?php _e( 'Open-source Projects' ); ?></h2>
         <ul>
             <?php query_posts('category_name=open-source-projects'); ?>
             <?php while (have_posts()) : the_post(); ?>
