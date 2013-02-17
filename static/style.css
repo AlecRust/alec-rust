@@ -866,6 +866,7 @@ nav ol {
   }
 }
 .global-content {
+  position: relative;
   margin-bottom: 30px;
 }
 .global-content img {
@@ -1269,6 +1270,7 @@ nav ol {
 }
 .post {
   box-shadow: 0 2px 2px #cccccc;
+  position: relative;
   background-color: #f8f8f8;
   margin-bottom: 30px;
   padding: 10px 20px;
@@ -1298,7 +1300,6 @@ nav ol {
 }
 @media only screen and (min-width: 768px) {
   .post {
-    position: relative;
     padding: 30px 40px;
   }
   .post:first-child {
@@ -1457,6 +1458,26 @@ nav ol {
 .timestamp a {
   color: #858585;
   text-decoration: none;
+}
+.edit-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+.edit-link .post-edit-link {
+  color: #eee;
+  background-color: #d13a3a;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 12px;
+}
+.edit-link .post-edit-link:hover {
+  color: #fff;
+  background-color: #d64f4f;
+}
+.edit-link .post-edit-link:active {
+  text-decoration: underline;
 }
 body.page-home .global-header .global-header-logo:hover span {
   color: #2ec239;

@@ -26,9 +26,11 @@ get_header(); ?>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
             </div>
 
-            <footer class="entry-meta">
-                <?php edit_post_link( __( 'Edit Page' ), '<p class="edit-link">', '</p>' ); ?>
+            <footer class="entry-meta visuallyhidden">
+                <?php alecrust_entry_meta(); ?>
             </footer>
+
+            <?php edit_post_link( __( 'Edit' ), '<aside class="edit-link">', '</aside>' ); ?>
 
         </article>
 

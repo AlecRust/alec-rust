@@ -39,3 +39,28 @@
         text-decoration: none;
     }
 }
+
+// Edit link
+.edit-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 0;
+
+    .post-edit-link {
+        color: #eee;
+        background-color: @edit-color;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 12px;
+
+        &:hover {
+            color: #fff;
+            background-color: lighten(@edit-color, 5%);
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
