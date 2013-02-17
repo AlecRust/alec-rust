@@ -1288,9 +1288,6 @@ nav ol {
   color: #919191;
   text-decoration: none;
 }
-.post .entry-meta a:hover {
-  text-decoration: underline;
-}
 .post .entry-content p {
   font-size: 15px;
 }

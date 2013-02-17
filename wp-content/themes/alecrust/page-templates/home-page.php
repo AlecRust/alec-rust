@@ -57,7 +57,7 @@ get_header(); ?>
             <li><a href="/work/disney/"><img src="images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
             <li><a href="/work/bbc-worldwide/"><img src="images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
-        <p class="view-more"><a href="/work/"><?php _e( 'See my work' ); ?>/a></p>
+        <p class="view-more"><a href="/work/"><?php _e( 'See my work' ); ?></a></p>
     </section>
 
     <section class="module module-activity">
