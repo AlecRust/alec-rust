@@ -20,11 +20,19 @@
     overflow: hidden;
 
     &:before {
+        .size(0, 150%);
         content: "";
         display: block;
-        width: 0;
-        height: 150%;
     }
+}
+
+// Sizing shortcuts
+.size(@width, @height) {
+    width: @width;
+    height: @height;
+}
+.square(@size) {
+    .size(@size, @size);
 }
 
 // Single Corner Border Radius

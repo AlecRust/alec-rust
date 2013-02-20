@@ -24,10 +24,10 @@ Text Domain: alecrust
     overflow: hidden;
 }
 .ir:before {
-    content: "";
-    display: block;
     width: 0;
     height: 150%;
+    content: "";
+    display: block;
 }
 article,
 aside,
@@ -366,23 +366,23 @@ nav ol {
     margin-bottom: 30px;
 }
 .show-search {
+    width: 1px;
+    height: 1px;
     border: 0;
     clip: rect(0 0 0 0);
-    height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
 }
 .show-search.focusable:active,
 .show-search.focusable:focus {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
 }
 .global-search-input {
     box-shadow: inset 0 1px 4px #777777;
@@ -445,83 +445,83 @@ nav ol {
         margin: 46px 40px 0 0;
     }
     .global-search form {
+        width: 1px;
+        height: 1px;
         border: 0;
         clip: rect(0 0 0 0);
-        height: 1px;
         margin: -1px;
         overflow: hidden;
         padding: 0;
         position: absolute;
-        width: 1px;
     }
     .global-search form.focusable:active,
     .global-search form.focusable:focus {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
     }
     .global-search.search-visible {
         overflow: hidden;
     }
     .global-search.search-visible form {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
     }
     .global-search.search-visible .show-search {
+        width: 1px;
+        height: 1px;
         border: 0;
         clip: rect(0 0 0 0);
-        height: 1px;
         margin: -1px;
         overflow: hidden;
         padding: 0;
         position: absolute;
-        width: 1px;
     }
     .global-search.search-visible .show-search.focusable:active,
     .global-search.search-visible .show-search.focusable:focus {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
     }
     .show-search {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
         margin-bottom: 0;
     }
     .show-search a {
-        background-color: transparent;
-        border: 0;
-        overflow: hidden;
+        width: 48px;
+        height: 48px;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
         opacity: 0.4;
         filter: alpha(opacity=40);
+        background-color: transparent;
+        border: 0;
+        overflow: hidden;
         display: block;
-        width: 48px;
-        height: 48px;
         background-image: url("images/global-sprite.png");
     }
     .show-search a:before {
-        content: "";
-        display: block;
         width: 0;
         height: 150%;
+        content: "";
+        display: block;
     }
     .show-search a:hover {
         opacity: 0.5;
@@ -561,53 +561,53 @@ nav ol {
     margin-bottom: 20px;
 }
 .global-navigation ul {
+    width: 1px;
+    height: 1px;
     border: 0;
     clip: rect(0 0 0 0);
-    height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
     list-style: none;
     text-align: right;
 }
 .global-navigation ul.focusable:active,
 .global-navigation ul.focusable:focus {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
 }
 .global-navigation.navigation-visible ul {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
     width: 100%;
 }
 .global-navigation.navigation-visible .show-navigation {
+    width: 1px;
+    height: 1px;
     border: 0;
     clip: rect(0 0 0 0);
-    height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
 }
 .global-navigation.navigation-visible .show-navigation.focusable:active,
 .global-navigation.navigation-visible .show-navigation.focusable:focus {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
 }
 .global-navigation li {
     background-color: #3e3e3e;
@@ -678,39 +678,39 @@ nav ol {
     color: #fff;
 }
 .global-navigation .home a:before {
-    top: 12px;
     width: 14px;
     height: 14px;
+    top: 12px;
     background-position: 0 -62px;
 }
 .global-navigation .about a:before {
-    top: 13px;
     width: 12px;
     height: 12px;
+    top: 13px;
     background-position: 0 -90px;
 }
 .global-navigation .work a:before {
-    top: 14px;
     width: 13px;
     height: 11px;
+    top: 14px;
     background-position: 0 -117px;
 }
 .global-navigation .projects a:before {
-    top: 13px;
     width: 12px;
     height: 13px;
+    top: 13px;
     background-position: 0 -143px;
 }
 .global-navigation .blog a:before {
-    top: 13px;
     width: 11px;
     height: 13px;
+    top: 13px;
     background-position: 0 -170px;
 }
 .global-navigation .contact a:before {
-    top: 15px;
     width: 13px;
     height: 9px;
+    top: 15px;
     background-position: 0 -197px;
 }
 .show-navigation {
@@ -756,32 +756,32 @@ nav ol {
 }
 @media only screen and (min-width: 480px) {
     .global-navigation ul {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
         text-align: center;
     }
     .global-navigation .show-navigation {
+        width: 1px;
+        height: 1px;
         border: 0;
         clip: rect(0 0 0 0);
-        height: 1px;
         margin: -1px;
         overflow: hidden;
         padding: 0;
         position: absolute;
-        width: 1px;
     }
     .global-navigation .show-navigation.focusable:active,
     .global-navigation .show-navigation.focusable:focus {
-        clip: auto;
+        width: auto;
         height: auto;
+        clip: auto;
         margin: 0;
         overflow: visible;
         position: static;
-        width: auto;
     }
     .global-navigation li {
         box-shadow: none;
@@ -1166,13 +1166,13 @@ nav ol {
     padding-left: 44px;
 }
 .module-tweets li:before {
+    width: 26px;
+    height: 21px;
     content: "";
     display: block;
     position: absolute;
     top: 3px;
     left: 7px;
-    width: 26px;
-    height: 21px;
     background: url("images/global-sprite.png") 0 -432px;
 }
 @media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
@@ -1583,31 +1583,31 @@ body.page-contact .global-header .global-header-logo:hover span {
     visibility: hidden;
 }
 .visuallyhidden {
+    width: 1px;
+    height: 1px;
     border: 0;
     clip: rect(0 0 0 0);
-    height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
-    width: 1px;
 }
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
 }
 .visible {
-    clip: auto;
+    width: auto;
     height: auto;
+    clip: auto;
     margin: 0;
     overflow: visible;
     position: static;
-    width: auto;
 }
 @media print {
     * {
