@@ -389,7 +389,7 @@ nav ol {
     font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
     border: 0;
     border-radius: 3px;
-    padding: 11px 14px;
+    padding: 12px 14px 9px;
 }
 .global-search-button {
     background-color: #3e3e3e;
@@ -1281,7 +1281,7 @@ nav ol {
     position: relative;
     background-color: #f8f8f8;
     margin-bottom: 30px;
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
 .post .entry-title a {
     text-decoration: none;
@@ -1289,17 +1289,36 @@ nav ol {
 .post .entry-title a:hover {
     text-decoration: underline;
 }
+.post .entry-content p {
+    font-size: 15px;
+}
 .post .entry-meta {
-    text-align: right;
     font-size: 13px;
     color: #919191;
+}
+.post .entry-meta:before,
+.post .entry-meta:after {
+    content: " ";
+    display: table;
+}
+.post .entry-meta:after {
+    clear: both;
+}
+.post .entry-meta .comments-link {
+    float: left;
+}
+.post .entry-meta .comments-link a:hover {
+    text-decoration: underline;
+}
+.post .entry-meta .timestamp {
+    float: right;
+}
+.post .entry-meta p {
+    margin-bottom: 0;
 }
 .post .entry-meta a {
     color: #919191;
     text-decoration: none;
-}
-.post .entry-content p {
-    font-size: 15px;
 }
 @media only screen and (min-width: 480px) {
     .post {
@@ -1316,11 +1335,10 @@ nav ol {
     .post .entry-title {
         padding-right: 110px;
     }
-    .post .entry-meta {
+    .post .entry-meta .timestamp {
         position: absolute;
         top: 52px;
         right: 40px;
-        text-align: left;
     }
 }
 @media only screen and (min-width: 1024px) {

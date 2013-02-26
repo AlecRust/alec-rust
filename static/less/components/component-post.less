@@ -5,7 +5,7 @@
     position: relative;
     background-color: @content-background;
     margin-bottom: 30px;
-    padding: 10px 20px;
+    padding: 15px 20px;
 
     .entry-title {
 
@@ -18,21 +18,37 @@
         }
     }
 
-    .entry-meta {
-        text-align: right;
-        font-size: @base-font-size - 1;
-        color: lighten(@text-color, 35%);
-
-        a {
-            color: lighten(@text-color, 35%);
-            text-decoration: none;
-        }
-    }
-
     .entry-content {
 
         p {
             font-size: @base-font-size + 1;
+        }
+    }
+
+    .entry-meta {
+        .clearfix;
+        font-size: @base-font-size - 1;
+        color: lighten(@text-color, 35%);
+
+        .comments-link {
+            float: left;
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .timestamp {
+            float: right;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: lighten(@text-color, 35%);
+            text-decoration: none;
         }
     }
 }
@@ -62,10 +78,12 @@
         }
 
         .entry-meta {
-            position: absolute;
-            top: 52px;
-            right: 40px;
-            text-align: left;
+
+            .timestamp {
+                position: absolute;
+                top: 52px;
+                right: 40px;
+            }
         }
     }
 }
