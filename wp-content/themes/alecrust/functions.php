@@ -23,18 +23,18 @@
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size
  */
 function alecrust_setup() {
-	// This theme styles the visual editor with editor-style.css to match the theme style
-	add_editor_style();
+    // This theme styles the visual editor with editor-style.css to match the theme style
+    add_editor_style();
 
-	// Adds RSS feed links to <head> for posts and comments
-	add_theme_support( 'automatic-feed-links' );
+    // Adds RSS feed links to <head> for posts and comments
+    add_theme_support( 'automatic-feed-links' );
 
-	// This theme supports the "Image" post format
-	add_theme_support( 'post-formats', array( 'image' ) );
+    // This theme supports the "Image" post format
+    add_theme_support( 'post-formats', array( 'image' ) );
 
-	// This theme uses a custom image size for featured images, displayed on "standard" posts
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
+    // This theme uses a custom image size for featured images, displayed on "standard" posts
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'alecrust_setup' );
 
@@ -85,14 +85,14 @@ function remove_body_classes($wp_classes) {
  * Enqueues scripts and styles for front-end
  */
 function alecrust_scripts_styles() {
-	global $wp_styles;
+    global $wp_styles;
 
-	// Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+    // Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+        wp_enqueue_script( 'comment-reply' );
 
-	// Loads the main stylesheet
-	wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
+    // Loads the main stylesheet
+    wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
 
@@ -105,24 +105,24 @@ add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
  * @return string Filtered title
  */
 function alecrust_wp_title( $title, $sep ) {
-	global $paged, $page;
+    global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+    if ( is_feed() )
+        return $title;
 
-	// Adds the site name
-	$title .= get_bloginfo( 'name' );
+    // Adds the site name
+    $title .= get_bloginfo( 'name' );
 
-	// Adds the site description for the front page
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_front_page() ) )
-		$title = "$title $sep $site_description";
+    // Adds the site description for the front page
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_front_page() ) )
+        $title = "$title $sep $site_description";
 
-	// Adds a page number if necessary
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+    // Adds a page number if necessary
+    if ( $paged >= 2 || $page >= 2 )
+        $title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 
-	return $title;
+    return $title;
 }
 add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 
@@ -146,9 +146,9 @@ add_filter('the_content_more_link', 'add_more_wrapper');
  * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link
  */
 function alecrust_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
-	return $args;
+    if ( ! isset( $args['show_home'] ) )
+        $args['show_home'] = true;
+    return $args;
 }
 add_filter( 'wp_page_menu_args', 'alecrust_page_menu_args' );
 
@@ -157,17 +157,17 @@ add_filter( 'wp_page_menu_args', 'alecrust_page_menu_args' );
  */
 if ( ! function_exists( 'alecrust_content_nav' ) ) :
 function alecrust_content_nav( $html_id ) {
-	global $wp_query;
+    global $wp_query;
 
-	$html_id = esc_attr( $html_id );
+    $html_id = esc_attr( $html_id );
 
-	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="visuallyhidden"><?php _e( 'Post navigation' ); ?></h3>
-			<div class="nav-previous alignleft"><?php next_posts_link( __( 'Older posts' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts' ) ); ?></div>
-		</nav>
-	<?php endif;
+    if ( $wp_query->max_num_pages > 1 ) : ?>
+        <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
+            <h3 class="visuallyhidden"><?php _e( 'Post navigation' ); ?></h3>
+            <div class="nav-previous alignleft"><?php next_posts_link( __( 'Older posts' ) ); ?></div>
+            <div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts' ) ); ?></div>
+        </nav>
+    <?php endif;
 }
 endif;
 
@@ -178,55 +178,55 @@ endif;
  */
 if ( ! function_exists( 'alecrust_comment' ) ) :
 function alecrust_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-		// Display trackbacks differently than normal comments
-	?>
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)' ), '<span class="edit-link">', '</span>' ); ?></p>
-	<?php
-			break;
-		default :
-		// Proceed with normal comments
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
-				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<cite class="fn">%1$s %2$s</cite>',
-						get_comment_author_link(),
-						// If current post author is also comment author, make it known visually
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author' ) . '</span>' : ''
-					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s' ), get_comment_date(), get_comment_time() )
-					);
-				?>
-			</header>
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case 'pingback' :
+        case 'trackback' :
+        // Display trackbacks differently than normal comments
+    ?>
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+        <p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)' ), '<span class="edit-link">', '</span>' ); ?></p>
+    <?php
+            break;
+        default :
+        // Proceed with normal comments
+        global $post;
+    ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+        <article id="comment-<?php comment_ID(); ?>" class="comment">
+            <header class="comment-meta comment-author vcard">
+                <?php
+                    echo get_avatar( $comment, 44 );
+                    printf( '<cite class="fn">%1$s %2$s</cite>',
+                        get_comment_author_link(),
+                        // If current post author is also comment author, make it known visually
+                        ( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author' ) . '</span>' : ''
+                    );
+                    printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+                        esc_url( get_comment_link( $comment->comment_ID ) ),
+                        get_comment_time( 'c' ),
+                        /* translators: 1: date, 2: time */
+                        sprintf( __( '%1$s at %2$s' ), get_comment_date(), get_comment_time() )
+                    );
+                ?>
+            </header>
 
-			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
-			<?php endif; ?>
+            <?php if ( '0' == $comment->comment_approved ) : ?>
+                <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+            <?php endif; ?>
 
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit' ), '<p class="edit-link">', '</p>' ); ?>
-			</section>
+            <section class="comment-content comment">
+                <?php comment_text(); ?>
+                <?php edit_comment_link( __( 'Edit' ), '<p class="edit-link">', '</p>' ); ?>
+            </section>
 
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div>
-		</article>
-	<?php
-		break;
-	endswitch; // end comment_type check
+            <div class="reply">
+                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+            </div>
+        </article>
+    <?php
+        break;
+    endswitch; // end comment_type check
 }
 endif;
 
@@ -235,41 +235,41 @@ endif;
  */
 if ( ! function_exists( 'alecrust_entry_meta' ) ) :
 function alecrust_entry_meta() {
-	// Translators: used between list items, there is a space after the comma
-	$categories_list = get_the_category_list( __( ', ' ) );
+    // Translators: used between list items, there is a space after the comma
+    $categories_list = get_the_category_list( __( ', ' ) );
 
-	// Translators: used between list items, there is a space after the comma
-	$tag_list = get_the_tag_list( '', __( ', ' ) );
+    // Translators: used between list items, there is a space after the comma
+    $tag_list = get_the_tag_list( '', __( ', ' ) );
 
-	$date = sprintf( '<a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
+    $date = sprintf( '<a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+        esc_url( get_permalink() ),
+        esc_attr( get_the_time() ),
+        esc_attr( get_the_date( 'c' ) ),
+        esc_html( get_the_date() )
+    );
 
-	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s' ), get_the_author() ) ),
-		get_the_author()
-	);
+    $author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+        esc_attr( sprintf( __( 'View all posts by %s' ), get_the_author() ) ),
+        get_the_author()
+    );
 
-	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
-	if ( $tag_list ) {
-		$utility_text = __( 'Tagged %2$s on %3$s' );
-	} elseif ( $categories_list ) {
-		$utility_text = __( '%3$s' );
-	} else {
-		$utility_text = __( '%3$s' );
-	}
+    // Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
+    if ( $tag_list ) {
+        $utility_text = __( 'Tagged %2$s on %3$s' );
+    } elseif ( $categories_list ) {
+        $utility_text = __( '%3$s' );
+    } else {
+        $utility_text = __( '%3$s' );
+    }
 
-	printf(
-		$utility_text,
-		$categories_list,
-		$tag_list,
-		$date,
-		$author
-	);
+    printf(
+        $utility_text,
+        $categories_list,
+        $tag_list,
+        $date,
+        $author
+    );
 }
 endif;
 
@@ -281,7 +281,7 @@ function add_google_analytics() { ?>
     <script>
         var _gaq=[['_setAccount','UA-3217267-1'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        g.src='//www.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
 <?php } ?>
