@@ -40,6 +40,6 @@
             </p>
         </footer>
 
-        <?php edit_post_link( __( 'Edit' ), '<p class="edit-link">', '</p>' ); ?>
+        <?php edit_post_link( __( 'Edit' ), '<aside class="edit-link">', '</aside>' ); ?>
 
     </article>

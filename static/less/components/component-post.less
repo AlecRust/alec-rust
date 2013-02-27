@@ -33,22 +33,27 @@
         .comments-link {
             float: left;
 
-            a:hover {
-                text-decoration: underline;
+            a {
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
         .timestamp {
             float: right;
+
+            a {
+                color: lighten(@text-color, 35%);
+                text-decoration: none;
+
+                &:hover {}
+            }
         }
 
         p {
             margin-bottom: 0;
-        }
-
-        a {
-            color: lighten(@text-color, 35%);
-            text-decoration: none;
         }
     }
 }

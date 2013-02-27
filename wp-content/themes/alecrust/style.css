@@ -1313,12 +1313,12 @@ nav ol {
 .post .entry-meta .timestamp {
     float: right;
 }
-.post .entry-meta p {
-    margin-bottom: 0;
-}
-.post .entry-meta a {
+.post .entry-meta .timestamp a {
     color: #919191;
     text-decoration: none;
+}
+.post .entry-meta p {
+    margin-bottom: 0;
 }
 @media only screen and (min-width: 480px) {
     .post {

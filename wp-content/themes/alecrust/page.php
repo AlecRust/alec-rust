@@ -27,14 +27,14 @@ get_header(); ?>
             </div>
 
             <footer class="entry-meta visuallyhidden">
-                <?php alecrust_entry_meta(); ?>
+                <p class="timestamp">
+                    <?php alecrust_entry_meta(); ?>
+                </p>
             </footer>
 
             <?php edit_post_link( __( 'Edit' ), '<aside class="edit-link">', '</aside>' ); ?>
 
         </article>
-
-        <?php comments_template( '', true ); ?>
 
     <?php endwhile; ?>
 
