@@ -51,11 +51,11 @@ get_header(); ?>
     <section class="module module-thumbs">
         <h1><?php _e( 'Companies I\'ve worked with'); ?></h1>
         <ul>
-            <li><a href="/work/universal-music/"><img src="/wp-content/themes/alecrust/images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
-            <li><a href="/work/bbc/"><img src="/wp-content/themes/alecrust/images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
-            <li><a href="/work/apple/"><img src="/wp-content/themes/alecrust/images/temp/company-thumb-apple.png" width="120" height="60" alt="Apple"></a></li>
-            <li><a href="/work/disney/"><img src="/wp-content/themes/alecrust/images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
-            <li><a href="/work/bbc-worldwide/"><img src="/wp-content/themes/alecrust/images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
+            <li><a href="/work/universal-music/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
+            <li><a href="/work/bbc/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
+            <li><a href="/work/apple/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-apple.png" width="120" height="60" alt="Apple"></a></li>
+            <li><a href="/work/disney/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
+            <li><a href="/work/bbc-worldwide/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
         <p class="view-more"><a href="/work/"><?php _e( 'See my work' ); ?></a></p>
     </section>

@@ -29,7 +29,7 @@
         <div class="wrap">
 
             <header class="global-header" role="banner">
-                <h1 class="global-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>A</span>lec Rust</a></h1>
+                <h1 class="global-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Alec Rust Home" rel="home"><span>A</span>lec Rust</a></h1>
                 <h2 class="global-header-tagline"><?php bloginfo( 'description' ); ?></h2>
             </header>
 
