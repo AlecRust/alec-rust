@@ -26,6 +26,7 @@
         <?php else : ?>
         <div class="entry-content">
             <?php the_content( __( 'Read more' ) ); ?>
+            <?php /* Render "Websites Developed" section if attached to post */ ?>
             <?php $attachments = new Attachments( 'websites_developed' ); ?>
             <?php if( $attachments->exist() ) : ?>
                 <h2>Websites Developed</h2>

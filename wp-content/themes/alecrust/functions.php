@@ -282,9 +282,10 @@ function alecrust_entry_meta() {
 
     // Outputs only year if "Work" post
     // TODO: Improve to output more information (date range?)
-    // TODO: Improve by wrapping in anchor and <time>
     if ( in_category( 'work' )) {
-        $date = sprintf( the_time('Y') );
+        $date = sprintf( 'Work completed in %1$s',
+            esc_attr( get_the_date( 'Y' ) )
+        );
     } else {
         $date = sprintf( '<a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
             esc_url( get_permalink() ),
