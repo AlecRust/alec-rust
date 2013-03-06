@@ -82,6 +82,11 @@ function remove_body_classes($wp_classes) {
 }
 
 /**
+ * Switches off the "Attachments" plugin Settings panel
+ */
+define( 'ATTACHMENTS_SETTINGS_SCREEN', false );
+
+/**
  * Enqueues scripts and styles for front-end
  */
 function alecrust_scripts_styles() {
