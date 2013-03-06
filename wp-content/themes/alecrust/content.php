@@ -26,6 +26,20 @@
         <?php else : ?>
         <div class="entry-content">
             <?php the_content( __( 'Read more' ) ); ?>
+            <?php $attachments = new Attachments( 'websites_developed' ); ?>
+            <?php if( $attachments->exist() ) : ?>
+                <h2>Websites Developed</h2>
+                <ul class="work-heros">
+                    <?php while( $attachments->get() ) : ?>
+                        <li>
+                            <a href="<?php echo $attachments->field( 'website_url' ); ?>">
+                                <h3><?php echo $attachments->field( 'website_name' ); ?></h3>
+                                <img src="<?php echo $attachments->url(); ?>" width="325" height="425" alt="<?php echo $attachments->field( 'website_name' ); ?>">
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php endif; ?>
         </div>
         <?php endif; ?>
 

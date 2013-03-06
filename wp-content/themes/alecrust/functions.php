@@ -82,6 +82,40 @@ function remove_body_classes($wp_classes) {
 }
 
 /**
+ * Sets up "Websites Developed" section under post using "Attachments" plugin
+ */
+function websites_developed( $attachments )
+{
+    $fields         = array(
+        array(
+            'name'      => 'website_name',                          // unique field name
+            'type'      => 'text',                                  // registered field type
+            'label'     => __( 'Website Name', 'attachments' ),     // label to display
+            'default'   => 'website_name',                          // default value upon selection
+        ),
+        array(
+            'name'      => 'website_url',                           // unique field name
+            'type'      => 'text',                                  // registered field type
+            'label'     => __( 'Website URL', 'attachments' ),      // label to display
+            'default'   => 'website_url',                           // default value upon selection
+        ),
+    );
+    $args = array(
+        'label'         => 'Websites Developed',                    // title of the meta box (string)
+        'post_type'     => array( 'post' ),                         // all post types to utilize (string|array)
+        'position'      => 'normal',                                // meta box position (string) (normal, side or advanced)
+        'priority'      => 'high',                                  // meta box priority (string) (high, default, low, core)
+        'filetype'      => 'image',                                 // allowed file type(s) (array) (image|video|text|audio|application)
+        'button_text'   => __( 'Attach Website', 'attachments' ),   // text for 'Attach' button in meta box (string)
+        'modal_text'    => __( 'Attach', 'attachments' ),           // text for modal 'Attach' button (string)
+        'router'        => 'upload',                                // which tab should be the default in the modal (string) (browse|upload)
+        'fields'        => $fields,                                 // fields array
+    );
+    $attachments->register( 'websites_developed', $args ); // unique instance name
+}
+add_action( 'attachments_register', 'websites_developed' );
+
+/**
  * Switches off the "Attachments" plugin Settings panel
  */
 define( 'ATTACHMENTS_SETTINGS_SCREEN', false );
