@@ -28,10 +28,10 @@
             <?php the_content( __( 'Read more' ) ); ?>
             <?php /* Render "Websites Developed" section if attached to post */ ?>
             <?php $attachments = new Attachments( 'websites_developed' ); ?>
-            <?php if( $attachments->exist() ) : ?>
+            <?php if ( $attachments->exist() ) : ?>
                 <h2>Websites Developed</h2>
                 <ul class="work-heros">
-                    <?php while( $attachments->get() ) : ?>
+                    <?php while ( $attachments->get() ) : ?>
                         <li>
                             <a href="<?php echo $attachments->field( 'website_url' ); ?>">
                                 <h3><?php echo $attachments->field( 'website_name' ); ?></h3>

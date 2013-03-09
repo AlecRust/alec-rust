@@ -22,6 +22,12 @@ get_header(); ?>
             </header>
 
             <div class="entry-content">
+                <?php /* Output Gravatar on About page */ ?>
+                <?php if ( is_page('about') ) : ?>
+                    <div class="bio-image">
+                        <?php echo get_avatar( $id_or_email = 'me@alecrust.com', $size = '300' ); ?>
+                    </div>
+                <?php endif; ?>
                 <?php the_content(); ?>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
             </div>
