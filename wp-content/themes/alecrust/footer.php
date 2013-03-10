@@ -8,6 +8,16 @@
 ?>
             </main>
 
+            <?php if (is_single() ) { ?>
+            <nav class="post-navigation">
+                <h1 class="visuallyhidden"><?php _e( 'Post Navigation' ); ?></h1>
+                <ul>
+                    <li class="prev"><?php previous_post_link( '%link' ); ?></li>
+                    <li class="next"><?php next_post_link( '%link' ); ?></li>
+                </ul>
+            </nav>
+            <?php } ?>
+
             <aside class="global-social-links" role="complementary">
                 <h1 class="visuallyhidden">Social Links</h1>
                 <?php wp_nav_menu( array(
