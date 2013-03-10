@@ -7,3 +7,35 @@ body.page-about {
         color: @about-color;
     }
 }
+
+// Bio image
+.bio-image {
+    max-width: 320px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px 15px 10px;
+}
+
+.bio-image-caption {
+    color: lighten(@text-color, 30%);
+    text-align: right;
+    font-size: @base-font-size - 2;
+    padding-top: 10px;
+
+    a {
+        color: lighten(@text-color, 30%);
+    }
+}
+
+// @smartphone-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @smartphone-landscape) {
+
+    // Bio image
+    .bio-image {
+        float: right;
+        width: 40%;
+        margin-left: 20px;
+    }
+}

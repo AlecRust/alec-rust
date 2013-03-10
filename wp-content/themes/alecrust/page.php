@@ -24,9 +24,10 @@ get_header(); ?>
             <div class="entry-content">
                 <?php /* Output Gravatar on About page */ ?>
                 <?php if ( is_page('about') ) : ?>
-                    <div class="bio-image">
+                    <figure class="bio-image">
                         <?php echo get_avatar( $id_or_email = 'me@alecrust.com', $size = '300' ); ?>
-                    </div>
+                        <figcaption class="bio-image-caption">My current <a href="http://en.gravatar.com/">Gravatar</a></figcaption>
+                    </figure>
                 <?php endif; ?>
                 <?php the_content(); ?>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>

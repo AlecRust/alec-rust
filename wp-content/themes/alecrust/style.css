@@ -1584,6 +1584,29 @@ body.page-home.page .global-content {
 body.page-about .global-header .global-header-logo:hover span {
     color: #3e7fd7;
 }
+.bio-image {
+    max-width: 320px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px 15px 10px;
+}
+.bio-image-caption {
+    color: #858585;
+    text-align: right;
+    font-size: 12px;
+    padding-top: 10px;
+}
+.bio-image-caption a {
+    color: #858585;
+}
+@media only screen and (min-width: 480px) {
+    .bio-image {
+        float: right;
+        width: 40%;
+        margin-left: 20px;
+    }
+}
 body.page-work .global-header .global-header-logo:hover span {
     color: #d13a3a;
 }
