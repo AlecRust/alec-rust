@@ -2,12 +2,6 @@
 // -------------------------
 .wpcf7 {
 
-    form {}
-
-    p {}
-
-    span {}
-
     // Text inputs
     input[type="text"],
     textarea {
@@ -25,6 +19,7 @@
     }
 
     // Send button
+    // TODO: Refactor in to button component
     .wpcf7-submit {
         #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
         background-color: lighten(@brand-color, .5%);

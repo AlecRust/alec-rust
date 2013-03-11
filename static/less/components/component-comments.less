@@ -1,0 +1,80 @@
+// "Comments" page component
+// -------------------------
+.comments-area {
+    padding: 0 20px 20px;
+
+    // "Leave a reply" title
+    .reply-title {}
+
+    // Cancel reply link
+    #cancel-comment-reply-link {
+        font-size: @base-font-size - 1;
+    }
+
+    // Comment form textarea
+    #comment {
+        .box-shadow(inset 0 1px 4px #eee);
+        color: lighten(@text-color, 30%);
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: @border-radius;
+        padding: 10px;
+
+        &:hover,
+        &:focus {
+            border-color: #aaa;
+        }
+    }
+
+    // "Allowed tags" info
+    // TODO: Remove?
+    .form-allowed-tags {
+        font-size: @base-font-size - 2;
+    }
+
+    // "Post Comment" button
+    // TODO: Refactor in to button component
+    .form-submit {
+        text-align: center;
+        margin-bottom: 0;
+
+        input {
+            display: inline-block;
+            background-color: lighten(@brand-color, .5%);
+            font-size: @base-font-size + 2;
+            color: #e5e5e5;
+            border: 0;
+            border-radius: @border-radius;
+            padding: 12px 20px 10px;
+
+            &:hover {
+                #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
+                background-color: darken(@brand-color, 2%);
+            }
+
+            &:active {
+                color: #fff;
+                #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
+                background-color: lighten(@brand-color, 9%);
+            }
+        }
+    }
+}
+
+// @smartphone-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @smartphone-landscape) {
+
+    .comments-area {
+        padding: 0 30px 30px;
+    }
+}
+
+// @tablet-portrait devices and up
+// -------------------------
+@media only screen and (min-width: @tablet-portrait) {
+
+    .comments-area {
+        padding: 0 40px 40px;
+    }
+}
