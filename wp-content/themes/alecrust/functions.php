@@ -224,7 +224,7 @@ function alecrust_comment( $comment, $args, $depth ) {
         // Display trackbacks differently than normal comments
     ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-        <p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)' ), '<span class="edit-link">', '</span>' ); ?></p>
+        <p><?php _e( 'Pingback:' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)' ), '<aside class="edit-link">', '</aside>' ); ?></p>
     <?php
             break;
         default :
@@ -236,10 +236,8 @@ function alecrust_comment( $comment, $args, $depth ) {
             <header class="comment-meta comment-author vcard">
                 <?php
                     echo get_avatar( $comment, 44 );
-                    printf( '<cite class="fn">%1$s %2$s</cite>',
-                        get_comment_author_link(),
-                        // If current post author is also comment author, make it known visually
-                        ( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author' ) . '</span>' : ''
+                    printf( '<cite class="fn">%1$s</cite>',
+                        get_comment_author_link()
                     );
                     printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
                         esc_url( get_comment_link( $comment->comment_ID ) ),
@@ -260,7 +258,7 @@ function alecrust_comment( $comment, $args, $depth ) {
             </section>
 
             <div class="reply">
-                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
             </div>
         </article>
     <?php

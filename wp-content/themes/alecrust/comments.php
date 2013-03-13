@@ -52,6 +52,6 @@ if ( post_password_required() )
 
     <?php endif; ?>
 
-    <?php comment_form(); ?>
+    <?php comment_form(array('comment_notes_after' => '')); ?>
 
 </div>
