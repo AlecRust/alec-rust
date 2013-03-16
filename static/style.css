@@ -1074,8 +1074,37 @@ nav ol {
   background-color: #f8f8f8;
   margin-bottom: 10px;
 }
+.comments-area article.comment .comment-meta .timestamp {
+  float: right;
+  text-decoration: none;
+  padding: 10px 10px 0 0;
+}
+.comments-area article.comment .comment-content {
+  padding: 10px;
+}
 .comments-area article.comment .comment-content p {
   margin-bottom: 10px;
+}
+.comments-area article.comment .reply a {
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-right-radius: 2px;
+  display: block;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #eee;
+  border-top: 1px solid #ddd;
+  padding: 5px;
+}
+.comments-area article.comment .reply a:hover {
+  background-color: #e9e9e9;
+}
+.comments-area article.comment .reply a:active {
+  background-color: #e5e5e5;
 }
 .comments-area #cancel-comment-reply-link {
   font-size: 13px;

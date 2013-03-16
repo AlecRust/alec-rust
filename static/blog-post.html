@@ -90,8 +90,8 @@
                                 <header class="comment-meta comment-author vcard">
                                     <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=44&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D44&amp;r=G" class="avatar avatar-44 photo" height="44" width="44">
                                     <cite class="fn">Alec</cite>
-                                    <a href="#comment-5">
-                                        <time datetime="2013-03-11T09:42:46+00:00">March 11, 2013 at 9:42 am</time>
+                                    <a href="#comment-5" class="timestamp" title="2013-03-11T09:42:46+00:00">
+                                        <time datetime="2013-03-11T09:42:46+00:00">March 11, 2013</time>
                                     </a>
                                 </header>
                                 <section class="comment-content comment">
@@ -110,8 +110,8 @@
                                         <header class="comment-meta comment-author vcard">
                                             <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=44&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D44&amp;r=G" class="avatar avatar-44 photo" height="44" width="44">
                                             <cite class="fn">Alec</cite>
-                                            <a href="#comment-7">
-                                                <time datetime="2013-03-11T09:43:03+00:00">March 11, 2013 at 9:43 am</time>
+                                            <a href="#comment-7" class="timestamp" title="2013-03-11T09:43:03+00:00">
+                                                <time datetime="2013-03-11T09:43:03+00:00">March 11, 2013</time>
                                             </a>
                                         </header>
                                         <section class="comment-content comment">
@@ -130,8 +130,8 @@
                                                 <header class="comment-meta comment-author vcard">
                                                     <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=44&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D44&amp;r=G" class="avatar avatar-44 photo" height="44" width="44">
                                                     <cite class="fn">Alec</cite>
-                                                    <a href="#comment-9">
-                                                        <time datetime="2013-03-11T09:43:24+00:00">March 11, 2013 at 9:43am</time>
+                                                    <a href="#comment-9" class="timestamp" title="2013-03-11T09:43:24+00:00">
+                                                        <time datetime="2013-03-11T09:43:24+00:00">March 11, 2013</time>
                                                     </a>
                                                 </header>
                                                 <section class="comment-content comment">
@@ -154,8 +154,8 @@
                                 <header class="comment-meta comment-author vcard">
                                     <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=44&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D44&amp;r=G" class="avatar avatar-44 photo" height="44" width="44">
                                     <cite class="fn">Alec</cite>
-                                    <a href="#comment-6">
-                                        <time datetime="2013-03-11T09:42:51+00:00">March 11, 2013 at 9:42 am</time>
+                                    <a href="#comment-6" class="timestamp" title="2013-03-11T09:42:51+00:00">
+                                        <time datetime="2013-03-11T09:42:51+00:00">March 11, 2013</time>
                                     </a>
                                 </header>
                                 <section class="comment-content comment">
@@ -174,8 +174,8 @@
                                 <header class="comment-meta comment-author vcard">
                                     <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=44&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D44&amp;r=G" class="avatar avatar-44 photo" height="44" width="44">
                                     <cite class="fn">Alec</cite>
-                                    <a href="#comment-8">
-                                        <time datetime="2013-03-11T09:43:13+00:00">March 11, 2013 at 9:43 am</time>
+                                    <a href="#comment-8" class="timestamp" title="2013-03-11T09:43:13+00:00">
+                                        <time datetime="2013-03-11T09:43:13+00:00">March 11, 2013</time>
                                     </a>
                                 </header>
                                 <section class="comment-content comment">
@@ -198,9 +198,17 @@
                             </small>
                         </h3>
                         <form action="#" method="post" id="commentform">
-                            <p class="logged-in-as">
-                                Logged in as <a href="#">Alec</a>.
-                                <a href="#" title="Log out of this account">Log out?</a>
+                            <p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
+                            <p class="comment-form-author">
+                                <label for="author">Name <span class="required">*</span></label>
+                                <input id="author" name="author" type="text" value="" size="30" aria-required="true">
+                            </p>
+                            <p class="comment-form-email">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input id="email" name="email" type="text" value="" size="30" aria-required="true">
+                            </p>
+                            <p class="comment-form-url">
+                                <label for="url">Website</label><input id="url" name="url" type="text" value="" size="30">
                             </p>
                             <p class="comment-form-comment">
                                 <label for="comment">Comment</label>
@@ -209,13 +217,6 @@
                             <p class="form-submit">
                                 <input name="submit" type="submit" id="submit" value="Post Comment">
                             </p>
-                            <script>
-                                (function () {
-                                    if (window === window.parent) {
-                                        document.getElementById('_wp_unfiltered_html_comment_disabled').name = '_wp_unfiltered_html_comment';
-                                    }
-                                })();
-                            </script>
                         </form>
                     </div>
                 </div>

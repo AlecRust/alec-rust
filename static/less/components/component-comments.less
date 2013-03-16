@@ -35,10 +35,18 @@
         margin-bottom: 10px;
 
         // Comment meta
-        .comment-meta {}
+        .comment-meta {
+
+            .timestamp {
+                float: right;
+                text-decoration: none;
+                padding: 10px 10px 0 0;
+            }
+        }
 
         // Comment content
         .comment-content {
+            padding: 10px;
 
             p {
                 margin-bottom: 10px;
@@ -46,7 +54,25 @@
         }
 
         // Reply link
-        .reply {}
+        .reply a {
+            .border-bottom-left-radius(@border-radius);
+            .border-bottom-right-radius(@border-radius);
+            display: block;
+            font-size: @base-font-size - 1;
+            text-align: center;
+            text-decoration: none;
+            background-color: #eee;
+            border-top: 1px solid #ddd;
+            padding: 5px;
+
+            &:hover {
+                background-color: #e9e9e9;
+            }
+
+            &:active {
+                background-color: #e5e5e5;
+            }
+        }
     }
 
     // "Leave a reply" title
