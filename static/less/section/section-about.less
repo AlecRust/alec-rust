@@ -10,10 +10,11 @@ body.page-about {
 
 // Bio image
 .bio-image {
+    .box-shadow(1px 2px 3px #ddd);
     max-width: 320px;
     border: 1px solid #eee;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     padding: 15px 15px 10px;
 }
 
@@ -34,8 +35,20 @@ body.page-about {
 
     // Bio image
     .bio-image {
+        .transition(@transition);
         float: right;
         width: 40%;
         margin-left: 20px;
+    }
+}
+
+// @desktop-width devices and up
+// -------------------------
+@media only screen and (min-width: @desktop-width) {
+
+    // Bio image
+    .bio-image {
+        .rotate(4deg);
+        margin-bottom: 30px;
     }
 }

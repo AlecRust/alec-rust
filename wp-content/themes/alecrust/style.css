@@ -1798,10 +1798,11 @@ body.page-about .global-header .global-header-logo:hover span {
     color: #3e7fd7;
 }
 .bio-image {
+    box-shadow: 1px 2px 3px #dddddd;
     max-width: 320px;
     border: 1px solid #eee;
     background-color: #fff;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     padding: 15px 15px 10px;
 }
 .bio-image-caption {
@@ -1815,9 +1816,23 @@ body.page-about .global-header .global-header-logo:hover span {
 }
 @media only screen and (min-width: 480px) {
     .bio-image {
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
         float: right;
         width: 40%;
         margin-left: 20px;
+    }
+}
+@media only screen and (min-width: 1224px) {
+    .bio-image {
+        -webkit-transform: rotate(4deg);
+        -moz-transform: rotate(4deg);
+        -ms-transform: rotate(4deg);
+        -o-transform: rotate(4deg);
+        transform: rotate(4deg);
+        margin-bottom: 30px;
     }
 }
 body.page-work .global-header .global-header-logo:hover span {
