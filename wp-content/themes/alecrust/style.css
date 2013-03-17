@@ -1071,7 +1071,7 @@ nav ol {
 }
 .comments-area .commentlist {
     list-style: none;
-    margin: 0 0 20px;
+    margin: 0 0 25px;
     padding-left: 0;
 }
 .comments-area .children {
@@ -1151,7 +1151,7 @@ nav ol {
     width: 100%;
     border: 1px solid #bbb;
     border-radius: 2px;
-    padding: 5px;
+    padding: 7px;
 }
 .comments-area input[type="text"]:hover,
 .comments-area textarea:hover,
@@ -1222,7 +1222,7 @@ nav ol {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 2px;
-    padding: 10px;
+    padding: 7px;
 }
 .wpcf7 input[type="text"]:hover,
 .wpcf7 textarea:hover,
@@ -1526,10 +1526,6 @@ nav ol {
 .post .entry-meta .timestamp {
     float: right;
 }
-.post .entry-meta .timestamp a {
-    color: #919191;
-    text-decoration: none;
-}
 .post .entry-meta p {
     margin-bottom: 0;
 }
@@ -1693,10 +1689,17 @@ nav ol {
 .timestamp {
     color: #858585;
     font-size: 13px;
+    text-decoration: none;
+}
+.timestamp:hover {
+    color: #919191;
 }
 .timestamp a {
-    color: #858585;
+    color: #919191;
     text-decoration: none;
+}
+.timestamp a:hover {
+    color: #919191;
 }
 .edit-link {
     position: absolute;
