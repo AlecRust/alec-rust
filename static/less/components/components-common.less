@@ -57,11 +57,12 @@
     margin-bottom: 0;
 
     .post-edit-link {
+        .border-bottom-left-radius(@border-radius);
         color: #eee;
         background-color: @edit-color;
         display: inline-block;
         text-decoration: none;
-        padding: 5px 12px;
+        padding: 5px 12px 3px;
 
         &:hover {
             color: #fff;
@@ -70,6 +71,19 @@
 
         &:active {
             text-decoration: underline;
+        }
+    }
+}
+
+// @tablet-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @tablet-landscape) {
+
+// Edit link
+    .edit-link {
+
+        .post-edit-link {
+            .border-top-right-radius(@border-radius + 1);
         }
     }
 }

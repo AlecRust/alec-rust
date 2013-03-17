@@ -652,7 +652,8 @@ nav ol {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
     background-color: #4a4a4a;
 }
-.global-navigation li.current-menu-item a {
+.global-navigation li.current-menu-item a,
+.global-navigation li.current-menu-parent a {
     text-decoration: underline;
 }
 .global-navigation a {
@@ -1708,11 +1709,14 @@ nav ol {
     margin-bottom: 0;
 }
 .edit-link .post-edit-link {
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-bottom-left-radius: 2px;
     color: #eee;
     background-color: #d13a3a;
     display: inline-block;
     text-decoration: none;
-    padding: 5px 12px;
+    padding: 5px 12px 3px;
 }
 .edit-link .post-edit-link:hover {
     color: #fff;
@@ -1720,6 +1724,13 @@ nav ol {
 }
 .edit-link .post-edit-link:active {
     text-decoration: underline;
+}
+@media only screen and (min-width: 1024px) {
+    .edit-link .post-edit-link {
+        -webkit-border-top-right-radius: 3px;
+        -moz-border-radius-topright: 3px;
+        border-top-right-radius: 3px;
+    }
 }
 body.page-home .global-header .global-header-logo:hover span {
     color: #2ec239;

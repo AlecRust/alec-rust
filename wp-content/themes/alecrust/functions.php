@@ -68,12 +68,12 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
  */
 add_filter('body_class', 'remove_body_classes', 20, 2);
 function remove_body_classes($wp_classes) {
-    if ( is_page_template('page-templates/work-index.php') ) :
+    if ( is_page_template('page-templates/category-work.php') ) :
         foreach($wp_classes as $key => $value) {
             if ($value == 'page') unset($wp_classes[$key]);
         }
     endif;
-    if ( is_page_template('page-templates/projects-index.php') ) :
+    if ( is_page_template('page-templates/category-projects.php') ) :
         foreach($wp_classes as $key => $value) {
             if ($value == 'page') unset($wp_classes[$key]);
         }
