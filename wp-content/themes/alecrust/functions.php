@@ -236,7 +236,7 @@ function alecrust_comment( $comment, $args, $depth ) {
             <header class="comment-meta comment-author vcard">
                 <?php
                     echo get_avatar( $comment, 44 );
-                    printf( '<cite class="fn">%1$s</cite>',
+                    printf( '<cite class="fn author">%1$s</cite>',
                         get_comment_author_link()
                     );
                     printf( '<a href="%1$s" title="%2$s" class="timestamp"><time datetime="%2$s">%3$s</time></a>',

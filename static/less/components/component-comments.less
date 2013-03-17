@@ -36,17 +36,30 @@
 
         // Comment meta
         .comment-meta {
+            overflow: hidden; // .clearfix seems to destroy img border-radius
+
+            .avatar {
+                .border-top-left-radius(@border-radius);
+                .border-bottom-right-radius(@border-radius);
+                float: left;
+            }
+
+            .author {
+                float: left;
+                font-style: normal;
+                padding: 15px 0 0 10px;
+            }
 
             .timestamp {
                 float: right;
                 text-decoration: none;
-                padding: 10px 10px 0 0;
+                padding: 15px 10px 0 0;
             }
         }
 
         // Comment content
         .comment-content {
-            padding: 10px;
+            padding: 20px 10px 10px;
 
             p {
                 margin-bottom: 10px;
@@ -147,6 +160,13 @@
 @media only screen and (min-width: @tablet-portrait) {
 
     .comments-area {
+        width: 80%;
+        margin: auto;
         padding: 0 40px 40px;
+
+        // Single comment
+        article.comment {
+            margin-bottom: 20px;
+        }
     }
 }

@@ -273,6 +273,10 @@ nav ol {
     }
 }
 .global-header {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     margin: 36px 0 30px;
 }
@@ -1082,13 +1086,30 @@ nav ol {
     background-color: #f8f8f8;
     margin-bottom: 10px;
 }
+.comments-area article.comment .comment-meta {
+    overflow: hidden;
+}
+.comments-area article.comment .comment-meta .avatar {
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    border-top-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    border-bottom-right-radius: 2px;
+    float: left;
+}
+.comments-area article.comment .comment-meta .author {
+    float: left;
+    font-style: normal;
+    padding: 15px 0 0 10px;
+}
 .comments-area article.comment .comment-meta .timestamp {
     float: right;
     text-decoration: none;
-    padding: 10px 10px 0 0;
+    padding: 15px 10px 0 0;
 }
 .comments-area article.comment .comment-content {
-    padding: 10px;
+    padding: 20px 10px 10px;
 }
 .comments-area article.comment .comment-content p {
     margin-bottom: 10px;
@@ -1177,7 +1198,12 @@ nav ol {
 }
 @media only screen and (min-width: 768px) {
     .comments-area {
+        width: 80%;
+        margin: auto;
         padding: 0 40px 40px;
+    }
+    .comments-area article.comment {
+        margin-bottom: 20px;
     }
 }
 .wpcf7 input[type="text"],
