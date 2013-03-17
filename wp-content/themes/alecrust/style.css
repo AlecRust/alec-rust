@@ -1138,16 +1138,25 @@ nav ol {
 .comments-area #cancel-comment-reply-link {
     font-size: 13px;
 }
-.comments-area #comment {
+.comments-area .required {
+    color: #f00;
+}
+.comments-area label {
+    display: block;
+}
+.comments-area input[type="text"],
+.comments-area textarea {
     box-shadow: inset 0 1px 4px #eeeeee;
     color: #858585;
     width: 100%;
     border: 1px solid #bbb;
     border-radius: 2px;
-    padding: 10px;
+    padding: 5px;
 }
-.comments-area #comment:hover,
-.comments-area #comment:focus {
+.comments-area input[type="text"]:hover,
+.comments-area textarea:hover,
+.comments-area input[type="text"]:focus,
+.comments-area textarea:focus {
     border-color: #aaa;
 }
 .comments-area .form-allowed-tags {
