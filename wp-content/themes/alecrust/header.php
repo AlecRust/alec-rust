@@ -10,6 +10,12 @@
     <head>
         <meta charset="utf-8">
         <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="description" content="<?php if ( is_single() ) {
+            single_post_title('', true);
+        } else {
+            bloginfo('description');
+        }
+        ?>">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

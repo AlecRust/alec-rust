@@ -935,6 +935,7 @@ nav ol {
 @media only screen and (min-width: 1024px) {
   .global-content {
     width: 69%;
+    min-height: 30em;
     margin: 110px auto;
   }
   .page .global-content {
