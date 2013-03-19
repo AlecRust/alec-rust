@@ -1,14 +1,5 @@
-// "About" page specific styles
+// "Bio Image" page component
 // -------------------------
-body.page-about {
-
-    // "A" logo colour
-    .global-header .global-header-logo:hover span {
-        color: @about-color;
-    }
-}
-
-// Bio image
 .bio-image {
     .box-shadow(1px 2px 3px #ddd);
     max-width: 320px;
@@ -33,7 +24,6 @@ body.page-about {
 // -------------------------
 @media only screen and (min-width: @smartphone-landscape) {
 
-    // Bio image
     .bio-image {
         .transition(@transition);
         float: right;
@@ -46,7 +36,6 @@ body.page-about {
 // -------------------------
 @media only screen and (min-width: @desktop-width) {
 
-    // Bio image
     .bio-image {
         .rotate(4deg);
         margin-bottom: 30px;

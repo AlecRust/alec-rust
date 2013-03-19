@@ -20,6 +20,8 @@ get_header(); ?>
                     printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
                 elseif ( is_year() ) :
                     printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>' );
+                elseif ( in_category( 'blog' ) ) :
+                    _e( 'Blog' );
                 else :
                     _e( 'Archives' );
                 endif;

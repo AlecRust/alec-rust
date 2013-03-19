@@ -64,22 +64,15 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
- * Removes .page class from <body> on Work and Projects index
+ * Removes pages from search results
  */
-add_filter('body_class', 'remove_body_classes', 20, 2);
-function remove_body_classes($wp_classes) {
-    if ( is_page_template('page-templates/category-work.php') ) :
-        foreach($wp_classes as $key => $value) {
-            if ($value == 'page') unset($wp_classes[$key]);
-        }
-    endif;
-    if ( is_page_template('page-templates/category-projects.php') ) :
-        foreach($wp_classes as $key => $value) {
-            if ($value == 'page') unset($wp_classes[$key]);
-        }
-    endif;
-    return $wp_classes;
+function pages_search_filter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
 }
+add_filter('pre_get_posts','pages_search_filter');
 
 /**
  * Sets up "Websites Developed" section under post using "Attachments" plugin
@@ -197,9 +190,7 @@ add_filter( 'wp_page_menu_args', 'alecrust_page_menu_args' );
 if ( ! function_exists( 'alecrust_content_nav' ) ) :
 function alecrust_content_nav( $html_id ) {
     global $wp_query;
-
     $html_id = esc_attr( $html_id );
-
     if ( $wp_query->max_num_pages > 1 ) : ?>
         <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
             <h3 class="visuallyhidden"><?php _e( 'Post navigation' ); ?></h3>
