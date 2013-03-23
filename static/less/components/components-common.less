@@ -49,6 +49,16 @@
     }
 }
 
+// Archive title
+.archive-title {
+    padding-left: 20px;
+}
+
+// Hide archive title on Blog index
+.category-blog .archive-title {
+    .visuallyhidden
+}
+
 // Edit link
 .edit-link {
     position: absolute;
@@ -75,6 +85,27 @@
     }
 }
 
+// @smartphone-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @smartphone-landscape) {
+
+    // Archive title
+    .archive-title {
+        padding-left: 30px;
+    }
+}
+
+// @tablet-portrait devices and up
+// -------------------------
+@media only screen and (min-width: @tablet-portrait) {
+
+    // Archive title
+    h1.archive-title { // Increased specificity to overrid .global-content h1
+        margin-top: 20px;
+        padding-left: 40px;
+    }
+}
+
 // @tablet-landscape devices and up
 // -------------------------
 @media only screen and (min-width: @tablet-landscape) {
@@ -85,5 +116,15 @@
         .post-edit-link {
             .border-top-right-radius(@border-radius + 1);
         }
+    }
+}
+
+// @desktop-width devices and up
+// -------------------------
+@media only screen and (min-width: @desktop-width) {
+
+    // Archive title
+    h1.archive-title { // Increased specificity to overrid .global-content h1
+        margin-top: 0;
     }
 }

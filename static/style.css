@@ -1751,6 +1751,28 @@ nav ol {
 .timestamp a:hover {
   color: #919191;
 }
+.archive-title {
+  padding-left: 20px;
+}
+.category-blog .archive-title {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+.category-blog .archive-title.focusable:active,
+.category-blog .archive-title.focusable:focus {
+  width: auto;
+  height: auto;
+  clip: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+}
 .edit-link {
   position: absolute;
   top: 0;
@@ -1774,11 +1796,27 @@ nav ol {
 .edit-link .post-edit-link:active {
   text-decoration: underline;
 }
+@media only screen and (min-width: 480px) {
+  .archive-title {
+    padding-left: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h1.archive-title {
+    margin-top: 20px;
+    padding-left: 40px;
+  }
+}
 @media only screen and (min-width: 1024px) {
   .edit-link .post-edit-link {
     -webkit-border-top-right-radius: 3px;
     -moz-border-radius-topright: 3px;
     border-top-right-radius: 3px;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  h1.archive-title {
+    margin-top: 0;
   }
 }
 body.page-home.page .global-content {
