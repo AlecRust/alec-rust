@@ -32,32 +32,29 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="wrap">
+        <header class="global-header" role="banner">
+            <h1 class="global-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Alec Rust Home" rel="home"><span>A</span>lec Rust</a></h1>
+            <h2 class="global-header-tagline"><?php bloginfo( 'description' ); ?></h2>
+        </header>
 
-            <header class="global-header" role="banner">
-                <h1 class="global-header-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Alec Rust Home" rel="home"><span>A</span>lec Rust</a></h1>
-                <h2 class="global-header-tagline"><?php bloginfo( 'description' ); ?></h2>
-            </header>
+        <section class="global-search" role="search">
+            <p class="show-search">
+                <a href="#"><?php _e( 'Show Search' ); ?></a>
+            </p>
+            <?php get_search_form(); ?>
+        </section>
 
-            <section class="global-search" role="search">
-                <p class="show-search">
-                    <a href="#"><?php _e( 'Show Search' ); ?></a>
-                </p>
-                <?php get_search_form(); ?>
-            </section>
+        <nav class="global-navigation">
+            <h1 class="visuallyhidden"><?php _e( 'Main Navigation' ); ?></h1>
+            <p class="show-navigation">
+                <a href="#"><?php _e( 'Show Navigation' ); ?></a>
+            </p>
+            <?php wp_nav_menu( array(
+                'theme_location'  => 'primary-menu',
+                'menu'            => 'primary-menu',
+                'container'       => false,
+                'items_wrap'      => '<ul>%3$s</ul>'
+            ) ); ?>
+        </nav>
 
-            <nav class="global-navigation">
-                <h1 class="visuallyhidden"><?php _e( 'Main Navigation' ); ?></h1>
-                <p class="show-navigation">
-                    <a href="#"><?php _e( 'Show Navigation' ); ?></a>
-                </p>
-                <?php wp_nav_menu( array(
-                    'theme_location'  => 'primary-menu',
-                    'menu'            => 'primary-menu',
-                    'container'       => false,
-                    'items_wrap'      => '<ul>%3$s</ul>'
-                ) ); ?>
-            </nav>
-
-            <main class="global-content" role="main">
-
+        <main class="global-content" role="main">

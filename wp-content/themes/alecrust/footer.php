@@ -6,29 +6,27 @@
  * @subpackage Alec_Rust
  */
 ?>
-            </main>
+        </main>
 
-            <?php if (is_single() ) { ?>
-            <nav class="post-navigation">
-                <h1 class="visuallyhidden"><?php _e( 'Post Navigation' ); ?></h1>
-                <ul>
-                    <li class="prev"><?php previous_post_link( '%link' ); ?></li>
-                    <li class="next"><?php next_post_link( '%link' ); ?></li>
-                </ul>
-            </nav>
-            <?php } ?>
+        <?php if (is_single() ) { ?>
+        <nav class="post-navigation">
+            <h1 class="visuallyhidden"><?php _e( 'Post Navigation' ); ?></h1>
+            <ul>
+                <li class="prev"><?php previous_post_link( '%link' ); ?></li>
+                <li class="next"><?php next_post_link( '%link' ); ?></li>
+            </ul>
+        </nav>
+        <?php } ?>
 
-            <aside class="global-social-links" role="complementary">
-                <h1 class="visuallyhidden">Social Links</h1>
-                <?php wp_nav_menu( array(
-                    'theme_location'  => 'social-menu',
-                    'menu'            => 'social-menu',
-                    'container'       => false,
-                    'items_wrap'      => '<ul>%3$s</ul>'
-                ) ); ?>
-            </aside>
-
-        </div>
+        <aside class="global-social-links" role="complementary">
+            <h1 class="visuallyhidden">Social Links</h1>
+            <?php wp_nav_menu( array(
+                'theme_location'  => 'social-menu',
+                'menu'            => 'social-menu',
+                'container'       => false,
+                'items_wrap'      => '<ul>%3$s</ul>'
+            ) ); ?>
+        </aside>
 
         <footer class="global-footer" role="contentinfo">
             <p>Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>

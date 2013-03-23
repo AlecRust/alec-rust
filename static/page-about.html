@@ -17,102 +17,98 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="wrap">
+        <header class="global-header" role="banner">
+            <h1 class="global-header-logo"><a href="index.html" title="Alec Rust Home" rel="home"><span>A</span>lec Rust</a></h1>
+            <h2 class="global-header-tagline">User Interface Developer</h2>
+        </header>
 
-            <header class="global-header" role="banner">
-                <h1 class="global-header-logo"><a href="index.html" title="Alec Rust Home" rel="home"><span>A</span>lec Rust</a></h1>
-                <h2 class="global-header-tagline">User Interface Developer</h2>
-            </header>
+        <section class="global-search" role="search">
+            <p class="show-search">
+                <a href="#">Show Search</a>
+            </p>
+            <form role="search" method="get" action="#">
+                <h1 class="visuallyhidden">Search</h1>
+                <label for="s" class="visuallyhidden">Search</label>
+                <input type="search" name="s" id="s" class="global-search-input" placeholder="Search&hellip;" required>
+                <button type="submit" name="submit" class="global-search-button">Go</button>
+            </form>
+        </section>
 
-            <section class="global-search" role="search">
-                <p class="show-search">
-                    <a href="#">Show Search</a>
-                </p>
-                <form role="search" method="get" action="#">
-                    <h1 class="visuallyhidden">Search</h1>
-                    <label for="s" class="visuallyhidden">Search</label>
-                    <input type="search" name="s" id="s" class="global-search-input" placeholder="Search&hellip;" required>
-                    <button type="submit" name="submit" class="global-search-button">Go</button>
-                </form>
-            </section>
+        <nav class="global-navigation">
+            <h1 class="visuallyhidden">Main Navigation</h1>
+            <p class="show-navigation">
+                <a href="#">Show Navigation</a>
+            </p>
+            <ul>
+                <li class="home"><a href="index.html" rel="home">Home</a></li>
+                <li class="about current-menu-item"><a href="page-about.html">About</a></li>
+                <li class="work"><a href="index-work.html">Work</a></li>
+                <li class="projects"><a href="index-projects.html">Projects</a></li>
+                <li class="blog"><a href="index-blog.html">Blog</a></li>
+                <li class="contact"><a href="page-contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-            <nav class="global-navigation">
-                <h1 class="visuallyhidden">Main Navigation</h1>
-                <p class="show-navigation">
-                    <a href="#">Show Navigation</a>
-                </p>
-                <ul>
-                    <li class="home"><a href="index.html" rel="home">Home</a></li>
-                    <li class="about current-menu-item"><a href="page-about.html">About</a></li>
-                    <li class="work"><a href="index-work.html">Work</a></li>
-                    <li class="projects"><a href="index-projects.html">Projects</a></li>
-                    <li class="blog"><a href="index-blog.html">Blog</a></li>
-                    <li class="contact"><a href="page-contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <main class="global-content" role="main">
 
-            <main class="global-content" role="main">
+            <article class="page hentry">
+                <header class="entry-header">
+                    <h1 class="entry-title">About</h1>
+                </header>
+                <div class="entry-content">
+                    <figure class="bio-image">
+                        <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=300&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D300&amp;r=G" class="avatar avatar-300 photo" height="300" width="300">
+                        <figcaption class="bio-image-caption">My current <a href="#">Gravatar</a></figcaption>
+                    </figure>
+                    <h2>Heading Level 2</h2>
+                    <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Curabitur mollis dolor et massa vehicula lobortis. Donec commodo, nisi quis aliquam elementum, massa metus tincidunt libero, in consectetur augue mauris feugiat ligula. Fusce cursus faucibus ligula. Pellentesque diam leo, hendrerit in dignissim eget, adipiscing nec sapien.</p>
+                    <p>Cras eu felis sit amet elit pellentesque sollicitudin. Cras et sapien eu turpis vulputate mollis et vel risus. Aenean mi metus, congue et pharetra faucibus, ornare sed ligula. Donec congue dictum leo, viverra viverra purus pharetra ac.</p>
+                    <h2>Heading Level 2</h2>
+                    <p>Nunc egestas nulla a diam consequat luctus. <a href="#">Donec vulputate nisl non</a> tellus ultricies a pharetra velit fringilla. Duis laoreet mollis erat, vel ultricies neque lobortis non. Pellentesque fermentum, felis ut ullamcorper lacinia, purus turpis cursus quam, sed aliquam augue dolor et magna. In justo erat, viverra sit amet volutpat non, interdum ac nisi.</p>
+                    <p>Cras cursus magna at diam sollicitudin a eleifend arcu bibendum. Ut quis dolor purus, eget volutpat nisl. Cras nisl ligula, dapibus sit amet convallis quis, sagittis eget elit. Etiam vel mi dui. Morbi nunc tellus, sagittis et commodo ultricies, convallis nec lorem.</p>
+                    <h3>Heading Level 3</h3>
+                    <p>Vivamus venenatis ultricies lacus, <a href="#">id bibendum</a> felis condimentum nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed quis libero in justo eleifend aliquam laoreet sed quam.</p>
+                    <p>Cras a ligula et mauris fermentum scelerisque sed quis velit. Duis lorem velit, dapibus at elementum in, dapibus at tortor.</p>
+                    <ul>
+                        <li>Unordered list item</li>
+                        <li><a href="#">Unordered list item with link</a></li>
+                        <li>Unordered list item</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Curabitur mollis</a> dolor et massa vehicula lobortis. Donec commodo, nisi quis aliquam elementum, massa metus tincidunt libero, in consectetur augue mauris feugiat ligula. Fusce cursus faucibus ligula. Pellentesque diam leo, hendrerit in dignissim eget, adipiscing nec sapien.</p>
+                    <ol>
+                        <li>Ordered list item</li>
+                        <li><a href="#">Ordered list item with link</a></li>
+                        <li>Ordered list item</li>
+                    </ol>
+                    <blockquote>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <small>Arthur Hemmingway</small>
+                    </blockquote>
+                </div>
+                <footer class="entry-meta visuallyhidden">
+                    <p class="timestamp">
+                        <a href="#" title="8:35 pm"><time class="entry-date" datetime="2013-01-11T20:35:52+00:00">January 11, 2013</time></a>
+                    </p>
+                </footer>
+                <aside class="edit-link">
+                    <a class="post-edit-link" href="#">Edit</a>
+                </aside>
+            </article>
 
-                <article class="page hentry">
-                    <header class="entry-header">
-                        <h1 class="entry-title">About</h1>
-                    </header>
-                    <div class="entry-content">
-                        <figure class="bio-image">
-                            <img alt="" src="http://0.gravatar.com/avatar/01be68ca0f4f9d4b6788d54834a166f3?s=300&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D300&amp;r=G" class="avatar avatar-300 photo" height="300" width="300">
-                            <figcaption class="bio-image-caption">My current <a href="#">Gravatar</a></figcaption>
-                        </figure>
-                        <h2>Heading Level 2</h2>
-                        <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Curabitur mollis dolor et massa vehicula lobortis. Donec commodo, nisi quis aliquam elementum, massa metus tincidunt libero, in consectetur augue mauris feugiat ligula. Fusce cursus faucibus ligula. Pellentesque diam leo, hendrerit in dignissim eget, adipiscing nec sapien.</p>
-                        <p>Cras eu felis sit amet elit pellentesque sollicitudin. Cras et sapien eu turpis vulputate mollis et vel risus. Aenean mi metus, congue et pharetra faucibus, ornare sed ligula. Donec congue dictum leo, viverra viverra purus pharetra ac.</p>
-                        <h2>Heading Level 2</h2>
-                        <p>Nunc egestas nulla a diam consequat luctus. <a href="#">Donec vulputate nisl non</a> tellus ultricies a pharetra velit fringilla. Duis laoreet mollis erat, vel ultricies neque lobortis non. Pellentesque fermentum, felis ut ullamcorper lacinia, purus turpis cursus quam, sed aliquam augue dolor et magna. In justo erat, viverra sit amet volutpat non, interdum ac nisi.</p>
-                        <p>Cras cursus magna at diam sollicitudin a eleifend arcu bibendum. Ut quis dolor purus, eget volutpat nisl. Cras nisl ligula, dapibus sit amet convallis quis, sagittis eget elit. Etiam vel mi dui. Morbi nunc tellus, sagittis et commodo ultricies, convallis nec lorem.</p>
-                        <h3>Heading Level 3</h3>
-                        <p>Vivamus venenatis ultricies lacus, <a href="#">id bibendum</a> felis condimentum nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed quis libero in justo eleifend aliquam laoreet sed quam.</p>
-                        <p>Cras a ligula et mauris fermentum scelerisque sed quis velit. Duis lorem velit, dapibus at elementum in, dapibus at tortor.</p>
-                        <ul>
-                            <li>Unordered list item</li>
-                            <li><a href="#">Unordered list item with link</a></li>
-                            <li>Unordered list item</li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Curabitur mollis</a> dolor et massa vehicula lobortis. Donec commodo, nisi quis aliquam elementum, massa metus tincidunt libero, in consectetur augue mauris feugiat ligula. Fusce cursus faucibus ligula. Pellentesque diam leo, hendrerit in dignissim eget, adipiscing nec sapien.</p>
-                        <ol>
-                            <li>Ordered list item</li>
-                            <li><a href="#">Ordered list item with link</a></li>
-                            <li>Ordered list item</li>
-                        </ol>
-                        <blockquote>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                            <small>Arthur Hemmingway</small>
-                        </blockquote>
-                    </div>
-                    <footer class="entry-meta visuallyhidden">
-                        <p class="timestamp">
-                            <a href="#" title="8:35 pm"><time class="entry-date" datetime="2013-01-11T20:35:52+00:00">January 11, 2013</time></a>
-                        </p>
-                    </footer>
-                    <aside class="edit-link">
-                        <a class="post-edit-link" href="#">Edit</a>
-                    </aside>
-                </article>
+        </main>
 
-            </main>
-
-            <aside class="global-social-links" role="complementary">
-                <h1 class="visuallyhidden">Social Links</h1>
-                <ul>
-                    <li class="github"><a href="#">GitHub</a></li>
-                    <li class="twitter"><a href="#">Twitter</a></li>
-                    <li class="linkedin"><a href="#">LinkedIn</a></li>
-                    <li class="quora"><a href="#">Quora</a></li>
-                    <li class="facebook"><a href="#">Facebook</a></li>
-                    <li class="lastfm"><a href="#">Last.fm</a></li>
-                    <li class="email"><a href="#">Email</a></li>
-                </ul>
-            </aside>
-
-        </div>
+        <aside class="global-social-links" role="complementary">
+            <h1 class="visuallyhidden">Social Links</h1>
+            <ul>
+                <li class="github"><a href="#">GitHub</a></li>
+                <li class="twitter"><a href="#">Twitter</a></li>
+                <li class="linkedin"><a href="#">LinkedIn</a></li>
+                <li class="quora"><a href="#">Quora</a></li>
+                <li class="facebook"><a href="#">Facebook</a></li>
+                <li class="lastfm"><a href="#">Last.fm</a></li>
+                <li class="email"><a href="#">Email</a></li>
+            </ul>
+        </aside>
 
         <footer class="global-footer" role="contentinfo">
             <p>Copyright <time datetime="2013">2013</time> <a href="index.html" rel="home">Alec Rust</a></p>
