@@ -1,6 +1,6 @@
 // Add class to body when scrolling
-var $body = $('body');
 $(window).scroll(function() {
+    var $body = $('body');
     $body.addClass('scrolling');
     var scroll = $(window).scrollTop();
     if (scroll <= 1) {

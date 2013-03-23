@@ -1374,8 +1374,8 @@ nav ol {
   left: 0;
 }
 .module-heros .hero-thumb img {
-  border-radius: 2px;
   box-shadow: 1px 1px 1px #aaaaaa;
+  border-radius: 2px;
 }
 .module-list ul {
   list-style: disc;
@@ -1404,8 +1404,8 @@ nav ol {
   padding: 0 5px;
 }
 .module-thumbs img {
-  border-radius: 2px;
   box-shadow: 1px 1px 1px #aaaaaa;
+  border-radius: 2px;
 }
 .module-activity ul {
   list-style: disc;

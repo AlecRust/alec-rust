@@ -1,4 +1,5 @@
 // "Module" page component
+// Modules on home page
 // -------------------------
 .module {
     margin-bottom: 30px;
@@ -67,8 +68,8 @@
         left: 0;
 
         img {
+            .box-shadow(1px 1px 1px #aaa);
             border-radius: @border-radius;
-            .box-shadow(1px 1px 1px #aaa)
         }
     }
 }
@@ -113,8 +114,8 @@
     }
 
     img {
+        .box-shadow(1px 1px 1px #aaa);
         border-radius: @border-radius;
-        .box-shadow(1px 1px 1px #aaa)
     }
 }
 
@@ -162,9 +163,9 @@
 
             // If HiDPI
             @media print,
-                (-o-min-device-pixel-ratio: 5/4),
-                (-webkit-min-device-pixel-ratio: 1.25),
-                (min-resolution: 120dpi) {
+            (-o-min-device-pixel-ratio: 5/4),
+            (-webkit-min-device-pixel-ratio: 1.25),
+            (min-resolution: 120dpi) {
                 background-image: url("@{sprite-x2-path}");
                 .background-size(48px auto);
             }
