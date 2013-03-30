@@ -1807,6 +1807,10 @@ form.contact-form input[type="submit"]:active {
 .edit-link .post-edit-link:active {
     text-decoration: underline;
 }
+.prettyprint {
+    border-radius: 2px;
+    padding: 10px 15px;
+}
 @media only screen and (min-width: 480px) {
     .archive-title {
         padding-left: 30px;

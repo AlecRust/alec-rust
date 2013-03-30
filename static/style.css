@@ -1611,19 +1611,6 @@ form.contact-form input[type="submit"]:active {
     max-width: 50%;
   }
 }
-.prettyprint {
-  border-radius: 2px;
-  padding: 10px 15px;
-}
-@media only screen and (min-width: 480px) {
-  
-}
-@media only screen and (min-width: 768px) {
-  
-}
-@media only screen and (min-width: 1024px) {
-  
-}
 .work-heros {
   text-align: center;
   list-style: none;
@@ -1811,6 +1798,10 @@ form.contact-form input[type="submit"]:active {
 }
 .edit-link .post-edit-link:active {
   text-decoration: underline;
+}
+.prettyprint {
+  border-radius: 2px;
+  padding: 10px 15px;
 }
 @media only screen and (min-width: 480px) {
   .archive-title {
