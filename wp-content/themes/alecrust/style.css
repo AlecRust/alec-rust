@@ -1273,22 +1273,25 @@ nav ol {
         margin-bottom: 20px;
     }
 }
-.wpcf7 input[type="text"],
-.wpcf7 textarea {
+form.contact-form input[type="text"],
+form.contact-form input[type="email"],
+form.contact-form textarea {
     box-shadow: inset 0 1px 4px #eeeeee;
     color: #858585;
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 2px;
-    padding: 7px;
+    padding: 7px 7px 5px;
 }
-.wpcf7 input[type="text"]:hover,
-.wpcf7 textarea:hover,
-.wpcf7 input[type="text"]:focus,
-.wpcf7 textarea:focus {
+form.contact-form input[type="text"]:hover,
+form.contact-form input[type="email"]:hover,
+form.contact-form textarea:hover,
+form.contact-form input[type="text"]:focus,
+form.contact-form input[type="email"]:focus,
+form.contact-form textarea:focus {
     border-color: #bbb;
 }
-.wpcf7 .wpcf7-submit {
+form.contact-form input[type="submit"] {
     background-color: #3e3e3e;
     background-image: -moz-linear-gradient(top, #454545, #343434);
     background-image: -ms-linear-gradient(top, #454545, #343434);
@@ -1305,7 +1308,7 @@ nav ol {
     border-radius: 2px;
     padding: 12px 20px 10px;
 }
-.wpcf7 .wpcf7-submit:hover {
+form.contact-form input[type="submit"]:hover {
     background-color: #434343;
     background-image: -moz-linear-gradient(top, #4a4a4a, #383838);
     background-image: -ms-linear-gradient(top, #4a4a4a, #383838);
@@ -1317,7 +1320,7 @@ nav ol {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4a4a4a', endColorstr='#383838', GradientType=0);
     background-color: #2e2e2e;
 }
-.wpcf7 .wpcf7-submit:active {
+form.contact-form input[type="submit"]:active {
     color: #fff;
     background-color: #454545;
     background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
@@ -1382,8 +1385,8 @@ nav ol {
     left: 0;
 }
 .module-heros .hero-thumb img {
-    border-radius: 2px;
     box-shadow: 1px 1px 1px #aaaaaa;
+    border-radius: 2px;
 }
 .module-list ul {
     list-style: disc;
@@ -1412,8 +1415,8 @@ nav ol {
     padding: 0 5px;
 }
 .module-thumbs img {
-    border-radius: 2px;
     box-shadow: 1px 1px 1px #aaaaaa;
+    border-radius: 2px;
 }
 .module-activity ul {
     list-style: disc;
@@ -1759,6 +1762,28 @@ nav ol {
 .timestamp a:hover {
     color: #919191;
 }
+.archive-title {
+    padding-left: 20px;
+}
+.category-blog .archive-title {
+    width: 1px;
+    height: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+.category-blog .archive-title.focusable:active,
+.category-blog .archive-title.focusable:focus {
+    width: auto;
+    height: auto;
+    clip: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+}
 .edit-link {
     position: absolute;
     top: 0;
@@ -1782,11 +1807,27 @@ nav ol {
 .edit-link .post-edit-link:active {
     text-decoration: underline;
 }
+@media only screen and (min-width: 480px) {
+    .archive-title {
+        padding-left: 30px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    h1.archive-title {
+        margin-top: 20px;
+        padding-left: 40px;
+    }
+}
 @media only screen and (min-width: 1024px) {
     .edit-link .post-edit-link {
         -webkit-border-top-right-radius: 3px;
         -moz-border-radius-topright: 3px;
         border-top-right-radius: 3px;
+    }
+}
+@media only screen and (min-width: 1224px) {
+    h1.archive-title {
+        margin-top: 0;
     }
 }
 body.page-home.page .global-content {
