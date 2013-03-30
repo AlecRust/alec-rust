@@ -37,6 +37,7 @@
         <script src="<?php echo get_template_directory_uri(); ?>/js/main.min.js"></script>
 
         <?php wp_reset_query(); ?>
+
         <?php if (is_page('home') ) { ?>
         <script src="<?php echo get_template_directory_uri(); ?>/js/cycle-text.js"></script>
         <script>
@@ -51,6 +52,10 @@
                 ]);
             }
         </script>
+        <?php } ?>
+
+        <?php if (is_single() ) { ?>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
         <?php } ?>
 
         <?php wp_footer(); ?>
