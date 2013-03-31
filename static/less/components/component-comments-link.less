@@ -1,0 +1,26 @@
+// "Comments Link" page component
+// -------------------------
+.comments-link {
+    float: left;
+
+    a {
+        color: lighten(@text-color, 30%);
+        text-decoration: none;
+
+        &:hover {
+            color: lighten(@text-color, 15%);
+        }
+
+        &:active {
+            color: @text-color;
+        }
+    }
+}
+
+// @smartphone-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @smartphone-landscape) {}
+
+// @desktop-width devices and up
+// -------------------------
+@media only screen and (min-width: @desktop-width) {}

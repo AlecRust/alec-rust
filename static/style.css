@@ -1265,6 +1265,25 @@ nav ol {
     margin-bottom: 20px;
   }
 }
+.comments-link {
+  float: left;
+}
+.comments-link a {
+  color: #858585;
+  text-decoration: none;
+}
+.comments-link a:hover {
+  color: #5e5e5e;
+}
+.comments-link a:active {
+  color: #383838;
+}
+@media only screen and (min-width: 480px) {
+  
+}
+@media only screen and (min-width: 1224px) {
+  
+}
 form.contact-form input[type="text"],
 form.contact-form input[type="email"],
 form.contact-form textarea {
@@ -1483,8 +1502,39 @@ form.contact-form input[type="submit"]:active {
 .post .entry-title a:hover {
   text-decoration: underline;
 }
+.post .entry-content h1 {
+  font-size: 28px;
+  margin: 30px 0 15px;
+}
+.post .entry-content h2 {
+  font-size: 25px;
+  margin: 30px 0 10px;
+}
+.post .entry-content h3 {
+  font-size: 22px;
+  margin: 30px 0 5px;
+}
 .post .entry-content p {
   font-size: 15px;
+  line-height: 1.5999999999999999;
+}
+.post .entry-content blockquote {
+  background-color: #f9f9f9;
+  border-left: 10px solid #bbb;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  margin: 1.5em 10px;
+  padding: .5em 10px;
+}
+.post .entry-content blockquote:before {
+  color: #bbb;
+  content: open-quote;
+  font-size: 4em;
+  line-height: .1em;
+  vertical-align: -0.4em;
+  margin-right: .25em;
+}
+.post .entry-content blockquote p {
+  display: inline;
 }
 .post .entry-meta {
   font-size: 13px;
@@ -1497,12 +1547,6 @@ form.contact-form input[type="submit"]:active {
 }
 .post .entry-meta:after {
   clear: both;
-}
-.post .entry-meta .comments-link {
-  float: left;
-}
-.post .entry-meta .comments-link a:hover {
-  text-decoration: underline;
 }
 .post .entry-meta .timestamp {
   float: right;
