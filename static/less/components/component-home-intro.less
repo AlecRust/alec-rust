@@ -1,15 +1,5 @@
-// "Home" page specific styles
-// TODO: Refactor this page away. Modularise all the things.
+// "Home Intro" page component
 // -------------------------
-body.page-home {
-
-    &.page .global-content {
-        .box-shadow(none);
-        background-color: transparent;
-    }
-}
-
-// Site introduction
 .home-intro {
     margin-bottom: 30px;
 
@@ -62,23 +52,12 @@ body.page-home {
 // -------------------------
 @media only screen and (min-width: @smartphone-landscape) {
 
-    body.page-home {
+    // Site introduction
+    .home-intro {
 
-        // Site introduction
-        .home-intro {
-
-            li {
-                display: inline-block;
-                margin: 0 35px 0 0;
-            }
-        }
-
-        // "Companies I've worked with" module
-        .module-thumbs {
-
-            li:last-child {
-                margin-right: 0;
-            }
+        li {
+            display: inline-block;
+            margin: 0 35px 0 0;
         }
     }
 }
@@ -87,36 +66,8 @@ body.page-home {
 // -------------------------
 @media only screen and (min-width: @tablet-portrait) {
 
-    body.page-home {
-
-        // Site introduction
-        .home-intro {
-            margin-bottom: 60px;
-        }
-
-        // "Recent work/projects" module
-        .module-heros {
-            float: left;
-        }
-
-        // "Recent blog posts" module
-        .module-list {
-            float: right;
-        }
-
-        // "Companies I've worked with" module
-        .module-thumbs {
-            float: left;
-        }
-
-        // "Recent GitHub activity" module
-        .module-activity {
-            float: left;
-        }
-
-        // "Recent tweets" module
-        .module-tweets {
-            float: right;
-        }
+    // Site introduction
+    .home-intro {
+        margin-bottom: 60px;
     }
 }

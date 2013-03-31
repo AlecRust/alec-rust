@@ -192,6 +192,18 @@
             padding: 0 10px;
         }
     }
+
+    // Home page specific module styling
+    body.page-home {
+
+        // "Companies I've worked with" module
+        .module-thumbs {
+
+            li:last-child {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 // @tablet-portrait devices and up
@@ -205,5 +217,34 @@
 
     .module-thumbs {
         width: 100%;
+    }
+
+    // Home page specific module styling
+    body.page-home {
+
+        // "Recent work/projects" module
+        .module-heros {
+            float: left;
+        }
+
+        // "Recent blog posts" module
+        .module-list {
+            float: right;
+        }
+
+        // "Companies I've worked with" module
+        .module-thumbs {
+            float: left;
+        }
+
+        // "Recent GitHub activity" module
+        .module-activity {
+            float: left;
+        }
+
+        // "Recent tweets" module
+        .module-tweets {
+            float: right;
+        }
     }
 }

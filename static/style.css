@@ -305,6 +305,10 @@ nav ol {
   background-color: #f8f8f8;
   padding: 10px 20px;
 }
+body.page-home.page .global-content {
+  box-shadow: none;
+  background-color: transparent;
+}
 @media only screen and (min-width: 480px) {
   .page .global-content {
     padding: 15px 30px;
@@ -1265,25 +1269,6 @@ nav ol {
     margin-bottom: 20px;
   }
 }
-.comments-link {
-  float: left;
-}
-.comments-link a {
-  color: #858585;
-  text-decoration: none;
-}
-.comments-link a:hover {
-  color: #5e5e5e;
-}
-.comments-link a:active {
-  color: #383838;
-}
-@media only screen and (min-width: 480px) {
-  
-}
-@media only screen and (min-width: 1224px) {
-  
-}
 form.contact-form input[type="text"],
 form.contact-form input[type="email"],
 form.contact-form textarea {
@@ -1479,6 +1464,9 @@ form.contact-form input[type="submit"]:active {
   .module-thumbs li {
     padding: 0 10px;
   }
+  body.page-home .module-thumbs li:last-child {
+    margin-right: 0;
+  }
 }
 @media only screen and (min-width: 768px) {
   .module {
@@ -1487,6 +1475,21 @@ form.contact-form input[type="submit"]:active {
   }
   .module-thumbs {
     width: 100%;
+  }
+  body.page-home .module-heros {
+    float: left;
+  }
+  body.page-home .module-list {
+    float: right;
+  }
+  body.page-home .module-thumbs {
+    float: left;
+  }
+  body.page-home .module-activity {
+    float: left;
+  }
+  body.page-home .module-tweets {
+    float: right;
   }
 }
 .post {
@@ -1653,6 +1656,57 @@ form.contact-form input[type="submit"]:active {
   }
   .post-navigation ul {
     max-width: 50%;
+  }
+}
+.home-intro {
+  margin-bottom: 30px;
+}
+.home-intro h1 {
+  text-shadow: 0 0 5px #fff;
+}
+.home-intro ul {
+  list-style: none;
+  padding: 0 30px;
+}
+.home-intro li {
+  font-size: 15px;
+  text-shadow: 0 0 5px #fff;
+  margin-bottom: 10px;
+}
+.home-intro a {
+  display: inline-block;
+  min-height: 24px;
+  text-decoration: none;
+  background: url("images/global-sprite.png") no-repeat;
+  padding: 4px 0 0 35px;
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  .home-intro a {
+    background-image: url("images/global-sprite-x2.png");
+    -webkit-background-size: 48px auto;
+    -moz-background-size: 48px auto;
+    -o-background-size: 48px auto;
+    background-size: 48px auto;
+  }
+}
+.home-intro a:active {
+  text-decoration: underline;
+}
+.home-intro .about a {
+  background-position: 0 -457px;
+}
+.home-intro .work a {
+  background-position: 0 -483px;
+}
+@media only screen and (min-width: 480px) {
+  .home-intro li {
+    display: inline-block;
+    margin: 0 35px 0 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .home-intro {
+    margin-bottom: 60px;
   }
 }
 .work-heros {
@@ -1843,6 +1897,19 @@ form.contact-form input[type="submit"]:active {
 .edit-link .post-edit-link:active {
   text-decoration: underline;
 }
+.comments-link {
+  float: left;
+}
+.comments-link a {
+  color: #858585;
+  text-decoration: none;
+}
+.comments-link a:hover {
+  color: #5e5e5e;
+}
+.comments-link a:active {
+  color: #383838;
+}
 .prettyprint {
   border-radius: 2px;
   padding: 10px 15px;
@@ -1868,79 +1935,6 @@ form.contact-form input[type="submit"]:active {
 @media only screen and (min-width: 1224px) {
   h1.archive-title {
     margin-top: 0;
-  }
-}
-body.page-home.page .global-content {
-  box-shadow: none;
-  background-color: transparent;
-}
-.home-intro {
-  margin-bottom: 30px;
-}
-.home-intro h1 {
-  text-shadow: 0 0 5px #fff;
-}
-.home-intro ul {
-  list-style: none;
-  padding: 0 30px;
-}
-.home-intro li {
-  font-size: 15px;
-  text-shadow: 0 0 5px #fff;
-  margin-bottom: 10px;
-}
-.home-intro a {
-  display: inline-block;
-  min-height: 24px;
-  text-decoration: none;
-  background: url("images/global-sprite.png") no-repeat;
-  padding: 4px 0 0 35px;
-}
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  .home-intro a {
-    background-image: url("images/global-sprite-x2.png");
-    -webkit-background-size: 48px auto;
-    -moz-background-size: 48px auto;
-    -o-background-size: 48px auto;
-    background-size: 48px auto;
-  }
-}
-.home-intro a:active {
-  text-decoration: underline;
-}
-.home-intro .about a {
-  background-position: 0 -457px;
-}
-.home-intro .work a {
-  background-position: 0 -483px;
-}
-@media only screen and (min-width: 480px) {
-  body.page-home .home-intro li {
-    display: inline-block;
-    margin: 0 35px 0 0;
-  }
-  body.page-home .module-thumbs li:last-child {
-    margin-right: 0;
-  }
-}
-@media only screen and (min-width: 768px) {
-  body.page-home .home-intro {
-    margin-bottom: 60px;
-  }
-  body.page-home .module-heros {
-    float: left;
-  }
-  body.page-home .module-list {
-    float: right;
-  }
-  body.page-home .module-thumbs {
-    float: left;
-  }
-  body.page-home .module-activity {
-    float: left;
-  }
-  body.page-home .module-tweets {
-    float: right;
   }
 }
 .hidden {

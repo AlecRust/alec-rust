@@ -85,8 +85,25 @@
     }
 }
 
+// Comments link
+.comments-link {
+    float: left;
+
+    a {
+        color: lighten(@text-color, 30%);
+        text-decoration: none;
+
+        &:hover {
+            color: lighten(@text-color, 15%);
+        }
+
+        &:active {
+            color: @text-color;
+        }
+    }
+}
+
 // Google Code Prettify
-// -------------------------
 .prettyprint {
     border-radius: @border-radius;
     padding: 10px 15px;

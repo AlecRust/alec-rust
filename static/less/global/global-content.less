@@ -51,6 +51,15 @@
     padding: 10px 20px;
 }
 
+// Remove background colour on home page
+body.page-home {
+
+    &.page .global-content {
+        .box-shadow(none);
+        background-color: transparent;
+    }
+}
+
 // @smartphone-landscape devices and up
 // -------------------------
 @media only screen and (min-width: @smartphone-landscape) {

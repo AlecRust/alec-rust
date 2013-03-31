@@ -10,7 +10,6 @@ html {
 body {
     color: #383838;
     font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    font-size: 14px;
     font-size: 1rem;
     line-height: 1;
     text-rendering: optimizeLegibility;
@@ -19,48 +18,19 @@ body {
 
 /* Headings
 -------------------------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    clear: both;
-    line-height: 1.846153846;
-    margin: 24px 0;
-    margin: 1.714285714rem 0;
-}
-
 h1 {
-    font-size: 21px;
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 28px;
+    margin: 30px 0 15px;
 }
 
 h2 {
-    font-size: 18px;
-    font-size: 1.285714286rem;
-    line-height: 1.6;
+    font-size: 25px;
+    margin: 30px 0 10px;
 }
 
 h3 {
-    font-size: 16px;
-    font-size: 1.142857143rem;
-}
-
-h4 {
-    font-size: 14px;
-    font-size: 1rem;
-}
-
-h5 {
-    font-size: 13px;
-    font-size: 0.928571429rem;
-}
-
-h6 {
-    font-size: 12px;
-    font-size: 0.857142857rem;
+    font-size: 22px;
+    margin: 30px 0 5px;
 }
 
 hr {
@@ -75,13 +45,11 @@ hr {
 -------------------------------- */
 p {
     line-height: 1.714285714;
-    margin: 0 0 24px;
     margin: 0 0 1.714285714rem;
 }
 
 ul,
 ol {
-    margin: 0 0 24px;
     margin: 0 0 1.714285714rem;
     line-height: 1.714285714;
     padding: 0;
@@ -103,24 +71,20 @@ ol ul {
 }
 
 li {
-    margin: 0 0 0 24px;
     margin: 0 0 0 1.714285714rem;
 }
 
 dl {
-    margin: 0 24px;
     margin: 0 1.714285714rem;
 }
 
 dt {
     font-weight: bold;
-    margin-bottom: 24px;
     margin-bottom: 1.714285714rem;
 }
 
 dd {
     line-height: 1.714285714;
-    margin: 0 0 24px;
     margin: 0 0 1.714285714rem;
 }
 
@@ -146,7 +110,6 @@ big {
     font-style: italic !important;
     font-weight: normal;
     margin: 0;
-    padding: 24px;
     padding: 1.714285714rem;
 }
 
@@ -154,13 +117,10 @@ pre {
     border: 1px solid #ededed;
     color: #666;
     font-family: Consolas, Monaco, Lucida Console, monospace;
-    font-size: 12px;
     font-size: 0.857142857rem;
     line-height: 1.714285714;
-    margin: 24px 0;
     margin: 1.714285714rem 0;
     overflow: auto;
-    padding: 24px;
     padding: 1.714285714rem;
 }
 
@@ -169,7 +129,6 @@ kbd,
 samp,
 var {
     font-family: Consolas, Monaco, Lucida Console, monospace;
-    font-size: 12px;
     font-size: 0.857142857rem;
     line-height: 2;
 }
@@ -184,7 +143,6 @@ dfn {
 address {
     display: block;
     line-height: 1.714285714;
-    margin: 0 0 24px;
     margin: 0 0 1.714285714rem;
 }
 
@@ -219,7 +177,6 @@ input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-family: inherit;
-    padding: 6px;
     padding: 0.428571429rem;
 }
 
@@ -227,10 +184,8 @@ textarea {
     border: 1px solid #d5d2ca;
     border-radius: 3px;
     font-family: inherit;
-    font-size: 12px;
     font-size: 0.857142857rem;
     line-height: 1.714285714;
-    padding: 10px;
     padding: 0.714285714rem;
     width: 96%;
 }
@@ -255,23 +210,19 @@ a:hover {
 .alignleft {
     display: inline;
     float: left;
-    margin: 12px 24px 12px 0;
     margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
 }
 
 .alignright {
     display: inline;
     float: right;
-    margin: 12px 0 12px 24px;
     margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
 }
 
 .aligncenter {
     clear: both;
     display: block;
-    margin-top: 12px;
     margin-top: 0.857142857rem;
-    margin-bottom: 12px;
     margin-bottom: 0.857142857rem;
 }
 
@@ -285,7 +236,6 @@ table {
     font-size: 12px;
     font-size: 0.857142857rem;
     line-height: 2;
-    margin: 0 0 24px;
     margin: 0 0 1.714285714rem;
     width: 100%;
 }
@@ -369,6 +319,5 @@ img.wp-smiley {
     font-size: 12px;
     font-size: 0.857142857rem;
     line-height: 2;
-    margin: 0 0 24px;
     margin: 0 0 1.71429rem;
 }
