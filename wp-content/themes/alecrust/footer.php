@@ -39,7 +39,7 @@
         <?php wp_reset_query(); ?>
 
         <?php if (is_page('home') ) { ?>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/cycle-text.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/cycle-text.min.js"></script>
         <script>
             // Cycle intro text at @tabletLandscape and up
             var mq = window.matchMedia('(min-width: 1024px)');

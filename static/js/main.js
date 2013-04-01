@@ -11,7 +11,15 @@ $(window).scroll(function() {
 // Show search
 $('.show-search a').click(function() {
     $('.global-search').addClass('search-visible');
+    $('.global-search-input').focus();
     return false;
+});
+
+// Esc from search
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) { // Esc key
+        $('.global-search').removeClass('search-visible');
+    }
 });
 
 // Show navigation
