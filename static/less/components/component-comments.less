@@ -41,8 +41,8 @@
             overflow: hidden; // .clearfix seems to destroy img border-radius
 
             .avatar {
-                .border-top-left-radius(@border-radius);
-                .border-bottom-right-radius(@border-radius);
+                border-top-left-radius: @border-radius;
+                border-bottom-right-radius: @border-radius;
                 float: left;
             }
 
@@ -70,8 +70,7 @@
 
         // Reply link
         .reply a {
-            .border-bottom-left-radius(@border-radius);
-            .border-bottom-right-radius(@border-radius);
+            .border-bottom-radius(@border-radius);
             display: block;
             font-size: @base-font-size - 1;
             text-align: center;
@@ -87,6 +86,12 @@
             &:active {
                 background-color: #e5e5e5;
             }
+        }
+
+        // Edit link
+        .edit-link {
+            width: 100%;
+            text-align: center;
         }
     }
 
