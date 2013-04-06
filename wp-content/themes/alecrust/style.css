@@ -1316,6 +1316,75 @@ form.contact-form input[type="submit"]:active {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
     background-color: #4a4a4a;
 }
+.form-error {
+    border-radius: 2px;
+    border: 1px solid #cacaca;
+    background-color: #f8dfdf;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+}
+.form-error h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+.form-error .form-errors {
+    margin: 0;
+    padding-left: 20px;
+}
+.form-error .form-errors .form-error-message {
+    color: #ff4d4d;
+}
+.home-intro {
+    margin-bottom: 30px;
+}
+.home-intro h1 {
+    text-shadow: 0 0 5px #fff;
+}
+.home-intro ul {
+    list-style: none;
+    padding: 0 30px;
+}
+.home-intro li {
+    font-size: 15px;
+    text-shadow: 0 0 5px #fff;
+    margin-bottom: 10px;
+}
+.home-intro a {
+    display: inline-block;
+    min-height: 24px;
+    text-decoration: none;
+    background: url("images/global-sprite.png") no-repeat;
+    padding: 4px 0 0 35px;
+}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .home-intro a {
+        background-image: url("images/global-sprite-x2.png");
+        -webkit-background-size: 48px auto;
+        -moz-background-size: 48px auto;
+        -o-background-size: 48px auto;
+        background-size: 48px auto;
+    }
+}
+.home-intro a:active {
+    text-decoration: underline;
+}
+.home-intro .about a {
+    background-position: 0 -457px;
+}
+.home-intro .work a {
+    background-position: 0 -483px;
+}
+@media only screen and (min-width: 480px) {
+    .home-intro li {
+        display: inline-block;
+        margin: 0 35px 0 0;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .home-intro {
+        margin-bottom: 60px;
+    }
+}
 .module {
     margin-bottom: 30px;
 }
@@ -1689,57 +1758,6 @@ form.contact-form input[type="submit"]:active {
 @media only screen and (min-width: 1424px) {
     .screenshots li {
         margin-right: 4%;
-    }
-}
-.home-intro {
-    margin-bottom: 30px;
-}
-.home-intro h1 {
-    text-shadow: 0 0 5px #fff;
-}
-.home-intro ul {
-    list-style: none;
-    padding: 0 30px;
-}
-.home-intro li {
-    font-size: 15px;
-    text-shadow: 0 0 5px #fff;
-    margin-bottom: 10px;
-}
-.home-intro a {
-    display: inline-block;
-    min-height: 24px;
-    text-decoration: none;
-    background: url("images/global-sprite.png") no-repeat;
-    padding: 4px 0 0 35px;
-}
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-    .home-intro a {
-        background-image: url("images/global-sprite-x2.png");
-        -webkit-background-size: 48px auto;
-        -moz-background-size: 48px auto;
-        -o-background-size: 48px auto;
-        background-size: 48px auto;
-    }
-}
-.home-intro a:active {
-    text-decoration: underline;
-}
-.home-intro .about a {
-    background-position: 0 -457px;
-}
-.home-intro .work a {
-    background-position: 0 -483px;
-}
-@media only screen and (min-width: 480px) {
-    .home-intro li {
-        display: inline-block;
-        margin: 0 35px 0 0;
-    }
-}
-@media only screen and (min-width: 768px) {
-    .home-intro {
-        margin-bottom: 60px;
     }
 }
 .work-heros {
