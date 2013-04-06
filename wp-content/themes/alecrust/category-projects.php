@@ -18,7 +18,7 @@ get_header(); ?>
     <section class="post work-list">
         <h2><?php _e( 'Personal Projects' ); ?></h2>
         <ul>
-            <?php query_posts('category_name=personal-projects'); ?>
+            <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'title', 'order' => 'ASC' ) ); ?>
             <?php while (have_posts()) : the_post(); ?>
                 <li>
                     <a href="<?php the_permalink(); ?>">
@@ -35,7 +35,7 @@ get_header(); ?>
     <section class="post work-list">
         <h2><?php _e( 'Open-source Projects' ); ?></h2>
         <ul>
-            <?php query_posts('category_name=open-source-projects'); ?>
+            <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'title', 'order' => 'ASC' ) ); ?>
             <?php while (have_posts()) : the_post(); ?>
                 <li>
                     <a href="<?php the_permalink(); ?>">
