@@ -11,13 +11,16 @@ form.contact-form { // Additional specicivity to override grunion.css
         .box-shadow(inset 0 1px 4px #eee);
         color: lighten(@text-color, 30%);
         width: 100%;
-        border: 1px solid #ddd;
+        border: 1px solid #d0d0d0;
         border-radius: @border-radius;
         padding: 7px 7px 5px;
 
-        &:hover,
+        &:hover {
+            border-color: darken(#d0d0d0, 10%);
+        }
+
         &:focus {
-            border-color: #bbb;
+            border-color: darken(#d0d0d0, 20%);
         }
     }
 
