@@ -10,6 +10,11 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <header class="entry-header">
+            <?php if ( has_post_thumbnail() ) : ?>
+            <figure class="entry-image">
+                <?php the_post_thumbnail( 'single-post-thumbnail' ); ?>
+            </figure>
+            <?php endif; ?>
             <?php if ( is_single() ) : ?>
             <h1 class="entry-title"><?php the_title(); ?></h1>
             <?php else : ?>
