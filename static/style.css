@@ -1176,7 +1176,7 @@ body.page-home.page .global-content {
 .comments-area input[type="text"],
 .comments-area textarea {
   box-shadow: inset 0 1px 4px #eeeeee;
-  color: #858585;
+  color: #6b6b6b;
   width: 100%;
   border: 1px solid #d0d0d0;
   border-radius: 2px;
@@ -1188,6 +1188,7 @@ body.page-home.page .global-content {
 }
 .comments-area input[type="text"]:focus,
 .comments-area textarea:focus {
+  color: #454545;
   border-color: #9d9d9d;
 }
 .comments-area .form-allowed-tags {
@@ -1250,7 +1251,7 @@ form.contact-form input[type="text"],
 form.contact-form input[type="email"],
 form.contact-form textarea {
   box-shadow: inset 0 1px 4px #eeeeee;
-  color: #858585;
+  color: #6b6b6b;
   width: 100%;
   border: 1px solid #d0d0d0;
   border-radius: 2px;
@@ -1264,6 +1265,7 @@ form.contact-form textarea:hover {
 form.contact-form input[type="text"]:focus,
 form.contact-form input[type="email"]:focus,
 form.contact-form textarea:focus {
+  color: #454545;
   border-color: #9d9d9d;
 }
 form.contact-form input[type="submit"] {
