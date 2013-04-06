@@ -109,6 +109,26 @@ function websites_developed( $attachments )
 add_action( 'attachments_register', 'websites_developed' );
 
 /**
+ * Sets up "Screenshots" section under post using "Attachments" plugin
+ */
+function screenshots( $attachments )
+{
+    $args = array(
+        'label'         => 'Screenshots',                           // title of the meta box (string)
+        'post_type'     => array( 'post' ),                         // all post types to utilize (string|array)
+        'position'      => 'normal',                                // meta box position (string) (normal, side or advanced)
+        'priority'      => 'high',                                  // meta box priority (string) (high, default, low, core)
+        'filetype'      => 'image',                                 // allowed file type(s) (array) (image|video|text|audio|application)
+        'button_text'   => __( 'Attach Screenshot', 'attachments' ),// text for 'Attach' button in meta box (string)
+        'modal_text'    => __( 'Attach', 'attachments' ),           // text for modal 'Attach' button (string)
+        'router'        => 'upload',                                // which tab should be the default in the modal (string) (browse|upload)
+        'fields'        => '',                                 // fields array
+    );
+    $attachments->register( 'screenshots', $args ); // unique instance name
+}
+add_action( 'attachments_register', 'screenshots' );
+
+/**
  * Switches off the "Attachments" plugin Settings panel
  */
 define( 'ATTACHMENTS_SETTINGS_SCREEN', false );
@@ -272,7 +292,7 @@ function alecrust_entry_meta() {
     // Outputs only year if "Work" post
     // TODO: Improve to output more information (date range?)
     if ( in_category( 'work' )) {
-        $date = sprintf( 'Work completed in %1$s',
+        $date = sprintf( 'Year %1$s',
             esc_attr( get_the_date( 'Y' ) )
         );
     } else {

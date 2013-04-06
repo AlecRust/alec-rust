@@ -24,8 +24,11 @@
             <?php the_excerpt(); ?>
         </div>
         <?php else : ?>
+
         <div class="entry-content">
+
             <?php the_content( __( 'Read more' ) ); ?>
+
             <?php /* Render "Websites Developed" section if attached to post */ ?>
             <?php $attachments = new Attachments( 'websites_developed' ); ?>
             <?php if ( $attachments->exist() ) : ?>
@@ -35,13 +38,30 @@
                         <li>
                             <a href="<?php echo $attachments->field( 'website_url' ); ?>">
                                 <h3><?php echo $attachments->field( 'website_name' ); ?></h3>
-                                <img src="<?php echo $attachments->url(); ?>" width="325" height="425" alt="<?php echo $attachments->field( 'website_name' ); ?>">
+                                <img src="<?php echo $attachments->url(); ?>" width="325" height="425" alt="<?php echo $attachments->field( 'title' ); ?>">
                             </a>
                         </li>
                     <?php endwhile; ?>
                 </ul>
             <?php endif; ?>
+
+            <?php /* Render "Screenshots" section if attached to post */ ?>
+            <?php $attachments = new Attachments( 'screenshots' ); ?>
+            <?php if ( $attachments->exist() ) : ?>
+                <h2>Screenshots</h2>
+                <ul class="screenshots">
+                    <?php while ( $attachments->get() ) : ?>
+                        <li>
+                            <a href="<?php echo $attachments->url(); ?>">
+                                <?php echo $attachments->image( 'thumbnail' ); ?>
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php endif; ?>
+
         </div>
+
         <?php endif; ?>
 
         <footer class="entry-meta">
