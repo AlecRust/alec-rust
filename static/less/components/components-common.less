@@ -35,10 +35,6 @@
     font-size: @base-font-size - 1;
     text-decoration: none; // If .timestamp class appears on anchor
 
-    &:hover {
-        color: lighten(@text-color, 35%); // If .timestamp class appears on anchor
-    }
-
     a {
         color: lighten(@text-color, 35%);
         text-decoration: none;
@@ -47,6 +43,11 @@
             color: lighten(@text-color, 35%);
         }
     }
+}
+
+// If .timestamp class appears on anchor
+a.timestamp:hover {
+    color: lighten(@text-color, 35%);
 }
 
 // Archive title

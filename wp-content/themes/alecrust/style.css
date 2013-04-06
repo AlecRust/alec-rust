@@ -1859,14 +1859,14 @@ form.contact-form input[type="submit"]:active {
     font-size: 13px;
     text-decoration: none;
 }
-.timestamp:hover {
-    color: #919191;
-}
 .timestamp a {
     color: #919191;
     text-decoration: none;
 }
 .timestamp a:hover {
+    color: #919191;
+}
+a.timestamp:hover {
     color: #919191;
 }
 .archive-title {
