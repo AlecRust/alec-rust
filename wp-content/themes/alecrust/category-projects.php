@@ -11,8 +11,12 @@
 get_header(); ?>
 
     <article class="post">
-        <h1><?php _e( 'Projects' ); ?></h1>
-        <p><?php _e( 'Browse the personal and open-source projects I\'ve been involved in below.' ); ?></p>
+        <header class="entry-header">
+            <h1 class="entry-title"><?php _e( 'Projects' ); ?></h1>
+        </header>
+        <div class="entry-content">
+            <p><?php _e( 'Browse the personal and open-source projects I&rsquo;ve been involved in below.' ); ?></p>
+        </div>
     </article>
 
     <section class="post work-list">

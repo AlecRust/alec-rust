@@ -11,7 +11,7 @@
 get_header(); ?>
 
     <article class="home-intro">
-        <h1><?php _e( 'I\'m Alec, and I<span>\'ve spent the last decade building awesome things on the internet.</span>' ); ?></h1>
+        <h1><?php _e( 'I&rsquo;m Alec, and I<span>&rsquo;ve spent the last decade building awesome things on the internet.</span>' ); ?></h1>
         <ul>
             <li class="about"><a href="/about/"><?php _e( 'More about me' ); ?></a></li>
             <li class="work"><a href="/work/"><?php _e( 'Some of my work' ); ?></a></li>
@@ -56,7 +56,7 @@ get_header(); ?>
     </section>
 
     <section class="module module-thumbs">
-        <h1><?php _e( 'Companies I\'ve worked with'); ?></h1>
+        <h1><?php _e( 'Companies I&rsquo;ve worked with'); ?></h1>
         <ul>
             <li><a href="/work/universal-music/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
             <li><a href="/work/bbc/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
