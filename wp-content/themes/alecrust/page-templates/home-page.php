@@ -26,8 +26,15 @@ get_header(); ?>
                 <li>
                     <a href="<?php the_permalink(); ?>" class="hero">
                         <dl>
+                            <?php $title_short = get_post_meta($post->ID, 'title_short', true);
+                            if ($title_short) { ?>
                             <dt class="hero-title"><?php the_title(); ?></dt>
-                            <dd class="hero-description"><?php the_content( 'More', '...' ); ?></dd>
+                            <?php } else { ?>
+                            <dt class="hero-title no-desc"><?php the_title(); ?></dt>
+                            <?php } ?>
+                            <?php if ($title_short) { ?>
+                            <dd class="hero-description"><?php echo $title_short ?></dd>
+                            <?php } ?>
                             <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
                         </dl>
                     </a>
