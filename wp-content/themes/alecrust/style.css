@@ -5,8 +5,8 @@ Author: Alec Rust
 Author URI: http://alecrust.com/
 Description: Mobile first responsive theme for the Alec Rust website.
 Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: The MIT License (MIT)
+License URI: http://opensource.org/licenses/mit-license.php
 Tags: mobile-first, responsive
 Text Domain: alecrust
 */
@@ -1317,22 +1317,65 @@ form.contact-form input[type="submit"]:active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#424242', endColorstr='#4a4a4a', GradientType=0);
   background-color: #4a4a4a;
 }
-.form-error {
+.edit-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+.edit-link .post-edit-link {
+  border-bottom-left-radius: 3px;
+  color: #eee;
+  background-color: #d13a3a;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 12px 3px;
+}
+.edit-link .post-edit-link:hover {
+  color: #fff;
+  background-color: #d64f4f;
+}
+.edit-link .post-edit-link:active {
+  text-decoration: underline;
+}
+.edit-link .comment-edit-link {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: #eee;
+  background-color: #d13a3a;
+  font-size: 11px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 3px 10px 2px;
+}
+.edit-link .comment-edit-link:hover {
+  color: #fff;
+  background-color: #d64f4f;
+}
+.edit-link .comment-edit-link:active {
+  text-decoration: underline;
+}
+@media only screen and (min-width: 1024px) {
+  .edit-link .post-edit-link {
+    border-top-right-radius: 3px;
+  }
+}
+div.form-error {
   border-radius: 2px;
   border: 1px solid #cacaca;
   background-color: #f8dfdf;
   margin-bottom: 20px;
   padding: 12px 15px;
 }
-.form-error h3 {
+div.form-error h3 {
   font-size: 19px;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
 }
-.form-error .form-errors {
+div.form-error .form-errors {
   margin: 0;
   padding-left: 20px;
 }
-.form-error .form-errors .form-error-message {
+div.form-error .form-errors .form-error-message {
   color: #ff4d4d;
 }
 .home-intro {
@@ -1562,40 +1605,6 @@ form.contact-form input[type="submit"]:active {
   background-color: #f8f8f8;
   padding: 10px 20px;
 }
-.page .entry-content h1 {
-  font-size: 28px;
-  margin: 30px 0 15px;
-}
-.page .entry-content h2 {
-  font-size: 25px;
-  margin: 30px 0 10px;
-}
-.page .entry-content h3 {
-  font-size: 22px;
-  margin: 30px 0 5px;
-}
-.page .entry-content p {
-  font-size: 15px;
-  line-height: 1.5999999999999999;
-}
-.page .entry-content blockquote {
-  background-color: #f9f9f9;
-  border-left: 10px solid #bbb;
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  margin: 1.5em 10px;
-  padding: .5em 10px;
-}
-.page .entry-content blockquote:before {
-  color: #bbb;
-  content: open-quote;
-  font-size: 4em;
-  line-height: .1em;
-  vertical-align: -0.4em;
-  margin-right: .25em;
-}
-.page .entry-content blockquote p {
-  display: inline;
-}
 body.page-home.page .global-content {
   box-shadow: none;
   background-color: transparent;
@@ -1622,88 +1631,9 @@ body.page-home.page .global-content {
   margin-bottom: 30px;
   padding: 15px 20px;
 }
-.post .entry-title a {
-  text-decoration: none;
-}
-.post .entry-title a:hover {
-  text-decoration: underline;
-}
-.post .entry-image {
-  text-align: center;
-}
-.post .entry-content h1 {
-  font-size: 28px;
-  margin: 30px 0 15px;
-}
-.post .entry-content h2 {
-  font-size: 25px;
-  margin: 30px 0 10px;
-}
-.post .entry-content h3 {
-  font-size: 22px;
-  margin: 30px 0 5px;
-}
-.post .entry-content p {
-  font-size: 15px;
-  line-height: 1.5999999999999999;
-}
-.post .entry-content blockquote {
-  background-color: #f9f9f9;
-  border-left: 10px solid #bbb;
-  quotes: "\201C" "\201D" "\2018" "\2019";
-  margin: 1.5em 10px;
-  padding: .5em 10px;
-}
-.post .entry-content blockquote:before {
-  color: #bbb;
-  content: open-quote;
-  font-size: 4em;
-  line-height: .1em;
-  vertical-align: -0.4em;
-  margin-right: .25em;
-}
-.post .entry-content blockquote p {
-  display: inline;
-}
-.post .entry-meta {
-  font-size: 13px;
-  color: #919191;
-}
-.post .entry-meta:before,
-.post .entry-meta:after {
-  content: " ";
-  display: table;
-}
-.post .entry-meta:after {
-  clear: both;
-}
-.post .entry-meta .timestamp {
-  float: right;
-}
-.post .entry-meta p {
-  margin-bottom: 0;
-}
 @media only screen and (min-width: 480px) {
   .post {
     padding: 15px 30px;
-  }
-  .post .entry-image {
-    float: left;
-    margin-right: 10px;
-  }
-  .post .entry-image img {
-    width: 45px;
-    height: 45px;
-  }
-  .post .entry-content .alignleft {
-    float: left;
-    max-width: 40%;
-    margin: 0 10px 10px 0;
-  }
-  .post .entry-content .alignright {
-    float: right;
-    max-width: 40%;
-    margin: 0 0 10px 10px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1713,20 +1643,6 @@ body.page-home.page .global-content {
   .post:first-child {
     margin-top: 30px;
   }
-  .post .entry-title {
-    padding-right: 110px;
-  }
-  .post .entry-content .alignleft {
-    margin: 0 20px 20px 0;
-  }
-  .post .entry-content .alignright {
-    margin: 0 0 20px 20px;
-  }
-  .post .entry-meta .timestamp {
-    position: absolute;
-    top: 52px;
-    right: 40px;
-  }
 }
 @media only screen and (min-width: 1024px) {
   .post {
@@ -1734,10 +1650,6 @@ body.page-home.page .global-content {
   }
   .post:first-child {
     margin-top: 0;
-  }
-  .post .entry-content .alignleft,
-  .post .entry-content .alignright {
-    max-width: none;
   }
 }
 .post-navigation {
@@ -2008,44 +1920,6 @@ a.timestamp:hover {
   overflow: visible;
   position: static;
 }
-.edit-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-bottom: 0;
-}
-.edit-link .post-edit-link {
-  border-bottom-left-radius: 3px;
-  color: #eee;
-  background-color: #d13a3a;
-  display: inline-block;
-  text-decoration: none;
-  padding: 5px 12px 3px;
-}
-.edit-link .post-edit-link:hover {
-  color: #fff;
-  background-color: #d64f4f;
-}
-.edit-link .post-edit-link:active {
-  text-decoration: underline;
-}
-.edit-link .comment-edit-link {
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  color: #eee;
-  background-color: #d13a3a;
-  font-size: 11px;
-  display: inline-block;
-  text-decoration: none;
-  padding: 3px 10px 2px;
-}
-.edit-link .comment-edit-link:hover {
-  color: #fff;
-  background-color: #d64f4f;
-}
-.edit-link .comment-edit-link:active {
-  text-decoration: underline;
-}
 .comments-link {
   float: left;
 }
@@ -2074,14 +1948,112 @@ a.timestamp:hover {
     padding-left: 40px;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .edit-link .post-edit-link {
-    border-top-right-radius: 3px;
-  }
-}
 @media only screen and (min-width: 1224px) {
   h1.archive-title {
     margin-top: 0;
+  }
+}
+.entry-title a {
+  text-decoration: none;
+}
+.entry-title a:hover {
+  text-decoration: underline;
+}
+.entry-image {
+  text-align: center;
+}
+.entry-content h1 {
+  font-size: 28px;
+  margin: 30px 0 15px;
+}
+.entry-content h2 {
+  font-size: 25px;
+  margin: 30px 0 10px;
+}
+.entry-content h3 {
+  font-size: 22px;
+  margin: 30px 0 5px;
+}
+.entry-content p {
+  font-size: 15px;
+  line-height: 1.5999999999999999;
+}
+.entry-content blockquote {
+  background-color: #f9f9f9;
+  border-left: 10px solid #bbb;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  margin: 1.5em 10px;
+  padding: .5em 10px;
+}
+.entry-content blockquote:before {
+  color: #bbb;
+  content: open-quote;
+  font-size: 4em;
+  line-height: .1em;
+  vertical-align: -0.4em;
+  margin-right: .25em;
+}
+.entry-content blockquote p {
+  display: inline;
+}
+.entry-meta {
+  font-size: 13px;
+  color: #919191;
+}
+.entry-meta:before,
+.entry-meta:after {
+  content: " ";
+  display: table;
+}
+.entry-meta:after {
+  clear: both;
+}
+.entry-meta .timestamp {
+  float: right;
+}
+.entry-meta p {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 480px) {
+  .entry-image {
+    float: left;
+    margin-right: 10px;
+  }
+  .entry-image img {
+    width: 45px;
+    height: 45px;
+  }
+  .entry-content .alignleft {
+    float: left;
+    max-width: 40%;
+    margin: 0 10px 10px 0;
+  }
+  .entry-content .alignright {
+    float: right;
+    max-width: 40%;
+    margin: 0 0 10px 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .entry-title {
+    padding-right: 110px;
+  }
+  .entry-content .alignleft {
+    margin: 0 20px 20px 0;
+  }
+  .entry-content .alignright {
+    margin: 0 0 20px 20px;
+  }
+  .entry-meta .timestamp {
+    position: absolute;
+    top: 52px;
+    right: 40px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .entry-content .alignleft,
+  .entry-content .alignright {
+    max-width: none;
   }
 }
 .hidden {

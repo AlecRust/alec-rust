@@ -1,0 +1,58 @@
+// "Edit Link" page component
+// Edit link for posts and comments
+// -------------------------
+.edit-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 0;
+
+    .post-edit-link {
+        border-bottom-left-radius: @border-radius + 1;
+        color: #eee;
+        background-color: @edit-color;
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 12px 3px;
+
+        &:hover {
+            color: #fff;
+            background-color: lighten(@edit-color, 5%);
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .comment-edit-link {
+        .border-bottom-radius(@border-radius + 1);
+        color: #eee;
+        background-color: @edit-color;
+        font-size: @base-font-size - 3;
+        display: inline-block;
+        text-decoration: none;
+        padding: 3px 10px 2px;
+
+        &:hover {
+            color: #fff;
+            background-color: lighten(@edit-color, 5%);
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+// @tablet-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @tablet-landscape) {
+
+    .edit-link {
+
+        .post-edit-link {
+            border-top-right-radius: @border-radius + 1;
+        }
+    }
+}
