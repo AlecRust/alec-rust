@@ -2,14 +2,7 @@
 /**
  * Alec Rust functions and definitions
  *
- * Sets up the theme and provides some helper functions, which are used
- * in the theme as custom template tags. Others are attached to action and
- * filter hooks in WordPress to change core functionality
- *
- * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
- * to a filter or action hook
- *
- * More information on hooks, actions, and filters: http://codex.wordpress.org/Plugin_API
+ * Information on hooks, actions, and filters: http://codex.wordpress.org/Plugin_API
  *
  * @package WordPress
  * @subpackage Alec_Rust
@@ -18,25 +11,79 @@
 /**
  * Sets up theme defaults and registers the various WordPress features supported
  *
- * @uses add_editor_style() To add a Visual Editor stylesheet
  * @uses add_theme_support() To add support for post thumbnails, automatic feed links and post formats
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size
  */
 function alecrust_setup() {
-    // This theme styles the visual editor with editor-style.css to match the theme style
+    // Styles the visual editor with editor-style.css to match the theme style
     add_editor_style();
 
     // Adds RSS feed links to <head> for posts and comments
     add_theme_support( 'automatic-feed-links' );
 
-    // This theme supports the "Image" post format
-    add_theme_support( 'post-formats', array( 'image' ) );
-
     // This theme uses a custom image size for featured images, displayed on "standard" posts
     add_theme_support( 'post-thumbnails' );
+
     set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'alecrust_setup' );
+
+/**
+ * Enqueues scripts and styles for front-end
+ */
+function alecrust_scripts_styles() {
+    global $wp_styles;
+
+    // Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+        wp_enqueue_script( 'comment-reply' );
+
+    // Loads the main stylesheet
+    wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
+
+/**
+ * Removes junk from head
+ */
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
+remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+/**
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view
+ *
+ * @param string $title Default title text for current view
+ * @param string $sep Optional separator
+ * @return string Filtered title
+ */
+function alecrust_wp_title( $title, $sep ) {
+    global $paged, $page;
+
+    if ( is_feed() )
+        return $title;
+
+    // Adds the site name
+    $title .= get_bloginfo( 'name' );
+
+    // Adds the site description for the front page
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_front_page() ) )
+        $title = "$title $sep $site_description";
+
+    // Adds a page number if necessary
+    if ( $paged >= 2 || $page >= 2 )
+        $title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+
+    return $title;
+}
+add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 
 /**
  * Registers theme menus
@@ -50,18 +97,6 @@ function register_menus() {
     );
 }
 add_action( 'init', 'register_menus' );
-
-/**
- * Removes junk from head
- */
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'index_rel_link');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'feed_links_extra', 3);
-remove_action('wp_head', 'start_post_rel_link', 10, 0);
-remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
  * Adds category class to <body> on single post pages
@@ -92,7 +127,7 @@ function pages_search_filter($query) {
 add_filter('pre_get_posts','pages_search_filter');
 
 /**
- * Sets up "Attachments" section under post
+ * Sets up "Attachments" section under post content
  */
 function post_attachments( $attachments )
 {
@@ -129,51 +164,6 @@ add_action( 'attachments_register', 'post_attachments' );
  * Switches off the "Attachments" plugin Settings panel
  */
 define( 'ATTACHMENTS_SETTINGS_SCREEN', false );
-
-/**
- * Enqueues scripts and styles for front-end
- */
-function alecrust_scripts_styles() {
-    global $wp_styles;
-
-    // Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-        wp_enqueue_script( 'comment-reply' );
-
-    // Loads the main stylesheet
-    wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
-}
-add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
-
-/**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view
- *
- * @param string $title Default title text for current view
- * @param string $sep Optional separator
- * @return string Filtered title
- */
-function alecrust_wp_title( $title, $sep ) {
-    global $paged, $page;
-
-    if ( is_feed() )
-        return $title;
-
-    // Adds the site name
-    $title .= get_bloginfo( 'name' );
-
-    // Adds the site description for the front page
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_front_page() ) )
-        $title = "$title $sep $site_description";
-
-    // Adds a page number if necessary
-    if ( $paged >= 2 || $page >= 2 )
-        $title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
-
-    return $title;
-}
-add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 
 /**
  * Changes the default feed cache recreation period to 2 hours
@@ -302,12 +292,6 @@ function alecrust_entry_meta() {
         );
     }
 
-    $author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-        esc_attr( sprintf( __( 'View all posts by %s' ), get_the_author() ) ),
-        get_the_author()
-    );
-
     // Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
     if ( $tag_list ) {
         $utility_text = __( 'Tagged %2$s on %3$s' );
@@ -321,8 +305,7 @@ function alecrust_entry_meta() {
         $utility_text,
         $categories_list,
         $tag_list,
-        $date,
-        $author
+        $date
     );
 }
 endif;
