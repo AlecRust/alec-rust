@@ -41,7 +41,7 @@ get_header(); ?>
                 </li>
             <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="/work/"><?php _e( 'See my work' ); ?></a></p>
+        <p class="view-more"><a href="/work/"><?php _e( 'View my work' ); ?></a></p>
     </section>
 
     <section class="module module-list">
@@ -52,7 +52,7 @@ get_header(); ?>
                 <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
             <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="/blog/"><?php _e( 'See more posts' ); ?></a></p>
+        <p class="view-more"><a href="/blog/"><?php _e( 'View more posts' ); ?></a></p>
     </section>
 
     <section class="module module-thumbs">
@@ -64,7 +64,7 @@ get_header(); ?>
             <li><a href="/work/disney/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
             <li><a href="/work/bbc-worldwide/"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
-        <p class="view-more"><a href="/work/"><?php _e( 'See my work' ); ?></a></p>
+        <p class="view-more"><a href="/work/"><?php _e( 'View my work' ); ?></a></p>
     </section>
 
     <section class="module module-activity">
