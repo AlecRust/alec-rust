@@ -12,15 +12,15 @@ get_header(); ?>
 
     <article class="post">
         <header class="entry-header">
-            <h1 class="entry-title"><?php _e( 'Work' ); ?></h1>
+            <h1 class="entry-title">Work</h1>
         </header>
         <div class="entry-content">
-            <p><?php _e( 'Choose a company below to browse some of my past work.' ); ?></p>
+            <p>Choose a company below to browse some of my past work.</p>
         </div>
     </article>
 
     <section class="post work-list">
-        <h2><?php _e( 'Large Corporations' ); ?></h2>
+        <h2>Large Corporations</h2>
         <ul>
         <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
     </section>
 
     <section class="post work-list">
-        <h2><?php _e( 'Small Businesses' ); ?></h2>
+        <h2>Small Businesses</h2>
         <ul>
         <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>

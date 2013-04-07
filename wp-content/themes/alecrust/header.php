@@ -37,15 +37,15 @@
 
         <section class="global-search" role="search">
             <p class="show-search">
-                <a href="#"><?php _e( 'Show Search' ); ?></a>
+                <a href="#">Show Search</a>
             </p>
             <?php get_search_form(); ?>
         </section>
 
         <nav class="global-navigation">
-            <h1 class="visuallyhidden"><?php _e( 'Main Navigation' ); ?></h1>
+            <h1 class="visuallyhidden">Main Navigation</h1>
             <p class="show-navigation">
-                <a href="#"><?php _e( 'Show Navigation' ); ?></a>
+                <a href="#">Show Navigation</a>
             </p>
             <?php wp_nav_menu( array(
                 'theme_location'  => 'primary-menu',

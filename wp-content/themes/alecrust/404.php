@@ -11,11 +11,11 @@ get_header(); ?>
     <article class="post error404 no-results not-found">
 
         <header class="entry-header">
-            <h1 class="entry-title"><?php _e( 'Something bad happened.' ); ?></h1>
+            <h1 class="entry-title">Something bad happened.</h1>
         </header>
 
         <div class="entry-content">
-            <p><?php _e( 'Sorry, the page you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help?' ); ?></p>
+            <p>Sorry, the page you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help</p>
             <?php get_search_form(); ?>
         </div>
 

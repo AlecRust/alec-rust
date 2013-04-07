@@ -12,15 +12,15 @@ get_header(); ?>
 
     <article class="post">
         <header class="entry-header">
-            <h1 class="entry-title"><?php _e( 'Projects' ); ?></h1>
+            <h1 class="entry-title">Projects</h1>
         </header>
         <div class="entry-content">
-            <p><?php _e( 'Browse the personal and open-source projects I&rsquo;ve been involved in below.' ); ?></p>
+            <p>Browse the personal and open-source projects I&rsquo;ve been involved in below.</p>
         </div>
     </article>
 
     <section class="post work-list">
-        <h2><?php _e( 'Personal Projects' ); ?></h2>
+        <h2>Personal Projects</h2>
         <ul>
         <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
     </section>
 
     <section class="post work-list">
-        <h2><?php _e( 'Open-source Projects' ); ?></h2>
+        <h2>Open-source Projects</h2>
         <ul>
         <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>

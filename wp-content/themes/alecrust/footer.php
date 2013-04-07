@@ -10,7 +10,7 @@
 
         <?php if (is_single() ) { ?>
         <nav class="post-navigation">
-            <h1 class="visuallyhidden"><?php _e( 'Post Navigation' ); ?></h1>
+            <h1 class="visuallyhidden">Post Navigation</h1>
             <ul>
                 <li class="prev"><?php previous_post_link( '%link' ); ?></li>
                 <li class="next"><?php next_post_link( '%link' ); ?></li>
@@ -29,7 +29,7 @@
         </aside>
 
         <footer class="global-footer" role="contentinfo">
-            <p>Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+            <p>Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Alec Rust</a></p>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

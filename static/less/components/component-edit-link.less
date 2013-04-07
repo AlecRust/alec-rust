@@ -7,13 +7,11 @@
     right: 0;
     margin-bottom: 0;
 
-    .post-edit-link {
-        border-bottom-left-radius: @border-radius + 1;
+    a {
         color: #eee;
-        background-color: @edit-color;
         display: inline-block;
         text-decoration: none;
-        padding: 5px 12px 3px;
+        background-color: @edit-color;
 
         &:hover {
             color: #fff;
@@ -25,23 +23,15 @@
         }
     }
 
+    .post-edit-link {
+        border-bottom-left-radius: @border-radius + 1;
+        padding: 5px 12px 3px;
+    }
+
     .comment-edit-link {
         .border-bottom-radius(@border-radius + 1);
-        color: #eee;
-        background-color: @edit-color;
         font-size: @base-font-size - 3;
-        display: inline-block;
-        text-decoration: none;
         padding: 3px 10px 2px;
-
-        &:hover {
-            color: #fff;
-            background-color: lighten(@edit-color, 5%);
-        }
-
-        &:active {
-            text-decoration: underline;
-        }
     }
 }
 

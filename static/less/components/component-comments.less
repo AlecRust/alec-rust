@@ -1,18 +1,17 @@
 // "Comments" page component
 // Below styling is a little messy due to default comments output
-// TODO: Improve comments code output and update this styling after
+// TODO: Improve comments code output and update this styling
 // -------------------------
 .comments-area {
     padding: 0 20px 20px;
 
-    // Comments title
+    // Comments area title
     .comments-title {
         margin-bottom: 20px;
     }
 
-    // Comments list
     .commentlist {
-        list-style: none; // TODO: Add styled list numbers
+        list-style: none;
         margin: 0 0 25px;
         padding-left: 0;
     }
@@ -32,9 +31,8 @@
         background-color: @content-background;
         margin-bottom: 10px;
 
-        // Comment meta
         .comment-meta {
-            overflow: hidden; // .clearfix seems to destroy img border-radius
+            overflow: hidden; // .clearfix destroys img border-radius
 
             .avatar {
                 border-top-left-radius: @border-radius;
@@ -55,7 +53,6 @@
             }
         }
 
-        // Comment content
         .comment-content {
             padding: 20px 10px 10px;
 
@@ -64,7 +61,6 @@
             }
         }
 
-        // Reply link
         .reply a {
             .border-bottom-radius(@border-radius);
             display: block;
@@ -84,7 +80,6 @@
             }
         }
 
-        // Edit link
         .edit-link {
             width: 100%;
             text-align: center;
@@ -106,15 +101,11 @@
         padding: 0 20px;
     }
 
-    // "Leave a reply" title
-    .reply-title {}
-
     // Cancel reply link
     #cancel-comment-reply-link {
         font-size: @base-font-size - 1;
     }
 
-    // Required star
     .required {
         color: #f00;
     }
@@ -143,14 +134,7 @@
         }
     }
 
-    // "Allowed tags" info
-    // TODO: Remove?
-    .form-allowed-tags {
-        font-size: @base-font-size - 2;
-    }
-
     // "Post Comment" button
-    // TODO: Refactor in to button component
     .form-submit {
         text-align: center;
         margin-bottom: 15px;

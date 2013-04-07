@@ -15,11 +15,11 @@ get_header(); ?>
         <header class="archive-header">
             <h1 class="archive-title"><?php
                 if ( is_day() ) :
-                    printf( __( 'Daily Archives: %s' ), '<span>' . get_the_date() . '</span>' );
+                    printf( __( 'Daily Archives: %s' ), get_the_date() );
                 elseif ( is_month() ) :
-                    printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
+                    printf( __( 'Monthly Archives: %s' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
                 elseif ( is_year() ) :
-                    printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>' );
+                    printf( __( 'Yearly Archives: %s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
                 elseif ( in_category( 'blog' ) ) :
                     _e( 'Blog' );
                 else :
@@ -29,7 +29,6 @@ get_header(); ?>
         </header>
 
         <?php
-        /* Start the Loop */
         while ( have_posts() ) : the_post();
 
             /* Include the post format-specific template for the content. If you want to

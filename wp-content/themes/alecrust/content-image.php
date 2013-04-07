@@ -21,9 +21,9 @@
             </a>
             <?php if ( comments_open() ) : ?>
             <div class="comments-link">
-                <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply' ) . '</span>', __( '1 Reply' ), __( '% Replies' ) ); ?>
+                <?php comments_popup_link( __( 'Leave a reply' ), __( '1 Reply' ), __( '% Replies' ) ); ?>
             </div>
-            <?php endif; // comments_open() ?>
+            <?php endif; ?>
             <?php edit_post_link( __( 'Edit Image' ), '<aside class="edit-link">', '</aside>' ); ?>
         </footer>
 

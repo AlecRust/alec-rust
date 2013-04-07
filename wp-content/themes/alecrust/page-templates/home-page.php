@@ -11,15 +11,15 @@
 get_header(); ?>
 
     <article class="home-intro">
-        <h1><?php _e( 'I&rsquo;m Alec, and I<span>&rsquo;ve spent the last decade building awesome things on the internet.</span>' ); ?></h1>
+        <h1>I&rsquo;m Alec, and I<span>&rsquo;ve spent the last decade building awesome things on the internet.</span></h1>
         <ul>
-            <li class="about"><a href="<?php echo site_url('/about/'); ?>"><?php _e( 'More about me' ); ?></a></li>
-            <li class="work"><a href="<?php echo site_url('/work/'); ?>"><?php _e( 'Some of my work' ); ?></a></li>
+            <li class="about"><a href="<?php echo site_url('/about/'); ?>">More about me</a></li>
+            <li class="work"><a href="<?php echo site_url('/work/'); ?>">Some of my work</a></li>
         </ul>
     </article>
 
     <section class="module module-heros">
-        <h1><a href="<?php echo site_url('/work/'); ?>"><?php _e( 'Recent work' ); ?></a>/<a href="<?php echo site_url('/projects/'); ?>"><?php _e( 'projects' ); ?></a></h1>
+        <h1><a href="<?php echo site_url('/work/'); ?>">Recent work</a>/<a href="<?php echo site_url('/projects/'); ?>">projects</a></h1>
         <ul>
         <?php query_posts('category_name=work,projects&showposts=3'); ?>
         <?php while (have_posts()) : the_post(); ?>
@@ -41,22 +41,22 @@ get_header(); ?>
             </li>
         <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="<?php echo site_url('/work/'); ?>"><?php _e( 'View my work' ); ?></a></p>
+        <p class="view-more"><a href="<?php echo site_url('/work/'); ?>">View my work</a></p>
     </section>
 
     <section class="module module-list">
-        <h1><a href="<?php echo site_url('/blog/'); ?>"><?php _e( 'Recent blog posts' ); ?></a></h1>
+        <h1><a href="<?php echo site_url('/blog/'); ?>">Recent blog posts</a></h1>
         <ul>
         <?php query_posts('category_name=blog&showposts=7'); ?>
         <?php while (have_posts()) : the_post(); ?>
             <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="<?php echo site_url('/blog/'); ?>"><?php _e( 'View more posts' ); ?></a></p>
+        <p class="view-more"><a href="<?php echo site_url('/blog/'); ?>">View more posts</a></p>
     </section>
 
     <section class="module module-thumbs">
-        <h1><a href="<?php echo site_url('/work/'); ?>"><?php _e( 'Companies I&rsquo;ve worked with'); ?></a></h1>
+        <h1><a href="<?php echo site_url('/work/'); ?>">Companies I&rsquo;ve worked with</a></h1>
         <ul>
             <li><a href="<?php echo site_url('/work/universal-music/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
             <li><a href="<?php echo site_url('/work/bbc/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
@@ -64,11 +64,11 @@ get_header(); ?>
             <li><a href="<?php echo site_url('/work/disney/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
             <li><a href="<?php echo site_url('/work/bbc-worldwide/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc-worldwide.png" width="120" height="60" alt="BBC Worldwide"></a></li>
         </ul>
-        <p class="view-more"><a href="<?php echo site_url('/work/'); ?>"><?php _e( 'View my work' ); ?></a></p>
+        <p class="view-more"><a href="<?php echo site_url('/work/'); ?>">View my work</a></p>
     </section>
 
     <section class="module module-activity">
-        <h1><a href="https://github.com/AlecRust"><?php _e( 'Recent GitHub activity' ); ?></a></h1>
+        <h1><a href="https://github.com/AlecRust">Recent GitHub activity</a></h1>
         <?php
         include_once(ABSPATH . WPINC . '/feed.php');
         $rss = fetch_feed('https://github.com/AlecRust.atom');
@@ -89,11 +89,11 @@ get_header(); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p class="view-more"><a href="https://github.com/AlecRust"><?php _e( 'View my GitHub profile' ); ?></a></p>
+        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile</a></p>
     </section>
 
     <section class="module module-tweets">
-        <h1><a href="https://twitter.com/AlecRust"><?php _e( 'Recent tweets' ); ?></a></h1>
+        <h1><a href="https://twitter.com/AlecRust">Recent tweets</a></h1>
         <?php
         include_once(ABSPATH . WPINC . '/feed.php');
         $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
@@ -114,7 +114,7 @@ get_header(); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p class="view-more"><a href="https://twitter.com/AlecRust"><?php _e( 'View my Twitter profile' ); ?></a></p>
+        <p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>
     </section>
 
 <?php get_footer(); ?>

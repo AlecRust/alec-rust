@@ -96,7 +96,7 @@ add_filter('pre_get_posts','pages_search_filter');
  */
 function post_attachments( $attachments )
 {
-    $fields         = array(
+    $fields = array(
         array(
             'name'      => 'attachment_hero_title',                         // unique field name
             'type'      => 'text',                                          // registered field type
@@ -111,12 +111,12 @@ function post_attachments( $attachments )
         ),
     );
     $args = array(
-        'label'         => 'Attachments',                                   // title of the meta box (string)
+        'label'         => 'Screenshots/Links',                             // title of the meta box (string)
         'post_type'     => array( 'post' ),                                 // all post types to utilize (string|array)
         'position'      => 'normal',                                        // meta box position (string) (normal, side or advanced)
         'priority'      => 'high',                                          // meta box priority (string) (high, default, low, core)
         'filetype'      => 'image',                                         // allowed file type(s) (array) (image|video|text|audio|application)
-        'button_text'   => __( 'Attach', 'attachments' ),                   // text for 'Attach' button in meta box (string)
+        'button_text'   => __( 'Add Attachment', 'attachments' ),           // text for 'Attach' button in meta box (string)
         'modal_text'    => __( 'Attach', 'attachments' ),                   // text for modal 'Attach' button (string)
         'router'        => 'browse',                                        // which tab should be the default in the modal (string) (browse|upload)
         'fields'        => $fields,                                         // fields array
@@ -286,9 +286,9 @@ function alecrust_entry_meta() {
     // Translators: used between list items, there is a space after the comma
     $tag_list = get_the_tag_list( '', __( ', ' ) );
 
-    // Outputs only year if "Work" post
-    // TODO: Improve to output more information (date range?)
-    if ( in_category( 'work' )) {
+    // If Work or Project post
+    // TODO: Add facility to output years range
+    if ( in_category( 'work' && 'projects' )) {
         $date = sprintf( '<a href="%1$s"><time class="entry-date" datetime="%2$s">Year %2$s</time></a>',
             esc_url( get_permalink() ),
             esc_attr( get_the_date( 'Y' ) )
