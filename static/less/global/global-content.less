@@ -45,30 +45,6 @@
     }
 }
 
-.page .global-content {
-    .box-shadow(0 2px 2px #ccc);
-    background-color: @content-background;
-    padding: 10px 20px;
-}
-
-// Remove background colour on home page
-body.page-home {
-
-    &.page .global-content {
-        .box-shadow(none);
-        background-color: transparent;
-    }
-}
-
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
-
-    .page .global-content {
-        padding: 15px 30px;
-    }
-}
-
 // @tablet-portrait devices and up
 // -------------------------
 @media only screen and (min-width: @tablet-portrait) {
@@ -76,10 +52,6 @@ body.page-home {
     .global-content {
         .clearfix;
         margin: auto auto 30px;
-    }
-
-    .page .global-content {
-        padding: 30px 40px;
     }
 }
 
@@ -91,10 +63,6 @@ body.page-home {
         width: 69%;
         min-height: 30em; // Prevent social icons/navigation overlapping footer if little content
         margin: 110px auto;
-    }
-
-    .page .global-content {
-        border-radius: @border-radius + 1;
     }
 }
 

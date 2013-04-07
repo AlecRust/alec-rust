@@ -1,7 +1,15 @@
 /*
- * Compiled stylesheet for AlecRust.com
- * View source at: https://github.com/AlecRust/alec-rust
- */
+Theme Name: Alec Rust
+Theme URI: https://github.com/AlecRust/alec-rust
+Author: Alec Rust
+Author URI: http://alecrust.com/
+Description: Mobile first responsive theme for the Alec Rust website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: mobile-first, responsive
+Text Domain: alecrust
+*/
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -300,20 +308,6 @@ nav ol {
 .global-content blockquote small {
   font-style: normal;
 }
-.page .global-content {
-  box-shadow: 0 2px 2px #cccccc;
-  background-color: #f8f8f8;
-  padding: 10px 20px;
-}
-body.page-home.page .global-content {
-  box-shadow: none;
-  background-color: transparent;
-}
-@media only screen and (min-width: 480px) {
-  .page .global-content {
-    padding: 15px 30px;
-  }
-}
 @media only screen and (min-width: 768px) {
   .global-content {
     margin: auto auto 30px;
@@ -326,18 +320,12 @@ body.page-home.page .global-content {
   .global-content:after {
     clear: both;
   }
-  .page .global-content {
-    padding: 30px 40px;
-  }
 }
 @media only screen and (min-width: 1024px) {
   .global-content {
     width: 69%;
     min-height: 30em;
     margin: 110px auto;
-  }
-  .page .global-content {
-    border-radius: 3px;
   }
 }
 @media only screen and (min-width: 1224px) {
@@ -1544,6 +1532,30 @@ form.contact-form input[type="submit"]:active {
   }
   body.page-home .module-tweets {
     float: right;
+  }
+}
+.page .global-content {
+  box-shadow: 0 2px 2px #cccccc;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+}
+body.page-home.page .global-content {
+  box-shadow: none;
+  background-color: transparent;
+}
+@media only screen and (min-width: 480px) {
+  .page .global-content {
+    padding: 15px 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .page .global-content {
+    padding: 30px 40px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .page .global-content {
+    border-radius: 3px;
   }
 }
 .post {
