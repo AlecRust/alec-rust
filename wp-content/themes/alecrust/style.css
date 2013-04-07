@@ -1996,6 +1996,13 @@ a.timestamp:hover {
 .entry-content blockquote p {
   display: inline;
 }
+.entry-content .secondary-link {
+  text-decoration: none;
+}
+.entry-content .secondary-link:hover,
+.entry-content .secondary-link:visited {
+  color: #383838;
+}
 .entry-meta {
   font-size: 13px;
   color: #919191;
