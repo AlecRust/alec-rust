@@ -22,34 +22,34 @@ get_header(); ?>
     <section class="post work-list">
         <h2><?php _e( 'Personal Projects' ); ?></h2>
         <ul>
-            <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'title', 'order' => 'ASC' ) ); ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <li>
-                    <a href="<?php the_permalink(); ?>">
-                        <dl>
-                            <dt><?php the_title(); ?></dt>
-                            <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
-                        </dl>
-                    </a>
-                </li>
-            <?php endwhile; ?>
+        <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <li>
+                <a href="<?php the_permalink(); ?>">
+                    <dl>
+                        <dt><?php the_title(); ?></dt>
+                        <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                    </dl>
+                </a>
+            </li>
+        <?php endwhile; ?>
         </ul>
     </section>
 
     <section class="post work-list">
         <h2><?php _e( 'Open-source Projects' ); ?></h2>
         <ul>
-            <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'title', 'order' => 'ASC' ) ); ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <li>
-                    <a href="<?php the_permalink(); ?>">
-                        <dl>
-                            <dt><?php the_title(); ?></dt>
-                            <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
-                        </dl>
-                    </a>
-                </li>
-            <?php endwhile; ?>
+        <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <li>
+                <a href="<?php the_permalink(); ?>">
+                    <dl>
+                        <dt><?php the_title(); ?></dt>
+                        <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                    </dl>
+                </a>
+            </li>
+        <?php endwhile; ?>
         </ul>
     </section>
 

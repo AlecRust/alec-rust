@@ -92,58 +92,38 @@ function pages_search_filter($query) {
 add_filter('pre_get_posts','pages_search_filter');
 
 /**
- * Sets up "Websites Developed" section under post using "Attachments" plugin
+ * Sets up "Attachments" section under post
  */
-function websites_developed( $attachments )
+function post_attachments( $attachments )
 {
     $fields         = array(
         array(
-            'name'      => 'website_name',                          // unique field name
-            'type'      => 'text',                                  // registered field type
-            'label'     => __( 'Website Name', 'attachments' ),     // label to display
-            'default'   => 'website_name',                          // default value upon selection
+            'name'      => 'attachment_hero_title',                         // unique field name
+            'type'      => 'text',                                          // registered field type
+            'label'     => __( 'Attachment Hero Title', 'attachments' ),    // label to display
+            'default'   => 'attachment_hero_title',                         // default value upon selection
         ),
         array(
-            'name'      => 'website_url',                           // unique field name
-            'type'      => 'text',                                  // registered field type
-            'label'     => __( 'Website URL', 'attachments' ),      // label to display
-            'default'   => 'website_url',                           // default value upon selection
+            'name'      => 'attachment_link',                               // unique field name
+            'type'      => 'text',                                          // registered field type
+            'label'     => __( 'Attachment Link', 'attachments' ),          // label to display
+            'default'   => 'attachment_link',                               // default value upon selection
         ),
     );
     $args = array(
-        'label'         => 'Websites Developed',                    // title of the meta box (string)
-        'post_type'     => array( 'post' ),                         // all post types to utilize (string|array)
-        'position'      => 'normal',                                // meta box position (string) (normal, side or advanced)
-        'priority'      => 'high',                                  // meta box priority (string) (high, default, low, core)
-        'filetype'      => 'image',                                 // allowed file type(s) (array) (image|video|text|audio|application)
-        'button_text'   => __( 'Attach Website', 'attachments' ),   // text for 'Attach' button in meta box (string)
-        'modal_text'    => __( 'Attach', 'attachments' ),           // text for modal 'Attach' button (string)
-        'router'        => 'upload',                                // which tab should be the default in the modal (string) (browse|upload)
-        'fields'        => $fields,                                 // fields array
+        'label'         => 'Attachments',                                   // title of the meta box (string)
+        'post_type'     => array( 'post' ),                                 // all post types to utilize (string|array)
+        'position'      => 'normal',                                        // meta box position (string) (normal, side or advanced)
+        'priority'      => 'high',                                          // meta box priority (string) (high, default, low, core)
+        'filetype'      => 'image',                                         // allowed file type(s) (array) (image|video|text|audio|application)
+        'button_text'   => __( 'Attach', 'attachments' ),                   // text for 'Attach' button in meta box (string)
+        'modal_text'    => __( 'Attach', 'attachments' ),                   // text for modal 'Attach' button (string)
+        'router'        => 'browse',                                        // which tab should be the default in the modal (string) (browse|upload)
+        'fields'        => $fields,                                         // fields array
     );
-    $attachments->register( 'websites_developed', $args ); // unique instance name
+    $attachments->register( 'post_attachments', $args );                    // unique instance name
 }
-add_action( 'attachments_register', 'websites_developed' );
-
-/**
- * Sets up "Screenshots" section under post using "Attachments" plugin
- */
-function screenshots( $attachments )
-{
-    $args = array(
-        'label'         => 'Screenshots',                           // title of the meta box (string)
-        'post_type'     => array( 'post' ),                         // all post types to utilize (string|array)
-        'position'      => 'normal',                                // meta box position (string) (normal, side or advanced)
-        'priority'      => 'high',                                  // meta box priority (string) (high, default, low, core)
-        'filetype'      => 'image',                                 // allowed file type(s) (array) (image|video|text|audio|application)
-        'button_text'   => __( 'Attach Screenshot', 'attachments' ),// text for 'Attach' button in meta box (string)
-        'modal_text'    => __( 'Attach', 'attachments' ),           // text for modal 'Attach' button (string)
-        'router'        => 'upload',                                // which tab should be the default in the modal (string) (browse|upload)
-        'fields'        => '',                                 // fields array
-    );
-    $attachments->register( 'screenshots', $args ); // unique instance name
-}
-add_action( 'attachments_register', 'screenshots' );
+add_action( 'attachments_register', 'post_attachments' );
 
 /**
  * Switches off the "Attachments" plugin Settings panel

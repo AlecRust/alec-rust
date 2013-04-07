@@ -1,0 +1,92 @@
+// "Post Attachments" page component
+// Websites and Screenshots area under posts
+// -------------------------
+.post-attachments {
+
+    .post-attachments-title {
+        display: inline-block;
+        width: 40%;
+        font-size: @base-font-size + 8;
+        border-bottom: 1px solid #ddd;
+        margin: 30px 0 20px;
+    }
+
+    .post-attachments-list {
+        text-align: center;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .post-attachment {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 40px;
+
+        a {
+            .box-shadow(1px 1px 2px #bbb);
+            display: block;
+
+            &:hover {
+                .box-shadow(1px 1px 2px #999);
+
+                h3 {
+                    .opacity(100);
+                }
+            }
+
+            &:active {
+
+                h3 {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .post-attachment-title {
+        .transition(@transition);
+        .opacity(90);
+        #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        font-size: @base-font-size + 5;
+        color: #fff;
+        margin-bottom: 0;
+        padding: 15px 20px;
+    }
+}
+
+// @smartphone-landscape devices and up
+// -------------------------
+@media only screen and (min-width: @smartphone-landscape) {
+
+    .post-attachments {
+
+        .post-attachments-list {
+            text-align: left;
+        }
+
+        .post-attachment {
+
+            &:nth-child(2n - 1) {
+                margin-right: 4%;
+            }
+        }
+    }
+}
+
+// @desktop-width-secondary devices and up
+// -------------------------
+@media only screen and (min-width: @desktop-width-secondary) {
+
+    .post-attachments {
+
+        .post-attachment {
+            margin-right: 4%;
+        }
+    }
+}

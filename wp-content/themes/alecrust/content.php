@@ -34,35 +34,28 @@
 
             <?php the_content( __( 'Read more' ) ); ?>
 
-            <?php /* Render "Websites Developed" section if attached to post */ ?>
-            <?php $attachments = new Attachments( 'websites_developed' ); ?>
+            <?php /* Render "Attachments" section */ ?>
+            <?php $attachments = new Attachments( 'post_attachments' ); ?>
             <?php if ( $attachments->exist() ) : ?>
-                <h2>Websites Developed</h2>
-                <ul class="work-heros">
-                    <?php while ( $attachments->get() ) : ?>
-                        <li>
-                            <a href="<?php echo $attachments->field( 'website_url' ); ?>">
-                                <h3><?php echo $attachments->field( 'website_name' ); ?></h3>
-                                <img src="<?php echo $attachments->url(); ?>" width="325" height="425" alt="<?php echo $attachments->field( 'title' ); ?>">
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
-            <?php endif; ?>
-
-            <?php /* Render "Screenshots" section if attached to post */ ?>
-            <?php $attachments = new Attachments( 'screenshots' ); ?>
-            <?php if ( $attachments->exist() ) : ?>
-                <h2>Screenshots</h2>
-                <ul class="screenshots">
-                    <?php while ( $attachments->get() ) : ?>
-                        <li>
-                            <a href="<?php echo $attachments->url(); ?>">
-                                <?php echo $attachments->image( 'thumbnail' ); ?>
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
-                </ul>
+                <aside class="post-attachments">
+                    <h2 class="post-attachments-title">Screenshots/Links</h2>
+                    <ul class="post-attachments-list">
+                        <?php while ( $attachments->get() ) : ?>
+                            <li class="post-attachment">
+                                <?php if ( $attachments->field( 'attachment_link' ) ) : ?>
+                                <a href="<?php echo $attachments->field( 'attachment_link' ); ?>">
+                                <?php else : ?>
+                                <a href="<?php echo $attachments->url(); ?>">
+                                <?php endif; ?>
+                                    <?php if ( $attachments->field( 'attachment_hero_title' ) ) : ?>
+                                    <h3 class="post-attachment-title"><?php echo $attachments->field( 'attachment_hero_title' ); ?></h3>
+                                    <?php endif; ?>
+                                    <?php echo $attachments->image( 'thumbnail' ); ?>
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                </aside>
             <?php endif; ?>
 
         </div>
