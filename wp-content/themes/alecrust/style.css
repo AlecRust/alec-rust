@@ -1879,7 +1879,7 @@ body.page-home.page .global-content {
 }
 @media only screen and (min-width: 1024px) {
   .post-navigation {
-    margin: -85px 0 40px;
+    margin: -135px 0 40px;
   }
   .post-navigation ul {
     max-width: 50%;
