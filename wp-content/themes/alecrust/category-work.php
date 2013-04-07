@@ -19,10 +19,11 @@ get_header(); ?>
         </div>
     </article>
 
+    <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php if (have_posts()) : ?>
     <section class="post work-list">
         <h2>Large Corporations</h2>
         <ul>
-        <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>
             <li>
                 <a href="<?php the_permalink(); ?>">
@@ -35,11 +36,13 @@ get_header(); ?>
         <?php endwhile; ?>
         </ul>
     </section>
+    <?php endif; ?>
 
+    <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php if (have_posts()) : ?>
     <section class="post work-list">
         <h2>Small Businesses</h2>
         <ul>
-        <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
         <?php while (have_posts()) : the_post(); ?>
             <li>
                 <a href="<?php the_permalink(); ?>">
@@ -52,5 +55,6 @@ get_header(); ?>
         <?php endwhile; ?>
         </ul>
     </section>
+    <?php endif; ?>
 
 <?php get_footer(); ?>

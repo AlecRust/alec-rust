@@ -151,8 +151,8 @@ function post_attachments( $attachments )
         'position'      => 'normal',                                        // meta box position (string) (normal, side or advanced)
         'priority'      => 'high',                                          // meta box priority (string) (high, default, low, core)
         'filetype'      => 'image',                                         // allowed file type(s) (array) (image|video|text|audio|application)
-        'button_text'   => __( 'Add Attachment', 'attachments' ),           // text for 'Attach' button in meta box (string)
-        'modal_text'    => __( 'Attach', 'attachments' ),                   // text for modal 'Attach' button (string)
+        'button_text'   => __( 'Add attachment', 'attachments' ),           // text for 'Attach' button in meta box (string)
+        'modal_text'    => __( 'Add attachment', 'attachments' ),           // text for modal 'Attach' button (string)
         'router'        => 'browse',                                        // which tab should be the default in the modal (string) (browse|upload)
         'fields'        => $fields,                                         // fields array
     );

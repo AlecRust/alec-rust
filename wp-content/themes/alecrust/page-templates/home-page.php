@@ -26,15 +26,14 @@ get_header(); ?>
             <li>
                 <a href="<?php the_permalink(); ?>" class="hero">
                     <dl>
-                        <?php $title_short = get_post_meta($post->ID, 'title_short', true);
-                        if ($title_short) { ?>
+                        <?php if ( has_excerpt() ) : ?>
                         <dt class="hero-title"><?php the_title(); ?></dt>
-                        <?php } else { ?>
+                        <?php else : ?>
                         <dt class="hero-title no-desc"><?php the_title(); ?></dt>
-                        <?php } ?>
-                        <?php if ($title_short) { ?>
-                        <dd class="hero-description"><?php echo $title_short ?></dd>
-                        <?php } ?>
+                        <?php endif; ?>
+                        <?php if ( has_excerpt() ) : ?>
+                        <dd class="hero-description"><?php echo the_excerpt(); ?></dd>
+                        <?php endif; ?>
                         <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
                     </dl>
                 </a>
@@ -89,11 +88,11 @@ get_header(); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile</a></p>
+        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile' ); ?></a></p>
     </section>
 
     <section class="module module-tweets">
-        <h1><a href="https://twitter.com/AlecRust">Recent tweets</a></h1>
+        <h1><a href="https://twitter.com/AlecRust"><?php _e( 'Recent tweets' ); ?></a></h1>
         <?php
         include_once(ABSPATH . WPINC . '/feed.php');
         $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
@@ -114,7 +113,7 @@ get_header(); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>
+        <p class="view-more"><a href="https://twitter.com/AlecRust"><?php _e( 'View my Twitter profile' ); ?></a></p>
     </section>
 
 <?php get_footer(); ?>
