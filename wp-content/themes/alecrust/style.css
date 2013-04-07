@@ -1657,6 +1657,16 @@ body.page-home.page .global-content {
     width: 45px;
     height: 45px;
   }
+  .post .entry-content .alignleft {
+    float: left;
+    max-width: 40%;
+    margin: 0 10px 10px 0;
+  }
+  .post .entry-content .alignright {
+    float: right;
+    max-width: 40%;
+    margin: 0 0 10px 10px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .post {
@@ -1667,6 +1677,12 @@ body.page-home.page .global-content {
   }
   .post .entry-title {
     padding-right: 110px;
+  }
+  .post .entry-content .alignleft {
+    margin: 0 20px 20px 0;
+  }
+  .post .entry-content .alignright {
+    margin: 0 0 20px 20px;
   }
   .post .entry-meta .timestamp {
     position: absolute;
@@ -1680,6 +1696,10 @@ body.page-home.page .global-content {
   }
   .post:first-child {
     margin-top: 0;
+  }
+  .post .entry-content .alignleft,
+  .post .entry-content .alignright {
+    max-width: none;
   }
 }
 .post-navigation {
