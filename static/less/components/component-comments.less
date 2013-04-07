@@ -91,6 +91,16 @@
         }
     }
 
+    // "Comment awaiting moderation" info alert
+    .comment-awaiting-moderation {
+        text-align: center;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: @info-color;
+        margin-bottom: 0;
+        padding: 5px;
+    }
+
     // Wrapper of respond area
     #respond {
         padding: 0 20px;
@@ -121,7 +131,7 @@
         width: 100%;
         border: 1px solid #d0d0d0;
         border-radius: @border-radius;
-        padding: 7px;
+        padding: 7px 7px 5px;
 
         &:hover {
             border-color: darken(#d0d0d0, 10%);
@@ -146,7 +156,7 @@
         margin-bottom: 15px;
 
         input {
-            display: inline-block;
+            #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
             background-color: lighten(@brand-color, .5%);
             font-size: @base-font-size + 2;
             color: #e5e5e5;

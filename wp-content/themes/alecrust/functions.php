@@ -64,6 +64,23 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
+ * Adds category class to <body> on single post pages
+ */
+add_filter('body_class','add_category_to_single');
+function add_category_to_single($classes, $class) {
+    if (is_single() ) {
+        global $post;
+        foreach((get_the_category($post->ID)) as $category) {
+            echo $category->cat_name . ' ';
+            // add category slug to the $classes array
+            $classes[] = 'category-'.$category->slug;
+        }
+    }
+    // return the $classes array
+    return $classes;
+}
+
+/**
  * Removes pages from search results
  */
 function pages_search_filter($query) {
