@@ -1041,7 +1041,7 @@ nav ol {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 35px 8px 14px;
+  padding: 8px 14px;
 }
 .alert h3 {
   font-size: 19px;
@@ -1228,10 +1228,12 @@ nav ol {
   text-align: center;
 }
 .comments-area .comment-awaiting-moderation {
-  text-align: center;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  color: #3a87ad;
+  border-color: #afd9ee;
   background-color: #d9edf7;
+  text-align: center;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   margin-bottom: 0;
   padding: 5px;
 }
@@ -1494,7 +1496,7 @@ input[type="submit"]:active,
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 35px 8px 14px;
+  padding: 8px 14px;
 }
 .form-error h3 {
   font-size: 19px;
