@@ -2,53 +2,56 @@
 // -------------------------
 
 // Scaffolding
-@brand-color:                   #333;
-@content-background:            #f8f8f8;
-@footer-background:             #525252;
-@text-color:                    lighten(@brand-color, 2%);
-@edit-color:                    #d13a3a;
-@border-radius:                 2px;
-@transition:                    all 0.3s ease;
+@brand-color:                    #333;
+@content-background:             #f8f8f8;
+@footer-background:              #525252;
+@text-color:                     lighten(@brand-color, 2%);
+@edit-color:                     @state-success-text;
+@border-radius:                  2px;
+@transition:                     all 0.3s ease;
 
 // Screen sizes
-@smartphone-landscape:          480px;
-@tablet-portrait:               768px;
-@tablet-landscape:              1024px;
-@desktop-width:                 1224px;
-@desktop-width-secondary:       @desktop-width + 200px; // 1424
-@large-desktop-width:           1725px;
+@smartphone-landscape:           480px;
+@tablet-portrait:                768px;
+@tablet-landscape:               1024px;
+@desktop-width:                  1224px;
+@desktop-width-secondary:        @desktop-width + 200px; // 1424
+@large-desktop-width:            1725px;
 
 // Links
-@link-color:                    @text-color;
-@link-color-hover:              darken(@link-color, 10%);
-@link-color-visited:            lighten(@link-color, 10%);
+@link-color:                     @text-color;
+@link-color-hover:               darken(@link-color, 10%);
+@link-color-visited:             lighten(@link-color, 10%);
 
 // Typography
-@sans-font-family:              "Myriad Pro", Helvetica, Arial, sans-serif;
-@serif-font-family:             serif;
-@brand-font-family:             "stalin_oneregular", sans-serif;
+@sans-font-family:               "Myriad Pro", Helvetica, Arial, sans-serif;
+@serif-font-family:              serif;
+@brand-font-family:              "stalin_oneregular", sans-serif;
 
-@base-font-size:                14px;
-@base-font-family:              @sans-font-family;
-@base-line-height:              1.4;
+@base-font-size:                 14px;
+@base-font-family:               @sans-font-family;
+@base-line-height:               1.4;
 
-// Alert colours
-@success-color:                 lighten(@home-color, 40%);
-@info-color:                    lighten(@about-color, 40%);
-@error-color:                   lighten(@work-color, 40%);
+// Alerts
+@state-error-text:               #b94a48;
+@state-error-bg:                 #f2dede;
+@state-success-text:             #468847;
+@state-success-bg:               #dff0d8;
+@state-info-text:                #3a87ad;
+@state-info-bg:                  #d9edf7;
 
 // Images path
-@img-path:                      "images/";
-@sprite-path:                   "images/global-sprite.png";
-@sprite-x2-path:                "images/global-sprite-x2.png";
+@img-path:                       "images/";
+@sprite-path:                    "images/global-sprite.png";
+@sprite-x2-path:                 "images/global-sprite-x2.png";
 
 // Selection highlight
-@selection-hightlight-color:    #b3d4fc;
+@selection-hightlight-color:     #b3d4fc;
 
 // Page colours
-@home-color:                    #2ec239;
-@about-color:                   #3e7fd7;
-@work-color:                    #d13a3a;
-@projects-color:                #d57300;
-@blog-color:                    #47c6bf;
-@contact-color:                 #d5db3a;
+@home-color:                     #2ec239;
+@about-color:                    #3e7fd7;
+@work-color:                     #d13a3a;
+@projects-color:                 #d57300;
+@blog-color:                     #47c6bf;
+@contact-color:                  #d5db3a;
