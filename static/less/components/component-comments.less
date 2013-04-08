@@ -140,24 +140,7 @@
         margin-bottom: 15px;
 
         input {
-            #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
-            background-color: lighten(@brand-color, .5%);
-            font-size: @base-font-size + 2;
-            color: #e5e5e5;
-            border: 0;
-            border-radius: @border-radius;
-            padding: 12px 20px 10px;
-
-            &:hover {
-                #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
-                background-color: darken(@brand-color, 2%);
-            }
-
-            &:active {
-                color: #fff;
-                #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
-                background-color: lighten(@brand-color, 9%);
-            }
+            .button;
         }
     }
 }

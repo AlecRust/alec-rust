@@ -15,7 +15,7 @@ get_header(); ?>
         </header>
 
         <div class="entry-content">
-            <p>Sorry, the page you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help</p>
+            <p>Sorry, the page you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help?</p>
             <?php get_search_form(); ?>
         </div>
 

@@ -1,0 +1,33 @@
+// "Button" page component
+// Used for submit buttons
+// -------------------------
+.button {
+    #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
+    font-size: @base-font-size + 2;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer; // Necessary?
+    text-decoration: none;
+    line-height: @base-line-height;
+    display: inline-block;
+    color: #e5e5e5;
+    border-radius: @border-radius;
+    background-color: lighten(@brand-color, .5%);
+    border: 0; // For input.button
+    margin-bottom: 0; // For input.button
+    padding: 11px 20px 10px;
+
+    &:hover,
+    &:focus {
+        color: lighten(#e5e5e5, 10%);
+        #gradient > .vertical(lighten(@brand-color, 9%), lighten(@brand-color, 2%));
+        background-color: darken(@brand-color, 2%);
+    }
+
+    &:active {
+        color: #fff;
+        text-decoration: none;
+        #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));
+        background-color: lighten(@brand-color, 9%);
+    }
+}
