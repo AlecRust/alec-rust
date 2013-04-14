@@ -15,14 +15,18 @@ get_header(); ?>
             <h1 class="entry-title">Work</h1>
         </header>
         <div class="entry-content">
-            <p>Choose a company below to browse some of my past work.</p>
+            <?php echo category_description( get_category_by_slug('work')->term_id ); ?>
         </div>
     </article>
 
     <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
+    <?php
+        $category_id = get_cat_ID( 'Large Corporations' );
+        $category_link = get_category_link( $category_id );
+    ?>
     <section class="post work-list">
-        <h2>Large Corporations</h2>
+        <h2><a href="<?php echo esc_url( $category_link ); ?>">Large Corporations</a></h2>
         <ul>
         <?php while (have_posts()) : the_post(); ?>
             <li>
@@ -40,8 +44,12 @@ get_header(); ?>
 
     <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
+    <?php
+        $category_id = get_cat_ID( 'Small Businesses' );
+        $category_link = get_category_link( $category_id );
+    ?>
     <section class="post work-list">
-        <h2>Small Businesses</h2>
+        <h2><a href="<?php echo esc_url( $category_link ); ?>">Small Businesses</a></h2>
         <ul>
         <?php while (have_posts()) : the_post(); ?>
             <li>

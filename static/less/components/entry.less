@@ -2,6 +2,9 @@
 // -------------------------
 
 .entry-title {
+    font-weight: normal;
+    font-size: @base-font-size + 21;
+    margin: 0 0 20px;
 
     a {
         text-decoration: none;
@@ -19,16 +22,19 @@
 .entry-content {
 
     h1 {
+        font-weight: normal;
         font-size: @base-font-size + 14;
         margin: 30px 0 15px;
     }
 
     h2 {
+        font-weight: normal;
         font-size: @base-font-size + 11;
         margin: 30px 0 10px;
     }
 
     h3 {
+        font-weight: normal;
         font-size: @base-font-size + 8;
         margin: 30px 0 5px;
     }
@@ -40,6 +46,11 @@
 
     .lead {
         font-size: @base-font-size + 6;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     blockquote {
@@ -76,6 +87,24 @@
         &:hover,
         &:visited {
             color: @text-color;
+        }
+    }
+}
+
+.entry-caption {
+    .border-bottom-radius(@border-radius);
+    border: 1px solid #dfdfdf;
+    border-top: 0;
+    background-color: #efefef;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+
+    p {
+        text-align: right;
+        font-size: @base-font-size - 2;
+
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 }

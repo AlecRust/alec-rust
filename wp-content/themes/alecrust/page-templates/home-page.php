@@ -74,9 +74,10 @@ get_header(); ?>
         $maxitems = $rss->get_item_quantity(3);
         $rss_items = $rss->get_items(0, $maxitems);
         ?>
+        <?php if ($maxitems == 0) echo '<p class="alert">No activity to display.</p>'; ?>
         <ul>
-        <?php if ($maxitems == 0) echo '<li>No activity to display.</li>';
-        else
+        <?php
+            if (!$maxitems == 0)
             foreach ( $rss_items as $item ) : ?>
                 <li>
                     <a href="<?php echo $item->get_permalink(); ?>">
@@ -99,9 +100,10 @@ get_header(); ?>
         $maxitems = $rss->get_item_quantity(3);
         $rss_items = $rss->get_items(0, $maxitems);
         ?>
+        <?php if ($maxitems == 0) echo '<p class="alert">No tweets to display.</p>'; ?>
         <ul>
-        <?php if ($maxitems == 0) echo '<li>No tweets to display.</li>';
-        else
+        <?php
+            if (!$maxitems == 0)
             foreach ( $rss_items as $item ) : ?>
                 <li>
                     <a href="<?php echo $item->get_permalink(); ?>">
