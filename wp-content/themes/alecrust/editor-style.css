@@ -2,324 +2,282 @@
  * Theme Name: Alec Rust
  * Description: Used to style the TinyMCE editor
  */
-
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+}
+.ir:before {
+  width: 0;
+  height: 150%;
+  content: "";
+  display: block;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
 html {
-    font-size: 87.5%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
-
 body {
-    color: #383838;
-    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1;
-    text-rendering: optimizeLegibility;
-    vertical-align: baseline;
+  margin: 0;
 }
-
-/* Headings
--------------------------------- */
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
 h1 {
-    font-size: 28px;
-    margin: 30px 0 15px;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
-
-h2 {
-    font-size: 25px;
-    margin: 30px 0 10px;
+abbr[title] {
+  border-bottom: 1px dotted;
 }
-
-h3 {
-    font-size: 22px;
-    margin: 30px 0 5px;
-}
-
-hr {
-    background-color: #ccc;
-    border: 0;
-    height: 1px;
-    margin: 24px;
-    margin-bottom: 1.714285714rem;
-}
-
-/* Text elements
--------------------------------- */
-p {
-    line-height: 1.714285714;
-    margin: 0 0 1.714285714rem;
-}
-
-.lead {
-    font-size: 21px;
-}
-
-ul,
-ol {
-    margin: 0 0 1.714285714rem;
-    line-height: 1.714285714;
-    padding: 0;
-}
-
-ul {
-    list-style: disc outside;
-}
-
-ol {
-    list-style: decimal outside;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-    margin-bottom: 0;
-}
-
-li {
-    margin: 0 0 0 1.714285714rem;
-}
-
-dl {
-    margin: 0 1.714285714rem;
-}
-
-dt {
-    font-weight: bold;
-    margin-bottom: 1.714285714rem;
-}
-
-dd {
-    line-height: 1.714285714;
-    margin: 0 0 1.714285714rem;
-}
-
+b,
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
-
-cite,
-em,
-i {
-    font-style: italic;
+dfn {
+  font-style: italic;
 }
-
-cite {
-    border: none;
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
-
-big {
-    font-size: 128.571429%;
+mark {
+  background: #ff0;
+  color: #000;
 }
-
-.mceContentBody blockquote {
-    font-style: italic !important;
-    font-weight: normal;
-    margin: 0;
-    padding: 1.714285714rem;
-}
-
-pre {
-    border: 1px solid #ededed;
-    color: #666;
-    font-family: Consolas, Monaco, Lucida Console, monospace;
-    font-size: 0.857142857rem;
-    line-height: 1.714285714;
-    margin: 1.714285714rem 0;
-    overflow: auto;
-    padding: 1.714285714rem;
-}
-
 code,
 kbd,
-samp,
-var {
-    font-family: Consolas, Monaco, Lucida Console, monospace;
-    font-size: 0.857142857rem;
-    line-height: 2;
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
 }
-
-abbr,
-acronym,
-dfn {
-    border-bottom: 1px dotted #666;
-    cursor: help;
+pre {
+  white-space: pre-wrap;
 }
-
-address {
-    display: block;
-    line-height: 1.714285714;
-    margin: 0 0 1.714285714rem;
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
 }
-
-del {
-    color: #333;
+small {
+  font-size: 80%;
 }
-
-ins {
-    background: #fff9c0;
-    border: none;
-    color: #333;
-    text-decoration: none;
-}
-
-sup,
-sub {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
+sub,
 sup {
-    top: -0.5em;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
-
+sup {
+  top: -0.5em;
+}
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
-
-input[type="text"] {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-family: inherit;
-    padding: 0.428571429rem;
+img {
+  border: 0;
 }
-
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
 textarea {
-    border: 1px solid #d5d2ca;
-    border-radius: 3px;
-    font-family: inherit;
-    font-size: 0.857142857rem;
-    line-height: 1.714285714;
-    padding: 0.714285714rem;
-    width: 96%;
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
 }
-
-/* Links
--------------------------------- */
-a,
-a em,
-a strong {
-    color: #21759b;
-    outline: none;
+button,
+input {
+  line-height: normal;
 }
-
-a.muted {
-    color: #383838;
+button,
+select {
+  text-transform: none;
 }
-
-/* Alignment
--------------------------------- */
-.alignleft {
-    display: inline;
-    float: left;
-    margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
 }
-
-.alignright {
-    display: inline;
-    float: right;
-    margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;
+button[disabled],
+html input[disabled] {
+  cursor: default;
 }
-
-.aligncenter {
-    clear: both;
-    display: block;
-    margin-top: 0.857142857rem;
-    margin-bottom: 0.857142857rem;
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
 }
-
-/* Tables
--------------------------------- */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
 table {
-    border-bottom: 1px solid #ededed;
-    border-collapse: collapse;
-    border-spacing: 0;
-    color: #757575;
-    font-size: 12px;
-    font-size: 0.857142857rem;
-    line-height: 2;
-    margin: 0 0 1.714285714rem;
-    width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-tr th {
-    color: #636363;
-    font-size: 11px;
-    font-size: 0.785714286rem;
-    font-weight: bold;
-    line-height: 2.181818182;
-    text-align: left;
-    text-transform: uppercase;
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-td {
-    border-top: 1px solid #ededed !important;
-    color: #757575;
-    font-size: inherit;
-    font-weight: normal;
-    padding: 6px 10px 6px 0;
-    text-align: left;
+html,
+button,
+input,
+select,
+textarea {
+  color: #383838;
 }
-
-/* Images
--------------------------------- */
-img,
-.editor-attachment {
-    border: 0;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    max-width: 100%;
+body {
+  color: #383838;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  background-color: #ffffff;
+  padding: 1em 1.5em;
 }
-
-/* Prevent stretching of full-size images in IE8 */
-img.size-full {
-    width: auto/9;
+h1 {
+  font-weight: normal;
+  font-size: 28px;
+  margin: 30px 0 15px;
 }
-
-img[class*="wp-image-"] {
-    height: auto;
-    max-width: 100%;
+h2 {
+  font-weight: normal;
+  font-size: 25px;
+  margin: 30px 0 10px;
 }
-
-/* Make sure images with WordPress-added height and width attributes are scaled correctly */
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"] {
-    height: auto;
+h3 {
+  font-weight: normal;
+  font-size: 22px;
+  margin: 30px 0 5px;
 }
-
-img.mceWPnextpage {
-    border-radius: 0;
-    box-shadow: none;
+a {
+  color: #383838;
 }
-
-img.wp-smiley {
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+a:hover {
+  color: #1f1f1f;
 }
-
-.wp-caption {
-    background: transparent;
-    border: none;
-    margin: 0;
-    padding: 4px;
-    text-align: left;
+a:active {
+  text-decoration: underline;
 }
-
-.wp-caption-dt {
-    margin: 0;
+a:visited {
+  color: #525252;
 }
-
-.wp-caption .wp-caption-text,
-.wp-caption-dd {
-    color: #757575;
-    font-style: italic;
-    font-size: 12px;
-    font-size: 0.857142857rem;
-    line-height: 2;
-    margin: 0 0 1.71429rem;
+a.muted {
+  color: #383838;
+}
+p {
+  font-size: 15px;
+  line-height: 1.5999999999999999;
+  margin: 0 0 1em;
+}
+.lead {
+  font-size: 20px;
+}
+blockquote {
+  background-color: #f9f9f9;
+  border-left: 10px solid #bbb;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  margin: 1.5em 10px;
+  padding: .5em 10px;
+}
+blockquote:before {
+  color: #bbb;
+  content: open-quote;
+  font-size: 4em;
+  line-height: .1em;
+  vertical-align: -0.4em;
+  margin-right: .25em;
+}
+blockquote p {
+  display: inline;
+}
+pre,
+code {
+  border-radius: 2px;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+}
+img {
+  vertical-align: middle;
+}
+.alignleft {
+  float: left;
+  max-width: 40%;
+  margin: 0 10px 10px 0;
+}
+.alignright {
+  float: right;
+  max-width: 40%;
+  margin: 0 0 10px 10px;
 }

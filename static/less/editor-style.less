@@ -1,0 +1,132 @@
+/*
+ * Theme Name: Alec Rust
+ * Description: Used to style the TinyMCE editor
+ */
+
+// Variables
+@import "variables";
+
+// Mixins
+@import "mixins";
+
+// Reset
+@import "normalize";
+
+// Apply a natural box layout model to all elements
+* {
+    .box-sizing(border-box);
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: @text-color;
+}
+
+body {
+    color: @text-color;
+    font-family: @base-font-family;
+    font-size: @base-font-size;
+    line-height: @base-line-height;
+    background-color: lighten(@content-background, 5%);
+    padding: 1em 1.5em;
+}
+
+// Headings
+h1 {
+    font-weight: normal;
+    font-size: @base-font-size + 14;
+    margin: 30px 0 15px;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: @base-font-size + 11;
+    margin: 30px 0 10px;
+}
+
+h3 {
+    font-weight: normal;
+    font-size: @base-font-size + 8;
+    margin: 30px 0 5px;
+}
+
+// Links
+a {
+    color: @link-color;
+
+    &:hover {
+        color: @link-color-hover;
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: @link-color-visited;
+    }
+
+    &.muted {
+        color: @text-color;
+    }
+}
+
+// Text elements
+p {
+    font-size: @base-font-size + 1;
+    line-height: @base-line-height + .2;
+    margin: 0 0 1em;
+}
+
+.lead {
+    font-size: @base-font-size + 6;
+}
+
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 10px solid #bbb;
+    quotes: "\201C""\201D""\2018""\2019";
+    margin: 1.5em 10px;
+    padding: .5em 10px;
+
+    &:before {
+        color: #bbb;
+        content: open-quote;
+        font-size: 4em;
+        line-height: .1em;
+        vertical-align: -.4em;
+        margin-right: .25em;
+    }
+
+    p {
+        display: inline;
+    }
+}
+
+pre,
+code {
+    border-radius: @border-radius;
+    background-color: #f9f2f4;
+    padding: 2px 4px;
+}
+
+// Remove the gap between images and the bottom of their containers
+img {
+    vertical-align: middle;
+}
+
+// Alignment
+.alignleft {
+    float: left;
+    max-width: 40%;
+    margin: 0 10px 10px 0;
+}
+
+.alignright {
+    float: right;
+    max-width: 40%;
+    margin: 0 0 10px 10px;
+}

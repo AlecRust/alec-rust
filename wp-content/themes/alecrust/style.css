@@ -1,15 +1,15 @@
 /*
-Theme Name: Alec Rust
-Theme URI: https://github.com/AlecRust/alec-rust
-Author: Alec Rust
-Author URI: http://alecrust.com/
-Description: Mobile first responsive theme for the Alec Rust website.
-Version: 1.0
-License: The MIT License (MIT)
-License URI: http://opensource.org/licenses/mit-license.php
-Tags: mobile-first, responsive
-Text Domain: alecrust
-*/
+ * Theme Name: Alec Rust
+ * Theme URI: https://github.com/AlecRust/alec-rust
+ * Author: Alec Rust
+ * Author URI: http://alecrust.com/
+ * Description: Mobile first responsive theme for the Alec Rust website.
+ * Version: 1.0
+ * License: The MIT License (MIT)
+ * License URI: http://opensource.org/licenses/mit-license.php
+ * Tags: mobile-first, responsive
+ * Text Domain: alecrust
+ */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -1057,17 +1057,17 @@ nav ol {
 }
 .alert-error {
   color: #b94a48;
-  border-color: #e4b9b9;
+  border-color: #ebcccc;
   background-color: #f2dede;
 }
 .alert-success {
   color: #468847;
-  border-color: #c1e2b3;
+  border-color: #d0e9c6;
   background-color: #dff0d8;
 }
 .alert-info {
   color: #3a87ad;
-  border-color: #afd9ee;
+  border-color: #c4e3f3;
   background-color: #d9edf7;
 }
 .button {
@@ -1205,7 +1205,7 @@ nav ol {
 }
 .comments-area .comment-awaiting-moderation {
   color: #3a87ad;
-  border-color: #afd9ee;
+  border-color: #c4e3f3;
   background-color: #d9edf7;
   text-align: center;
   border-top: 1px solid;
@@ -1299,6 +1299,7 @@ a.timestamp:hover {
   position: static;
 }
 .comments-link {
+  clear: both;
   float: left;
 }
 .comments-link a {
@@ -1411,6 +1412,7 @@ a.timestamp:hover {
 .entry-content blockquote p {
   display: inline;
 }
+.entry-content pre,
 .entry-content code {
   border-radius: 2px;
   background-color: #f9f2f4;
