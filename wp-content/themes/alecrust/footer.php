@@ -44,7 +44,7 @@
             // Cycle intro text at @tabletLandscape and up
             var mq = window.matchMedia('(min-width: 1024px)');
             if (mq.matches) {
-                $('.home-intro h1 span').cycle([
+                $('.hero-unit h1 span').cycle([
                     ' specialise in Responsive Web Design and modern web technologies.',
                     ' have industry experience building large-scale websites.',
                     ' have worked with many of the leading tech companies.',

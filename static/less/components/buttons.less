@@ -1,5 +1,4 @@
-// "Button" page component
-// Used for submit buttons
+// Buttons
 // -------------------------
 .button {
     #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
@@ -25,6 +24,7 @@
     }
 
     &:active {
+        .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
         color: #fff;
         text-decoration: none;
         #gradient > .vertical(lighten(@brand-color, 6%), lighten(@brand-color, 9%));

@@ -1,6 +1,5 @@
-// "Comments" page component
+// Comments
 // Below styling is a little messy due to default comments output
-// TODO: Improve comments code output and update this styling
 // -------------------------
 .comments-area {
     padding: 0 20px 20px;
@@ -83,6 +82,21 @@
         .edit-link {
             width: 100%;
             text-align: center;
+        }
+    }
+
+    // If comment by post author
+    .bypostauthor {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            top: 16px;
+            left: -20px;
+            content: "A";
+            color: lighten(@text-color, 55%);
+            font-size: @base-font-size - 2;
+            font-family: @brand-font-family;
         }
     }
 

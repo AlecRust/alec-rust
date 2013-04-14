@@ -1,7 +1,6 @@
-// "Bio Image" page component
-// Used soley on the About page so far, to style a polaroid-like Gravatar
+// Polaroid Image
 // -------------------------
-.bio-image {
+.img-polaroid {
     .box-shadow(1px 2px 3px #d1d1d1);
     max-width: 320px;
     border: 1px solid #eee;
@@ -10,7 +9,7 @@
     padding: 15px 15px 10px;
 }
 
-.bio-image-caption {
+.img-polaroid-caption {
     color: lighten(@text-color, 30%);
     text-align: right;
     font-size: @base-font-size - 2;
@@ -25,7 +24,7 @@
 // -------------------------
 @media only screen and (min-width: @smartphone-landscape) {
 
-    .bio-image {
+    .img-polaroid {
         .transition(@transition);
         float: right;
         width: 40%;
@@ -37,7 +36,7 @@
 // -------------------------
 @media only screen and (min-width: @desktop-width) {
 
-    .bio-image {
+    .img-polaroid {
         .rotate(4deg);
         margin-bottom: 30px;
     }

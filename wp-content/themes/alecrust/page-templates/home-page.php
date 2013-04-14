@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-    <article class="home-intro">
+    <article class="hero-unit">
         <h1>I&rsquo;m Alec, and I<span>&rsquo;ve spent the last decade building awesome things on the internet.</span></h1>
         <ul>
             <li class="about"><a href="<?php echo site_url('/about/'); ?>">More about me</a></li>
