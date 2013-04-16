@@ -1,5 +1,6 @@
+//
 // Base styles
-// -------------------------
+// --------------------------------------------------
 
 // Apply a natural box layout model to all elements
 * {
@@ -14,11 +15,15 @@ textarea {
     color: @text-color;
 }
 
+html {
+    background-color: transparent;
+}
+
 body {
     color: @text-color;
-    font-family: @base-font-family;
-    font-size: @base-font-size;
-    line-height: @base-line-height;
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
     background: #d8d8d8 url("@{img-path}body-bg-tile.png") fixed;
     background-size: 100%;
 }
@@ -28,7 +33,7 @@ a {
     color: @link-color;
 
     &:hover {
-        color: @link-color-hover;
+        color: @link-hover-color;
     }
 
     &:active {
@@ -36,7 +41,7 @@ a {
     }
 
     &:visited {
-        color: @link-color-visited;
+        color: @link-visited-color;
     }
 }
 
@@ -84,6 +89,7 @@ nav {
 }
 
 // Chrome Frame prompt
+// --------------------------------------------------
 .chromeframe {
     color: @text-color;
     background-color: #f2efc4;
@@ -92,9 +98,9 @@ nav {
     padding: 10px;
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     body {
         background-size: auto;

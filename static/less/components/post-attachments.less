@@ -1,11 +1,12 @@
+//
 // Post Attachments
-// -------------------------
+// --------------------------------------------------
 .post-attachments {
 
     .post-attachments-title {
         display: inline-block;
         width: 40%;
-        font-size: @base-font-size + 8;
+        font-size: @font-size-base + 8;
         border-bottom: 1px solid #ddd;
         margin: 30px 0 20px;
     }
@@ -52,16 +53,16 @@
         left: 0;
         width: 100%;
         text-align: left;
-        font-size: @base-font-size + 5;
+        font-size: @font-size-base + 5;
         color: #fff;
         margin-bottom: 0;
         padding: 15px 20px;
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .post-attachments {
 
@@ -78,9 +79,9 @@
     }
 }
 
-// @desktop-width-secondary devices and up
-// -------------------------
-@media only screen and (min-width: @desktop-width-secondary) {
+// @screen-desktop-medium devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-desktop-medium) {
 
     .post-attachments {
 

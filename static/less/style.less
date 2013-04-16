@@ -3,7 +3,7 @@
  * Theme URI: https://github.com/AlecRust/alec-rust
  * Author: Alec Rust
  * Author URI: http://alecrust.com/
- * Description: Mobile first responsive theme for the Alec Rust website.
+ * Description: Mobile-first responsive theme for the Alec Rust website.
  * Version: 1.0
  * License: The MIT License (MIT)
  * License URI: http://opensource.org/licenses/mit-license.php
@@ -11,20 +11,17 @@
  * Text Domain: alecrust
  */
 
-// Variables
+// Core variables and mixins
 @import "variables";
-
-// Mixins
 @import "mixins";
 
 // Reset
 @import "normalize";
+@import "print";
 
-// Web fonts
-@import "fonts";
-
-// Base
+// Core CSS
 @import "base";
+@import "fonts";
 
 // Global structure
 @import "global/content";
@@ -55,5 +52,3 @@
 // Utility classes
 @import "utilities";
 
-// Print styles
-@import "print";

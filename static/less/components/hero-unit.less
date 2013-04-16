@@ -1,11 +1,12 @@
+//
 // Hero Unit
-// -------------------------
+// --------------------------------------------------
 .hero-unit {
     margin-bottom: 30px;
 
     h1 {
         font-weight: normal;
-        font-size: @base-font-size + 21;
+        font-size: @font-size-base + 21;
         text-shadow: 0 0 5px #fff;
         margin: 0 0 20px;
     }
@@ -16,7 +17,7 @@
     }
 
     li {
-        font-size: @base-font-size + 1;
+        font-size: @font-size-base + 1;
         text-shadow: 0 0 5px #fff;
         margin-bottom: 10px;
     }
@@ -51,9 +52,9 @@
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .hero-unit {
 
@@ -64,9 +65,9 @@
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .hero-unit {
         margin-bottom: 60px;

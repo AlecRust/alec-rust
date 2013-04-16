@@ -89,7 +89,7 @@ get_header(); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
-        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile' ); ?></a></p>
+        <p class="view-more"><a href="https://github.com/AlecRust">View my GitHub profile</a></p>
     </section>
 
     <section class="module module-tweets">

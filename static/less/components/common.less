@@ -1,10 +1,11 @@
+//
 // Common
-// -------------------------
+// --------------------------------------------------
 
 // Archive title
 .archive-title {
     font-weight: normal;
-    font-size: @base-font-size + 21;
+    font-size: @font-size-base + 21;
     margin: 0;
 }
 
@@ -16,7 +17,7 @@
 // Timestamp
 .timestamp {
     color: lighten(@text-color, 30%);
-    font-size: @base-font-size - 1;
+    font-size: @font-size-base - 1;
     text-decoration: none; // If .timestamp class appears on anchor
 
     a {
@@ -55,6 +56,6 @@ a.timestamp:hover {
 
 // Google Code Prettify
 .prettyprint {
-    border-radius: @border-radius;
+    border-radius: @border-radius-base;
     padding: 10px 15px;
 }

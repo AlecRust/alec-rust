@@ -1,5 +1,6 @@
+//
 // Global header
-// -------------------------
+// --------------------------------------------------
 .global-header {
     .transition(@transition);
     position: relative;
@@ -7,8 +8,8 @@
 }
 
 .global-header-logo {
-    font-size: @base-font-size + 9;
-    font-family: @brand-font-family;
+    font-size: @font-size-base + 9;
+    font-family: @font-family-brand;
     text-align: center;
     margin: 0 0 -2px;
 
@@ -19,7 +20,7 @@
         #gradient > .vertical(lighten(@brand-color, 7%), @brand-color);
         .transition(@transition);
         .box-shadow(1px 1px 1px #aaa);
-        font-size: @base-font-size + 21;
+        font-size: @font-size-base + 21;
         color: #c5c5c5;
         border-radius: 30px;
         background-color: @brand-color;
@@ -29,7 +30,7 @@
 
     // "A" logo colour
     &:hover span {
-        color: @home-color;
+        color: @section-home-color;
     }
 
     a {
@@ -45,45 +46,45 @@
 
 // "About" page logo colour
 .page-about .global-header .global-header-logo:hover span {
-    color: @about-color;
+    color: @section-about-color;
 }
 
 // "Blog" category logo colour
 .category-blog .global-header .global-header-logo:hover span {
-    color: @blog-color;
+    color: @section-blog-color;
 }
 
 // "Contact" page logo colour
 .page-contact .global-header .global-header-logo:hover span {
-    color: @contact-color;
+    color: @section-contact-color;
 }
 
 // "Home" page logo colour
 .page-home .global-header .global-header-logo:hover span {
-    color: @home-color;
+    color: @section-home-color;
 }
 
 // "Projects" category logo colour
 .category-projects .global-header .global-header-logo:hover span {
-    color: @projects-color;
+    color: @section-projects-color;
 }
 
 // "Work" category logo colour
 .category-work .global-header .global-header-logo:hover span {
-    color: @work-color;
+    color: @section-work-color;
 }
 
 .global-header-tagline {
     width: 226px;
     color: #7b7b7b;
-    font-size: @base-font-size - 2;
+    font-size: @font-size-base - 2;
     margin: auto;
     padding-left: 60px;
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .global-header {
         float: left;
@@ -91,9 +92,9 @@
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .global-header {
         position: fixed;
@@ -108,9 +109,9 @@
     }
 }
 
-// @desktop-width devices and up
-// -------------------------
-@media only screen and (min-width: @desktop-width) {
+// @screen-desktop-base devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-desktop-base) {
 
     // 1. Prevent -90deg header rotation when scrolling
     // 2. Move header left when scrolling
@@ -121,9 +122,9 @@
     }
 }
 
-// @desktop-width-secondary devices and up
-// -------------------------
-@media only screen and (min-width: @desktop-width-secondary) {
+// @screen-desktop-medium devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-desktop-medium) {
 
     // Prevent move header left when scrolling
     body.scrolling .global-header {

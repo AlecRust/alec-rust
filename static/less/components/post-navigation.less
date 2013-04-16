@@ -1,5 +1,6 @@
+//
 // Post Navigation
-// -------------------------
+// --------------------------------------------------
 .post-navigation {
     margin-top: -20px;
 
@@ -11,7 +12,7 @@
     }
 
     li {
-        font-size: @base-font-size + 4;
+        font-size: @font-size-base + 4;
     }
 
     a {
@@ -40,11 +41,11 @@
             }
 
             &:visited:before {
-                border-left-color: @link-color-visited;
+                border-left-color: @link-visited-color;
             }
 
             &:hover:before {
-                border-left-color: @link-color-hover;
+                border-left-color: @link-hover-color;
             }
         }
     }
@@ -66,19 +67,19 @@
             }
 
             &:visited:after {
-                border-left-color: @link-color-visited;
+                border-left-color: @link-visited-color;
             }
 
             &:hover:after {
-                border-left-color: @link-color-hover;
+                border-left-color: @link-hover-color;
             }
         }
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .post-navigation {
         position: relative;

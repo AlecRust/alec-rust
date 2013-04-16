@@ -1,5 +1,6 @@
+//
 // Global navigation
-// -------------------------
+// --------------------------------------------------
 .global-navigation {
     margin-bottom: 20px;
 
@@ -134,9 +135,9 @@
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .global-navigation {
 
@@ -159,20 +160,20 @@
 
             &:first-child,
             &:nth-child(4) {
-                .border-left-radius(@border-radius + 1);
+                .border-left-radius(@border-radius-large);
             }
 
             &:nth-child(3),
             &:nth-child(6) {
-                .border-right-radius(@border-radius + 1);
+                .border-right-radius(@border-radius-large);
             }
         }
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .global-navigation {
         clear: left;
@@ -189,7 +190,7 @@
             margin-left: 0;
 
             &:first-child {
-                .border-left-radius(@border-radius + 1);
+                .border-left-radius(@border-radius-large);
             }
 
             &:nth-child(3),
@@ -199,15 +200,15 @@
             }
 
             &:last-child {
-                .border-right-radius(@border-radius + 1);
+                .border-right-radius(@border-radius-large);
             }
         }
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .global-navigation {
         position: fixed;
@@ -217,7 +218,7 @@
         margin-bottom: 60px;
 
         li {
-            .border-left-radius(@border-radius + 1) !important; // Override smaller screen size styles
+            .border-left-radius(@border-radius-large) !important; // Override smaller screen size styles
             text-align: left;
             display: list-item;
 

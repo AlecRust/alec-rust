@@ -3,7 +3,7 @@
  * Theme URI: https://github.com/AlecRust/alec-rust
  * Author: Alec Rust
  * Author URI: http://alecrust.com/
- * Description: Mobile first responsive theme for the Alec Rust website.
+ * Description: Mobile-first responsive theme for the Alec Rust website.
  * Version: 1.0
  * License: The MIT License (MIT)
  * License URI: http://opensource.org/licenses/mit-license.php
@@ -56,9 +56,11 @@ audio:not([controls]) {
   display: none;
 }
 html {
+  background: #fff;
+  color: #000;
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -195,12 +197,56 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-@font-face {
-  font-family: 'stalin_oneregular';
-  src: url('fonts/stalinone-regular-webfont.eot');
-  src: url('fonts/stalinone-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/stalinone-regular-webfont.woff') format('woff'), url('fonts/stalinone-regular-webfont.ttf') format('truetype'), url('fonts/stalinone-regular-webfont.svg#stalin_oneregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
 * {
   -moz-box-sizing: border-box;
@@ -212,6 +258,9 @@ input,
 select,
 textarea {
   color: #383838;
+}
+html {
+  background-color: transparent;
 }
 body {
   color: #383838;
@@ -271,6 +320,13 @@ nav ol {
   body {
     background-size: auto;
   }
+}
+@font-face {
+  font-family: 'stalin_oneregular';
+  src: url('fonts/stalinone-regular-webfont.eot');
+  src: url('fonts/stalinone-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/stalinone-regular-webfont.woff') format('woff'), url('fonts/stalinone-regular-webfont.ttf') format('truetype'), url('fonts/stalinone-regular-webfont.svg#stalin_oneregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 .global-content {
   position: relative;
@@ -1085,7 +1141,7 @@ nav ol {
 }
 .button:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   background-color: #454545;
   background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
@@ -1530,7 +1586,7 @@ input[type="submit"]:focus,
 input[type="submit"]:active,
 .form-submit input:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   background-color: #454545;
   background-image: -moz-linear-gradient(top, #424242, #4a4a4a);
@@ -2126,55 +2182,4 @@ body.page-home.page .global-content {
   margin: 0;
   overflow: visible;
   position: static;
-}
-@media print {
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  @page  {
-    margin: 0.5cm;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }

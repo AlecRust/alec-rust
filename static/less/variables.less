@@ -1,38 +1,51 @@
+//
 // Variables
-// -------------------------
+// --------------------------------------------------
 
 // Scaffolding
+// -------------------------
 @brand-color:                    #333;
-@content-background:             #f8f8f8;
-@footer-background:              #525252;
+@content-bg:                     #f8f8f8;
+@footer-bg:                      #525252;
 @text-color:                     lighten(@brand-color, 2%);
 @edit-color:                     @state-success-text;
-@border-radius:                  2px;
 @transition:                     all 0.3s ease;
+@border-radius-base:             2px;
+@border-radius-large:            @border-radius-base + 1;
 
 // Screen sizes
-@smartphone-landscape:           480px;
-@tablet-portrait:                768px;
-@tablet-landscape:               1024px;
-@desktop-width:                  1224px;
-@desktop-width-secondary:        @desktop-width + 200px; // 1424
-@large-desktop-width:            1725px;
+// -------------------------
+@screen-smartphone-landscape:    480px;
+@screen-tablet-portrait:         768px;
+@screen-tablet-landscape:        1024px;
+@screen-desktop-base:            1224px;
+@screen-desktop-medium:          @screen-desktop-base + 200px; // 1424
+@screen-desktop-large:           1725px; // Not used?
 
 // Links
+// -------------------------
 @link-color:                     @text-color;
-@link-color-hover:               darken(@link-color, 10%);
-@link-color-visited:             lighten(@link-color, 10%);
+@link-hover-color:               darken(@link-color, 10%);
+@link-visited-color:             lighten(@link-color, 10%);
 
 // Typography
-@sans-font-family:               "Myriad Pro", Helvetica, Arial, sans-serif;
-@serif-font-family:              serif;
-@brand-font-family:              "stalin_oneregular", sans-serif;
+// -------------------------
+@font-family-sans-serif:         "Myriad Pro", Helvetica, Arial, sans-serif;
+@font-family-serif:              serif;
+@font-family-brand:              "stalin_oneregular", sans-serif;
 
-@base-font-size:                 14px;
-@base-font-family:               @sans-font-family;
-@base-line-height:               1.4;
+@font-size-base:                 14px;
+@font-family-base:               @font-family-sans-serif;
+@line-height-base:               1.4;
+
+// Buttons
+// -------------------------
+@button-color:                   #e5e5e5;
+@button-bg:                      @brand-color;
+@button-border:                  0;
 
 // Alerts
+// -------------------------
 @state-error-text:               #b94a48;
 @state-error-bg:                 #f2dede;
 @state-success-text:             #468847;
@@ -41,18 +54,21 @@
 @state-info-bg:                  #d9edf7;
 
 // Paths
+// -------------------------
 @img-path:                       "images/";
 @sprite-path:                    "images/global-sprite.png";
 @sprite-x2-path:                 "images/global-sprite-x2.png";
 @font-path:                      "fonts/";
 
 // Selection highlight
+// -------------------------
 @selection-hightlight-color:     #b3d4fc;
 
-// Page colours
-@home-color:                     #2ec239;
-@about-color:                    #3e7fd7;
-@work-color:                     #d13a3a;
-@projects-color:                 #d57300;
-@blog-color:                     #47c6bf;
-@contact-color:                  #d5db3a;
+// Section colours
+// -------------------------
+@section-home-color:             #2ec239;
+@section-about-color:            #3e7fd7;
+@section-work-color:             #d13a3a;
+@section-projects-color:         #d57300;
+@section-blog-color:             #47c6bf;
+@section-contact-color:          #d5db3a;

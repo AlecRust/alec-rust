@@ -1,25 +1,26 @@
+//
 // Post
-// -------------------------
+// --------------------------------------------------
 .post {
     .box-shadow(0 2px 2px #ccc);
     position: relative;
-    background-color: @content-background;
+    background-color: @content-bg;
     margin-bottom: 30px;
     padding: 15px 20px;
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .post {
         padding: 15px 30px;
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .post {
         padding: 30px 40px;
@@ -30,12 +31,12 @@
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .post {
-        border-radius: @border-radius + 1;
+        border-radius: @border-radius-large;
 
         &:first-child {
             margin-top: 0;

@@ -1,11 +1,12 @@
+//
 // Modules
-// -------------------------
+// --------------------------------------------------
 .module {
     margin-bottom: 30px;
 
     h1 {
         display: inline-block;
-        font-size: @base-font-size + 2;
+        font-size: @font-size-base + 2;
         font-weight: bold;
         border-bottom: 1px solid #b8b8b8;
         margin: 0 0 14px;
@@ -78,7 +79,7 @@
 
         img {
             .box-shadow(1px 1px 1px #aaa);
-            border-radius: @border-radius;
+            border-radius: @border-radius-base;
         }
     }
 }
@@ -123,7 +124,7 @@
 
     img {
         .box-shadow(1px 1px 1px #aaa);
-        border-radius: @border-radius;
+        border-radius: @border-radius-base;
     }
 }
 
@@ -189,9 +190,9 @@
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     // "Thumbs" module type
     .module-thumbs {
@@ -214,9 +215,9 @@
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .module {
         width: 40%;

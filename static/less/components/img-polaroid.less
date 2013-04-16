@@ -1,5 +1,6 @@
+//
 // Polaroid Image
-// -------------------------
+// --------------------------------------------------
 .img-polaroid {
     .box-shadow(1px 2px 3px #d1d1d1);
     max-width: 320px;
@@ -12,7 +13,7 @@
 .img-polaroid-caption {
     color: lighten(@text-color, 30%);
     text-align: right;
-    font-size: @base-font-size - 2;
+    font-size: @font-size-base - 2;
     padding-top: 10px;
 
     a {
@@ -20,9 +21,9 @@
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .img-polaroid {
         .transition(@transition);
@@ -32,9 +33,9 @@
     }
 }
 
-// @desktop-width devices and up
-// -------------------------
-@media only screen and (min-width: @desktop-width) {
+// @screen-desktop-base devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-desktop-base) {
 
     .img-polaroid {
         .rotate(4deg);

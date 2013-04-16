@@ -1,6 +1,6 @@
+//
 // Comments
-// Below styling is a little messy due to default comments output
-// -------------------------
+// --------------------------------------------------
 .comments-area {
     padding: 0 20px 20px;
 
@@ -26,16 +26,16 @@
     article.comment {
         .box-shadow(0 2px 2px #ccc);
         position: relative;
-        border-radius: @border-radius + 1;
-        background-color: @content-background;
+        border-radius: @border-radius-large;
+        background-color: @content-bg;
         margin-bottom: 10px;
 
         .comment-meta {
             overflow: hidden; // .clearfix destroys img border-radius
 
             .avatar {
-                border-top-left-radius: @border-radius;
-                border-bottom-right-radius: @border-radius;
+                border-top-left-radius: @border-radius-base;
+                border-bottom-right-radius: @border-radius-base;
                 float: left;
             }
 
@@ -61,9 +61,9 @@
         }
 
         .reply a {
-            .border-bottom-radius(@border-radius);
+            .border-bottom-radius(@border-radius-base);
             display: block;
-            font-size: @base-font-size - 1;
+            font-size: @font-size-base - 1;
             text-align: center;
             text-decoration: none;
             background-color: #eee;
@@ -95,8 +95,8 @@
             left: -20px;
             content: "A";
             color: lighten(@text-color, 55%);
-            font-size: @base-font-size - 2;
-            font-family: @brand-font-family;
+            font-size: @font-size-base - 2;
+            font-family: @font-family-brand;
         }
     }
 
@@ -118,13 +118,13 @@
     // Reply title
     #reply-title {
         font-weight: normal;
-        font-size: @base-font-size + 10;
+        font-size: @font-size-base + 10;
         margin: 0 0 10px;
     }
 
     // Cancel reply link
     #cancel-comment-reply-link {
-        font-size: @base-font-size - 1;
+        font-size: @font-size-base - 1;
     }
 
     .required {
@@ -136,18 +136,18 @@
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .comments-area {
         padding: 0 30px 30px;
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .comments-area {
         width: 80%;

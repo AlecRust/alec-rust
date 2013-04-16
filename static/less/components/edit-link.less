@@ -1,5 +1,6 @@
+//
 // Edit Link
-// -------------------------
+// --------------------------------------------------
 .edit-link {
     position: absolute;
     top: 0;
@@ -23,25 +24,25 @@
     }
 
     .post-edit-link {
-        border-bottom-left-radius: @border-radius + 1;
+        border-bottom-left-radius: @border-radius-large;
         padding: 5px 12px 3px;
     }
 
     .comment-edit-link {
-        .border-bottom-radius(@border-radius + 1);
-        font-size: @base-font-size - 3;
+        .border-bottom-radius(@border-radius-large);
+        font-size: @font-size-base - 3;
         padding: 3px 10px 2px;
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .edit-link {
 
         .post-edit-link {
-            border-top-right-radius: @border-radius + 1;
+            border-top-right-radius: @border-radius-large;
         }
     }
 }

@@ -1,10 +1,11 @@
+//
 // Work List
-// -------------------------
+// --------------------------------------------------
 .work-list {
 
     h2 {
         font-weight: normal;
-        font-size: @base-font-size + 12;
+        font-size: @font-size-base + 12;
         margin: 0 0 25px;
 
         a {
@@ -50,15 +51,15 @@
         margin-left: 0;
 
         img {
-            border-radius: @border-radius;
+            border-radius: @border-radius-base;
             .box-shadow(1px 1px 1px #aaa)
         }
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .work-list {
 

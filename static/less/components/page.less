@@ -1,10 +1,11 @@
+//
 // Page
-// -------------------------
+// --------------------------------------------------
 .page {
 
     .global-content {
         .box-shadow(0 2px 2px #ccc);
-        background-color: @content-background;
+        background-color: @content-bg;
         padding: 10px 20px;
     }
 }
@@ -18,9 +19,9 @@ body.page-home {
     }
 }
 
-// @smartphone-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @smartphone-landscape) {
+// @screen-smartphone-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-smartphone-landscape) {
 
     .page {
 
@@ -30,9 +31,9 @@ body.page-home {
     }
 }
 
-// @tablet-portrait devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-portrait) {
+// @screen-tablet-portrait devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .page {
 
@@ -42,14 +43,14 @@ body.page-home {
     }
 }
 
-// @tablet-landscape devices and up
-// -------------------------
-@media only screen and (min-width: @tablet-landscape) {
+// @screen-tablet-landscape devices and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
 
     .page {
 
         .global-content {
-            border-radius: @border-radius + 1;
+            border-radius: @border-radius-large;
         }
     }
 }
