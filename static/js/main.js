@@ -28,6 +28,13 @@ $('.show-navigation a').click(function() {
     return false;
 });
 
+// Show comments form
+$('#comments #reply-title').click(function() {
+    $('#commentform').addClass('js-show-form');
+    $('#reply-title').addClass('js-clicked');
+    return false;
+});
+
 // Open external links in new tab
 $('a[href^=http]').click(function () {
     var a = new RegExp('/' + window.location.host + '/');
