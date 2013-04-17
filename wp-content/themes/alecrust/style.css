@@ -1270,7 +1270,7 @@ nav ol {
   cursor: pointer;
   border: 1px solid #ccc;
   background-color: #eee;
-  padding: 6px 6px 3px;
+  padding: 5px 5px 3px;
   margin: 0 20% 10px;
 }
 .comments-area > #respond #reply-title:hover {
@@ -1481,7 +1481,7 @@ a.timestamp:hover {
 }
 .entry-content p {
   font-size: 15px;
-  line-height: 1.5999999999999999;
+  line-height: 1.7;
 }
 .entry-content .lead {
   font-size: 20px;
@@ -1871,14 +1871,13 @@ input[type="submit"]:active,
   text-decoration: underline;
 }
 .module-thumbs ul {
-  display: table;
   text-align: center;
   margin-bottom: 11px;
   padding-left: 0;
 }
 .module-thumbs li {
-  display: table-cell;
-  margin: 0;
+  display: inline-block;
+  margin: 0 0 11px;
   padding: 0 5px;
 }
 .module-thumbs img {
@@ -1932,11 +1931,19 @@ input[type="submit"]:active,
   text-decoration: underline;
 }
 @media only screen and (min-width: 480px) {
-  .module-thumbs li {
-    padding: 0 10px;
+  .module-thumbs ul {
+    display: table;
+    width: 100%;
   }
-  body.page-home .module-thumbs li:last-child {
-    margin-right: 0;
+  .module-thumbs li {
+    display: table-cell;
+  }
+  .module-thumbs li a {
+    display: block;
+  }
+  .module-thumbs img {
+    max-width: 100%;
+    height: auto;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1945,9 +1952,6 @@ input[type="submit"]:active,
     margin-bottom: 40px;
   }
   .module-thumbs {
-    width: 100%;
-  }
-  .module-thumbs ul {
     width: 100%;
   }
   body.page-home .module-heros {

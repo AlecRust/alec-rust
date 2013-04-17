@@ -30,7 +30,7 @@ body {
     font-family: @font-family-base;
     font-size: @font-size-base;
     line-height: @line-height-base;
-    background-color: lighten(@content-bg, 5%);
+    background-color: lighten(@content-bg, 8%);
     padding: 1em 1.5em;
 }
 
@@ -70,7 +70,9 @@ a {
     }
 
     &.muted {
+        .opacity(60);
         color: @text-color;
+        text-decoration: none;
     }
 }
 

@@ -236,7 +236,10 @@ a:visited {
   color: #525252;
 }
 a.muted {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
   color: #383838;
+  text-decoration: none;
 }
 p {
   font-size: 15px;
