@@ -1486,6 +1486,10 @@ a.timestamp:hover {
 .entry-content .lead {
   font-size: 20px;
 }
+.entry-content ul,
+.entry-content li {
+  font-size: 15px;
+}
 .entry-content img {
   max-width: 100%;
   height: auto;

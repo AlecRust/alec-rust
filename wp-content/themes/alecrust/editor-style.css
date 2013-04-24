@@ -249,6 +249,10 @@ p {
 .lead {
   font-size: 20px;
 }
+ul,
+li {
+  font-size: 15px;
+}
 blockquote {
   background-color: #f9f9f9;
   border-left: 10px solid #bbb;
