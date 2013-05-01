@@ -1,7 +1,8 @@
 //
 // Polaroid Image
 // --------------------------------------------------
-.img-polaroid {
+.img-polaroid,
+.wp-caption {
     .box-shadow(1px 2px 3px #d1d1d1);
     max-width: 320px;
     border: 1px solid #eee;
@@ -10,8 +11,9 @@
     padding: 15px 15px 10px;
 }
 
-.img-polaroid-caption {
-    color: lighten(@text-color, 30%);
+.img-polaroid-caption,
+.wp-caption-text {
+    color: lighten(@text-color, 25%);
     text-align: right;
     font-size: @font-size-base - 2;
     padding-top: 10px;
@@ -25,7 +27,8 @@
 // --------------------------------------------------
 @media only screen and (min-width: @screen-smartphone-landscape) {
 
-    .img-polaroid {
+    .img-polaroid,
+    .wp-caption {
         .transition(@transition);
         float: right;
         width: 40%;
@@ -37,7 +40,8 @@
 // --------------------------------------------------
 @media only screen and (min-width: @screen-desktop-base) {
 
-    .img-polaroid {
+    .img-polaroid,
+    .wp-caption {
         .rotate(4deg);
         margin-bottom: 30px;
     }

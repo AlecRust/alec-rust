@@ -21,6 +21,7 @@
 }
 
 .entry-content {
+    font-size: @font-size-base + 1;
 
     h1 {
         font-weight: normal;
@@ -41,17 +42,11 @@
     }
 
     p {
-        font-size: @font-size-base + 1;
         line-height: @line-height-base + .3;
     }
 
     .lead {
         font-size: @font-size-base + 6;
-    }
-
-    ul,
-    li {
-        font-size: @font-size-base + 1;
     }
 
     img {
@@ -83,6 +78,7 @@
     pre,
     code {
         border-radius: @border-radius-base;
+        border: 1px solid #ddd;
         background-color: #f9f2f4;
         padding: 2px 4px;
     }
@@ -94,6 +90,14 @@
         &:visited {
             color: @text-color;
         }
+    }
+}
+
+.entry-attachment {
+    text-align: center;
+
+    .attachment {
+        display: inline-block;
     }
 }
 
@@ -114,6 +118,8 @@
         }
     }
 }
+
+.entry-description {}
 
 .entry-meta {
     .clearfix;

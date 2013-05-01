@@ -1353,7 +1353,6 @@ nav ol {
   .comments-area {
     width: 80%;
     margin: auto;
-    padding: 0 40px 40px;
   }
   .comments-area article.comment {
     margin-bottom: 20px;
@@ -1464,6 +1463,9 @@ a.timestamp:hover {
 .entry-image {
   text-align: center;
 }
+.entry-content {
+  font-size: 15px;
+}
 .entry-content h1 {
   font-weight: normal;
   font-size: 28px;
@@ -1480,15 +1482,10 @@ a.timestamp:hover {
   margin: 30px 0 5px;
 }
 .entry-content p {
-  font-size: 15px;
   line-height: 1.7;
 }
 .entry-content .lead {
   font-size: 20px;
-}
-.entry-content ul,
-.entry-content li {
-  font-size: 15px;
 }
 .entry-content img {
   max-width: 100%;
@@ -1515,6 +1512,7 @@ a.timestamp:hover {
 .entry-content pre,
 .entry-content code {
   border-radius: 2px;
+  border: 1px solid #ddd;
   background-color: #f9f2f4;
   padding: 2px 4px;
 }
@@ -1524,6 +1522,12 @@ a.timestamp:hover {
 .entry-content .muted:hover,
 .entry-content .muted:visited {
   color: #383838;
+}
+.entry-attachment {
+  text-align: center;
+}
+.entry-attachment .attachment {
+  display: inline-block;
 }
 .entry-caption {
   border-bottom-right-radius: 2px;
@@ -1759,7 +1763,8 @@ input[type="submit"]:active,
     margin-bottom: 60px;
   }
 }
-.img-polaroid {
+.img-polaroid,
+.wp-caption {
   box-shadow: 1px 2px 3px #d1d1d1;
   max-width: 320px;
   border: 1px solid #eee;
@@ -1767,17 +1772,20 @@ input[type="submit"]:active,
   margin: 0 auto 20px;
   padding: 15px 15px 10px;
 }
-.img-polaroid-caption {
-  color: #858585;
+.img-polaroid-caption,
+.wp-caption-text {
+  color: #787878;
   text-align: right;
   font-size: 12px;
   padding-top: 10px;
 }
-.img-polaroid-caption a {
+.img-polaroid-caption a,
+.wp-caption-text a {
   color: #858585;
 }
 @media only screen and (min-width: 480px) {
-  .img-polaroid {
+  .img-polaroid,
+  .wp-caption {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -1788,7 +1796,8 @@ input[type="submit"]:active,
   }
 }
 @media only screen and (min-width: 1224px) {
-  .img-polaroid {
+  .img-polaroid,
+  .wp-caption {
     -webkit-transform: rotate(4deg);
     -moz-transform: rotate(4deg);
     -ms-transform: rotate(4deg);
@@ -2164,7 +2173,7 @@ body.page-home.page .global-content {
 @media only screen and (min-width: 1024px) {
   .post-navigation {
     position: relative;
-    margin: -135px 0 40px;
+    margin: -115px 0 40px;
   }
   .post-navigation ul {
     max-width: 50%;
