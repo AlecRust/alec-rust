@@ -102,7 +102,7 @@ add_action( 'init', 'register_menus' );
  * Adds category class to <body> on single post pages
  */
 add_filter('body_class','add_category_to_single');
-function add_category_to_single($classes, $class) {
+function add_category_to_single($classes) {
     if (is_single() ) {
         global $post;
         foreach((get_the_category($post->ID)) as $category) {
