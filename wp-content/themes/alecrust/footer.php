@@ -58,13 +58,6 @@
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert"></script>
         <?php } ?>
 
-        <?php if (is_404() ) { ?>
-        <script>
-            var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-        </script>
-        <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
-        <?php } ?>
-
         <?php wp_footer(); ?>
 
     </body>
