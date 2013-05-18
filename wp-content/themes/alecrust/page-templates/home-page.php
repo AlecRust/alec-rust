@@ -97,8 +97,7 @@ get_header(); ?>
         <?php
         include_once(ABSPATH . WPINC . '/feed.php');
         $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
-        $maxitems = $rss->get_item_quantity(3);
-        $rss_items = $rss->get_items(0, $maxitems);
+        $rss_items = $rss->get_items(0);
         ?>
         <?php if ($maxitems == 0) echo '<p class="alert">No tweets to display.</p>'; ?>
         <ul>
