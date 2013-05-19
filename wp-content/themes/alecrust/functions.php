@@ -153,7 +153,7 @@ function post_attachments( $attachments )
         'filetype'      => 'image',                                         // allowed file type(s) (array) (image|video|text|audio|application)
         'button_text'   => __( 'Add attachment', 'attachments' ),           // text for 'Attach' button in meta box (string)
         'modal_text'    => __( 'Add attachment', 'attachments' ),           // text for modal 'Attach' button (string)
-        'router'        => 'browse',                                        // which tab should be the default in the modal (string) (browse|upload)
+        'router'        => 'upload',                                        // which tab should be the default in the modal (string) (browse|upload)
         'fields'        => $fields,                                         // fields array
     );
     $attachments->register( 'post_attachments', $args );                    // unique instance name
