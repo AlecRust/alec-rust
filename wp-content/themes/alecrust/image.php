@@ -21,7 +21,7 @@ get_header(); ?>
                 <div class="entry-attachment">
 
                     <div class="attachment">
-                        <a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
+                        <a href="<?php echo wp_get_attachment_url(); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
                         $attachment_size = apply_filters( 'alecrust_attachment_size', array( 960, 960 ) );
                         echo wp_get_attachment_image( $post->ID, $attachment_size );
                         ?></a>
