@@ -17,7 +17,7 @@ get_header(); ?>
                 <p class="entry-meta attachment-meta">
                     <?php
                     $metadata = wp_get_attachment_metadata();
-                    printf( __( 'Published at <a href="%3$s" title="Full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s">%8$s</a>', 'rustyrambles' ),
+                    printf( __( 'Published at <a href="%3$s" title="Full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s">%8$s</a>' ),
                         esc_attr( get_the_time() ),
                         get_the_date(),
                         esc_url( wp_get_attachment_url() ),
@@ -36,10 +36,10 @@ get_header(); ?>
                 <div class="entry-attachment">
 
                     <div class="attachment">
-                        <a href="<?php echo wp_get_attachment_url(); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
+                        <?php
                         $attachment_size = apply_filters( 'alecrust_attachment_size', array( 960, 960 ) );
                         echo wp_get_attachment_image( $post->ID, $attachment_size );
-                        ?></a>
+                        ?>
 
                         <?php if ( ! empty( $post->post_excerpt ) ) : ?>
                         <div class="entry-caption">
