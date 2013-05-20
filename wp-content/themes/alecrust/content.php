@@ -45,7 +45,7 @@
                                 <?php if ( $attachments->field( 'attachment_link' ) ) : ?>
                                 <a href="<?php echo $attachments->field( 'attachment_link' ); ?>">
                                 <?php else : ?>
-                                <a href="<?php echo $attachments->url(); ?>">
+                                <a href="<?php echo get_permalink( $attachments->id() ); ?>">
                                 <?php endif; ?>
                                     <?php if ( $attachments->field( 'attachment_hero_title' ) ) : ?>
                                     <h3 class="post-attachment-title"><?php echo $attachments->field( 'attachment_hero_title' ); ?></h3>
