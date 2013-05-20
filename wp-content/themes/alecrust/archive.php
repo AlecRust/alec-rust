@@ -27,6 +27,9 @@ get_header(); ?>
                     _e( 'Archives' );
                 endif;
             ?></h1>
+            <?php if ( tag_description() ) : // Show an optional tag description ?>
+                <div class="archive-meta"><?php echo tag_description(); ?></div>
+            <?php endif; ?>
         </header>
 
         <?php

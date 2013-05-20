@@ -12,7 +12,7 @@
         <header class="entry-header">
             <?php if ( has_post_thumbnail() ) : ?>
             <figure class="entry-image">
-                <?php the_post_thumbnail( 'single-post-thumbnail' ); ?>
+                <?php the_post_thumbnail( array(60,60) ); ?>
             </figure>
             <?php endif; ?>
             <?php if ( is_single() ) : ?>

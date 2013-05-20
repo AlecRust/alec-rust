@@ -33,7 +33,7 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>">
                     <dl>
                         <dt><?php the_title(); ?></dt>
-                        <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                        <dd><?php the_post_thumbnail( array(60,60) ); ?></dd>
                     </dl>
                 </a>
             </li>
@@ -56,7 +56,7 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>">
                     <dl>
                         <dt><?php the_title(); ?></dt>
-                        <dd><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                        <dd><?php the_post_thumbnail( array(60,60) ); ?></dd>
                     </dl>
                 </a>
             </li>

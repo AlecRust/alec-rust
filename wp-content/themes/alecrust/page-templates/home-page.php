@@ -34,7 +34,7 @@ get_header(); ?>
                         <?php if ( has_excerpt() ) : ?>
                         <dd class="hero-description"><?php echo the_excerpt(); ?></dd>
                         <?php endif; ?>
-                        <dd class="hero-thumb"><?php the_post_thumbnail( 'single-post-thumbnail' ); ?></dd>
+                        <dd class="hero-thumb"><?php the_post_thumbnail( array(60,60) ); ?></dd>
                     </dl>
                 </a>
             </li>
