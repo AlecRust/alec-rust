@@ -249,9 +249,9 @@ p {
 .lead {
   font-size: 20px;
 }
-ul,
 li {
   font-size: 15px;
+  margin-bottom: 10px;
 }
 blockquote {
   border-left: 10px solid #bbb;
