@@ -57,7 +57,7 @@ get_header(); ?>
     <section class="module module-thumbs">
         <h1><a href="<?php echo site_url('/work/'); ?>">Companies I&rsquo;ve worked with</a></h1>
         <ul>
-            <li><a href="<?php echo site_url('/work/universal-music/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music"></a></li>
+            <li><a href="<?php echo site_url('/work/unicef/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-unicef.png" width="120" height="60" alt="Unicef"></a></li>
             <li><a href="<?php echo site_url('/work/bbc/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-bbc.png" width="120" height="60" alt="BBC"></a></li>
             <li><a href="<?php echo site_url('/work/apple/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-apple.png" width="120" height="60" alt="Apple"></a></li>
             <li><a href="<?php echo site_url('/work/disney/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/temp/company-thumb-disney.png" width="120" height="60" alt="Disney"></a></li>
