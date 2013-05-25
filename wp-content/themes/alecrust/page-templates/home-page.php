@@ -32,7 +32,7 @@ get_header(); ?>
                         <dt class="hero-title no-desc"><?php the_title(); ?></dt>
                         <?php endif; ?>
                         <?php if ( has_excerpt() ) : ?>
-                        <dd class="hero-description"><?php echo the_excerpt(); ?></dd>
+                        <dd class="hero-description"><?php echo get_the_excerpt(); ?></dd>
                         <?php endif; ?>
                         <dd class="hero-thumb"><?php the_post_thumbnail( array(60,60) ); ?></dd>
                     </dl>

@@ -13,6 +13,7 @@
 	var currently_migrating = false;
 	var profile_name_edited = false;
 	var checked_licence = false;
+	var show_prefix_notice = false;
 
 	var admin_url = ajaxurl.replace( '/admin-ajax.php', '' ), spinner_url = admin_url + '/images/wpspin_light';
 
@@ -136,10 +137,9 @@
 					licence_key : licence,
 				},
 				error: function(jqXHR, textStatus, errorThrown){
-					console.log( 'A problem occured when trying to check the license, please try again.' );
+					alert( 'A problem occured when trying to check the license, please try again.' );
 				},
 				success: function(data){
-					console.log( data );
 					if ( typeof data.errors !== 'undefined' ) {
 						var msg = '';
 						for (var key in data.errors) {
@@ -201,6 +201,17 @@
 					
 					var original_body = data;
 					data = $.parseJSON( data );
+
+					if( data.prefix != wpmdb_this_prefix ) {
+						$('.remote-prefix').html( data.prefix );
+						show_prefix_notice = true;
+						if( $('#pull').is(':checked') ){
+							$('.prefix-notice.pull').show();
+						}
+						else {
+							$('.prefix-notice.push').show();
+						}
+					}
 					
 					$('.pull-push-connection-info').addClass('temp-disabled');
 					$('.pull-push-connection-info').attr('readonly','readonly');
@@ -420,7 +431,7 @@
 			$(this).blur();
 			event.preventDefault();
 
-			// check that they've select some tables to migrate
+			// check that they've selected some tables to migrate
 			if( $('#migrate-selected').is(':checked') && $('#select-tables').val() == null ){
 				alert( 'Please select at least one table to migrate.');
 				return;
@@ -729,19 +740,20 @@
 								form_data	:	form_data,
 								datetime	:	datetime,
 								stage		: 	stage,
-								bottleneck	: 	connection_data.bottleneck
+								bottleneck	: 	connection_data.bottleneck,
+								prefix 		: 	connection_data.prefix
 							},
 							error: function(jqXHR, textStatus, errorThrown){
 								$('.progress-title').html('Migration failed');
 								$('.progress-text').html( 'A problem occured when processing the ' + tables_to_migrate[i] + ' table. (#113)' );
 								$('.progress-text').addClass( 'migration-error' );
-								console.log( jqXHR + ' : ' + textStatus + ' : ' + errorThrown );
+								alert( jqXHR + ' : ' + textStatus + ' : ' + errorThrown );
 								table_migration_error = true;
 								migration_complete_events();
 								return;
 							},
 							success: function(data){
-								if( data != '' ){
+								if( $.trim( data ) != '' ){
 									$('.progress-title').html('Migration failed');
 									$('.progress-text').html(data);
 									$('.progress-text').addClass('migration-error');
@@ -804,12 +816,13 @@
 									form_data	:	form_data,
 									datetime	:	datetime,
 									stage		: 	stage,
+									prefix 		: 	connection_data.prefix,
 								},
 								error: function(jqXHR, textStatus, errorThrown){
 									$('.progress-title').html('Migration failed');
 									$('.progress-text').html('A problem occured when finalizing the backup. (#132)');
 									$('.progress-text').addClass('migration-error');
-									console.log( jqXHR + ' : ' + textStatus + ' : ' + errorThrown );
+									alert( jqXHR + ' : ' + textStatus + ' : ' + errorThrown );
 									table_migration_error = true;
 								},
 								success: function(data){
@@ -863,6 +876,12 @@
 			event.preventDefault();
 
 			if( doing_save_profile ){
+				return;
+			}
+
+			// check that they've selected some tables to migrate
+			if( $('#migrate-selected').is(':checked') && $('#select-tables').val() == null ){
+				alert( 'Please select at least one table to migrate.');
 				return;
 			}
 
@@ -966,6 +985,7 @@
 		function move_connection_info_box(){
 			$('.import-button').hide();
 			$('.connection-status').hide();
+			$('.prefix-notice').hide();
 			var connection_info = $.trim( $('.pull-push-connection-info').val() ).split("\n");
 			if( $('#pull').is(':checked') ){
 				$('.pull-list li').append( connection_info_box );
@@ -977,6 +997,9 @@
 					if( profile_name_edited == false ){
 						var profile_name = get_domain_name( connection_info[0] );
 						$('.create-new-profile').val(profile_name);
+					}
+					if( show_prefix_notice == true ) {
+						$('.prefix-notice.pull').show();
 					}
 				}
 				else{
@@ -994,6 +1017,9 @@
 					if( profile_name_edited == false ){
 						var profile_name = get_domain_name( connection_info[0] );
 						$('.create-new-profile').val(profile_name);
+					}
+					if( show_prefix_notice == true ) {
+						$('.prefix-notice.push').show();
 					}
 				}
 				else{
@@ -1393,6 +1419,13 @@
 				return;
 			}
 
+			if( wpmdb_openssl_available == false ) {
+				connection_info[0] = connection_info[0].replace('https://','http://');
+				var new_connection_info_contents = connection_info[0] + "\n" + connection_info[1];
+				$('.pull-push-connection-info').val(new_connection_info_contents);
+			}
+
+			show_prefix_notice = false;
 			doing_ajax = true;
 			
 			$('.step-two').hide();
@@ -1447,6 +1480,17 @@
 					$('.step-two').show();
 					connection_established = true;
 					connection_data = data;
+
+					if( data.prefix != wpmdb_this_prefix ) {
+						$('.remote-prefix').html( data.prefix );
+						show_prefix_notice = true;
+						if( $('#pull').is(':checked') ){
+							$('.prefix-notice.pull').show();
+						}
+						else {
+							$('.prefix-notice.push').show();
+						}
+					}
 
 					$('.remote-json-data').val(original_body);
 

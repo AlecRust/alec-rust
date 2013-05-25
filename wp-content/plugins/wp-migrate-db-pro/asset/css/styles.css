@@ -441,6 +441,21 @@
 .wpmdb .label-disabled {
   color: #888;
 }
+.wpmdb .prefix-notice {
+  background-color: #FFFFE0;
+  border: 1px solid #E6DB55;
+  padding: 15px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  display: none;
+  width: 710px;
+}
+.wpmdb .prefix-notice p {
+  margin-top: 0px;
+}
+.wpmdb .prefix-notice p:last-child {
+  margin: 0px;
+}
 .wpmdb .save-migration-profile {
   font-size: 14px;
   font-weight: bold;

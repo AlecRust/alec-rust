@@ -306,6 +306,22 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 				</div>
 			</div>
 
+			<div class="prefix-notice pull">
+				<p>Whoa! We've detected that the database table prefix differs between installations. Clicking the Migrate DB button below will create new database tables in your local database with prefix "<span class="remote-prefix"></span>".</p>
+
+				<p>However, your local install is configured to use table prefix "<?php echo $wpdb->prefix; ?>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your local install's wp-config.php and change the $table_prefix variable to "<span class="remote-prefix"></span>".</p>
+
+				<p>This will allow your local install the use the migrated tables. Once you do this, you shouldn't have to do it again.</p>
+			</div>
+
+			<div class="prefix-notice push">
+				<p>Whoa! We've detected that the database table prefix differs between installations. Clicking the Migrate DB button below will create new database tables in the remote database with prefix "<?php echo $wpdb->prefix; ?>".</p>
+
+				<p>However, your remote install is configured to use table prefix "<span class="remote-prefix"></span>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your remote install's wp-config.php and change the $table_prefix variable to "<?php echo $wpdb->prefix; ?>".</p>
+
+				<p>This will allow your remote install the use the migrated tables. Once you do this, you shouldn't have to do it again.</p>
+			</div>
+
 			<p class="migrate-db">
 				<input type="hidden" class="remote-json-data" name="remote_json_data" autocomplete="off" />
 				<input class="button-primary migrate-db-button" type="submit" value="Migrate DB" name="Submit" autocomplete="off" />

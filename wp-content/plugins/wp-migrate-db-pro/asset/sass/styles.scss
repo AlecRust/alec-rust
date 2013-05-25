@@ -540,6 +540,22 @@
 	.label-disabled {
 		color: #888;
 	}
+
+	.prefix-notice {
+		background-color: #FFFFE0;
+		border: 1px solid #E6DB55;
+		padding: 15px;
+		border-radius: 3px;
+		margin-bottom: 15px;
+		display: none;
+		width: 710px;
+		p{
+			margin-top: 0px;
+		}
+		p:last-child {
+			margin: 0px;
+		}
+	}
 	
 	/* Save migration profile */
 	
