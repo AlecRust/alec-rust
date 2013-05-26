@@ -69,10 +69,10 @@ get_header(); ?>
     <section class="module module-activity">
         <h1><a href="https://github.com/AlecRust">Recent GitHub activity</a></h1>
         <?php
-        include_once(ABSPATH . WPINC . '/feed.php');
-        $rss = fetch_feed('https://github.com/AlecRust.atom');
-        $maxitems = $rss->get_item_quantity(3);
-        $rss_items = $rss->get_items(0, $maxitems);
+            include_once(ABSPATH . WPINC . '/feed.php');
+            $rss = fetch_feed('https://github.com/AlecRust.atom');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
         ?>
         <?php if ($maxitems == 0) echo '<p class="alert">No activity to display.</p>'; ?>
         <ul>
@@ -95,9 +95,10 @@ get_header(); ?>
     <section class="module module-tweets">
         <h1><a href="https://twitter.com/AlecRust"><?php _e( 'Recent tweets' ); ?></a></h1>
         <?php
-        include_once(ABSPATH . WPINC . '/feed.php');
-        $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust&count=3');
-        $rss_items = $rss->get_items(0);
+            include_once(ABSPATH . WPINC . '/feed.php');
+            $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
         ?>
         <?php if ($maxitems == 0) echo '<p class="alert">No tweets to display.</p>'; ?>
         <ul>
