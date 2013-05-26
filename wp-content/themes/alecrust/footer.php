@@ -12,8 +12,8 @@
         <nav class="post-navigation">
             <h1 class="visuallyhidden">Post Navigation</h1>
             <ul>
-                <li class="prev"><?php previous_post_link( '%link' ); ?></li>
-                <li class="next"><?php next_post_link( '%link' ); ?></li>
+                <li class="prev"><?php previous_post_link('%link', '%title', 'in_same_cat'); ?></li>
+                <li class="next"><?php next_post_link('%link', '%title', 'in_same_cat'); ?></li>
             </ul>
         </nav>
         <?php } ?>
