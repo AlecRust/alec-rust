@@ -24,43 +24,39 @@
             <?php endif; ?>
         </header>
 
-        <?php if ( is_search() ) : // Only display Excerpts for Search ?>
-        <div class="entry-summary">
-            <?php the_excerpt(); ?>
-        </div>
-        <?php else : ?>
-
         <div class="entry-content">
 
             <?php the_content( __( 'Read more' ) ); ?>
 
-            <?php /* Render "Attachments" section */ ?>
-            <?php $attachments = new Attachments( 'post_attachments' ); ?>
-            <?php if ( $attachments->exist() ) : ?>
-                <aside class="post-attachments">
-                    <h2 class="post-attachments-title">Screenshots/Links</h2>
-                    <ul class="post-attachments-list">
-                        <?php while ( $attachments->get() ) : ?>
-                            <li class="post-attachment">
-                                <?php if ( $attachments->field( 'attachment_link' ) ) : ?>
-                                <a href="<?php echo $attachments->field( 'attachment_link' ); ?>">
-                                <?php else : ?>
-                                <a href="<?php echo get_permalink( $attachments->id() ); ?>">
-                                <?php endif; ?>
-                                    <?php if ( $attachments->field( 'attachment_hero_title' ) ) : ?>
-                                    <h3 class="post-attachment-title"><?php echo $attachments->field( 'attachment_hero_title' ); ?></h3>
+            <?php if ( !is_search() ) : // Don't display attachments on search results ?>
+
+                <?php /* Render "Attachments" section */ ?>
+                <?php $attachments = new Attachments( 'post_attachments' ); ?>
+                <?php if ( $attachments->exist() ) : ?>
+                    <aside class="post-attachments">
+                        <h2 class="post-attachments-title">Screenshots/Links</h2>
+                        <ul class="post-attachments-list">
+                            <?php while ( $attachments->get() ) : ?>
+                                <li class="post-attachment">
+                                    <?php if ( $attachments->field( 'attachment_link' ) ) : ?>
+                                    <a href="<?php echo $attachments->field( 'attachment_link' ); ?>">
+                                    <?php else : ?>
+                                    <a href="<?php echo get_permalink( $attachments->id() ); ?>">
                                     <?php endif; ?>
-                                    <?php echo $attachments->image( 'thumbnail' ); ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                    </ul>
-                </aside>
+                                        <?php if ( $attachments->field( 'attachment_hero_title' ) ) : ?>
+                                        <h3 class="post-attachment-title"><?php echo $attachments->field( 'attachment_hero_title' ); ?></h3>
+                                        <?php endif; ?>
+                                        <?php echo $attachments->image( 'thumbnail' ); ?>
+                                    </a>
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
+                    </aside>
+                <?php endif; ?>
+
             <?php endif; ?>
 
         </div>
-
-        <?php endif; ?>
 
         <footer class="entry-meta">
             <?php if ( comments_open() ) : ?>

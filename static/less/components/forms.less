@@ -9,17 +9,22 @@ label {
     margin-bottom: 3px;
 }
 
+// Contact form input wrappers
+.contact-form div {
+    margin-bottom: 1em;
+}
+
 // Text inputs
 input[type="text"],
 input[type="email"],
 textarea {
     .box-shadow(inset 0 1px 4px #eee);
     color: lighten(@text-color, 20%);
-    width: 100% !important; // Override grunion.css
-    max-width: none !important; // Override grunion.css
     border: 1px solid #d0d0d0;
     border-radius: @border-radius-base;
-    margin-bottom: 13px;
+    width: 100% !important; // Override grunion.css
+    max-width: none !important; // Override grunion.css
+    margin-bottom: 0 !important; // Override grunion.css
     padding: 7px 7px 5px;
 
     &:hover {
