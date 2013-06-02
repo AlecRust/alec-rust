@@ -19,7 +19,7 @@ get_header(); ?>
         </div>
     </article>
 
-    <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php query_posts( array( 'category_name' => 'large-corporations', 'orderby' => 'date', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
     <?php
         $category_id = get_cat_ID( 'Large Corporations' );
@@ -42,7 +42,7 @@ get_header(); ?>
     </section>
     <?php endif; ?>
 
-    <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php query_posts( array( 'category_name' => 'small-businesses', 'orderby' => 'date', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
     <?php
         $category_id = get_cat_ID( 'Small Businesses' );

@@ -19,7 +19,7 @@ get_header(); ?>
         </div>
     </article>
 
-    <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php query_posts( array( 'category_name' => 'personal-projects', 'orderby' => 'date', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
     <?php
         $category_id = get_cat_ID( 'Personal Projects' );
@@ -42,7 +42,7 @@ get_header(); ?>
     </section>
     <?php endif; ?>
 
-    <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'title', 'order' => 'ASC', 'posts_per_page' => 100 ) ); ?>
+    <?php query_posts( array( 'category_name' => 'open-source-projects', 'orderby' => 'date', 'posts_per_page' => 100 ) ); ?>
     <?php if (have_posts()) : ?>
     <?php
         $category_id = get_cat_ID( 'Open-source Projects' );
