@@ -368,7 +368,7 @@ class WP_Migrate_DB_Pro {
 
 		$args['method'] = 'POST';
 		$args['body'] = $this->array_to_multipart( $data );
-		$args['headers']['Content-Type'] = 'multipart/form-data, boundary=' . $this->multipart_boundary;
+		$args['headers']['Content-Type'] = 'multipart/form-data; boundary=' . $this->multipart_boundary;
 
 		$this->attempting_to_connect_to = $url;
 
@@ -377,6 +377,7 @@ class WP_Migrate_DB_Pro {
 		if ( is_wp_error( $response ) ) {
 			if( isset( $response->errors['http_request_failed'][0] ) && strstr( $response->errors['http_request_failed'][0], 'timed out' ) ) {
 				$this->error = 'The connection to the remote server has timed out, no changes have been committed. (#134 - scope: ' . $scope . ')';
+				$this->error_code = 134;
 			}
 			else if ( isset( $response->errors['http_request_failed'][0] ) && strstr( $response->errors['http_request_failed'][0], 'Could not resolve host' ) ) {
 				$this->error = 'We could not find: ' . $_POST['url'] . '. Are you sure this is the correct URL?';
@@ -624,6 +625,11 @@ class WP_Migrate_DB_Pro {
 			exit;
 		}
 
+		if ( $this->settings['allow_push'] != true ) {
+			echo 'The connection succeeded but the remote site is configured to reject push connections. You can change this in the "settings" tab on the remote site. (#133)';
+			exit;
+		}
+
 		$this->process_chunk( $_POST['chunk'] );
 		exit;
 	}
@@ -655,6 +661,9 @@ class WP_Migrate_DB_Pro {
 	}
 
 	function verify_signature( $data, $key ) {
+		if( empty( $data['sig'] ) ) {
+			return false;
+		}
 		$temp = $data;
 		$computed_signature = $this->create_signature( $temp, $key );
 		return $computed_signature === $data['sig'];
@@ -701,7 +710,7 @@ class WP_Migrate_DB_Pro {
 			exit;
 		}
 
-		// Pull and push need to be handled differently for obvious reason, trigger different code depending on the migration intent (push or pull)
+		// Pull and push need to be handled differently for obvious reasons, trigger different code depending on the migration intent (push or pull)
 		if ( $_POST['intent'] == 'push' || $_POST['intent'] == 'savefile' ) {
 			if ( isset( $_POST['bottleneck'] ) ) {
 				$this->maximum_chunk_size = (int) $_POST['bottleneck'];
@@ -740,6 +749,11 @@ class WP_Migrate_DB_Pro {
 			while ( $row_tracker != -1 ) {
 				$response = $this->remote_post( $ajax_url, $data, __FUNCTION__ );
 				$this->display_errors();
+
+				if( strpos( $response, ';' ) === false ) {
+					echo $response;
+					exit;
+				}
 
 				// returned data is just a big string like this query;query;query;33
 				// need to split this up into a chunk and row_tracker
@@ -883,11 +897,12 @@ class WP_Migrate_DB_Pro {
 
 		$data['sig'] = $this->create_signature( $data, $_POST['key'] );
 		$ajax_url = trailingslashit( $_POST['url'] ) . 'wp-admin/admin-ajax.php';
-		$response = $this->remote_post( $ajax_url, $data, __FUNCTION__, array( 'timeout' => 5 ) );
+		$timeout = apply_filters( 'wpmdb_prepare_remote_connection_timeout', 10 );
+		$response = $this->remote_post( $ajax_url, $data, __FUNCTION__, compact( 'timeout' ) );
 		$return = $response;
 
 		$alt_action = '';
-		if( isset( $this->error_code ) && $this->error_code = 121 ) {
+		if( isset( $this->error_code ) && ( $this->error_code = 121 || $this->error_code = 134 ) ) {
 			$alt_action = ' or <a class="try-http js-action-link" href="#">Try HTTP?</a>';
 		}
 
@@ -1028,6 +1043,12 @@ class WP_Migrate_DB_Pro {
 			echo $this->invalid_content_verification_error . ' (#124)';
 			exit;
 		}
+
+		if ( $this->settings['allow_pull'] != true ) {
+			echo 'The connection succeeded but the remote site is configured to reject pull connections. You can change this in the "settings" tab on the remote site. (#132)';
+			exit;
+		}
+
 		$this->maximum_chunk_size = $_POST['pull_limit'];
 		$this->backup_table( $_POST['table'] );
 		$this->display_errors();
@@ -1338,7 +1359,7 @@ class WP_Migrate_DB_Pro {
 			// Submitted by Tina Matter
 			elseif ( is_object( $data ) ) {
 				$dataClass = get_class( $data );
-				$_tmp = new $dataClass( );
+				$_tmp = @new $dataClass( );
 				foreach ( $data as $key => $value ) {
 					$_tmp->$key = $this->recursive_unserialize_replace( $value, false, $parent_serialized );
 				}
@@ -1429,8 +1450,13 @@ class WP_Migrate_DB_Pro {
 		$data['sig'] = $this->create_signature( $data, $_POST['key'] );
 
 		$ajax_url = trailingslashit( $this->remote_url ) . 'wp-admin/admin-ajax.php';
-		$this->remote_post( $ajax_url, $data, __FUNCTION__ );
+		$response = $this->remote_post( $ajax_url, $data, __FUNCTION__ );
 		$this->display_errors();
+		$response = trim( $response );
+		if( ! empty( $response ) ) {
+			echo $response;
+			exit;
+		}
 
 		// reset our chunk values back to the default
 		$this->current_chunk = '';
