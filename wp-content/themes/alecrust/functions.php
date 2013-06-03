@@ -69,6 +69,28 @@ function alecrust_wp_title( $title, $sep ) {
     if ( is_feed() )
         return $title;
 
+    // Retrieve category name
+    function parent_cat_names( $sep = '|' )
+    {
+        if ( ! is_single() or array() === $categories = get_the_category() )
+            return '';
+        $parents = array ();
+        foreach ( $categories as $category )
+        {
+            $parent = end( get_ancestors( $category->term_id, 'category' ) );
+            if ( ! empty ( $parent ) )
+                $top = get_category( $parent );
+            else
+                $top = $category;
+            $parents[ $top->term_id ] = $top;
+        }
+        return esc_html( join( $sep, wp_list_pluck( $parents, 'name' ) ) );
+    }
+
+    // Adds the parent category
+    if ( '' !== $parent_cats = parent_cat_names( $sep ) )
+        $title .= "$parent_cats $sep ";
+
     // Adds the site name
     $title .= get_bloginfo( 'name' );
 
