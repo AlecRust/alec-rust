@@ -8,13 +8,13 @@
             // Cache the array length
             var aLen = arr.length;
 
-            // merge options with defaults
+            // Merge options with defaults
             o = $.extend({
                 delay              : 5000,
                 transitionDuration : 300
             }, o);
 
-            // return a jQuery object
+            // Return a jQuery object
             return this.each(function () {
 
                 // Cache our jQuery object
