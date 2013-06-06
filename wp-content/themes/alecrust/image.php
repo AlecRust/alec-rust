@@ -17,12 +17,7 @@ get_header(); ?>
                 <p class="entry-meta attachment-meta">
                     <?php
                     $metadata = wp_get_attachment_metadata();
-                    printf( __( 'Published at <a href="%3$s" title="Full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s">%8$s</a>' ),
-                        esc_attr( get_the_time() ),
-                        get_the_date(),
-                        esc_url( wp_get_attachment_url() ),
-                        $metadata['width'],
-                        $metadata['height'],
+                    printf( __( '<a href="%1$s" title="Back to %2$s">Back to %3$s</a>' ),
                         esc_url( get_permalink( $post->post_parent ) ),
                         esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
                         get_the_title( $post->post_parent )
@@ -37,7 +32,7 @@ get_header(); ?>
 
                     <div class="attachment">
                         <?php
-                        $attachment_size = apply_filters( 'alecrust_attachment_size', array( 960, 960 ) );
+                        $attachment_size = apply_filters( 'alecrust_attachment_size', 'full' );
                         echo wp_get_attachment_image( $post->ID, $attachment_size );
                         ?>
 

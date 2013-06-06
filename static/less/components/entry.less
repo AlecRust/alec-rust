@@ -169,11 +169,37 @@
 
 // If on attachment page
 .attachment-meta {
-    font-size: @font-size-base;
+    font-size: @font-size-base + 1;
     text-align: center;
 
     a {
-        color: lighten(@text-color, 35%);
+        text-decoration: none;
+        display: inline-block;
+
+        // CSS arrow
+        &:before {
+            content: "";
+            display: inline-block;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 10px solid @link-color;
+            margin-right: 8px;
+        }
+
+        &:visited {
+
+            &:before {
+                border-right-color: @link-visited-color;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+
+            &:before {
+                border-right-color: @link-hover-color;
+            }
+        }
     }
 }
 
