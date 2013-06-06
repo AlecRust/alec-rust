@@ -71,6 +71,8 @@ get_header(); ?>
         <?php
             include_once(ABSPATH . WPINC . '/feed.php');
             $rss = fetch_feed('https://github.com/AlecRust.atom');
+            if ( is_wp_error( $rss ) )
+                return;
             $maxitems = $rss->get_item_quantity(3);
             $rss_items = $rss->get_items(0, $maxitems);
         ?>
@@ -97,6 +99,8 @@ get_header(); ?>
         <?php
             include_once(ABSPATH . WPINC . '/feed.php');
             $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust');
+            if ( is_wp_error( $rss ) )
+                return;
             $maxitems = $rss->get_item_quantity(3);
             $rss_items = $rss->get_items(0, $maxitems);
         ?>
