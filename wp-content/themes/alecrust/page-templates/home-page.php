@@ -70,15 +70,15 @@ get_header(); ?>
         <h1><a href="https://github.com/AlecRust">Recent GitHub activity</a></h1>
         <?php
             include_once(ABSPATH . WPINC . '/feed.php');
-            $github_rss = fetch_feed('https://github.com/AlecRust.atom');
-            $github_maxitems = $github_rss->get_item_quantity(3);
-            $github_rss_items = $github_rss->get_items(0, $github_maxitems);
+            $rss = fetch_feed('https://github.com/AlecRust.atom');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
         ?>
-        <?php if ($github_maxitems == 0) echo '<p class="alert">No activity to display.</p>'; ?>
+        <?php if ($maxitems == 0) echo '<p class="alert">No activity to display.</p>'; ?>
         <ul>
         <?php
-            if (!$github_maxitems == 0)
-            foreach ( $github_rss_items as $item ) : ?>
+            if (!$maxitems == 0)
+            foreach ( $rss_items as $item ) : ?>
                 <li>
                     <a href="<?php echo $item->get_permalink(); ?>">
                         <?php echo $item->get_title(); ?>
@@ -96,15 +96,15 @@ get_header(); ?>
         <h1><a href="https://twitter.com/AlecRust"><?php _e( 'Recent tweets' ); ?></a></h1>
         <?php
             include_once(ABSPATH . WPINC . '/feed.php');
-            $twitter_rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust');
-            $twitter_maxitems = $twitter_rss->get_item_quantity(3);
-            $twitter_rss_items = $twitter_rss->get_items(0, $twitter_maxitems);
+            $rss = fetch_feed('https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=AlecRust');
+            $maxitems = $rss->get_item_quantity(3);
+            $rss_items = $rss->get_items(0, $maxitems);
         ?>
-        <?php if ($twitter_maxitems == 0) echo '<p class="alert">No tweets to display.</p>'; ?>
+        <?php if ($maxitems == 0) echo '<p class="alert">No tweets to display.</p>'; ?>
         <ul>
         <?php
-            if (!$twitter_maxitems == 0)
-            foreach ( $twitter_rss_items as $item ) : ?>
+            if (!$maxitems == 0)
+            foreach ( $rss_items as $item ) : ?>
                 <li>
                     <a href="<?php echo $item->get_permalink(); ?>">
                         <?php echo $item->get_title(); ?>
