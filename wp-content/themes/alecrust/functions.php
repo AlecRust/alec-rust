@@ -337,10 +337,5 @@ endif;
  */
 add_action('wp_footer', 'add_google_analytics');
 function add_google_analytics() { ?>
-    <script>
-        var _gaq=[['_setAccount','UA-3217267-1'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src='//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
+    <script>(function(G,o,O,g,l){G.GoogleAnalyticsObject=O;G[O]||(G[O]=function(){(G[O].q=G[O].q||[]).push(arguments)});G[O].l=+new Date;g=o.createElement('script'),l=o.scripts[0];g.src='//www.google-analytics.com/analytics.js';l.parentNode.insertBefore(g,l)}(this,document,'ga'));ga('create','UA-3217267-26');ga('send','pageview')</script>
 <?php } ?>
