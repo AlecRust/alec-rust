@@ -8,12 +8,20 @@
 ?>
         </main>
 
-        <?php if (is_single() ) { ?>
+        <?php if (is_single() ) {
+            $all_term_ids = get_terms( 'category', array( 'fields' => 'ids' ) );
+            $post_terms = get_the_terms( get_the_ID(), 'category' );
+            $post_terms = wp_list_pluck( $post_terms, 'term_id' );
+            $parent_post_terms = get_parent_terms();
+            $child_terms = array_diff( $post_terms, $parent_post_terms );
+            // Exclude terms not associated with post, or that have a child who do
+            $exclude_these = array_diff( $all_term_ids, $child_terms );
+        ?>
         <nav class="post-navigation">
             <h1 class="visuallyhidden">Post Navigation</h1>
             <ul>
-                <li class="prev"><?php previous_post_link('%link', '%title', 'in_same_cat'); ?></li>
-                <li class="next"><?php next_post_link('%link', '%title', 'in_same_cat'); ?></li>
+                <li class="prev"><?php previous_post_link( '%link', '%title', false, $exclude_these ); ?></li>
+                <li class="next"><?php next_post_link( '%link', '%title', false, $exclude_these ); ?></li>
             </ul>
         </nav>
         <?php } ?>

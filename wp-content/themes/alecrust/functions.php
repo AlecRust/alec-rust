@@ -333,6 +333,36 @@ function alecrust_entry_meta() {
 endif;
 
 /**
+ * Returns a term IDs of terms that are associated with a post, and who have
+ * child terms also associated with the post.
+ *
+ * Please note, 'parent' is a slight misnomer. If you have category structure:
+ *    Cat A > Sub-Cat B > Sub-Sub-Cat C
+ * and a post belongs to A and B, but not C. 'B' is not considered a parent term
+ * for this post.
+ *
+ * @link http://wordpress.stackexchange.com/questions/101633/restrict-post-navigation-to-current-sub-menu/102616#102616
+ * @param int $post_id. Optional, defaults to the 'current' post.
+ * @return array An array of 'parent' term IDs
+ */
+function get_parent_terms( $post_id = 0 ) {
+
+    $post_id = ( $post_id ? $post_id : get_the_ID() );
+    $terms = get_the_terms( $post_id, 'category' );
+    $terms_with_children = array();
+
+    if( $terms ){
+        foreach( $terms as $t ) {
+            if( $t->parent && !in_array(  $t->parent, $terms_with_children ) ){
+                $terms_with_children[] = $t->parent;
+            }
+        }
+    }
+
+    return $terms_with_children ;
+}
+
+/**
  * Adds Google Analytics JS snippet to footer
  */
 add_action('wp_footer', 'add_google_analytics');
