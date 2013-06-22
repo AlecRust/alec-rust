@@ -1,6 +1,7 @@
 //
 // Global header
 // --------------------------------------------------
+
 .global-header {
     .transition(@transition);
     position: relative;
@@ -40,6 +41,13 @@
 
         &:hover {
             color: lighten(@brand-color, 5%);
+        }
+
+        &:active {
+
+            span {
+                #gradient > .vertical(@brand-color, lighten(@brand-color, 5%));
+            }
         }
     }
 }
