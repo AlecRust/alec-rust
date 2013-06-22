@@ -116,60 +116,11 @@
         padding: 0 20px;
     }
 
-    // Default reply title
+    // Reply title
     #reply-title {
         font-weight: normal;
         font-size: @font-size-base + 10;
         margin: 0 0 10px;
-    }
-
-    // Last respond area
-    > #respond {
-
-        // Last reply title
-        #reply-title {
-            #gradient > .vertical(lighten(#eee, 7%), lighten(#eee, .5%));
-            .box-shadow(0 2px 2px #ccc);
-            border-radius: @border-radius-large;
-            text-align: center;
-            font-size: @font-size-base + 3;
-            cursor: pointer;
-            border: 1px solid #ccc;
-            background-color: #eee;
-            padding: 5px 5px 3px;
-            margin: 0 20% 10px;
-
-            &:hover {
-                #gradient > .vertical(lighten(#eee, 9%), lighten(#eee, 2%));
-                border-color: darken(#ccc, 5%);
-            }
-
-            &:active {
-                .box-shadow(inset 0 3px 5px rgba(0,0,0,.12));
-                #gradient > .vertical(lighten(#eee, 6%), lighten(#eee, 9%));
-            }
-
-            &.js-clicked {
-                .box-shadow(none);
-                text-align: left;
-                font-size: @font-size-base + 10;
-                cursor: default;
-                border: 0;
-                background-color: transparent;
-                background-image: none;
-                margin: 0 0 10px;
-                padding: 0;
-            }
-        }
-
-        // Comment form - hide by default
-        #commentform {
-            .visuallyhidden;
-
-            &.js-show-form {
-                .visible;
-            }
-        }
     }
 
     // Cancel reply link
