@@ -59,6 +59,9 @@
         </div>
 
         <footer class="entry-meta">
+            <p class="author visuallyhidden">
+                By Alec Rust
+            </p>
             <?php if ( comments_open() ) : ?>
                 <p class="comments-link">
                     <?php comments_popup_link( __( 'Leave a reply' ), __( '1 Reply' ), __( '% Replies' ) ); ?>
