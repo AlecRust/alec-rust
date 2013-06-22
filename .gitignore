@@ -10,3 +10,4 @@ Thumbs.db
 _assets
 wp-content/uploads
 wp-config.php
+.tweetcache
