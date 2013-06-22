@@ -26,6 +26,11 @@
         </nav>
         <?php } ?>
 
+        <?php // Output widgets sidebar ?>
+        <?php if (is_single() ) { ?>
+            <?php dynamic_sidebar( 'Widgets' ); ?>
+        <?php } ?>
+
         <aside class="global-social-links" role="complementary">
             <h1 class="visuallyhidden">Social Links</h1>
             <ul>

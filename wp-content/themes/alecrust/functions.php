@@ -56,6 +56,20 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /**
+ * Registers sidebar and widgetized areas
+ */
+function sidebar_widgets_init() {
+    register_sidebar( array(
+        'name' => 'Widgets',
+        'before_widget' => '<aside class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h1 class="widget-title">',
+        'after_title' => '</h1>',
+    ) );
+}
+add_action( 'widgets_init', 'sidebar_widgets_init' );
+
+/**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view
  *
