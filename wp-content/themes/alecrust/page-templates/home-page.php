@@ -51,7 +51,7 @@ get_header(); ?>
             <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
         </ul>
-        <p class="view-more"><a href="<?php echo site_url('/blog/'); ?>">View more posts</a></p>
+        <p class="view-more"><a href="<?php echo site_url('/blog/'); ?>">View all posts</a></p>
     </section>
 
     <section class="module module-thumbs">

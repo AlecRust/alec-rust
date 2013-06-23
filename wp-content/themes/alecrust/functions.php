@@ -142,7 +142,6 @@ function add_category_to_single($classes) {
     if (is_single() ) {
         global $post;
         foreach((get_the_category($post->ID)) as $category) {
-            echo $category->cat_name . ' ';
             // add category slug to the $classes array
             $classes[] = 'category-'.$category->slug;
         }
