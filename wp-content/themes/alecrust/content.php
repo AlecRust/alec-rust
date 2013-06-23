@@ -26,6 +26,9 @@
 
         <div class="entry-content">
 
+            <?php if ( function_exists( 'sharing_display' ) ) remove_filter( 'the_content', 'sharing_display', 19 ); ?>
+            <?php if ( function_exists( 'sharing_display' ) ) remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
+
             <?php the_content( __( 'Read more' ) ); ?>
 
             <?php if ( !is_search() ) : // Don't display attachments on search results ?>
@@ -62,6 +65,7 @@
             <p class="author visuallyhidden">
                 By Alec Rust
             </p>
+            <?php if ( function_exists( 'sharing_display' ) && in_category( 'Blog' ) ) echo sharing_display(); ?>
             <?php if ( comments_open() ) : ?>
                 <p class="comments-link">
                     <?php comments_popup_link( __( 'Leave a reply' ), __( '1 Reply' ), __( '% Replies' ) ); ?>
