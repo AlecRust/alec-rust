@@ -61,8 +61,11 @@ p {
     text-shadow: none;
 }
 
-// Remove the gap between images and the bottom of their containers
-img {
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers
+audio,
+canvas,
+img,
+video {
     vertical-align: middle;
 }
 
@@ -88,9 +91,9 @@ nav {
     }
 }
 
-// Chrome Frame prompt
+// Browse Happy prompt
 // --------------------------------------------------
-.chromeframe {
+.browsehappy {
     color: @text-color;
     background-color: #f2efc4;
     text-align: center;
