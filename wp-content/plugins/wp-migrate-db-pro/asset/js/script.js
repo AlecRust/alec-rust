@@ -14,6 +14,8 @@
 	var profile_name_edited = false;
 	var checked_licence = false;
 	var show_prefix_notice = false;
+	var show_ssl_notice = false;
+	var show_version_notice = false;
 
 	var admin_url = ajaxurl.replace( '/admin-ajax.php', '' ), spinner_url = admin_url + '/images/wpspin_light';
 
@@ -76,6 +78,39 @@
 			}
 		}
 		return r;
+	}
+
+	function maybe_show_ssl_warning( url, key, remote_scheme ) {
+		var scheme = url.substr(0, url.indexOf(':'));
+		if( remote_scheme != scheme ) {
+			$('.ssl-notice').show();
+			show_ssl_notice = true;
+			url = url.replace('https','http');
+			$('.pull-push-connection-info').val( url + "\n" + key );
+		}
+	}
+
+	function maybe_show_version_warning( plugin_version, url ) {
+		if( typeof plugin_version != 'undefined' && plugin_version != wpmdb_plugin_version ) {
+			$('.different-plugin-version-notice').show();
+			$('.remote-version').html( plugin_version );
+			$('.remote-location').html( url );
+			$('.step-two').hide();
+			show_version_notice = true;
+		}
+	}
+
+	function maybe_show_prefix_notice( prefix ) {
+		if( prefix != wpmdb_this_prefix ) {
+			$('.remote-prefix').html( prefix );
+			show_prefix_notice = true;
+			if( $('#pull').is(':checked') ){
+				$('.prefix-notice.pull').show();
+			}
+			else {
+				$('.prefix-notice.push').show();
+			}
+		}
 	}
 
 	function get_domain_name( url ){
@@ -202,16 +237,9 @@
 					var original_body = data;
 					data = $.parseJSON( data );
 
-					if( data.prefix != wpmdb_this_prefix ) {
-						$('.remote-prefix').html( data.prefix );
-						show_prefix_notice = true;
-						if( $('#pull').is(':checked') ){
-							$('.prefix-notice.pull').show();
-						}
-						else {
-							$('.prefix-notice.push').show();
-						}
-					}
+					maybe_show_ssl_warning( connection_info[0], connection_info[1], data.scheme );
+					maybe_show_version_warning( data.plugin_version, connection_info[0] );
+					maybe_show_prefix_notice( data.prefix );
 					
 					$('.pull-push-connection-info').addClass('temp-disabled');
 					$('.pull-push-connection-info').attr('readonly','readonly');
@@ -826,6 +854,14 @@
 									table_migration_error = true;
 								},
 								success: function(data){
+									if( $.trim( data ) != '' ){
+										$('.progress-title').html('Migration failed');
+										$('.progress-text').html(data);
+										$('.progress-text').addClass('migration-error');
+										table_migration_error = true;
+										migration_complete_events();
+										return;
+									}
 									$('.progress-text').html('Migration complete');
 									$('.progress-title').html(completed_msg);
 								}
@@ -986,6 +1022,9 @@
 			$('.import-button').hide();
 			$('.connection-status').hide();
 			$('.prefix-notice').hide();
+			$('.ssl-notice').hide();
+			$('.different-plugin-version-notice').hide();
+			$('.step-two').show();
 			var connection_info = $.trim( $('.pull-push-connection-info').val() ).split("\n");
 			if( $('#pull').is(':checked') ){
 				$('.pull-list li').append( connection_info_box );
@@ -1000,6 +1039,13 @@
 					}
 					if( show_prefix_notice == true ) {
 						$('.prefix-notice.pull').show();
+					}
+					if( show_ssl_notice == true ) {
+						$('.ssl-notice').show();
+					}
+					if( show_version_notice == true ) {
+						$('.different-plugin-version-notice').show();
+						$('.step-two').hide();
 					}
 				}
 				else{
@@ -1021,6 +1067,13 @@
 					if( show_prefix_notice == true ) {
 						$('.prefix-notice.push').show();
 					}
+					if( show_ssl_notice == true ) {
+						$('.ssl-notice').show();
+					}
+					if( show_version_notice == true ) {
+						$('.different-plugin-version-notice').show();
+						$('.step-two').hide();
+					}
 				}
 				else{
 					$('.connection-status').show();
@@ -1036,16 +1089,7 @@
 				}
 			}
 		}
-
-		// replace tables and replaces depending on which option is selected
-		var intent = $('input[name=action]:checked').val();
-		if( intent == 'pull' ){
-			last_replace_switch = 'pull';
-		}
-		else if( intent == 'savefile' || intent == 'push' ){
-			last_replace_switch = 'push';
-		}
-		
+			
 		function change_replace_values(){
 			if( $('#push').is(':checked') || $('#savefile').is(':checked') ){
 				if( last_replace_switch == '' || last_replace_switch == 'pull' ){
@@ -1290,6 +1334,9 @@
 				return;
 			}
 			else{
+				$('.ssl-notice').hide();
+				$('.different-plugin-version-notice').hide();
+				$('.migrate-db-button').show();
 				$(this).removeClass('temp-disabled');
 				$(this).removeAttr('readonly');
 				$('.connect-button').show();
@@ -1429,6 +1476,8 @@
 			doing_ajax = true;
 			
 			$('.step-two').hide();
+			$('.ssl-notice').hide();
+			$('.prefix-notice').hide();
 			$('.connection-status').show();
 
 			$('.connection-status').html( 'Establishing connection to remote server, please wait' );
@@ -1481,16 +1530,9 @@
 					connection_established = true;
 					connection_data = data;
 
-					if( data.prefix != wpmdb_this_prefix ) {
-						$('.remote-prefix').html( data.prefix );
-						show_prefix_notice = true;
-						if( $('#pull').is(':checked') ){
-							$('.prefix-notice.pull').show();
-						}
-						else {
-							$('.prefix-notice.push').show();
-						}
-					}
+					maybe_show_ssl_warning( connection_info[0], connection_info[1], data.scheme );
+					maybe_show_version_warning( data.plugin_version, connection_info[0] );
+					maybe_show_prefix_notice( data.prefix );
 
 					$('.remote-json-data').val(original_body);
 

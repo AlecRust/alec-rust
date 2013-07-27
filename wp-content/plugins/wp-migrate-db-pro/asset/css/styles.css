@@ -22,6 +22,9 @@
      Help Tab
      ========================================================================== */
 }
+.wpmdb > .warning {
+  max-width: 750px;
+}
 .wpmdb a {
   text-decoration: none;
 }
@@ -92,6 +95,7 @@
 }
 .wpmdb .connection-status {
   display: none;
+  overflow: auto;
 }
 .wpmdb .connection-status.error {
   color: #9D1818;
@@ -441,7 +445,7 @@
 .wpmdb .label-disabled {
   color: #888;
 }
-.wpmdb .prefix-notice {
+.wpmdb .prefix-notice, .wpmdb .ssl-notice, .wpmdb .different-plugin-version-notice, .wpmdb .mysqli-notice {
   background-color: #FFFFE0;
   border: 1px solid #E6DB55;
   padding: 15px;
@@ -450,11 +454,26 @@
   display: none;
   width: 710px;
 }
-.wpmdb .prefix-notice p {
+.wpmdb .prefix-notice p, .wpmdb .ssl-notice p, .wpmdb .different-plugin-version-notice p, .wpmdb .mysqli-notice p {
   margin-top: 0px;
 }
-.wpmdb .prefix-notice p:last-child {
+.wpmdb .prefix-notice p:last-child, .wpmdb .ssl-notice p:last-child, .wpmdb .different-plugin-version-notice p:last-child, .wpmdb .mysqli-notice p:last-child {
   margin: 0px;
+}
+.wpmdb .different-plugin-version-notice, .wpmdb .mysqli-notice {
+  background-color: #FFEBE8;
+  border-color: #CC0000;
+}
+.wpmdb .different-plugin-version-notice a, .wpmdb .mysqli-notice a {
+  color: #CC0000;
+  text-decoration: underline;
+}
+.wpmdb .mysqli-notice {
+  display: block;
+}
+.wpmdb .ssl-notice {
+  margin-bottom: 0;
+  margin-top: 15px;
 }
 .wpmdb .save-migration-profile {
   font-size: 14px;
@@ -609,9 +628,6 @@
 }
 .wpmdb .help-tab .videos {
   width: 640px;
-  border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 25px;
-  padding-bottom: 28px;
 }
 .wpmdb .help-tab .videos ul > li {
   margin-bottom: 30px;
@@ -677,6 +693,9 @@
 }
 .wpmdb .help-tab .debug {
   width: 640px;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 25px;
+  padding-bottom: 28px;
 }
 .wpmdb .help-tab .debug textarea {
   width: 100%;
@@ -716,7 +735,12 @@
 
 .migration-error {
   color: #A21B1B;
+  display: block;
   font-weight: bold;
+  max-height: 400px;
+  max-width: 100%;
+  overflow: scroll;
+  word-wrap: break-word;
 }
 
 .progress-content {

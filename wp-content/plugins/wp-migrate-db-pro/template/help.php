@@ -1,3 +1,24 @@
+<?php
+$videos = array(
+	'SlfSuuePYaQ' => array(
+		'title' => 'Feature Walkthrough',
+		'desc' => 'A brief walkthrough of the WP Migrate DB plugin
+			showing all of the different options and explaining them.'
+	),
+	'IFdHIpf6jjc' => array(
+		'title' => 'Pulling Live Data Into Your Local Development&nbsp;Environment',
+		'desc' => 'This screencast demonstrates how you can pull data from a remote, live 
+			WordPress install and update the data in your local development
+			environment.'
+	),
+	'FjTzNqAlQE0' => array(
+		'title' => 'Pushing Local Development Data to a Staging&nbsp;Environment',
+		'desc' => 'This screencast demonstrates how you can push a local WordPress database
+			you\'ve been using for development to a staging environment.'
+	)
+);
+?>
+
 <div class="help-tab content-tab">
 
 	<div class="support">
@@ -12,26 +33,11 @@
 		</div>
 	</div>
 
-	<?php
-	$videos = array(
-		'SlfSuuePYaQ' => array(
-			'title' => 'Feature Walkthrough',
-			'desc' => 'A brief walkthrough of the WP Migrate DB plugin
-				showing all of the different options and explaining them.'
-		),
-		'IFdHIpf6jjc' => array(
-			'title' => 'Pulling Live Data Into Your Local Development&nbsp;Environment',
-			'desc' => 'This screencast demonstrates how you can pull data from a remote, live 
-				WordPress install and update the data in your local development
-				environment.'
-		),
-		'FjTzNqAlQE0' => array(
-			'title' => 'Pushing Local Development Data to a Staging&nbsp;Environment',
-			'desc' => 'This screencast demonstrates how you can push a local WordPress database
-				you\'ve been using for development to a staging environment.'
-		)
-	);
-	?>
+	<div class="debug">
+		<h3>Diagnostic Info &amp; Error Log</h3>
+		<textarea class="debug-log-textarea" autocomplete="off" readonly></textarea>
+		<a class="button clear-log js-action-link">Clear Error Log</a>
+	</div>
 
 	<div class="videos">
 		<h3>Videos</h3>
@@ -51,12 +57,6 @@
 			</li>
 		<?php endforeach; ?>
 		</ul>
-	</div>
-
-	<div class="debug">
-		<h3>Diagnostic Info &amp; Error Log</h3>
-		<textarea class="debug-log-textarea" autocomplete="off" readonly></textarea>
-		<a class="button clear-log js-action-link">Clear Error Log</a>
 	</div>
 
 </div> <!-- end .help-tab -->

@@ -30,7 +30,7 @@ class WP_Migrate_DB_Pro {
 	private $dbrains_api_base = 'https://deliciousbrains.com';
 	private $transient_timeout;
 	private $transient_retry_timeout;
-	private $max_allowed_packet_default = 1048576;
+	private $max_allowed_packet_default;
 	private $multipart_boundary = 'bWH4JVmYCnf6GfXacrcc';
 	private $attempting_to_connect_to;
 
@@ -99,6 +99,7 @@ class WP_Migrate_DB_Pro {
 		}
 
 		add_filter( 'plugin_action_links_' . $this->plugin_basename, array( $this, 'plugin_action_links' ) );
+		add_filter( 'network_admin_plugin_action_links_' . $this->plugin_basename, array( $this, 'plugin_action_links' ) );
 
 		if ( is_multisite() ) {
 			add_action( 'network_admin_menu', array( $this, 'network_admin_menu' ) );
@@ -195,6 +196,9 @@ class WP_Migrate_DB_Pro {
 
 		// allow devs to change the temporary prefix applied to the tables
 		$this->temp_prefix = apply_filters( 'wpmdb_temporary_prefix', $this->temp_prefix );
+
+		// allow devs to change the max allowed packet default value (1mb)
+		$this->max_allowed_packet_default = apply_filters( 'wpmdb_max_allowed_packet_default', 1048576 );
 
 		// testing only - if uncommented, will always check for plugin updates
 		//delete_site_transient( 'update_plugins' );
@@ -355,13 +359,33 @@ class WP_Migrate_DB_Pro {
 		return $result;
 	}
 
-	function remote_post( $url, $data, $scope, $args = array() ) {
-		set_time_limit( 0 );
+	function is_json( $string ) {
+		$json = @json_decode( $string );
+		return ! ( $json == NULL || $json == false );
+	}
+
+	function remote_post( $url, $data, $scope, $args = array(), $expecting_json = false ) {
+		$this->set_time_limit();
+
+		if( function_exists( 'fsockopen' ) && strpos( $url, 'https://' ) === 0 && $scope == 'ajax_prepare_remote_connection' ) {
+			$url_parts = parse_url( $url );
+			$host = $url_parts['host'];
+			if( $pf = @fsockopen( $host, 443, $err, $err_string, 1 ) ) {
+				// worked
+				fclose( $pf );
+			}
+			else {
+				// failed
+				$url = substr_replace( $url, 'http', 0, 5 );
+			}
+		}
 
 		$sslverify = ( $this->settings['verify_ssl'] == 1 ? true : false );
 
+		$default_remote_post_timeout = apply_filters( 'wpmdb_default_remote_post_timeout', 60 * 20 );
+
 		$args = wp_parse_args( $args, array(
-			'timeout'  => 60 * 20,
+			'timeout'  => $default_remote_post_timeout,
 			'blocking'  => true,
 			'sslverify'	=> $sslverify,
 		) );
@@ -375,9 +399,18 @@ class WP_Migrate_DB_Pro {
 		$response = wp_remote_post( $url, $args );
 
 		if ( is_wp_error( $response ) ) {
-			if( isset( $response->errors['http_request_failed'][0] ) && strstr( $response->errors['http_request_failed'][0], 'timed out' ) ) {
+			if( strpos( $url, 'https://' ) === 0 && $scope == 'ajax_prepare_remote_connection' ) {
+				$url = substr_replace( $url, 'http', 0, 5 );
+				// needs testing
+				if( $response = $this->remote_post( $url, $data, $scope, $args, $expecting_json ) ) {
+					return $response;
+				}
+				else {
+					return false;
+				}
+			}
+			else if( isset( $response->errors['http_request_failed'][0] ) && strstr( $response->errors['http_request_failed'][0], 'timed out' ) ) {
 				$this->error = 'The connection to the remote server has timed out, no changes have been committed. (#134 - scope: ' . $scope . ')';
-				$this->error_code = 134;
 			}
 			else if ( isset( $response->errors['http_request_failed'][0] ) && strstr( $response->errors['http_request_failed'][0], 'Could not resolve host' ) ) {
 				$this->error = 'We could not find: ' . $_POST['url'] . '. Are you sure this is the correct URL?';
@@ -387,14 +420,30 @@ class WP_Migrate_DB_Pro {
 				}
 			}
 			else {
-				$this->error = 'The connection failed, please try connecting over http instead of https. (#121 - scope: ' . $scope . ')';
-				$this->error_code = 121;
+				$this->error = 'The connection failed, an unexpected error occured, please contact support. (#121 - scope: ' . $scope . ')';
 			}
 			$this->log_error( $this->error, $response );
 			return false;
 		}
 		elseif ( (int) $response['response']['code'] < 200 || (int) $response['response']['code'] > 399 ) {
-			$this->error = 'Unable to connect to the remote server, please check the connection details (#129 - scope: ' . $scope . ')';
+			if( strpos( $url, 'https://' ) === 0 && $scope == 'ajax_prepare_remote_connection' ) {
+				$url = substr_replace( $url, 'http', 0, 5 );
+				// needs testing
+				if( $response = $this->remote_post( $url, $data, $scope, $args, $expecting_json ) ) {
+					return $response;
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				$this->error = 'Unable to connect to the remote server, please check the connection details - ' . $response['response']['code'] . ' ' . $response['response']['message'] . ' (#129 - scope: ' . $scope . ')';
+				$this->log_error( $this->error, $response );
+				return false;
+			}
+		}
+		elseif ( $expecting_json && $this->is_json( $response['body'] ) == false ) {
+			$this->error = 'There was a problem with the AJAX request, we were expecting a JSON response, instead we received:<br />' . $response['body'];
 			$this->log_error( $this->error, $response );
 			return false;
 		}
@@ -439,7 +488,7 @@ class WP_Migrate_DB_Pro {
 	}
 
 	function plugin_action_links( $links ) {
-		$link = sprintf( '<a href="%s">%s</a>', $this->plugin_base, __( 'Settings', 'wp-migrate-db-pro' ) );
+		$link = sprintf( '<a href="%s">%s</a>', network_admin_url( $this->plugin_base ), __( 'Settings', 'wp-migrate-db-pro' ) );
 		array_unshift( $links, $link );
 		return $links;
 	}
@@ -472,12 +521,18 @@ class WP_Migrate_DB_Pro {
 	}
 
 	function output_diagnostic_info() {
+		global $table_prefix;
+		
 		_e( 'site_url()', 'wp-app-store' ); echo ': ';
 		echo site_url();
 		echo "\r\n";
 
 		_e( 'home_url()', 'wp-app-store' ); echo ': ';
 		echo home_url();
+		echo "\r\n";
+
+		_e( 'Table Prefix', 'wp-app-store' ); echo ': ';
+		echo $table_prefix;
 		echo "\r\n";
 
 		_e( 'WordPress', 'wp-app-store' ); echo ': ';
@@ -558,8 +613,10 @@ class WP_Migrate_DB_Pro {
 
 		$active_plugins = (array) get_option( 'active_plugins', array() );
 
-		if ( is_multisite() )
-			$active_plugins = array_merge( $active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
+		if ( is_multisite() ) {
+			$network_active_plugins = wp_get_active_network_plugins();
+			$active_plugins = array_map( array( $this, 'remove_wp_plugin_dir' ), $network_active_plugins );
+		}
 
 		foreach ( $active_plugins as $plugin ) {
 			$plugin_data = @get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
@@ -568,6 +625,11 @@ class WP_Migrate_DB_Pro {
 		}
 
 		echo "\r\n";
+	}
+
+	function remove_wp_plugin_dir( $name ) {
+		$plugin = str_replace( WP_PLUGIN_DIR, '', $name );
+		return substr( $plugin, 1 );
 	}
 	
 	// After table migration, delete old tables and rename new tables removing the temporarily prefix
@@ -636,7 +698,7 @@ class WP_Migrate_DB_Pro {
 
 	function process_chunk( $chunk ) {
 		// prepare db
-		set_time_limit( 0 );
+		$this->set_time_limit();
 		$db = $this->get_db_object();
 		$i = 1;
 		if ( $db->multi_query( $chunk ) ) { 
@@ -898,19 +960,22 @@ class WP_Migrate_DB_Pro {
 		$data['sig'] = $this->create_signature( $data, $_POST['key'] );
 		$ajax_url = trailingslashit( $_POST['url'] ) . 'wp-admin/admin-ajax.php';
 		$timeout = apply_filters( 'wpmdb_prepare_remote_connection_timeout', 10 );
-		$response = $this->remote_post( $ajax_url, $data, __FUNCTION__, compact( 'timeout' ) );
+		$response = $this->remote_post( $ajax_url, $data, __FUNCTION__, compact( 'timeout' ), true );
+		$url_bits = parse_url( $this->attempting_to_connect_to );
 		$return = $response;
 
 		$alt_action = '';
-		if( isset( $this->error_code ) && ( $this->error_code = 121 || $this->error_code = 134 ) ) {
-			$alt_action = ' or <a class="try-http js-action-link" href="#">Try HTTP?</a>';
-		}
 
 		if ( false === $response ) {
-			$return = array( 'wpmdb_error' => 1, 'body' => $this->error . ' <a class="try-again js-action-link" href="#">Try again?</a>' . $alt_action );
+			$return = array( 'wpmdb_error' => 1, 'body' => $this->error );
+			echo json_encode( $return );
+			exit;
 		}
 
+		// TODO: this is horrible, needs to be cleaned up (in the JS too)
 		$response = json_decode( $response, true );
+		$response['scheme'] = $url_bits['scheme'];
+		$return = json_encode( $response );
 
 		if ( isset( $response['error'] ) && $response['error'] == 1 ) {
 			$return = array( 'wpmdb_error' => 1, 'body' => $response['message'] );
@@ -924,29 +989,46 @@ class WP_Migrate_DB_Pro {
 	// AJAX end point for the above AJAX call, returns table information, absolute file path, table prefix, etc
 	function ajax_establish_remote_connection() {
 		global $wpdb;
+		
 		$return = array();
-		if ( $this->verify_signature( $_POST, $this->settings['key'] ) ) {
-			if ( isset( $this->settings['allow_' . $_POST['intent']] ) && $this->settings['allow_' . $_POST['intent']] == true ) {
-				$return['tables'] = $this->get_tables();
-				$return['table_sizes'] = $this->get_table_sizes();
-				$return['path'] = $this->absolute_root_file_path;
-				$return['url'] = home_url();
-				$return['prefix'] = $wpdb->prefix;
-				$return['bottleneck'] = $this->get_bottleneck();
-				$return['error'] = 0;
-				$return['domain'] = ( defined( 'DOMAIN_CURRENT_SITE' ) ? DOMAIN_CURRENT_SITE : '' );
-			}
-			else {
-				$return['error'] = 1;
-				$return['message'] = 'The connection succeeded but the remote site is configured to reject ' . $_POST['intent'] . ' connections. You can change this in the "settings" tab on the remote site. (#122) <a href="#" class="try-again js-action-link">Try again?</a>';
-			}
-		}
-		else {
+		
+		if ( !$this->verify_signature( $_POST, $this->settings['key'] ) ) {
 			$return['error'] = 1;
 			$return['message'] = $this->invalid_content_verification_error . ' (#120) <a href="#" class="try-again js-action-link">Try again?</a>';
+			echo json_encode( $return );
+			exit;
 		}
-		echo json_encode( $return );
 
+		if ( false == function_exists( 'mysqli_connect' ) ) {
+			$return = array(
+				'error' 	=> 1,
+				'message'	=> 'Oops, looks like PHP\'s mysqli extension is not
+					installed on the remote server. Please contact your web
+					host or system administrator to install it and
+					continue using WP Migrate DB Pro.'
+			);
+			echo json_encode( $return );
+			exit;
+		}
+
+		if ( !isset( $this->settings['allow_' . $_POST['intent']] ) || $this->settings['allow_' . $_POST['intent']] != true ) {
+			$return['error'] = 1;
+			$return['message'] = 'The connection succeeded but the remote site is configured to reject ' . $_POST['intent'] . ' connections. You can change this in the "settings" tab on the remote site. (#122) <a href="#" class="try-again js-action-link">Try again?</a>';
+			echo json_encode( $return );
+			exit;
+		}
+
+		$plugin_info = get_plugin_data( $this->plugin_file_path, false, false );
+		$return['tables'] = $this->get_tables();
+		$return['table_sizes'] = $this->get_table_sizes();
+		$return['path'] = $this->absolute_root_file_path;
+		$return['url'] = home_url();
+		$return['prefix'] = $wpdb->prefix;
+		$return['bottleneck'] = $this->get_bottleneck();
+		$return['error'] = 0;
+		$return['plugin_version'] = $plugin_info['Version'];
+		$return['domain'] = ( defined( 'DOMAIN_CURRENT_SITE' ) ? DOMAIN_CURRENT_SITE : '' );
+		echo json_encode( $return );
 		exit;
 	}
 
@@ -1035,7 +1117,8 @@ class WP_Migrate_DB_Pro {
 
 	function get_bottleneck() {
 		// we have to account for HTTP headers and other bloating, here we minus 1kb for bloat
-		return min( ( $this->get_post_max_size() - 1024 ), $this->get_max_allowed_packet_size() );
+		$calculated_bottleneck = min( ( $this->get_post_max_size() - 1024 ), $this->get_max_allowed_packet_size() );
+		return apply_filters( 'wpmdb_bottleneck', $calculated_bottleneck );
 	}
 
 	function ajax_process_pull_request() {
@@ -1063,6 +1146,29 @@ class WP_Migrate_DB_Pro {
 			<div id="icon-tools" class="icon32"><br /></div><h2>Migrate DB Pro</h2>
 
 			<?php
+			$hide_warning = apply_filters( 'wpmdb_hide_safe_mode_warning', false );
+			if ( function_exists( 'ini_get' ) && ini_get( 'safe_mode' ) && !$hide_warning ) {
+				?>
+				<div class="updated warning" style="margin: 10px 0 0 0;">
+					<p>
+						<strong>PHP Safe Mode Enabled</strong> &mdash;
+						We do not officially support running this plugin in
+						safe mode because <code>set_time_limit()</code>
+						has no effect. Therefore we can't extend the run time of the
+						script and ensure it doesn't time out before the migration completes.
+						We haven't disabled the plugin however, so you're free to cross your
+						fingers and hope for the best. However, if you have trouble,
+						we can't help you until you turn off safe mode.
+						<?php if ( function_exists( 'ini_get' ) ) : ?>
+						Your current PHP run time limit is set to <?php echo ini_get( 'max_execution_time' ); ?> seconds.
+						<?php endif; ?>
+					</p>
+				</div>
+				<?php
+			}
+			?>
+
+			<?php
 			if ( $msg = $this->get_new_beta_version_msg() ) {
 				echo '<div class="updated" style="margin: 10px 0 0 0;"><p>', $msg, '</p></div>';
 			}
@@ -1081,7 +1187,21 @@ class WP_Migrate_DB_Pro {
 					if ( isset( $_POST['import-db'] ) ) {
 						$this->import_db();
 					}
+					if( function_exists( 'mysqli_connect' ) == false ) : ?>
+					<div class="mysqli-notice migrate-tab content-tab">
+						<p>
+							<strong>MySQLi PHP Extension Not Installed</strong> &mdash;
+							Oops, looks like PHP's mysqli extension is not
+							installed on this server. Please contact your web
+							host or system administrator to install it and
+							continue using WP Migrate DB Pro.
+						</p>
+					</div>
+					<?php
+					else :
 					$this->template( 'migrate' );
+					endif;
+
 				}
 
 				$this->template( 'settings' );
@@ -1098,8 +1218,14 @@ class WP_Migrate_DB_Pro {
 	function apply_replaces( $subject, $is_serialized = false ) {
 		$search = $this->form_data['replace_old'];
 		$replace = $this->form_data['replace_new'];
-		$new = str_replace( $search, $replace, $subject, $count );
+		$new = str_ireplace( $search, $replace, $subject, $count );
 		return $new;
+	}
+
+	function set_time_limit() {
+		if ( !function_exists( 'ini_get' ) || !ini_get( 'safe_mode' ) ) {
+			set_time_limit( 0 );
+		}
 	}
 
 	/**
@@ -1114,7 +1240,7 @@ class WP_Migrate_DB_Pro {
 	 */
 	function backup_table( $table ) {
 		global $wpdb;
-		set_time_limit( 0 );
+		$this->set_time_limit();
 
 		if ( empty( $this->form_data ) ) {
 			$this->form_data = $this->parse_migration_form_data( $_POST['form_data'] );
@@ -1167,6 +1293,10 @@ class WP_Migrate_DB_Pro {
 			if ( $this->form_data['action'] != 'savefile' && $_POST['stage'] != 'backup' ) {
 				$create_table[0][1] = str_replace( 'CREATE TABLE `', 'CREATE TABLE `' . $temp_prefix, $create_table[0][1] );
 			}
+
+			$create_table[0][1] = str_replace( 'TYPE=', 'ENGINE=', $create_table[0][1] );
+
+			$create_table[0][1] = apply_filters( 'wpmdb_create_table_query', $create_table[0][1] );
 
 			$this->stow( $create_table[0][1] . ' ;' );
 
@@ -1233,6 +1363,8 @@ class WP_Migrate_DB_Pro {
 			} elseif ( isset( $this->form_data['exclude_revisions'] ) && $wpdb->posts == $table ) {
 				$where = ' WHERE post_type != "revision" ORDER BY ID';
 			}
+
+			$where = apply_filters( 'wpmdb_rows_where', $where, $table );
 
 			$table_data = $wpdb->get_results( "SELECT * FROM " . $this->backquote( $table ) . " $where LIMIT {$row_start}, {$row_inc}" );
 
@@ -1523,7 +1655,7 @@ class WP_Migrate_DB_Pro {
 
 	function download_file() {
 		// dont need to check for user permissions as our 'add_management_page' already takes care of this
-		set_time_limit( 0 );
+		$this->set_time_limit();
 
 		if ( ! is_numeric( $_GET['download'] ) ){
 			exit;
@@ -1553,6 +1685,7 @@ class WP_Migrate_DB_Pro {
 
 	function admin_head_connection_info() {
 		global $table_prefix;
+		$plugin_info = get_plugin_data( $this->plugin_file_path, false, false );
 		?>
 		<script type='text/javascript'>
 			var wpmdb_connection_info = '<?php echo json_encode( array( site_url( '', 'https' ), $this->settings['key'] ) ); ?>';
@@ -1568,6 +1701,7 @@ class WP_Migrate_DB_Pro {
 			var wpmdb_licence = '<?php echo $this->settings['licence']; ?>';
 			var wpmdb_is_multisite = <?php echo ( is_multisite() ? 'true' : 'false' ); ?>;
 			var wpmdb_openssl_available = <?php echo ( $this->open_ssl_enabled() ? 'true' : 'false' ); ?>;
+			var wpmdb_plugin_version = '<?php echo $plugin_info['Version']; ?>';
 		</script>
 		<?php
 	}
@@ -1681,7 +1815,7 @@ class WP_Migrate_DB_Pro {
 
 	function is_licence_expired( $skip_transient_check = false ) {
 		if( empty( $this->settings['licence'] ) ) {
-			$settings_link = sprintf( '<a href="%s">%s</a>', get_admin_url( '', 'tools.php?page=' . $this->plugin_slug ) . '#settings', __( 'Settings', 'wp-migrate-db-pro' ) );
+			$settings_link = sprintf( '<a href="%s">%s</a>', network_admin_url( $this->plugin_base ) . '#settings', __( 'Settings', 'wp-migrate-db-pro' ) );
 			$message = 'To finish activating WP Migrate DB Pro, please go to ' . $settings_link . ' and enter your licence key. 
 				If you don\'t have a licence key, you may 
 				<a href="http://deliciousbrains.com/wp-migrate-db-pro/pricing/">purchase one</a>.';
@@ -1722,7 +1856,7 @@ class WP_Migrate_DB_Pro {
 		}
 
 		if( empty( $this->settings['licence'] ) ) {
-			$settings_link = sprintf( '<a href="%s">%s</a>', get_admin_url( '', 'tools.php?page=' . $this->plugin_slug ) . '#settings', __( 'Settings', 'wp-migrate-db-pro' ) );
+			$settings_link = sprintf( '<a href="%s">%s</a>', network_admin_url( $this->plugin_base ) . '#settings', __( 'Settings', 'wp-migrate-db-pro' ) );
 			if ( $new_version ) {
 				$message = 'To update, ';
 			}

@@ -1,6 +1,9 @@
 @import "compass";
 
 .wpmdb{
+	> .warning {
+		max-width: 750px;
+	}
 
 	/* =============================================================================
 	   Common & Global
@@ -92,6 +95,7 @@
 	
 	.connection-status{
 		display: none;
+		overflow: auto;
 	}
 	
 	.connection-status.error{
@@ -541,7 +545,7 @@
 		color: #888;
 	}
 
-	.prefix-notice {
+	.prefix-notice, .ssl-notice, .different-plugin-version-notice, .mysqli-notice {
 		background-color: #FFFFE0;
 		border: 1px solid #E6DB55;
 		padding: 15px;
@@ -555,6 +559,24 @@
 		p:last-child {
 			margin: 0px;
 		}
+	}
+
+	.different-plugin-version-notice, .mysqli-notice {
+		background-color: #FFEBE8;
+		border-color: #CC0000;
+		a {
+			color: #CC0000;
+			text-decoration: underline;
+		}
+	}
+
+	.mysqli-notice {
+		display: block;
+	}
+
+	.ssl-notice {
+		margin-bottom: 0;
+		margin-top: 15px;
 	}
 	
 	/* Save migration profile */
@@ -769,9 +791,6 @@
 
 		.videos {
 			width: 640px;
-			border-bottom: 1px solid #CCCCCC;
-			margin-bottom: 25px;
-			padding-bottom: 28px;
 
 			ul > li {
 				margin-bottom: 30px;
@@ -842,6 +861,9 @@
 
 		.debug {
 			width: 640px;
+			border-bottom: 1px solid #CCCCCC;
+			margin-bottom: 25px;
+			padding-bottom: 28px;
 
 			textarea{
 				width: 100%;
@@ -880,8 +902,13 @@
 }
 
 .migration-error {
-	color: #A21B1B;
-	font-weight: bold;
+    color: #A21B1B;
+    display: block;
+    font-weight: bold;
+    max-height: 400px;
+    max-width: 100%;
+    overflow: scroll;
+    word-wrap: break-word;
 }
 
 .progress-content{

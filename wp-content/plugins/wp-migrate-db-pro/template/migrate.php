@@ -17,7 +17,7 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 		var wpmdb_loaded_tables = '<?php echo json_encode( $loaded_profile['select_tables'] ); ?>';
 	<?php endif; ?>
 </script>
-	
+
 <div class="migrate-tab content-tab">
 
 	<form method="post" id="migrate-form" action="#migrate" enctype="multipart/form-data">
@@ -76,6 +76,10 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 				<br />
 				<input class="button connect-button" type="submit" value="Connect" name="Connect" autocomplete="off" />
 			</div>
+
+			<div class="ssl-notice">
+				<p><strong>SSL Disabled</strong> &mdash; We couldn't connect over SSL but regular http (no SSL) appears to be working so we've switched to that. If you run a push or pull, your data will be transmitted unencrypted. Most people are fine with this, but just a heads up.</p>
+			</div>
 		
 		</div>
 	
@@ -84,6 +88,13 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 		</div>
 
 		<p class="connection-status">Please enter the connection information above to continue.</p>
+
+		<div class="different-plugin-version-notice">
+			<?php
+			$plugin_info = get_plugin_data( $this->plugin_file_path );
+			?>
+			<p><b>Version Mismatch</b> &mdash; We've detected you have version <span class="remote-version"></span> of WP Migrate DB Pro at <span class="remote-location"></span> but are using <?php echo $plugin_info['Version']; ?> here. Please go to the <a href="<?php echo network_admin_url( 'plugins.php' ); ?>">Plugins page</a> on both installs and check for updates.</p>
+		</div>
 		
 		<div class="step-two">
 
@@ -309,7 +320,7 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 			<div class="prefix-notice pull">
 				<p>Whoa! We've detected that the database table prefix differs between installations. Clicking the Migrate DB button below will create new database tables in your local database with prefix "<span class="remote-prefix"></span>".</p>
 
-				<p>However, your local install is configured to use table prefix "<?php echo $wpdb->prefix; ?>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your local install's wp-config.php and change the $table_prefix variable to "<span class="remote-prefix"></span>".</p>
+				<p>However, your local install is configured to use table prefix "<?php echo $wpdb->prefix; ?>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your local install's wp-config.php and change the "<?php echo $wpdb->prefix; ?>" variable to "<span class="remote-prefix"></span>".</p>
 
 				<p>This will allow your local install the use the migrated tables. Once you do this, you shouldn't have to do it again.</p>
 			</div>
@@ -317,7 +328,7 @@ $is_default_profile = isset( $loaded_profile['default_profile'] );
 			<div class="prefix-notice push">
 				<p>Whoa! We've detected that the database table prefix differs between installations. Clicking the Migrate DB button below will create new database tables in the remote database with prefix "<?php echo $wpdb->prefix; ?>".</p>
 
-				<p>However, your remote install is configured to use table prefix "<span class="remote-prefix"></span>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your remote install's wp-config.php and change the $table_prefix variable to "<?php echo $wpdb->prefix; ?>".</p>
+				<p>However, your remote install is configured to use table prefix "<span class="remote-prefix"></span>" and will ignore the migrated tables. So, <b>AFTER</b> migration is complete, you will need to edit your remote install's wp-config.php and change the "<span class="remote-prefix"></span>" variable to "<?php echo $wpdb->prefix; ?>".</p>
 
 				<p>This will allow your remote install the use the migrated tables. Once you do this, you shouldn't have to do it again.</p>
 			</div>
