@@ -1,13 +1,13 @@
 === WP Smush.it ===
 Plugin Name: WP Smush.it
-Version: 1.6.5
+Version: 1.6.5.1
 Author: WPMU DEV
 Author URI: http://premium.wpmudev.org
 Contributors: WPMUDEV, alexdunae
-Tags: images, image, attachments, attachment
-Requires at least: 2.9
+Tags: images, image, attachments, attachment, Smush.it
+Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 1.6.5
+Stable tag: 1.6.5.1
 License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 Reduce image file sizes and improve performance using the <a href="http://smush.it/">Smush.it</a> API within WordPress.
@@ -64,13 +64,19 @@ Don't forget to stay up to date on everything WordPress from the Internet's numb
 
 == Upgrade Notice ==
 
-In this first official release from WPMU DEV, we've done a code cleanup and reformat to get started, as well as
+In this first official release from WPMU DEV, we've done a code cleanup and reformat to get started, as well as  
 attempting to handle smush.it API errors a bit better. We've also made all the text fully i18n translatable.
 
 This will give us a good foundation to start adding some new features!
 
 
 == Changelog ==
+
+= 1.6.5.1 =
+* Correct Settings > Media issue causing settings to report warnings and not save. 
+* Corrected some processing logic to better handling or image path. Images still need to be within ABSPATH of site
+* Correct image URL passed to Smush.it API to convert https:// urls to http:// since the API does not allow https:// images
+
 
 = 1.6.5 =
 * Codes reformatted and cleaned up into a php class
