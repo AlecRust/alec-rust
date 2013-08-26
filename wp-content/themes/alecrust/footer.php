@@ -17,13 +17,16 @@
             // Exclude terms not associated with post, or that have a child who do
             $exclude_these = array_diff( $all_term_ids, $child_terms );
         ?>
-        <nav class="post-navigation">
+        <nav class="post-navigation" role="navigation">
             <h1 class="visuallyhidden">Post Navigation</h1>
             <ul>
                 <li class="prev"><?php previous_post_link( '%link', '%title', false, $exclude_these ); ?></li>
                 <li class="next"><?php next_post_link( '%link', '%title', false, $exclude_these ); ?></li>
             </ul>
         </nav>
+
+        <? } elseif ( is_archive() ) { ?>
+            <?php alecrust_content_nav( 'nav-below' ); ?>
         <?php } ?>
 
         <?php // Output widgets sidebar ?>
