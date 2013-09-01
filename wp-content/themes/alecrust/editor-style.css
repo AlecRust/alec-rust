@@ -256,13 +256,13 @@ li {
   margin-bottom: 15px;
 }
 blockquote {
-  border-left: 10px solid #bbb;
+  border-left: 10px solid #bbbbbb;
   quotes: "\201C" "\201D" "\2018" "\2019";
   margin: 1.5em 10px;
   padding: .5em 10px;
 }
 blockquote:before {
-  color: #bbb;
+  color: #bbbbbb;
   content: open-quote;
   font-size: 4em;
   line-height: .1em;
