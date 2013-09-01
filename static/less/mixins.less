@@ -116,7 +116,7 @@
 // Gradients
 // --------------------------------------------------
 #gradient {
-    .horizontal(@startColor: #555, @endColor: #333) {
+    .horizontal(@startColor: @gray, @endColor: @gray-dark) {
         background-color: @endColor;
         background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
         background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
@@ -127,7 +127,7 @@
         background-repeat: repeat-x;
         filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
     }
-    .vertical(@startColor: #555, @endColor: #333) {
+    .vertical(@startColor: @gray, @endColor: @gray-dark) {
         background-color: mix(@startColor, @endColor, 60%);
         background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
         background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10

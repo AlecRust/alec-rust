@@ -25,7 +25,7 @@
 
     li {
         #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
-        .box-shadow(-1px 1px 1px #aaa);
+        .box-shadow(-1px 1px 1px lighten(@gray-light, 6.5%));
         background-color: lighten(@brand-color, .5%);
         text-align: left;
         margin-bottom: 10px;
@@ -122,7 +122,7 @@
 
     a {
         #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
-        .box-shadow(-1px 1px 1px #aaa);
+        .box-shadow(-1px 1px 1px lighten(@gray-light, 6.5%));
         background-color: lighten(@brand-color, .5%);
 
         &:hover {
@@ -156,7 +156,7 @@
             .box-shadow(none);
             display: inline-block;
             text-align: center;
-            border: 1px solid #ddd;
+            border: 1px solid darken(@gray-lighter, 7%);
             width: 31%;
             margin-left: -4px;
 
