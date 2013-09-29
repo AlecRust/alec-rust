@@ -1,5 +1,5 @@
 /*
- 
+
  $Id: sitemap.js 48032 2008-05-27 14:32:06Z arnee $
 
 */
@@ -9,7 +9,7 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	var table = document.getElementById('sm_pageTable').getElementsByTagName('TBODY')[0];
 	var ce = function(ele) { return document.createElement(ele) };
 	var tr = ce('TR');
-												
+
 	var td = ce('TD');
 	var iUrl = ce('INPUT');
 	iUrl.type="text";
@@ -18,7 +18,7 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	if(url) iUrl.value=url;
 	td.appendChild(iUrl);
 	tr.appendChild(td);
-	
+
 	td = ce('TD');
 	td.style.width='150px';
 	var iPrio = ce('SELECT');
@@ -26,7 +26,7 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	iPrio.name="sm_pages_pr[]";
 	for(var i=0; i <priorities.length; i++) {
 		var op = ce('OPTION');
-		op.text = priorities[i];		
+		op.text = priorities[i];
 		op.value = priorities[i];
 		try {
 			iPrio.add(op, null); // standards compliant; doesn't work in IE
@@ -39,7 +39,7 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	}
 	td.appendChild(iPrio);
 	tr.appendChild(td);
-	
+
 	td = ce('TD');
 	td.style.width='150px';
 	var iFreq = ce('SELECT');
@@ -47,21 +47,21 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	iFreq.style.width='95%';
 	for(var i=0; i<changeFreqVals.length; i++) {
 		var op = ce('OPTION');
-		op.text = changeFreqNames[i];		
+		op.text = changeFreqNames[i];
 		op.value = changeFreqVals[i];
 		try {
 			iFreq.add(op, null); // standards compliant; doesn't work in IE
 		} catch(ex) {
 			iFreq.add(op); // IE only
 		}
-		
+
 		if(changeFreq && changeFreq == op.value) {
 			iFreq.selectedIndex = i;
 		}
 	}
 	td.appendChild(iFreq);
 	tr.appendChild(td);
-	
+
 	var td = ce('TD');
 	td.style.width='150px';
 	var iChanged = ce('INPUT');
@@ -71,7 +71,7 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	if(lastChanged) iChanged.value=lastChanged;
 	td.appendChild(iChanged);
 	tr.appendChild(td);
-	
+
 	var td = ce('TD');
 	td.style.textAlign="center";
 	td.style.width='5px';
@@ -81,14 +81,14 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	iAction.onclick = function() { table.removeChild(tr); };
 	td.appendChild(iAction);
 	tr.appendChild(td);
-	
+
 	var mark = ce('INPUT');
 	mark.type="hidden";
 	mark.name="sm_pages_mark[]";
 	mark.value="true";
 	tr.appendChild(mark);
-	
-	
+
+
 	var firstRow = table.getElementsByTagName('TR')[1];
 	if(firstRow) {
 		var firstCol = (firstRow.childNodes[1]?firstRow.childNodes[1]:firstRow.childNodes[0]);
@@ -98,8 +98,8 @@ function sm_addPage(url,priority,changeFreq,lastChanged) {
 	}
 	var cnt = table.getElementsByTagName('TR').length;
 	if(cnt%2) tr.className="alternate";
-	
-	table.appendChild(tr);										
+
+	table.appendChild(tr);
 }
 
 function sm_loadPages() {
