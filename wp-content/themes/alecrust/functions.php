@@ -37,9 +37,6 @@ function alecrust_scripts_styles() {
     // Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-
-    // Loads the main stylesheet
-    wp_enqueue_style( 'alecrust-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
 
@@ -54,6 +51,21 @@ remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+/*
+ * Given a file, i.e. /alecrust/style.css, replace it with a string containing the
+ * file's mtime, i.e. /alecrust/style.1221534296.css
+ *
+ * @param $file  The file to be loaded. Must be an absolute path (i.e. starting with slash)
+ */
+function auto_version($file)
+{
+  if(strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
+    return $file;
+
+  $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
+  return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
+}
 
 /**
  * Registers sidebar and widgetized areas
