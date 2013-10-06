@@ -29,9 +29,17 @@
             <?php alecrust_content_nav( 'nav-below' ); ?>
         <?php } ?>
 
-        <?php // Output widgets sidebar ?>
+        <?php // Widgets sidebar on Blog posts ?>
         <?php if ( is_single() && in_category( 'Blog' ) ) { ?>
             <?php dynamic_sidebar( 'Widgets' ); ?>
+        <?php } ?>
+
+        <?php // CV widget on About page ?>
+        <?php if ( is_page( 'about' ) ) { ?>
+            <aside class="widget">
+                <h1 class="widget-title">Looking for my CV?</h1>
+                <p><a href="/wp-content/uploads/Alec%20Rust%20CV.pdf" download="/wp-content/uploads/Alec%20Rust%20CV.pdf" class="button">Download as PDF</a></p>
+            </aside>
         <?php } ?>
 
         <aside class="global-social-links" role="complementary">

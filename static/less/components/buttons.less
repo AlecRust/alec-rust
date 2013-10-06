@@ -18,6 +18,10 @@
     margin-bottom: 0; // For input.button
     padding: 11px 20px 10px;
 
+    &:visited {
+        color: @button-color;
+    }
+
     &:hover,
     &:focus {
         #gradient > .vertical(lighten(@button-bg, 9%), lighten(@button-bg, 2%));
