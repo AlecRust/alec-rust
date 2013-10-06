@@ -20,7 +20,6 @@
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/html5shiv.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/respond.min.js"></script>
         <link rel="stylesheet" href="<?=auto_version('/wp-content/themes/alecrust/style.css')?>">
         <?php wp_head(); ?>
     </head>
