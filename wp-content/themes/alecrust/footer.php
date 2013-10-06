@@ -8,7 +8,7 @@
 ?>
         </main>
 
-        <?php if ( is_single() ) {
+        <?php if ( is_single() && !is_attachment() ) {
             $all_term_ids = get_terms( 'category', array( 'fields' => 'ids' ) );
             $post_terms = get_the_terms( get_the_ID(), 'category' );
             $post_terms = wp_list_pluck( $post_terms, 'term_id' );
