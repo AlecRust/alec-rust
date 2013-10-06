@@ -6,14 +6,15 @@
 // Variables
 @import "variables";
 
-// Tables
-@import "components/tables";
-
 // Mixins
 @import "mixins";
 
 // Reset
 @import "normalize";
+
+// Components
+@import "components/tables";
+@import "components/panels";
 
 // Apply a natural box layout model to all elements
 * {
@@ -143,29 +144,4 @@ img {
     float: right;
     max-width: 40%;
     margin: 0 0 20px 20px;
-}
-
-// Content Hero
-.content-hero {
-    display: inline-block;
-    font-size: @font-size-base;
-    max-width: 260px;
-    border: 1px solid darken(@content-bg, 8%);
-    background-color: darken(@content-bg, 3%);
-    margin-bottom: 20px;
-    padding: 15px 20px;
-
-    h2 {
-        font-size: @font-size-base + 6;
-        margin: 0 0 10px;
-    }
-
-    ul {
-        margin-bottom: 0;
-        padding-left: 15px;
-    }
-
-    li:last-child {
-        margin-bottom: 0;
-    }
 }

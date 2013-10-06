@@ -1,0 +1,44 @@
+//
+// Panels
+// --------------------------------------------------
+
+.panel {
+    display: inline-block;
+    font-size: @font-size-base;
+    border: 1px solid darken(@content-bg, 8%);
+    background-color: darken(@content-bg, 3%);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+
+    h2 {
+        font-size: @font-size-base + 6;
+        margin: 0 0 10px;
+    }
+
+    ul {
+        margin-bottom: 0;
+        padding-left: 15px;
+    }
+
+    li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .panel {
+        min-width: 260px;
+    }
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    .panel {
+        max-width: 260px;
+    }
+}
