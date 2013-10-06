@@ -29,6 +29,11 @@
     }
 }
 
+// Make .muted visible when logged in
+.logged-in .muted {
+    .opacity(70);
+}
+
 // Undoes the .visuallyhidden class
 .visible {
     .square(auto);
@@ -38,7 +43,26 @@
     position: static;
 }
 
-// Make .muted visible when logged in
-.logged-in .muted {
-    .opacity(70);
+// Left and right aligning
+.alignleft,
+.align-right {
+    margin-bottom: 20px;
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    // Left and right aligning
+    .alignleft {
+        float: left;
+        max-width: 35%;
+        margin: 0 20px 20px 0;
+    }
+
+    .alignright {
+        float: right;
+        max-width: 35%;
+        margin: 0 0 20px 20px;
+    }
 }
