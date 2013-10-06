@@ -28,7 +28,7 @@ th {
                 padding: 8px;
                 line-height: 1.4;
                 vertical-align: top;
-                border-top: 1px solid #ddd;
+                border-top: 1px solid darken(@gray-lighter, 7%);
             }
         }
     }
@@ -58,7 +58,7 @@ th {
 
     // Account for multiple tbody instances
     > tbody + tbody {
-        border-top: 2px solid #ddd;
+        border-top: 2px solid darken(@gray-lighter, 7%);
     }
 
     // Nesting
@@ -71,7 +71,7 @@ th {
 
         > td,
         > th {
-            background-color: #eee;
+            background-color: @gray-lighter;
         }
     }
 }
@@ -141,7 +141,7 @@ table {
         overflow-y: hidden;
         overflow-x: scroll;
         -ms-overflow-style: -ms-autohiding-scrollbar;
-        border: 1px solid #ddd;
+        border: 1px solid darken(@gray-lighter, 7%);
         -webkit-overflow-scrolling: touch;
 
         // Tighten up spacing
