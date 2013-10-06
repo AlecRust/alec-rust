@@ -27,7 +27,7 @@
     <?php if(is_page()) { $page_slug = 'page-'.$post->post_name; } ?>
     <body <?php body_class($page_slug); ?>>
 
-        <!--[if lt IE 7]>
+        <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 

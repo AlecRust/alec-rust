@@ -58,13 +58,13 @@ remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
  *
  * @param $file  The file to be loaded. Must be an absolute path (i.e. starting with slash)
  */
-function auto_version($file)
-{
-  if(strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
-    return $file;
+function auto_version($file) {
+    if ( strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file) ) {
+        return $file;
+    }
 
-  $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
-  return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
+    $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
+    return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
 }
 
 /**
