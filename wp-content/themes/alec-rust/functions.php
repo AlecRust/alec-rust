@@ -53,8 +53,8 @@ remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
 /*
- * Given a file, i.e. /alecrust/style.css, replace it with a string containing the
- * file's mtime, i.e. /alecrust/style.1221534296.css
+ * Given a file, i.e. /alec-rust/style.css, replace it with a string containing the
+ * file's mtime, i.e. /alec-rust/style.1221534296.css
  *
  * @param $file  The file to be loaded. Must be an absolute path (i.e. starting with slash)
  */
