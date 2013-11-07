@@ -1,3 +1,3 @@
 # Alec Rust
 
-The public repo for my personal website [Alec Rust](http://alecrust.com/).
+The WordPress theme `alec-rust`, used on [my personal website](http://alecrust.com/).
