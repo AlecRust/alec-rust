@@ -1,17 +1,40 @@
 <?php
 /**
- * Front to the WordPress application. This file doesn't do anything, but loads
- * wp-blog-header.php which does and tells WordPress to load the theme.
+ * Main template file
+ *
+ * This is the most generic template file in a WordPress theme.
+ * It is used to display a page when nothing more specific matches a query.
+ * For example, it puts together the home page when no home.php file exists.
  *
  * @package WordPress
+ * @subpackage Alec_Rust
  */
 
-/**
- * Tells WordPress to load the WordPress theme and output it.
- *
- * @var bool
- */
-define('WP_USE_THEMES', true);
+get_header(); ?>
 
-/** Loads the WordPress Environment and Template */
-require( dirname( __FILE__ ) . '/wp-blog-header.php' );
+    <?php if ( have_posts() ) : ?>
+
+        <?php while ( have_posts() ) : the_post(); ?>
+            <?php get_template_part( 'content', get_post_format() ); ?>
+        <?php endwhile; ?>
+
+        <?php alecrust_content_nav( 'nav-below' ); ?>
+
+    <?php else : ?>
+
+        <article class="post no-results not-found">
+
+            <header class="entry-header">
+                <h1 class="entry-title">Nothing Found</h1>
+            </header>
+
+            <div class="entry-content">
+                <p>Apologies, but no results were found. Perhaps searching will help find a related post.</p>
+                <?php get_search_form(); ?>
+            </div>
+
+        </article>
+
+    <?php endif; ?>
+
+<?php get_footer(); ?>

@@ -1,13 +1,6 @@
-# Editor folders
-.idea
+# Node modules
+/node_modules
 
 # OS generated files
 .DS_Store
 Thumbs.db
-
-# Specific folders and files
-.htaccess
-_assets
-wp-content/uploads
-wp-config.php
-.tweetcache
