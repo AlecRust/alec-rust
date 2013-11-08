@@ -24,19 +24,19 @@ module.exports = function (grunt) {
             }
         }
 
-//        cssmin: {
-//            build: {
-//                files: {
-//                    'style.css': 'style.css',
-//                    'editor-style.css': 'editor-style.css'
-//                }
-//            }
-//        }
+        cssmin: {
+            build: {
+                files: {
+                    'style.css': 'style.css',
+                    'editor-style.css': 'editor-style.css'
+                }
+            }
+        }
     });
 
 
     grunt.registerTask('default', [
         'less'
-        //'cssmin'
+        'cssmin'
     ]);
 };
