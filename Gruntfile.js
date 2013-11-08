@@ -22,21 +22,21 @@ module.exports = function (grunt) {
                     'editor-style.css': 'assets/less/editor-style.less'
                 }
             }
-        }
+        },
 
-//        cssmin: {
-//            build: {
-//                files: {
-//                    'style.css': 'style.css',
-//                    'editor-style.css': 'editor-style.css'
-//                }
-//            }
-//        }
+        cssmin: {
+            build: {
+                files: {
+                    'style.css': 'style.css',
+                    'editor-style.css': 'editor-style.css'
+                }
+            }
+        }
     });
 
 
     grunt.registerTask('default', [
         'less'
-        //'cssmin'
+        'cssmin'
     ]);
 };
