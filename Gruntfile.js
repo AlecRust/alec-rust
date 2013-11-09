@@ -9,14 +9,21 @@ module.exports = function (grunt) {
             less: {
                 files: 'assets/less/**/*.less',
                 tasks: ['less']
+            },
+
+            cssmin: {
+                files: ['style.css', 'editor-style.css'],
+                tasks: ['cssmin']
+            },
+
+            uglify: {
+                files: 'assets/js/**/*.js',
+                tasks: ['uglify']
             }
         },
 
         less: {
             development: {
-                options: {
-
-                },
                 files: {
                     'style.css': 'assets/less/style.less',
                     'editor-style.css': 'assets/less/editor-style.less'
@@ -31,11 +38,21 @@ module.exports = function (grunt) {
                     'editor-style.css': 'editor-style.css'
                 }
             }
+        },
+
+        uglify: {
+            build: {
+                files: {
+                    'assets/js/main.min.js': 'assets/js/main.js',
+                    'assets/js/cycle-text.min.js': 'assets/js/cycle-text.js'
+                }
+            }
         }
     });
 
     grunt.registerTask('default', [
         'less',
-        'cssmin'
+        'cssmin',
+        'uglify'
     ]);
 };
