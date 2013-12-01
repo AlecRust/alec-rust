@@ -8,11 +8,11 @@ module.exports = function (grunt) {
 
             less: {
                 files: 'assets/less/**/*.less',
-                tasks: ['less']
+                tasks: ['less', 'autoprefixer']
             },
 
             cssmin: {
-                files: ['style.css', 'editor-style.css'],
+                files: ['style.css'],
                 tasks: ['cssmin']
             },
 
@@ -24,6 +24,15 @@ module.exports = function (grunt) {
             uglify: {
                 files: 'assets/js/main.js',
                 tasks: ['uglify']
+            }
+        },
+
+        autoprefixer: {
+            build: {
+                files: {
+                    'style.css': ['style.css'],
+                    'editor-style.css': ['editor-style.css']
+                }
             }
         },
 
@@ -69,6 +78,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'less',
+        'autoprefixer',
         'cssmin',
         'concat',
         'uglify'
