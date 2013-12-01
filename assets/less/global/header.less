@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 .global-header {
-    .transition(@transition);
+    transition: @transition;
     position: relative;
     margin: 36px 0 30px;
 }
@@ -19,8 +19,8 @@
     // support is better for transitioning pseudo-elements
     span {
         #gradient > .vertical(lighten(@brand-color, 7%), @brand-color);
-        .transition(@transition);
         .box-shadow(1px 1px 1px lighten(@gray-light, 6.5%));
+        transition: @transition;
         font-size: @font-size-base + 21;
         color: #c5c5c5;
         border-radius: 30px;

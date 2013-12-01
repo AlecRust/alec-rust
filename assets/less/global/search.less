@@ -25,7 +25,7 @@
 // Button
 .global-search-button {
     #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
-    .transition(@transition);
+    transition: @transition;
     color: #d8dada;
     background-color: lighten(@brand-color, .5%);
     font-family: @font-family-brand;
@@ -80,9 +80,9 @@
 
         a {
             .square(48px);
-            .transition(@transition);
             .opacity(40);
             .ir;
+            transition: @transition;
             display: block;
             background-image: url("@{sprite-path}");
 

@@ -42,9 +42,9 @@
     }
 
     .post-attachment-title {
-        .transition(@transition);
         .opacity(90);
         #gradient > .vertical(lighten(@brand-color, 7%), lighten(@brand-color, .5%));
+        transition: @transition;
         position: absolute;
         bottom: 0;
         left: 0;
