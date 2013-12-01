@@ -38,7 +38,7 @@
         <?php if ( is_page( 'about' ) ) { ?>
             <aside class="widget">
                 <h1 class="widget-title">Looking for my CV?</h1>
-                <p><a href="/wp-content/uploads/Alec%20Rust%20CV.pdf" download="/wp-content/uploads/Alec%20Rust%20CV.pdf" class="button">Download as PDF</a></p>
+                <p><a href="/wp-content/uploads/Alec%20Rust%20CV.pdf" download="Alec Rust CV.pdf" class="button">Download as PDF</a></p>
             </aside>
         <?php } ?>
 
