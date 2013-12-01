@@ -27,20 +27,20 @@ module.exports = function (grunt) {
             }
         },
 
-        autoprefixer: {
-            build: {
-                files: {
-                    'style.css': ['style.css'],
-                    'editor-style.css': ['editor-style.css']
-                }
-            }
-        },
-
         less: {
             development: {
                 files: {
                     'style.css': 'assets/less/style.less',
                     'editor-style.css': 'assets/less/editor-style.less'
+                }
+            }
+        },
+
+        autoprefixer: {
+            build: {
+                files: {
+                    'style.css': ['style.css'],
+                    'editor-style.css': ['editor-style.css']
                 }
             }
         },
