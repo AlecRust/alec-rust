@@ -11,14 +11,14 @@ module.exports = function (grunt) {
                 tasks: ['less']
             },
 
-            concat: {
-                files: 'assets/js/**/*.js',
-                tasks: ['concat']
-            },
-
             cssmin: {
                 files: ['style.css', 'editor-style.css'],
                 tasks: ['cssmin']
+            },
+
+            concat: {
+                files: 'assets/js/**/*.js',
+                tasks: ['concat']
             },
 
             uglify: {
@@ -32,6 +32,15 @@ module.exports = function (grunt) {
                 files: {
                     'style.css': 'assets/less/style.less',
                     'editor-style.css': 'assets/less/editor-style.less'
+                }
+            }
+        },
+
+        cssmin: {
+            build: {
+                files: {
+                    'style.min.css': 'style.css',
+                    'editor-style.css': 'editor-style.css'
                 }
             }
         },
@@ -50,15 +59,6 @@ module.exports = function (grunt) {
             }
         },
 
-        cssmin: {
-            build: {
-                files: {
-                    'style.min.css': 'style.css',
-                    'editor-style.css': 'editor-style.css'
-                }
-            }
-        },
-
         uglify: {
             build: {
                 files: {
@@ -70,8 +70,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'less',
-        'concat',
         'cssmin',
+        'concat',
         'uglify'
     ]);
 };
