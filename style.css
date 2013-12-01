@@ -596,9 +596,7 @@ nav ol {
   }
 
   body.scrolling .global-header {
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    rotate: -90deg;
     top: 99px;
     left: -73px;
   }
@@ -606,9 +604,7 @@ nav ol {
 
 @media only screen and (min-width: 1224px) {
   body.scrolling .global-header {
-    -webkit-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
+    rotate: 0;
     top: 0;
     left: -25px;
   }
@@ -2047,9 +2043,7 @@ input[type="submit"]:active,
 @media only screen and (min-width: 1224px) {
   .img-polaroid,
   .wp-caption {
-    -webkit-transform: rotate(4deg);
-    -ms-transform: rotate(4deg);
-    transform: rotate(4deg);
+    rotate: 4deg;
     margin-bottom: 30px;
   }
 }
