@@ -6,15 +6,16 @@
     margin-bottom: 30px;
 
     ul {
+        .clearfix;
         list-style: none;
-        text-align: center;
         margin: 0;
-        padding: 0 20px;
+        padding-left: 20%;
     }
 
     li {
-        margin: 13px 2%;
-        display: inline-block;
+        width: 50%;
+        float: left;
+        margin: 13px 0;
     }
 
     a {
@@ -78,6 +79,42 @@
     // Email
     .email a {
         background-position: 0 -402px;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .global-social-links {
+
+        ul {
+            padding-left: 8%;
+        }
+
+        li {
+            width: 25%;
+        }
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .global-social-links {
+
+        ul {
+            text-align: center;
+            padding-left: 0;
+        }
+
+        li {
+            width: auto;
+            float: none;
+            display: inline-block;
+            margin: 0 0.5%;
+        }
     }
 }
 

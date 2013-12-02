@@ -1142,14 +1142,24 @@ nav ol {
 
 .global-social-links ul {
   list-style: none;
-  text-align: center;
   margin: 0;
-  padding: 0 20px;
+  padding-left: 20%;
+}
+
+.global-social-links ul:before,
+.global-social-links ul:after {
+  content: " ";
+  display: table;
+}
+
+.global-social-links ul:after {
+  clear: both;
 }
 
 .global-social-links li {
-  margin: 13px 2%;
-  display: inline-block;
+  width: 50%;
+  float: left;
+  margin: 13px 0;
 }
 
 .global-social-links a {
@@ -1209,6 +1219,30 @@ nav ol {
 
 .global-social-links .email a {
   background-position: 0 -402px;
+}
+
+@media only screen and (min-width: 480px) {
+  .global-social-links ul {
+    padding-left: 8%;
+  }
+
+  .global-social-links li {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .global-social-links ul {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .global-social-links li {
+    width: auto;
+    float: none;
+    display: inline-block;
+    margin: 0 0.5%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
