@@ -1256,7 +1256,7 @@ nav ol {
 @media only screen and (min-width: 1024px) {
   .global-social-links {
     position: fixed;
-    top: 250px;
+    top: 200px;
     width: 150px;
     margin-left: 2%;
   }
@@ -1270,7 +1270,7 @@ nav ol {
   }
 
   body.scrolling .global-social-links {
-    top: 350px;
+    top: 315px;
   }
 }
 
@@ -1280,7 +1280,7 @@ nav ol {
   }
 
   body.scrolling .global-social-links {
-    top: 250px;
+    top: 200px;
   }
 }
 
