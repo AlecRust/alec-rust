@@ -27,11 +27,12 @@
     }
 }
 
-// @screen-phone devices (480px) and up
+// @screen-tablet-portrait devices (768px) and up
 // --------------------------------------------------
-@media only screen and (min-width: @screen-phone) {
+@media only screen and (min-width: @screen-tablet-portrait) {
 
     .module-thumbs {
+        width: 100%;
 
         ul {
             display: table;
@@ -50,14 +51,5 @@
             max-width: 100%;
             height: auto;
         }
-    }
-}
-
-// @screen-tablet-portrait devices (768px) and up
-// --------------------------------------------------
-@media only screen and (min-width: @screen-tablet-portrait) {
-
-    .module-thumbs {
-        width: 100%;
     }
 }

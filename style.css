@@ -1451,7 +1451,11 @@ nav ol {
   background-color: #fff;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
+  .module-thumbs {
+    width: 100%;
+  }
+
   .module-thumbs ul {
     display: table;
     width: 100%;
@@ -1468,12 +1472,6 @@ nav ol {
   .module-thumbs img {
     max-width: 100%;
     height: auto;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .module-thumbs {
-    width: 100%;
   }
 }
 
