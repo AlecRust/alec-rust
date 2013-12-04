@@ -111,7 +111,7 @@
 
     // Rotate header -90deg when scrolling
     body.scrolling .global-header {
-        .rotate(-90deg);
+        transform: rotate(-90deg);
         top: 99px;
         left: -73px;
     }
@@ -124,7 +124,7 @@
     // 1. Prevent -90deg header rotation when scrolling
     // 2. Move header left when scrolling
     body.scrolling .global-header {
-        .rotate(0);
+        transform: rotate(0);
         top: 0;
         left: -25px;
     }
