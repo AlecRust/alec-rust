@@ -75,7 +75,7 @@ function sidebar_widgets_init() {
     register_sidebar( array(
         'name' => 'Home Page Twitter Module',
         'before_widget' => '<section class="module module-tweets">',
-        'after_widget' => '</section><p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>',
+        'after_widget' => '<p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p></section>',
         'before_title' => '<h1>',
         'after_title' => '</h1>',
     ) );
