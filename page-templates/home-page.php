@@ -68,6 +68,6 @@ get_header(); ?>
 
     <?php include_once('module-github-feed.php'); ?>
 
-    <?php include_once('module-twitter-feed.php'); ?>
+    <?php dynamic_sidebar('Home Page Twitter Module'); ?>
 
 <?php get_footer(); ?>

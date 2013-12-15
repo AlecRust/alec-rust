@@ -31,7 +31,7 @@
 
         <?php // Widgets sidebar on Blog posts ?>
         <?php if ( is_single() && in_category( 'Blog' ) ) { ?>
-            <?php dynamic_sidebar( 'Widgets' ); ?>
+            <?php dynamic_sidebar( 'Blog Sidebar' ); ?>
         <?php } ?>
 
         <?php // CV widget on About page ?>

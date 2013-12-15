@@ -71,13 +71,23 @@ function auto_version($file) {
  * Registers sidebar and widgetized areas
  */
 function sidebar_widgets_init() {
+
     register_sidebar( array(
-        'name' => 'Widgets',
+        'name' => 'Home Page Twitter Module',
+        'before_widget' => '<section class="module module-tweets">',
+        'after_widget' => '</section><p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p>',
+        'before_title' => '<h1>',
+        'after_title' => '</h1>',
+    ) );
+
+    register_sidebar(array(
+        'name' => 'Blog Sidebar',
         'before_widget' => '<aside class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h1 class="widget-title">',
         'after_title' => '</h1>',
-    ) );
+    ));
+
 }
 add_action( 'widgets_init', 'sidebar_widgets_init' );
 
