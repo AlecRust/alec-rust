@@ -68,7 +68,7 @@ function auto_version($file) {
 }
 
 /**
- * Registers sidebar and widgetized areas
+ * Registers widgetized area and blog sidebar
  */
 function sidebar_widgets_init() {
 
@@ -78,7 +78,7 @@ function sidebar_widgets_init() {
         'after_widget' => '<p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p></section>',
         'before_title' => '<h1>',
         'after_title' => '</h1>',
-    ) );
+    ));
 
     register_sidebar(array(
         'name' => 'Blog Sidebar',
