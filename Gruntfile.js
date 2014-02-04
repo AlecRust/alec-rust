@@ -12,18 +12,18 @@ module.exports = function (grunt) {
             },
 
             cssmin: {
-                files: ['style.css'],
-                tasks: ['cssmin']
+                files: 'style.css',
+                tasks: 'cssmin'
             },
 
             concat: {
                 files: 'assets/js/**/*.js',
-                tasks: ['concat']
+                tasks: 'concat'
             },
 
             uglify: {
                 files: 'assets/js/main.js',
-                tasks: ['uglify']
+                tasks: 'uglify'
             }
         },
 
@@ -42,8 +42,8 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'style.css': ['style.css'],
-                    'editor-style.css': ['editor-style.css']
+                    'style.css': 'style.css',
+                    'editor-style.css': 'editor-style.css'
                 }
             }
         },
