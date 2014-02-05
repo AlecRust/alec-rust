@@ -73,7 +73,7 @@ function auto_version($file) {
 function sidebar_widgets_init() {
 
     register_sidebar( array(
-        'name' => 'Home Page Twitter Module',
+        'name' => 'Home Bottom Right Module',
         'before_widget' => '<section class="module module-tweets">',
         'after_widget' => '<p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p></section>',
         'before_title' => '<h1>',

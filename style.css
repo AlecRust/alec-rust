@@ -1515,6 +1515,12 @@ nav ol {
   text-decoration: underline;
 }
 
+.module-tweets em a {
+  font-style: normal;
+  color: #858585;
+  font-size: 13px;
+}
+
 .alert {
   border: 1px solid #e4b9b9;
   border-radius: 2px;
@@ -1817,7 +1823,7 @@ nav ol {
 }
 
 .timestamp a {
-  color: #919191;
+  color: #858585;
   text-decoration: none;
 }
 

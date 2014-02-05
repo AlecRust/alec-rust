@@ -68,6 +68,6 @@ get_header(); ?>
 
     <?php include_once('module-github-feed.php'); ?>
 
-    <?php dynamic_sidebar('Home Page Twitter Module'); ?>
+    <?php dynamic_sidebar('Home Bottom Right Module'); ?>
 
 <?php get_footer(); ?>
