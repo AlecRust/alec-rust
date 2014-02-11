@@ -1469,7 +1469,7 @@ nav ol {
   }
 
   .module-thumbs li a {
-    display: block;
+    display: inline-block;
   }
 
   .module-thumbs img {
