@@ -58,13 +58,6 @@
     border-top-left-radius: @radius;
 }
 
-// Drop shadows
-// --------------------------------------------------
-.box-shadow(@shadowA, @shadowB:X, ...){
-    @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
-    box-shadow: @props;
-}
-
 // Opacity
 // --------------------------------------------------
 .opacity(@opacity) {
