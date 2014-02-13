@@ -462,6 +462,7 @@ nav ol {
 @media only screen and (min-width: 1224px) {
   .global-content {
     width: 57%;
+    max-width: 800px;
   }
 }
 
