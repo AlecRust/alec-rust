@@ -1936,6 +1936,7 @@ img#wpstats.focusable:focus {
 
 .entry-image {
   text-align: center;
+  margin: 0;
 }
 
 .entry-image img {
