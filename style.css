@@ -2274,6 +2274,11 @@ input[type="submit"]:active,
   padding: 15px 15px 10px;
 }
 
+.img-polaroid img,
+.wp-caption img {
+  margin-left: 0;
+}
+
 .img-polaroid-caption,
 .wp-caption-text {
   color: #787878;

@@ -10,6 +10,12 @@
     background-color: #fff;
     margin: 0 auto 20px;
     padding: 15px 15px 10px;
+
+    // Protect against stt.min.css .avatar styles
+    // TODO: Prevent stt.min.css from being output
+    img {
+        margin-left: 0;
+    }
 }
 
 .img-polaroid-caption,
