@@ -76,7 +76,33 @@ module.exports = function (grunt) {
                     'assets/js/main.min.js': 'assets/js/main.js'
                 }
             }
+        },
+
+        'ftp-deploy': {
+            build: {
+                auth: {
+                    host: 'ftp.alecrust.com',
+                    port: 21,
+                    authKey: 'key1'
+                },
+                src: './',
+                dest: '/public_html/wp-content/themes/alec-rust',
+                exclusions: [
+                    './Thumbs.db',
+                    './.DS_Store',
+                    './.ftppass',
+                    './.git',
+                    './.gitattributes',
+                    './.gitignore',
+                    './assets/less',
+                    './Gruntfile.js',
+                    './node_modules',
+                    './package.json',
+                    './README.md'
+                ]
+            }
         }
+
     });
 
     grunt.registerTask('default', [
