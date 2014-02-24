@@ -1,9 +1,12 @@
-# Node modules
-/node_modules
-
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Node modules
+/node_modules
+
+# Bower components
+/bower_components
 
 # Other
 .ftppass

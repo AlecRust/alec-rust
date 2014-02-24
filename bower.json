@@ -1,0 +1,19 @@
+{
+  "name": "alec-rust",
+  "version": "1.0.0",
+  "authors": [
+    "Alec Rust"
+  ],
+  "description": "AlecRust.com WordPress theme",
+  "license": "MIT",
+  "homepage": "http://alecrust.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.0"
+  }
+}

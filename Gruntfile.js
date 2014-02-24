@@ -89,11 +89,27 @@ module.exports = function (grunt) {
                     './.gitattributes',
                     './.gitignore',
                     './assets/less',
+                    './bower_components',
+                    './bower.json',
                     './Gruntfile.js',
                     './node_modules',
                     './package.json',
                     './README.md'
                 ]
+            }
+        },
+
+        bowercopy: {
+            options: {
+                srcPrefix: 'bower_components'
+            },
+            less: {
+                options: {
+                    destPrefix: 'assets/less'
+                },
+                files: {
+                    'normalize.less': 'normalize.css/normalize.css'
+                }
             }
         }
 
