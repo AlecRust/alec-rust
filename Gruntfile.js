@@ -5,22 +5,18 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         watch: {
-
             less: {
                 files: 'assets/less/**/*.less',
                 tasks: ['less', 'autoprefixer']
             },
-
             cssmin: {
                 files: 'style.css',
                 tasks: 'cssmin'
             },
-
             concat: {
                 files: 'assets/js/**/*.js',
                 tasks: 'concat'
             },
-
             uglify: {
                 files: 'assets/js/main.js',
                 tasks: 'uglify'
@@ -57,17 +53,15 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            concat: {
-                options: {
-                    separator: '\n'
-                },
-                dest: 'assets/js/main.js',
-                src: [
-                    'assets/js/vendor/jquery.js',
-                    'assets/js/cycle-text.js',
-                    'assets/js/utilities.js'
-                ]
-            }
+            options: {
+                separator: '\n'
+            },
+            dest: 'assets/js/main.js',
+            src: [
+                'assets/js/vendor/jquery.js',
+                'assets/js/cycle-text.js',
+                'assets/js/utilities.js'
+            ]
         },
 
         uglify: {
