@@ -1701,6 +1701,7 @@ nav ol {
 }
 
 .module-tweets ul {
+  list-style: none;
   padding-left: 0;
 }
 
