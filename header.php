@@ -5,7 +5,7 @@
  * @package WordPress
  * @subpackage Alec_Rust
  */
-?><!DOCTYPE html>
+?><!doctype html>
 <html lang="en-GB">
     <head>
         <meta charset="utf-8">
