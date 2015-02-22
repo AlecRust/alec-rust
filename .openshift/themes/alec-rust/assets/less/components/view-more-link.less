@@ -1,0 +1,30 @@
+//
+// View More link
+// --------------------------------------------------
+
+.view-more {
+    text-align: right;
+    font-weight: bold;
+
+    a {
+        display: inline-block;
+
+        // CSS arrow
+        &:after {
+            content: "";
+            display: inline-block;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 10px solid @link-color;
+            margin: 0 0 -1px 8px;
+        }
+
+        &:visited:after {
+            border-left-color: @link-visited-color;
+        }
+
+        &:hover:after {
+            border-left-color: @link-hover-color;
+        }
+    }
+}

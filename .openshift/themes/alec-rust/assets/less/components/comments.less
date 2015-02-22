@@ -1,0 +1,159 @@
+//
+// Comments
+// --------------------------------------------------
+
+.comments-area {
+    padding: 0 20px 20px;
+
+    // Comments area title
+    .comments-title {
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+
+    .commentlist {
+        list-style: none;
+        margin: 0 0 25px;
+        padding-left: 0;
+    }
+
+    // Nested comments list
+    .children {
+        list-style: none;
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    // Single comment
+    article.comment {
+        position: relative;
+        box-shadow: 0 2px 2px lighten(@gray-light, 20%);
+        border-radius: @border-radius-large;
+        background-color: @content-bg;
+        margin-bottom: 10px;
+
+        .comment-meta {
+            overflow: hidden; // .clearfix destroys img border-radius
+
+            .avatar {
+                border-top-left-radius: @border-radius-base;
+                border-bottom-right-radius: @border-radius-base;
+                float: left;
+            }
+
+            .author {
+                float: left;
+                font-style: normal;
+                padding: 15px 0 0 10px;
+            }
+
+            .timestamp {
+                float: right;
+                text-decoration: none;
+                padding: 15px 10px 0 0;
+            }
+        }
+
+        .comment-content {
+            padding: 20px 10px 10px;
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+
+        .reply a {
+            .border-bottom-radius(@border-radius-base);
+            display: block;
+            font-size: @font-size-base - 1;
+            text-align: center;
+            text-decoration: none;
+            background-color: @gray-lighter;
+            border-top: 1px solid darken(@gray-lighter, 7%);
+            padding: 5px;
+
+            &:hover {
+                background-color: #e9e9e9;
+            }
+
+            &:active {
+                background-color: #e5e5e5;
+            }
+        }
+
+        .edit-link {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    // If comment by post author
+    .bypostauthor {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            top: 16px;
+            left: -20px;
+            content: "A";
+            color: lighten(@text-color, 55%);
+            font-size: @font-size-base - 2;
+            font-family: @font-family-brand;
+        }
+    }
+
+    // "Comment awaiting moderation" info alert
+    .comment-awaiting-moderation {
+        .alert-info;
+        text-align: center;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        margin-bottom: 0;
+        padding: 5px;
+    }
+
+    // Default respond area
+    #respond {
+        padding: 0 20px;
+    }
+
+    // Reply title
+    #reply-title {
+        font-weight: normal;
+        font-size: @font-size-base + 10;
+        margin: 0 0 10px;
+    }
+
+    // Cancel reply link
+    #cancel-comment-reply-link {
+        font-size: @font-size-base - 1;
+    }
+
+    .required {
+        color: @state-error-text;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .comments-area {
+        padding: 0 30px 30px;
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .comments-area {
+        width: 80%;
+        margin: auto;
+
+        // Single comment
+        article.comment {
+            margin-bottom: 20px;
+        }
+    }
+}

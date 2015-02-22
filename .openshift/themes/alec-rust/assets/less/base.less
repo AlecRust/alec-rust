@@ -1,0 +1,112 @@
+//
+// Base styles
+// --------------------------------------------------
+
+// Apply a natural box layout model to all elements
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color: @text-color;
+}
+
+html {
+    background-color: transparent;
+}
+
+body {
+    color: @text-color;
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    background: #d8d8d8 url("@{img-path}body-bg-tile.png") fixed;
+    background-size: 100%;
+}
+
+// Links
+a {
+    color: @link-color;
+
+    &:hover {
+        color: @link-hover-color;
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: @link-visited-color;
+    }
+}
+
+// Paragraphs
+p {
+    margin: 0 0 1em;
+}
+
+// Selection highlight
+::-moz-selection {
+    background: @selection-hightlight-color;
+    text-shadow: none;
+}
+
+::selection {
+    background: @selection-hightlight-color;
+    text-shadow: none;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+// Remove default fieldset styles
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+// Allow only vertical resizing of textareas
+textarea {
+    resize: vertical;
+}
+
+// Remove margin and padding from nav ul/ols
+nav {
+
+    ul,
+    ol {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// Browse Happy prompt
+// --------------------------------------------------
+.browsehappy {
+    color: @text-color;
+    background-color: #f2efc4;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    body {
+        background-size: auto;
+
+        // Sticky footer
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+}

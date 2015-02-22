@@ -1,0 +1,49 @@
+//
+// Edit Link
+// --------------------------------------------------
+
+.edit-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-bottom: 0;
+
+    a {
+        color: @gray-lighter;
+        display: inline-block;
+        text-decoration: none;
+        background-color: @edit-color;
+
+        &:hover {
+            color: #fff;
+            background-color: darken(@edit-color, 2%);
+        }
+
+        &:active {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,.125);
+        }
+    }
+
+    .post-edit-link {
+        border-bottom-left-radius: @border-radius-large;
+        padding: 5px 12px 3px;
+    }
+
+    .comment-edit-link {
+        .border-bottom-radius(@border-radius-large);
+        font-size: @font-size-base - 3;
+        padding: 3px 10px 2px;
+    }
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    .edit-link {
+
+        .post-edit-link {
+            border-top-right-radius: @border-radius-large;
+        }
+    }
+}

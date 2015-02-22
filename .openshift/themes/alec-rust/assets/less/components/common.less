@@ -1,0 +1,53 @@
+//
+// Common
+// --------------------------------------------------
+
+// Timestamp
+.timestamp {
+    color: lighten(@text-color, 30%);
+    font-size: @font-size-base - 1;
+    text-decoration: none; // If .timestamp class appears on anchor
+
+    a {
+        color: lighten(@text-color, 30%);
+        text-decoration: none;
+
+        &:hover {
+            color: lighten(@text-color, 35%);
+        }
+    }
+}
+
+// If .timestamp class appears on anchor
+a.timestamp:hover {
+    color: lighten(@text-color, 35%);
+}
+
+// Comments link
+.comments-link {
+    float: left;
+
+    a {
+        color: lighten(@text-color, 30%);
+        text-decoration: none;
+
+        &:hover {
+            color: lighten(@text-color, 15%);
+        }
+
+        &:active {
+            color: @text-color;
+        }
+    }
+}
+
+// Google Code Prettify
+.prettyprint {
+    border-radius: @border-radius-base;
+    padding: 10px 15px;
+}
+
+// Hide Jetpack Stats pixel image output
+img#wpstats {
+    .visuallyhidden;
+}

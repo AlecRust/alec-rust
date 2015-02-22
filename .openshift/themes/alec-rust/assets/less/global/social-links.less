@@ -1,0 +1,163 @@
+//
+// Global Social Links
+// --------------------------------------------------
+
+.global-social-links {
+    margin-bottom: 30px;
+
+    ul {
+        .clearfix;
+        list-style: none;
+        margin: 0;
+        padding-left: 20%;
+    }
+
+    li {
+        width: 50%;
+        float: left;
+        margin: 13px 0;
+    }
+
+    a {
+        .opacity(50);
+        transition: @transition;
+        display: inline-block;
+        min-height: 25px;
+        text-decoration: none;
+        background: url("@{sprite-path}") no-repeat;
+        padding: 3px 4px 0 35px;
+
+        // If HiDPI
+        @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+            background-image: url("@{sprite-x2-path}");
+            background-size: 48px auto;
+        }
+
+        &:hover {
+            .opacity(60);
+        }
+
+        &:active {
+            .opacity(70);
+            text-decoration: underline;
+        }
+    }
+
+    // GitHub
+    .github a {
+        background-position: 0 -225px;
+    }
+
+    // Twitter
+    .twitter a {
+        background-position: 0 -255px;
+    }
+
+    // LinkedIn
+    .linkedin a {
+        background-position: 0 -284px;
+    }
+
+    // Quora
+    .quora a {
+        background-position: 0 -314px;
+    }
+
+    // Facebook
+    .facebook a {
+        background-position: 0 -343px;
+    }
+
+    // Last.fm
+    .lastfm a {
+        background-position: 0 -373px;
+    }
+
+    // Email
+    .email a {
+        background-position: 0 -402px;
+    }
+
+    // Google+
+    .googleplus a {
+        background-position: 0 -432px;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .global-social-links {
+
+        ul {
+            padding-left: 8%;
+        }
+
+        li {
+            width: 25%;
+        }
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .global-social-links {
+
+        ul {
+            text-align: center;
+            padding-left: 0;
+        }
+
+        li {
+            width: auto;
+            float: none;
+            display: inline-block;
+            margin: 0 0.5%;
+        }
+    }
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    .global-social-links {
+        position: fixed;
+        top: 200px;
+        width: 150px;
+        margin-left: 2%;
+
+        ul {
+            text-align: left;
+        }
+
+        li {
+            margin: 0 0 20px;
+        }
+    }
+
+    // Move down when scrolling
+    body.scrolling .global-social-links {
+        top: 315px;
+    }
+}
+
+// @screen-desktop devices (1224px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-desktop) {
+
+    .global-social-links {
+        margin-left: 6%;
+    }
+
+    // Prevent move down when scrolling
+    body.scrolling .global-social-links {
+        top: 200px;
+    }
+}

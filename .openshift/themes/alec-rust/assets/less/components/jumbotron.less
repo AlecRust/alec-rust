@@ -1,0 +1,76 @@
+//
+// Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+    margin-bottom: 30px;
+
+    h1 {
+        font-weight: normal;
+        font-size: @font-size-base + 21;
+        text-shadow: 0 0 5px #fff;
+        margin: 0 0 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0 30px;
+    }
+
+    li {
+        font-size: @font-size-base + 1;
+        text-shadow: 0 0 5px #fff;
+        margin-bottom: 10px;
+    }
+
+    a {
+        display: inline-block;
+        min-height: 24px;
+        text-decoration: none;
+        background: url("@{sprite-path}") no-repeat;
+        padding: 4px 0 0 35px;
+
+        // If HiDPI
+        @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+            background-image: url("@{sprite-x2-path}");
+            background-size: 48px auto;
+        }
+
+        &:active {
+            text-decoration: underline;
+        }
+    }
+
+    .about a {
+        background-position: 0 -487px;
+    }
+
+    .work a {
+        background-position: 0 -515px;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .jumbotron {
+
+        li {
+            display: inline-block;
+            margin: 0 35px 0 0;
+        }
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .jumbotron {
+        margin-bottom: 60px;
+    }
+}

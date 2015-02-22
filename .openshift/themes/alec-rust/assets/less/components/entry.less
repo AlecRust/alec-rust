@@ -1,0 +1,225 @@
+//
+// Entry
+// --------------------------------------------------
+
+.entry-title {
+    font-weight: normal;
+    font-size: @font-size-base + 21;
+    margin: 0 0 20px;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.entry-image {
+    text-align: center;
+    margin: 0;
+
+    img {
+        border-radius: @border-radius-base;
+    }
+}
+
+.entry-content {
+    font-size: @font-size-base + 1;
+
+    h1 {
+        font-weight: normal;
+        font-size: @font-size-base + 14;
+        margin: 30px 0 15px;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: @font-size-base + 11;
+        margin: 30px 0 10px;
+    }
+
+    h3 {
+        font-weight: normal;
+        font-size: @font-size-base + 7;
+        margin: 30px 0 5px;
+    }
+
+    p {
+        line-height: @line-height-base + .3;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    .lead {
+        font-size: @font-size-base + 5;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    blockquote {
+        background-color: #f9f9f9;
+        border-left: 10px solid lighten(@gray-light, 13.5%);
+        quotes: "\201C""\201D""\2018""\2019";
+        margin: 1.5em 10px;
+        padding: .5em 10px;
+
+        &:before {
+            color: lighten(@gray-light, 13.5%);
+            content: open-quote;
+            font-size: 4em;
+            line-height: .1em;
+            vertical-align: -.4em;
+            margin-right: .25em;
+        }
+
+        p {
+            display: inline;
+        }
+    }
+
+    pre,
+    code {
+        border-radius: @border-radius-base;
+        border: 1px solid darken(@gray-lighter, 7%);
+        background-color: #f9f2f4;
+        padding: 2px 4px;
+    }
+
+    code {
+        margin: 0 1px;
+    }
+
+    .muted {
+        text-decoration: none;
+
+        &:hover,
+        &:visited {
+            color: @text-color;
+        }
+    }
+}
+
+.entry-attachment {
+    text-align: center;
+
+    .attachment {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+
+.entry-caption {
+    .border-bottom-radius(@border-radius-base);
+    border: 1px solid #dfdfdf;
+    border-top: 0;
+    background-color: #efefef;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+
+    p {
+        text-align: right;
+        font-size: @font-size-base - 2;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.entry-description {}
+
+.entry-meta {
+    .clearfix;
+    font-size: @font-size-base - 1;
+    color: lighten(@text-color, 35%);
+
+    .timestamp {
+        float: right;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+// If on attachment page
+.attachment-meta {
+    font-size: @font-size-base + 1;
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+
+        // CSS arrow
+        &:before {
+            content: "";
+            display: inline-block;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 10px solid @link-color;
+            margin-right: 8px;
+        }
+
+        &:visited {
+
+            &:before {
+                border-right-color: @link-visited-color;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+
+            &:before {
+                border-right-color: @link-hover-color;
+            }
+        }
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .entry-image {
+        float: left;
+        margin-right: 10px;
+
+        img {
+            .square(45px);
+        }
+    }
+
+    .entry-content {
+
+        code {
+            white-space: nowrap;
+        }
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .entry-title {
+        padding-right: 110px;
+    }
+
+    .entry-meta {
+
+        .timestamp {
+            position: absolute;
+            top: 52px;
+            right: 40px;
+        }
+    }
+}

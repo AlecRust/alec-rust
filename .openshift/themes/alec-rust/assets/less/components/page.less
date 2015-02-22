@@ -1,0 +1,57 @@
+//
+// Page
+// --------------------------------------------------
+
+.page {
+
+    .global-content {
+        box-shadow: 0 2px 2px lighten(@gray-light, 20%);
+        background-color: @content-bg;
+        padding: 10px 20px;
+    }
+}
+
+// Remove background colour on home page
+body.page-home {
+
+    &.page .global-content {
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .page {
+
+        .global-content {
+            padding: 15px 30px;
+        }
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .page {
+
+        .global-content {
+            padding: 30px 40px;
+        }
+    }
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    .page {
+
+        .global-content {
+            border-radius: @border-radius-large;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+//
+// Archive
+// --------------------------------------------------
+
+.archive-header {
+    padding: 0 20px 15px;
+}
+
+.archive-title {
+    font-weight: normal;
+    font-size: @font-size-base + 15;
+    margin: 0;
+}
+
+.archive-meta {
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+// Hide archive header on Blog index
+.category-blog .archive-header {
+    .visuallyhidden
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .archive-header {
+        padding: 0 30px 25px;
+    }
+}
+
+// @screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-portrait) {
+
+    .archive-header {
+        padding: 30px 40px 30px;
+    }
+}
+
+// @screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-tablet-landscape) {
+
+    .archive-header {
+        padding-left: 0;
+    }
+}

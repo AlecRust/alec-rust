@@ -1,0 +1,77 @@
+//
+// Work List
+// --------------------------------------------------
+
+.work-list {
+
+    h2 {
+        font-weight: normal;
+        font-size: @font-size-base + 12;
+        margin: 0 0 25px;
+
+        a {
+            color: @text-color;
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 20px;
+
+        a {
+            display: block;
+            min-height: 60px;
+            text-decoration: none;
+
+            &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    dl {
+        position: relative;
+        margin: 0;
+    }
+
+    dt {
+        font-weight: bold;
+        padding: 22px 0 0 70px;
+    }
+
+    dd {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        margin-left: 0;
+
+        img {
+            border-radius: @border-radius-base;
+            box-shadow: 1px 1px 1px lighten(@gray-light, 6.5%);
+        }
+    }
+}
+
+// @screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width: @screen-phone) {
+
+    .work-list {
+
+        ul {
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 20px 30px 0;
+        }
+    }
+}

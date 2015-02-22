@@ -1,0 +1,115 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Clearfix
+// --------------------------------------------------
+.clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Image replacement
+// --------------------------------------------------
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+
+    &:before {
+        .size(0, 150%);
+        content: "";
+        display: block;
+    }
+}
+
+// Sizing shortcuts
+// --------------------------------------------------
+.size(@width, @height) {
+    width: @width;
+    height: @height;
+}
+.square(@size) {
+    .size(@size, @size);
+}
+
+// Single side border-radius
+// --------------------------------------------------
+.border-top-radius(@radius) {
+    border-top-right-radius: @radius;
+    border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+    border-bottom-right-radius: @radius;
+    border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+    border-bottom-right-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+    border-bottom-left-radius: @radius;
+    border-top-left-radius: @radius;
+}
+
+// Opacity
+// --------------------------------------------------
+.opacity(@opacity) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})"; // For IE8
+}
+
+// Gradients
+// --------------------------------------------------
+#gradient {
+    .horizontal(@startColor: @gray, @endColor: @gray-dark) {
+        background-color: @endColor;
+        background-image: linear-gradient(left, @startColor, @endColor);
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
+    }
+    .vertical(@startColor: @gray, @endColor: @gray-dark) {
+        background-color: mix(@startColor, @endColor, 60%);
+        background-image: linear-gradient(top, @startColor, @endColor);
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+    }
+}
+
+// Tables
+// --------------------------------------------------
+.table-row-variant(@state; @background; @border) {
+
+    // Exact selectors below required to prevent inheritance to nested tables.
+    .table > thead > tr,
+    .table > tbody > tr,
+    .table > tfoot > tr {
+
+        > td.@{state},
+        > th.@{state},
+        &.@{state} > td,
+        &.@{state} > th {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    // Hover states
+    // Note: this is not available for cells or rows within `thead` or `tfoot`.
+    .table > tbody > tr {
+
+        > td.@{state}:hover,
+        > th.@{state}:hover,
+        &.@{state}:hover > td,
+        &.@{state}:hover > th {
+            background-color: darken(@background, 5%);
+            border-color: darken(@border, 5%);
+        }
+    }
+}
