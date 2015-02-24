@@ -1,12 +1,50 @@
-# OS generated files
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
 .DS_Store
+._*
 Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+nbproject
+*.sublime-project
+*.sublime-workspace
 
-# Node modules
-/node_modules
+# Dreamweaver added files
+_notes
+dwsync.xml
 
-# Bower components
-/bower_components
+# Komodo
+*.komodoproject
+.komodotools
 
-# Other
-.ftppass
+# Espresso
+*.esproj
+*.espressostorage
+
+# Rubinius
+*.rbc
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+
+# build script local files
+build/buildinfo.properties
+build/config/buildinfo.properties
