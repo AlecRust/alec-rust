@@ -24,7 +24,7 @@
         <?php wp_head(); ?>
     </head>
     <?php if(is_page()) { $page_slug = 'page-'.$post->post_name; } ?>
-    <body <?php body_class($page_slug); ?>>
+    <body <?php if (is_page()) body_class($page_slug); ?>>
 
         <!--[if lt IE 9]>
             <p class="browsehappy">You're using an outdated browser that I choose not to support. <a href="http://browsehappy.com/">Upgrade your browser</a> to improve your experience.</p>
