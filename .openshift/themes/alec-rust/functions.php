@@ -92,54 +92,34 @@ function sidebar_widgets_init() {
 add_action( 'widgets_init', 'sidebar_widgets_init' );
 
 /**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
- * @param string $title Default title text for current view
- * @param string $sep Optional separator
- * @return string Filtered title
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string The filtered title.
  */
 function alecrust_wp_title( $title, $sep ) {
-    global $paged, $page;
-
-    if ( is_feed() )
-        return $title;
-
-    // Retrieve category name
-    function parent_cat_names( $sep = '|' )
-    {
-        if ( ! is_single() or array() === $categories = get_the_category() )
-            return '';
-        $parents = array ();
-        foreach ( $categories as $category )
-        {
-            $parent = end( get_ancestors( $category->term_id, 'category' ) );
-            if ( ! empty ( $parent ) )
-                $top = get_category( $parent );
-            else
-                $top = $category;
-            $parents[ $top->term_id ] = $top;
-        }
-        return esc_html( join( $sep, wp_list_pluck( $parents, 'name' ) ) );
-    }
-
-    // Adds the parent category
-    if ( '' !== $parent_cats = parent_cat_names( $sep ) )
-        $title .= "$parent_cats $sep ";
-
-    // Adds the site name
-    $title .= get_bloginfo( 'name' );
-
-    // Adds the site description for the front page
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description && ( is_front_page() ) )
-        $title = "$title $sep $site_description";
-
-    // Adds a page number if necessary
-    if ( $paged >= 2 || $page >= 2 )
-        $title = "$title $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
-
+  if ( is_feed() ) {
     return $title;
+  }
+
+  global $page, $paged;
+
+  // Add the site name
+  $title .= get_bloginfo( 'name', 'display' );
+
+  // Add the site description for the front page
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( is_front_page() ) {
+    $title .= " $sep $site_description";
+  }
+
+  // Add a page number if necessary
+  if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+    $title .= " $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+  }
+
+  return $title;
 }
 add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 

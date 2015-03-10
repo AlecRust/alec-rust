@@ -497,7 +497,7 @@ th {
 
 .table > thead > tr > th {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;

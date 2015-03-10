@@ -729,7 +729,7 @@ nav ol {
 
 .global-header-logo span {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#333333));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#333333));
   background-image: -webkit-linear-gradient(top, #454545, #333333);
   background-image: linear-gradient(top, #454545, #333333);
   background-repeat: repeat-x;
@@ -762,7 +762,7 @@ nav ol {
 
 .global-header-logo a:active span {
   background-color: #383838;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#333333), to(#404040));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#404040));
   background-image: -webkit-linear-gradient(top, #333333, #404040);
   background-image: linear-gradient(top, #333333, #404040);
   background-repeat: repeat-x;
@@ -899,7 +899,7 @@ nav ol {
 
 .global-navigation li {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -913,7 +913,7 @@ nav ol {
 
 .global-navigation li:hover {
   background-color: #434343;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#4a4a4a), to(#383838));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a4a4a), to(#383838));
   background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
   background-image: linear-gradient(top, #4a4a4a, #383838);
   background-repeat: repeat-x;
@@ -923,7 +923,7 @@ nav ol {
 
 .global-navigation li:active {
   background-color: #454545;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#424242), to(#4a4a4a));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#4a4a4a));
   background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
   background-image: linear-gradient(top, #424242, #4a4a4a);
   background-repeat: repeat-x;
@@ -1016,7 +1016,7 @@ nav ol {
 
 .show-navigation a {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -1028,7 +1028,7 @@ nav ol {
 
 .show-navigation a:hover {
   background-color: #434343;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#4a4a4a), to(#383838));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a4a4a), to(#383838));
   background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
   background-image: linear-gradient(top, #4a4a4a, #383838);
   background-repeat: repeat-x;
@@ -1038,7 +1038,7 @@ nav ol {
 
 .show-navigation a:active {
   background-color: #454545;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#424242), to(#4a4a4a));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#4a4a4a));
   background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
   background-image: linear-gradient(top, #424242, #4a4a4a);
   background-repeat: repeat-x;
@@ -1195,7 +1195,7 @@ nav ol {
 
 .global-search-button {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -1213,7 +1213,7 @@ nav ol {
 
 .global-search-button:hover {
   background-color: #434343;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#4a4a4a), to(#383838));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a4a4a), to(#383838));
   background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
   background-image: linear-gradient(top, #4a4a4a, #383838);
   background-repeat: repeat-x;
@@ -1224,7 +1224,7 @@ nav ol {
 
 .global-search-button:active {
   background-color: #454545;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#424242), to(#4a4a4a));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#4a4a4a));
   background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
   background-image: linear-gradient(top, #424242, #4a4a4a);
   background-repeat: repeat-x;
@@ -1844,7 +1844,7 @@ nav ol {
 
 .button {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -1871,7 +1871,7 @@ nav ol {
 .button:hover,
 .button:focus {
   background-color: #434343;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#4a4a4a), to(#383838));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a4a4a), to(#383838));
   background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
   background-image: linear-gradient(top, #4a4a4a, #383838);
   background-repeat: repeat-x;
@@ -1882,7 +1882,7 @@ nav ol {
 
 .button:active {
   background-color: #454545;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#424242), to(#4a4a4a));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#4a4a4a));
   background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
   background-image: linear-gradient(top, #424242, #4a4a4a);
   background-repeat: repeat-x;
@@ -2406,7 +2406,7 @@ textarea:focus {
 input[type="submit"],
 .form-submit input {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -2436,7 +2436,7 @@ input[type="submit"]:hover,
 input[type="submit"]:focus,
 .form-submit input:focus {
   background-color: #434343;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#4a4a4a), to(#383838));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4a4a4a), to(#383838));
   background-image: -webkit-linear-gradient(top, #4a4a4a, #383838);
   background-image: linear-gradient(top, #4a4a4a, #383838);
   background-repeat: repeat-x;
@@ -2448,7 +2448,7 @@ input[type="submit"]:focus,
 input[type="submit"]:active,
 .form-submit input:active {
   background-color: #454545;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#424242), to(#4a4a4a));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#424242), to(#4a4a4a));
   background-image: -webkit-linear-gradient(top, #424242, #4a4a4a);
   background-image: linear-gradient(top, #424242, #4a4a4a);
   background-repeat: repeat-x;
@@ -2743,7 +2743,7 @@ body.page-home.page .global-content {
   opacity: 0.9;
   filter: alpha(opacity=90);
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
@@ -2961,7 +2961,7 @@ th {
 
 .table > thead > tr > th {
   background-color: #3e3e3e;
-  background-image: -webkit-gradient(linear, top left, bottom left, from(#454545), to(#343434));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#454545), to(#343434));
   background-image: -webkit-linear-gradient(top, #454545, #343434);
   background-image: linear-gradient(top, #454545, #343434);
   background-repeat: repeat-x;
