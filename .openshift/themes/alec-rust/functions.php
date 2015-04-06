@@ -29,16 +29,16 @@ function alecrust_setup() {
 add_action( 'after_setup_theme', 'alecrust_setup' );
 
 /**
- * Enqueues scripts and styles for front-end
+ * Enqueue scripts and styles.
  */
-function alecrust_scripts_styles() {
-    global $wp_styles;
+function alecrust_scripts() {
+  wp_enqueue_style( 'wpg-style', get_stylesheet_uri() );
 
-    // Adds JavaScript to pages with the comment form to support sites with threaded comments (when in use)
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-        wp_enqueue_script( 'comment-reply' );
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script( 'comment-reply' );
+  }
 }
-add_action( 'wp_enqueue_scripts', 'alecrust_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'alecrust_scripts' );
 
 /**
  * Removes junk from head
@@ -51,21 +51,6 @@ remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-
-/*
- * Given a file, i.e. /alec-rust/style.css, replace it with a string containing the
- * file's mtime, i.e. /alec-rust/style.1221534296.css
- *
- * @param $file  The file to be loaded. Must be an absolute path (i.e. starting with slash)
- */
-function auto_version($file) {
-    if ( strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file) ) {
-        return $file;
-    }
-
-    $mtime = filemtime($_SERVER['DOCUMENT_ROOT'] . $file);
-    return preg_replace('{\\.([^./]+)$}', ".$mtime.\$1", $file);
-}
 
 /**
  * Registers widgetized area and blog sidebar

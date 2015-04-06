@@ -57,14 +57,19 @@
         </aside>
 
         <footer class="global-footer" role="contentinfo">
-            <p>Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Alec Rust</a></p>
+            <p>
+                Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Alec Rust</a>
+            </p>
         </footer>
 
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/main.js"></script>
 
         <?php wp_reset_query(); ?>
 
         <?php if (is_page('home') ) { ?>
+        <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/cycle-text.js"></script>
         <script>
             // Cycle intro text at @tabletLandscape and up
             var mq = window.matchMedia('(min-width: 1024px)');

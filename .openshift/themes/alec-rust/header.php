@@ -13,8 +13,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/vendor/html5shiv.min.js"></script>
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?><?= auto_version('/style.min.css') ?>">
         <?php wp_head(); ?>
     </head>
     <?php if(is_page()) { $page_slug = 'page-'.$post->post_name; } ?>
