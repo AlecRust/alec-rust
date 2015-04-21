@@ -63,13 +63,11 @@
             </p>
         </footer>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/main.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
 
         <?php wp_reset_query(); ?>
 
-        <?php if (is_page('home') ) { ?>
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/cycle-text.js"></script>
+        <?php if ( is_page('home') ) { ?>
         <script>
             // Cycle intro text at @tabletLandscape and up
             var mq = window.matchMedia('(min-width: 1024px)');
