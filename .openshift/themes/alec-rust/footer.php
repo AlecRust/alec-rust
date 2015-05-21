@@ -58,7 +58,7 @@
 
     <footer class="global-footer" role="contentinfo">
       <p>
-        Copyright <time datetime="<?= date('Y'); ?>"><?= date('Y'); ?></time>
+        Copyright <time datetime="<?php echo date('Y'); ?>"><?php echo date('Y'); ?></time>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Alec Rust</a>
       </p>
     </footer>
