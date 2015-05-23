@@ -1,48 +1,52 @@
-WordPress on OpenShift
-======================
+Alec Rust Personal Portfolio/Blog
+=================================
 
-This git repository helps you get up and running quickly w/ a WordPress installation
-on OpenShift.  The backend database is MySQL and the database name is the
-same as your application name (using getenv('OPENSHIFT_APP_NAME')).  You can name
-your application whatever you want.  However, the name of the database will always
-match the application so you might have to update .openshift/action_hooks/build.
+Repo layout
+===========
+php/ - Externally exposed php code goes here
+libs/ - Additional libraries
+misc/ - For not-externally exposed php code
+../data - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
+.openshift/pear.txt - list of pears to install
+.openshift/action_hooks/pre_build - Script that gets run every git push before the build
+.openshift/action_hooks/build - Script that gets run every git push as part of the build process (on the CI system if available)
+.openshift/action_hooks/deploy - Script that gets run every git push after build but before the app is restarted
+.openshift/action_hooks/post_deploy - Script that gets run every git push after the app is restarted
 
 
-Running on OpenShift
-----------------------------
+Notes about layout
+==================
+Please leave php, libs and data directories but feel free to create additional
+directories if needed.
 
-Create an account at https://www.openshift.com and install the client tools (run 'rhc setup' first)
+Note: Every time you push, everything in your remote repo dir gets recreated
+please store long term items (like an sqlite database) in ../data which will
+persist between pushes of your repo.
 
-Create a php-5.4 application (you can call your application whatever you want)
 
-    rhc app create wordpress php-5.4 mysql-5.5 --from-code=https://github.com/openshift/wordpress-example
+Environment Variables
+=====================
 
-That's it, you can now checkout your application at:
+OpenShift provides several environment variables to reference for ease
+of use.  The following list are some common variables but far from exhaustive:
 
-    http://wordpress-$yournamespace.rhcloud.com
+    getenv('OPENSHIFT_APP_NAME')  - Application name
+    getenv('OPENSHIFT_DATA_DIR')  - For persistent storage (between pushes)
+    getenv('OPENSHIFT_TMP_DIR')   - Temp storage (unmodified files deleted after 10 days)
 
-You'll be prompted to set an admin password and name your WordPress site the first time you visit this
-page.
+When embedding a database using 'rhc cartridge add', you can reference environment
+variables for username, host and password:
 
-Note: When you upload plugins and themes, they'll get put into your OpenShift data directory
-on the gear ($OPENSHIFT_DATA_DIR).  If you'd like to check these into source control, download the
-plugins and themes directories and then check them directly into php/wp-content/themes, php/wp-content/plugins.
+    getenv('OPENSHIFT_MYSQL_DB_HOST')      - DB host
+    getenv('OPENSHIFT_MYSQL_DB_PORT')      - DB Port
+    getenv('OPENSHIFT_MYSQL_DB_USERNAME')  - DB Username
+    getenv('OPENSHIFT_MYSQL_DB_PASSWORD')  - DB Password
 
-Notes
-=====
+To get a full list of environment variables, simply add a line in your
+.openshift/action_hooks/build script that says "export" and push.
 
-GIT_ROOT/.openshift/action_hooks/deploy:
-    This script is executed with every 'git push'.  Feel free to modify this script
-    to learn how to use it to your advantage.  By default, this script will create
-    the database tables that this example uses.
+pear.txt
+===========
 
-    If you need to modify the schema, you could create a file
-    GIT_ROOT/.openshift/action_hooks/alter.sql and then use
-    GIT_ROOT/.openshift/action_hooks/deploy to execute that script (make sure to
-    back up your application + database w/ 'rhc app snapshot save' first :) )
-
-Security Considerations
------------------------
-Consult the WordPress documentation for best practices regarding securing your wordpress installation.  OpenShift
-automatically generates unique secret keys for your deployment into wp-config.php, but you may feel more
-comfortable following the WordPress documentation directly.
+A list of pears to install, line by line on the server.  This will happen when
+the user git pushes.
