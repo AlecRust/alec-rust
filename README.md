@@ -5,11 +5,11 @@ Deployed to [http://alecrust-alecrust.rhcloud.com/](http://alecrust-alecrust.rhc
 
 ## Repo layout
 
-    .openshift/themes/alec-rust         - Distribution folder for WordPress theme
     .openshift/action_hooks/build       - Script that gets run every git push as part of the build process (on the CI system if available)
     .openshift/action_hooks/deploy      - Script that gets run every git push after build but before the app is restarted
     .openshift/action_hooks/post_deploy - Script that gets run every git push after the app is restarted
     .openshift/action_hooks/pre_build   - Script that gets run every git push before the build
+    .openshift/themes/alec-rust         - Distribution folder for WordPress theme
     .openshift/pear.txt                 - List of pears to install
     gulp/                               - Development tasks run by gulp
     libs/                               - Additional libraries
