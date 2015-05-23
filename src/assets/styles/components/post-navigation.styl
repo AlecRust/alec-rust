@@ -1,0 +1,76 @@
+//
+// Post Navigation
+// --------------------------------------------------
+
+@require "../base/variables";
+@require "../base/mixins";
+
+.post-navigation
+  margin-top -20px
+
+  ul
+    clearfix()
+    list-style none
+    max-width 75%
+    margin auto
+
+  li
+    font-size $font-size-base + 4
+
+  a
+    display block
+    text-decoration none
+    padding 10px
+
+    &:hover
+      text-decoration underline
+
+  .prev
+    float left
+    margin-left 10px
+
+    a
+      &:before
+        content ""
+        display inline-block
+        border-top 5px solid transparent
+        border-bottom 5px solid transparent
+        border-right 10px solid $link-color
+        margin 0 8px 0px 0
+
+      &:visited:before
+        border-left-color $link-visited-color
+
+      &:hover:before
+        border-left-color $link-hover-color
+
+  .next
+    text-align right
+    float right
+    margin-right 10px
+
+    a
+      &:after
+        content ""
+        display inline-block
+        border-top 5px solid transparent
+        border-bottom 5px solid transparent
+        border-left 10px solid $link-color
+        margin 0 0 0px 8px
+
+      &:visited:after
+        border-left-color $link-visited-color
+
+      &:hover:after
+        border-left-color $link-hover-color
+
+
+// $screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width $screen-tablet-landscape)
+  .post-navigation
+    position relative
+    margin -115px 0 40px
+
+    ul
+      max-width 50%

@@ -1,0 +1,41 @@
+//
+// Hero module
+// --------------------------------------------------
+
+@require "../../base/variables";
+
+.module-heros
+  ul
+    padding-left 14px
+
+  li
+    margin-bottom 15px
+
+  .hero
+    display block
+    position relative
+    min-height 60px
+    text-decoration none
+
+    &:active
+      text-decoration underline
+
+  .hero-title
+    font-weight bold
+    padding 10px 0 5px 75px
+
+    &.no-desc
+      padding-top 22px
+
+  .hero-description
+    padding-left 75px
+
+  .hero-thumb
+    position absolute
+    top 0
+    left 0
+
+    img
+      border-radius $border-radius-base
+      box-shadow 1px 1px 1px lighten($gray-light, 6.5%)
+      background-color #fff

@@ -1,0 +1,116 @@
+//
+// Global search
+// --------------------------------------------------
+
+@require "../base/variables";
+@require "../base/mixins";
+@require "../utils/utilities";
+
+.global-search
+  text-align center
+  z-index 1
+  margin-bottom 30px
+
+// "Show Search" icon
+.show-search
+  visuallyhidden()
+
+// Input
+.global-search-input
+  font-family $font-family-base
+  border 0
+  border-radius $border-radius-large
+  box-shadow inset 0 1px 4px #777
+  padding 12px 14px 9px
+
+// Button
+.global-search-button
+  gradient-vertical(lighten($brand-color, 7%), lighten($brand-color, .5%))
+  transition $transition
+  color #d8dada
+  background-color lighten($brand-color, .5%)
+  font-family $font-family-brand
+  border 0
+  border-radius $border-radius-large
+  margin-left -6px
+  padding 9px 12px 10px
+
+  &:hover
+    gradient-vertical(lighten($brand-color, 9%), lighten($brand-color, 2%))
+    color $gray-lighter
+    background-color darken($brand-color, 2%)
+
+  &:active
+    gradient-vertical(lighten($brand-color, 6%), lighten($brand-color, 9%))
+    color #fff
+    background-color lighten($brand-color, 9%)
+
+// $screen-tablet-portrait devices (768px) and up
+// --------------------------------------------------
+@media only screen and (min-width $screen-tablet-portrait)
+  .global-search
+    float right
+    margin 46px 40px 0 0
+
+    form
+      visuallyhidden()
+
+    &.search-visible
+      overflow hidden
+
+      form
+        visible()
+
+      // "Show Search" icon
+      .show-search
+        visuallyhidden()
+
+  // "Show Search" icon
+  .show-search
+    visible()
+    margin-bottom 0
+
+    a
+      square(48px)
+      ir()
+      opacity .4
+      transition $transition
+      display block
+      background-image url($sprite-path)
+
+      &:hover
+        opacity .5
+
+      &:active
+        opacity .6
+
+// $screen-tablet-landscape devices (1024px) and up
+// --------------------------------------------------
+@media only screen and (min-width $screen-tablet-landscape)
+  .global-search
+    position fixed
+    top 0
+    right 10px
+
+  // Box shadow if opened over scrolling content
+  body.scrolling .search-visible
+    border-radius $border-radius-large
+    box-shadow -2px 2px 6px lighten($gray-light, 6.5%)
+
+// $screen-large-desktop devices (1424px) and up
+// --------------------------------------------------
+@media only screen and (min-width $screen-large-desktop)
+  // Prevent box shadow if opened over scrolling content
+  body.scrolling .search-visible
+    box-shadow none
+
+// If HiDPI (can't be nested above)
+@media print,
+(-o-min-device-pixel-ratio 5/4),
+(-webkit-min-device-pixel-ratio 1.25),
+(min-resolution 120dpi)
+  // "Show Search" icon
+  .show-search
+    a
+      background-image url($sprite-x2-path)
+      background-size cover

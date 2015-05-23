@@ -1,0 +1,55 @@
+//
+// Alerts
+// TODO: Refactor so these aren't mixins
+// --------------------------------------------------
+
+@require "../base/variables";
+
+alert()
+  border 1px solid darken($state-error-bg, 10%)
+  border-radius $border-radius-base
+  color $state-error-text
+  background-color $state-error-bg
+  margin-bottom 20px
+  padding 8px 14px
+
+  h3
+    font-size $font-size-base + 5
+    margin 0 0 5px
+
+  .form-errors
+    margin 0
+    padding-left 20px
+
+    .form-error-message
+      color $state-error-text
+
+      &:last-child
+        margin-bottom 0
+
+.alert
+  alert()
+
+alert-error()
+  color $state-error-text
+  border-color darken($state-error-bg, 5%)
+  background-color $state-error-bg
+
+.alert-error
+  alert-error()
+
+alert-success()
+  color $state-success-text
+  border-color darken($state-success-bg, 5%)
+  background-color $state-success-bg
+
+.alert-success
+  alert-success()
+
+alert-info()
+  color $state-info-text
+  border-color darken($state-info-bg, 5%)
+  background-color $state-info-bg
+
+.alert-info
+  alert-info()

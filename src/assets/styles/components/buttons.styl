@@ -1,0 +1,42 @@
+//
+// Buttons
+// TODO: Refactor to not be a mixin used in forms.styl
+// --------------------------------------------------
+
+@require "../base/variables";
+@require "../base/mixins";
+
+button()
+  gradient-vertical(lighten($button-bg, 7%), lighten($button-bg, .5%))
+  font-size $font-size-base + 2
+  text-align center
+  vertical-align middle
+  cursor pointer
+  text-decoration none
+  line-height $line-height-base
+  display inline-block
+  color $button-color
+  border-radius $border-radius-base
+  border $button-border
+  background-color lighten($button-bg, .5%)
+  margin-bottom 0 // For input.button
+  padding 11px 20px 10px
+
+  &:visited
+    color $button-color
+
+  &:hover,
+  &:focus
+    gradient-vertical(lighten($button-bg, 9%), lighten($button-bg, 2%))
+    color lighten($button-color, 10%)
+    background-color darken($button-bg, 2%)
+
+  &:active
+    gradient-vertical(lighten($button-bg, 6%), lighten($button-bg, 9%))
+    box-shadow inset 0 3px 5px rgba(0, 0, 0, .125)
+    text-decoration none
+    color lighten($button-color, 20%)
+    background-color lighten($button-bg, 9%)
+
+.button
+  button()

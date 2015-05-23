@@ -1,0 +1,16 @@
+{
+  "name": "alec-rust",
+  "version": "1.1.0",
+  "homepage": "https://github.com/AlecRust/alec-rust",
+  "authors": [
+    "Alec Rust <me@alecrust.com>"
+  ],
+  "description": "AlecRust.com WordPress theme",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}

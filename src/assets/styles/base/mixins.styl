@@ -1,0 +1,102 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// Clearfix
+// --------------------------------------------------
+clearfix()
+  &:before,
+  &:after
+    content " "
+    display table
+
+  &:after
+    clear both
+
+// Image replacement
+// --------------------------------------------------
+ir()
+  background-color transparent
+  border 0
+  overflow hidden
+
+  &:before
+    size(0, 150%)
+    content ""
+    display block
+
+// Sizing shortcuts
+// --------------------------------------------------
+size($width, $height)
+  width $width
+  height $height
+
+square($size)
+  size($size, $size)
+
+// Single side border-radius
+// --------------------------------------------------
+border-top-radius($radius)
+  border-top-right-radius $radius
+  border-top-left-radius $radius
+
+border-right-radius($radius)
+  border-bottom-right-radius $radius
+  border-top-right-radius $radius
+
+border-bottom-radius($radius)
+  border-bottom-right-radius $radius
+  border-bottom-left-radius $radius
+
+border-left-radius($radius)
+  border-bottom-left-radius $radius
+  border-top-left-radius $radius
+
+// Gradients
+// --------------------------------------------------
+
+// Horizontal gradient, from left to right
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+gradient-horizontal($start-color = #555, $end-color = #333, $start-percent = 0%, $end-percent = 100%)
+  //background-image -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent) // Safari 5.1-6, Chrome 10+
+  //background-image -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent) // Opera 12
+  background-image linear-gradient(to right, $start-color $start-percent, $end-color $end-percent) // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat repeat-x
+  filter s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=1)", argb($start-color), argb($end-color)) // IE9 and down
+
+// Vertical gradient, from top to bottom
+//
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+gradient-vertical($start-color = #555, $end-color = #333, $start-percent = 0%, $end-percent = 100%)
+  //background-image -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Safari 5.1-6, Chrome 10+
+  //background-image -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Opera 12
+  background-image linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat repeat-x
+  filter s("progid:DXImageTransform.Microsoft.gradient(startColorstr='%s', endColorstr='%s', GradientType=0)", argb($start-color), argb($end-color)) // IE9 and down
+
+// Tables
+// --------------------------------------------------
+table-row-variant($state, $background)
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr
+    > td.{$state},
+    > th.{$state},
+    &.{$state} > td,
+    &.{$state} > th
+      background-color $background
+
+  // Hover states for `.table-hover`
+  // Note this is not available for cells or rows within `thead` or `tfoot`.
+  .table-hover > tbody > tr
+    > td.{$state}:hover,
+    > th.{$state}:hover,
+    &.{$state}:hover > td,
+    &:hover > .{$state},
+    &.{$state}:hover > th
+      background-color darken($background, 5%)

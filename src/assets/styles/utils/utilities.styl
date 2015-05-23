@@ -1,0 +1,65 @@
+//
+// Utilities
+// --------------------------------------------------
+
+@require "../base/variables";
+@require "../base/mixins";
+
+// Hide from both screenreaders and browsers
+.hidden
+  display none !important
+  visibility hidden
+
+// Hide only visually, but have it available for screenreaders
+visuallyhidden()
+  square(1px)
+  border 0
+  //clip rect(0 0 0 0)
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+
+  // Extends the visuallyhidden() class to allow the element to be focusable when navigated to via the keyboard h5bp.com/p
+  &.focusable:active,
+  &.focusable:focus
+    square(auto)
+    clip auto
+    margin 0
+    overflow visible
+    position static
+
+// Output class for use in HTML
+.visuallyhidden
+  visuallyhidden()
+
+// Make .muted visible when logged in
+.logged-in .muted
+  opacity .7
+
+// Undoes the .visuallyhidden class
+visible()
+  square(auto)
+  clip auto
+  margin 0
+  overflow visible
+  position static
+
+// Left and right aligning
+.alignleft,
+.align-right
+  margin-bottom 20px
+
+// $screen-phone devices (480px) and up
+// --------------------------------------------------
+@media only screen and (min-width $screen-phone)
+  // Left and right aligning
+  .alignleft
+    float left
+    max-width 35%
+    margin 0 20px 20px 0
+
+  .alignright
+    float right
+    max-width 35%
+    margin 0 0 20px 20px

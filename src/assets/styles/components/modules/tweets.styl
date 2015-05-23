@@ -1,0 +1,48 @@
+//
+// Tweets module
+// --------------------------------------------------
+
+@require "../../base/variables";
+@require "../../base/mixins";
+
+.module-tweets
+  ul
+    list-style none
+    padding-left 0
+
+  li
+    position relative
+    background-image none
+    margin-bottom 10px
+    padding 0 0 0 44px
+
+    &:before
+      size(26px, 21px)
+      content ""
+      display block
+      position absolute
+      top 3px
+      left 7px
+      background url($sprite-path) 0 -462px
+
+      // If HiDPI
+      @media print,
+      (-o-min-device-pixel-ratio 5/4),
+      (-webkit-min-device-pixel-ratio 1.25),
+      (min-resolution 120dpi)
+        background-image url($sprite-x2-path)
+        background-size 48px auto
+
+    a
+      color lighten($text-color, 30%) !important
+      font-style normal !important
+      text-decoration none
+
+      &:active
+        text-decoration underline
+
+  em
+    a
+      font-style normal
+      color lighten($text-color, 30%)
+      font-size $font-size-base - 1
