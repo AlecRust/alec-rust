@@ -5,7 +5,7 @@
   "authors": [
     "Alec Rust <me@alecrust.com>"
   ],
-  "description": "AlecRust.com WordPress theme",
+  "description": "Alec Rust personal portfolio and blog.",
   "ignore": [
     "node_modules",
     "bower_components"
