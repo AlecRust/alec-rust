@@ -5,17 +5,17 @@ Alec Rust Personal Portfolio/Blog
 
 Repo layout
 ===========
-
-- .openshift/pear.txt - list of pears to install
-- .openshift/action_hooks/pre_build - Script that gets run every git push before the build
+- .openshift/themes/alec-rust - Distribution folder for WordPress theme
 - .openshift/action_hooks/build - Script that gets run every git push as part of the build process (on the CI system if available)
 - .openshift/action_hooks/deploy - Script that gets run every git push after build but before the app is restarted
 - .openshift/action_hooks/post_deploy - Script that gets run every git push after the app is restarted
+- .openshift/action_hooks/pre_build - Script that gets run every git push before the build
+- .openshift/pear.txt - list of pears to install
 - gulp/ - Development tasks run by gulp
 - libs/ - Additional libraries
 - misc/ - For not-externally exposed php code
 - php/ - Externally exposed php code goes here
-- src/ - Source files of theme
+- src/ - Source files of WordPress theme
 - ../data - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
 
 Environment Variables
