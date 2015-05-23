@@ -3,8 +3,7 @@ Alec Rust Personal Portfolio/Blog
 
 Deployed to [http://alecrust-alecrust.rhcloud.com/](http://alecrust-alecrust.rhcloud.com/), public site at [http://www.alecrust.com/](http://www.alecrust.com/). Uses WordPress theme `alec-rust`.
 
-Repo layout
-===========
+## Repo layout
 
     .openshift/themes/alec-rust         - Distribution folder for WordPress theme
     .openshift/action_hooks/build       - Script that gets run every git push as part of the build process (on the CI system if available)
@@ -19,8 +18,7 @@ Repo layout
     src/                                - Source files of WordPress theme
     ../data                             - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
 
-Environment Variables
-=====================
+## Environment Variables
 
 Here are some common OpenShift environment variables:
 
