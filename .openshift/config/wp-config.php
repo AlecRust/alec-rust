@@ -60,8 +60,8 @@ define('FORCE_SSL_ADMIN', true);
 |--------------------------------------------------------------------------
 | WordPress Debugging Mode - MODIFICATION NOT RECOMMENDED (see below)
 |--------------------------------------------------------------------------
-| 
-| Set OpenShift's APPLICATION_ENV environment variable in order to enable 
+|
+| Set OpenShift's APPLICATION_ENV environment variable in order to enable
 | detailed PHP and WordPress error messaging during development.
 |
 | Set the variable, then restart your app. Using the `rhc` client:
@@ -69,13 +69,13 @@ define('FORCE_SSL_ADMIN', true);
 |   $ rhc env set APPLICATION_ENV=development -a <app-name>
 |   $ rhc app restart -a <app-name>
 |
-| Set the variable to 'production' and restart your app to deactivate error 
+| Set the variable to 'production' and restart your app to deactivate error
 | reporting.
 |
 | For more information about the APPLICATION_ENV variable, see:
 | https://developers.openshift.com/en/php-getting-started.html#development-mode
 |
-| WARNING: We strongly advise you NOT to run your application in this mode 
+| WARNING: We strongly advise you NOT to run your application in this mode
 |          in production.
 |
 */
