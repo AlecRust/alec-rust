@@ -26,11 +26,11 @@
 */
 
 /**
- * Code provided for users following SendGrid instructions linked above.
+ * SendGrid configuration with environment variables.
  */
-//define('SENDGRID_USERNAME', getenv('SENDGRID_USERNAME'));
-//define('SENDGRID_PASSWORD', getenv('SENDGRID_PASSWORD'));
-//define('SENDGRID_SEND_METHOD', 'api');
+define('SENDGRID_USERNAME', getenv('SENDGRID_USERNAME'));
+define('SENDGRID_PASSWORD', getenv('SENDGRID_PASSWORD'));
+define('SENDGRID_SEND_METHOD', 'api');
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ $table_prefix  = 'wp_';
 |--------------------------------------------------------------------------
 |
 | Determine whether the administration panel should be viewed over SSL. We
-| prefer to be secure by default.
+| prefer this off by default.
 |
 */
 
