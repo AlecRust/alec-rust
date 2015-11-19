@@ -530,8 +530,8 @@ th {
   border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {
-  background-image: -webkit-linear-gradient(top, #414141 0%, #343434 100%);
-  background-image: linear-gradient(to bottom, #414141 0%, #343434 100%);
+  background-image: -webkit-linear-gradient(top, #414141 0, #343434 100%);
+  background-image: linear-gradient(to bottom, #414141 0, #343434 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='argb(#414141)', endColorstr='argb(#343434)', GradientType=0);
   vertical-align: bottom;

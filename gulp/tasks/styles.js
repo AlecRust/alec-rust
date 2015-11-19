@@ -1,20 +1,27 @@
-var path =        require('path');
-var gulp =        require('gulp');
-var stylus =      require('gulp-stylus');
-var postcss =     require('gulp-postcss');
-var clip =        require('gulp-clip-empty-files');
-var bemLinter =   require('postcss-bem-linter');
-var atImport =    require('postcss-import');
-var cssnext =     require('cssnext');
-var del =         require('del');
-var notifyError = require('../notifyError');
-var paths =       require('../paths');
+var path =             require('path');
+var gulp =             require('gulp');
+var stylus =           require('gulp-stylus');
+var stylint =          require('gulp-stylint');
+var postcss =          require('gulp-postcss');
+var bemLinter =        require('postcss-bem-linter');
+var atImport =         require('postcss-import');
+var at2x =             require('postcss-at2x');
+var customProperties = require('postcss-custom-properties');
+var calc =             require('postcss-calc');
+var customMedia =      require('postcss-custom-media')
+var autoprefixer =     require('autoprefixer');
+var clip =             require('gulp-clip-empty-files');
+var del =              require('del');
+var notifyError =      require('../notifyError');
+var paths =            require('../paths');
 
 /**
  * Compile all Stylus into CSS files, placed in a temp directory
  */
 gulp.task('stylus', function() {
   return gulp.src(paths.styles.stylusSrc)
+    .pipe(stylint())
+    .pipe(stylint.reporter())
     .pipe(stylus().on('error', notifyError))
     .pipe(gulp.dest(paths.styles.tmpDir));
 });
@@ -26,7 +33,7 @@ gulp.task('bemlint', ['stylus'], function() {
   return gulp.src(path.join(paths.styles.tmpDir, '**/*.css'))
     .pipe(clip())
     .pipe(postcss([
-      bemLinter()
+      bemLinter('suit')
     ]).on('error', notifyError));
 });
 
@@ -37,12 +44,11 @@ gulp.task('postcss', ['stylus', 'bemlint'], function() {
   return gulp.src(path.join(paths.styles.tmpDir, '*.css'))
     .pipe(postcss([
       atImport(),
-      cssnext({
-        url: false,
-        features: {
-          rem: false
-        }
-      })
+      at2x(),
+      customProperties(),
+      calc(),
+      customMedia(),
+      autoprefixer()
     ]).on('error', notifyError))
     .pipe(gulp.dest(paths.styles.dest));
 });
@@ -50,8 +56,8 @@ gulp.task('postcss', ['stylus', 'bemlint'], function() {
 /**
  * Nuke temp CSS files
  * */
-gulp.task('clean-css', ['stylus', 'bemlint', 'postcss'], function(cb) {
-  del(paths.styles.tmpDir, cb);
+gulp.task('clean-css', ['stylus', 'bemlint', 'postcss'], function() {
+  return del(paths.styles.tmpDir);
 });
 
 gulp.task('styles', ['stylus', 'bemlint', 'postcss', 'clean-css']);

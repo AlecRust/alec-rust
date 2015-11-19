@@ -59,7 +59,7 @@ border-left-radius($radius)
 //
 // Creates two color stops, start and end, by specifying a color and position for each color stop.
 // Color stops are not available in IE9 and below.
-gradient-horizontal($start-color = #555, $end-color = #333, $start-percent = 0%, $end-percent = 100%)
+gradient-horizontal($start-color = #555, $end-color = #333, $start-percent = 0, $end-percent = 100%)
   //background-image -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent) // Safari 5.1-6, Chrome 10+
   //background-image -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent) // Opera 12
   background-image linear-gradient(to right, $start-color $start-percent, $end-color $end-percent) // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
@@ -70,7 +70,7 @@ gradient-horizontal($start-color = #555, $end-color = #333, $start-percent = 0%,
 //
 // Creates two color stops, start and end, by specifying a color and position for each color stop.
 // Color stops are not available in IE9 and below.
-gradient-vertical($start-color = #555, $end-color = #333, $start-percent = 0%, $end-percent = 100%)
+gradient-vertical($start-color = #555, $end-color = #333, $start-percent = 0, $end-percent = 100%)
   //background-image -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Safari 5.1-6, Chrome 10+
   //background-image -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent)  // Opera 12
   background-image linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent) // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
