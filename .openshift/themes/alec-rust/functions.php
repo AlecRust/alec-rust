@@ -32,6 +32,7 @@ add_action( 'after_setup_theme', 'alecrust_setup' );
  * Enqueue scripts and styles.
  */
 function alecrust_scripts() {
+  wp_enqueue_script( 'jquery' );
   wp_enqueue_style( 'wpg-style', get_stylesheet_uri() );
   wp_enqueue_script( 'wpg-script', get_template_directory_uri() . '/script.js', array(), '1.1.0', true );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
