@@ -2498,7 +2498,7 @@ body.page-home.page .global-content {
 .post-attachments .post-attachment {
   display: inline-block;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .post-attachments .post-attachment a {
   display: block;
