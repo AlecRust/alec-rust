@@ -30,7 +30,7 @@
 
       <?php the_content( __( 'Read more' ) ); ?>
 
-      <?php if ( !is_search() ) : // Don't display attachments on search results ?>
+      <?php if ( !is_search() && !is_archive() ) : // Don't display attachments on search or archive pages ?>
 
         <?php /* Render "Attachments" section */ ?>
         <?php $attachments = new Attachments( 'post_attachments' ); ?>
