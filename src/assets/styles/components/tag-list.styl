@@ -1,0 +1,28 @@
+//
+// Tag List
+// --------------------------------------------------
+
+@require "../base/variables";
+
+.TagList
+  display inline
+  list-style none
+  padding-left 0
+
+.TagList-item
+  display inline-block
+  margin 0 10px 5px 0
+
+  &:last-child
+    margin-right 0
+
+  a
+    display block
+    border-radius $border-radius-base
+    text-decoration none
+    color #fff
+    background-color $gray
+    padding 6px 9px
+
+    &:hover
+      background-color darken($gray, 10%)

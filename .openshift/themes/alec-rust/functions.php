@@ -298,7 +298,7 @@ function alecrust_entry_meta() {
   $categories_list = get_the_category_list( __( ', ' ) );
 
   // Translators: used between list items, there is a space after the comma
-  $tag_list = get_the_tag_list( '', __( ', ' ) );
+  $tag_list = get_the_tag_list('<h2>Skill/Technology Tags</h2><ul class="TagList"><li class="TagList-item">','</li><li class="TagList-item">','</li></ul>');
 
   // If Work or Project post
   // TODO: Add facility to output years range
@@ -318,7 +318,7 @@ function alecrust_entry_meta() {
 
   // Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
   if ( $tag_list ) {
-    $utility_text = __( 'Tagged %2$s on %3$s' );
+    $utility_text = __( '%3$s %2$s' );
   } elseif ( $categories_list ) {
     $utility_text = __( '%3$s' );
   } else {
