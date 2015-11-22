@@ -25,9 +25,9 @@ get_header(); ?>
       $category_id = get_cat_ID( 'Personal Projects' );
       $category_link = get_category_link( $category_id );
     ?>
-    <section class="post work-list">
-      <h2><a href="<?php echo esc_url( $category_link ); ?>">Personal Projects</a></h2>
-      <ul>
+    <section class="post">
+      <h2 class="work-title"><a href="<?php echo esc_url( $category_link ); ?>">Personal Projects</a></h2>
+      <ul class="work-list">
       <?php while (have_posts()) : the_post(); ?>
         <li>
           <a href="<?php the_permalink(); ?>">
@@ -48,9 +48,9 @@ get_header(); ?>
       $category_id = get_cat_ID( 'Open-source Projects' );
       $category_link = get_category_link( $category_id );
     ?>
-    <section class="post work-list">
-      <h2><a href="<?php echo esc_url( $category_link ); ?>">Open-source Projects</a></h2>
-      <ul>
+    <section class="post">
+      <h2 class="work-title"><a href="<?php echo esc_url( $category_link ); ?>">Open-source Projects</a></h2>
+      <ul class="work-list">
       <?php while (have_posts()) : the_post(); ?>
         <li>
           <a href="<?php the_permalink(); ?>">
