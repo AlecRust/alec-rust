@@ -900,6 +900,9 @@ textarea:focus {
 .align-right {
   margin-bottom: 20px;
 }
+.text-center {
+  text-align: center;
+}
 @media only screen and (min-width: 480px) {
   .alignleft {
     float: left;
@@ -1199,6 +1202,9 @@ textarea:focus {
 .alignleft,
 .align-right {
   margin-bottom: 20px;
+}
+.text-center {
+  text-align: center;
 }
 @media only screen and (min-width: 480px) {
   .alignleft {
@@ -1753,6 +1759,9 @@ textarea:focus {
 .align-right {
   margin-bottom: 20px;
 }
+.text-center {
+  text-align: center;
+}
 @media only screen and (min-width: 480px) {
   .alignleft {
     float: left;
@@ -2034,6 +2043,9 @@ textarea:focus {
 .alignleft,
 .align-right {
   margin-bottom: 20px;
+}
+.text-center {
+  text-align: center;
 }
 @media only screen and (min-width: 480px) {
   .alignleft {
@@ -2837,8 +2849,8 @@ table th[class*="col-"] {
   }
 }
 .tag-list {
-  display: inline;
   list-style: none;
+  margin: 0;
   padding-left: 0;
 }
 .tag-list-item {

@@ -69,7 +69,7 @@ get_header(); ?>
     <h2 class="work-title">Browse by Tag</h2>
     <?php
       $tags = get_tags();
-      $html = '<ul class="tag-list">';
+      $html = '<ul class="tag-list text-center">';
       foreach ( $tags as $tag ) {
         $tag_link = get_tag_link( $tag->term_id );
         $html .= "<li class='tag-list-item {$tag->slug}'><a href='{$tag_link}' title='Posts tagged with {$tag->name}'>{$tag->name}</a></li>";
