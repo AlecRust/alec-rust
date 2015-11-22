@@ -25,9 +25,9 @@ get_header(); ?>
       $category_id = get_cat_ID( 'Large Corporations' );
       $category_link = get_category_link( $category_id );
     ?>
-    <section class="post work-list">
-      <h2><a href="<?php echo esc_url( $category_link ); ?>">Large Corporations</a></h2>
-      <ul>
+    <section class="post">
+      <h2 class="work-title"><a href="<?php echo esc_url( $category_link ); ?>">Large Corporations</a></h2>
+      <ul class="work-list">
       <?php while (have_posts()) : the_post(); ?>
         <li>
           <a href="<?php the_permalink(); ?>">
@@ -48,9 +48,9 @@ get_header(); ?>
       $category_id = get_cat_ID( 'Small Businesses' );
       $category_link = get_category_link( $category_id );
     ?>
-    <section class="post work-list">
-      <h2><a href="<?php echo esc_url( $category_link ); ?>">Small Businesses</a></h2>
-      <ul>
+    <section class="post">
+      <h2 class="work-title"><a href="<?php echo esc_url( $category_link ); ?>">Small Businesses</a></h2>
+      <ul class="work-list">
       <?php while (have_posts()) : the_post(); ?>
         <li>
           <a href="<?php the_permalink(); ?>">
@@ -64,5 +64,19 @@ get_header(); ?>
       </ul>
     </section>
   <?php endif; ?>
+
+  <section class="post">
+    <h2 class="work-title">Browse by Tag</h2>
+    <?php
+      $tags = get_tags();
+      $html = '<ul class="tag-list">';
+      foreach ( $tags as $tag ) {
+        $tag_link = get_tag_link( $tag->term_id );
+        $html .= "<li class='tag-list-item {$tag->slug}'><a href='{$tag_link}' title='Posts tagged with {$tag->name}'>{$tag->name}</a></li>";
+      }
+      $html .= '</ul>';
+      echo $html;
+    ?>
+  </section>
 
 <?php get_footer(); ?>

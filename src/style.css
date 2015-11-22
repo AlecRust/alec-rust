@@ -2911,16 +2911,16 @@ table th[class*="col-"] {
     margin-left: 4%;
   }
 }
-.work-list h2 {
+.work-title {
   font-weight: normal;
   font-size: 26px;
   margin: 0 0 25px;
 }
-.work-list h2 a {
+.work-title a {
   color: #373737;
   text-decoration: none;
 }
-.work-list ul {
+.work-list {
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -2956,7 +2956,7 @@ table th[class*="col-"] {
   box-shadow: 1px 1px 1px #a0a0a0;
 }
 @media only screen and (min-width: 480px) {
-  .work-list ul {
+  .work-list {
     text-align: center;
   }
   .work-list li {
