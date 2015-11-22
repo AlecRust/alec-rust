@@ -35,10 +35,10 @@ get_header(); ?>
         <?php if ( is_page('about') ) : ?>
           <h2>Tag Cloud</h2>
           <p>Who says tag clouds are dead? The size of these tags reflects how often they are used in my work and project posts.</p>
-          <ul class="TagList">
+          <ul class="tag-list">
             <?php
               $wptc = wp_tag_cloud('smallest=12&largest=12&orderby=count&order=DESC&format=array&unit=px&number=5&echo=0');
-              foreach( $wptc as $wpt ) echo "<li class=\"TagList-item\">" . $wpt . "</li>\n";
+              foreach( $wptc as $wpt ) echo "<li class=\"tag-list-item\">" . $wpt . "</li>\n";
             ?>
           </ul>
         <?php endif; ?>

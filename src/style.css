@@ -2836,19 +2836,19 @@ table th[class*="col-"] {
     white-space: nowrap;
   }
 }
-.TagList {
+.tag-list {
   display: inline;
   list-style: none;
   padding-left: 0;
 }
-.TagList-item {
+.tag-list-item {
   display: inline-block;
   margin: 0 10px 5px 0;
 }
-.TagList-item:last-child {
+.tag-list-item:last-child {
   margin-right: 0;
 }
-.TagList-item a {
+.tag-list-item a {
   display: block;
   border-radius: 2px;
   text-decoration: none;
@@ -2856,7 +2856,7 @@ table th[class*="col-"] {
   background-color: #555;
   padding: 6px 9px;
 }
-.TagList-item a:hover {
+.tag-list-item a:hover {
   background-color: #4d4d4d;
 }
 .view-more {

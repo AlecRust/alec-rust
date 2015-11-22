@@ -298,7 +298,7 @@ function alecrust_entry_meta() {
   $categories_list = get_the_category_list( __( ', ' ) );
 
   // Translators: used between list items, there is a space after the comma
-  $tag_list = get_the_tag_list('<h2>Skill/Technology Tags</h2><ul class="TagList"><li class="TagList-item">','</li><li class="TagList-item">','</li></ul>');
+  $tag_list = get_the_tag_list('<h2>Skill/Technology Tags</h2><ul class="tag-list"><li class="tag-list-item">','</li><li class="tag-list-item">','</li></ul>');
 
   // If Work or Project post
   // TODO: Add facility to output years range
