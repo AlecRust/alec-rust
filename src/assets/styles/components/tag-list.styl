@@ -18,11 +18,14 @@
 
   a
     display block
-    border-radius $border-radius-base
+    border 1px solid $gray-light
+    border-radius 3px
     text-decoration none
-    color #fff
-    background-color $gray
+    color $gray
+    background-color $content-bg
     padding 6px 9px
 
     &:hover
-      background-color darken($gray, 10%)
+      color #fff
+      border-color $gray
+      background-color $gray

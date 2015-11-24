@@ -2862,14 +2862,17 @@ table th[class*="col-"] {
 }
 .tag-list-item a {
   display: block;
-  border-radius: 2px;
+  border: 1px solid #999;
+  border-radius: 3px;
   text-decoration: none;
-  color: #fff;
-  background-color: #555;
+  color: #555;
+  background-color: #f8f8f8;
   padding: 6px 9px;
 }
 .tag-list-item a:hover {
-  background-color: #4d4d4d;
+  color: #fff;
+  border-color: #555;
+  background-color: #555;
 }
 .view-more {
   text-align: right;
