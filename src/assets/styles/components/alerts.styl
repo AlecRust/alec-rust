@@ -53,3 +53,22 @@ alert-info()
 
 .alert-info
   alert-info()
+
+// Contact Form 7 alerts
+div.wpcf7-response-output
+  alert()
+  border 0
+  margin 20px 0
+
+  &.wpcf7-mail-sent-ok
+    alert-success()
+
+  &.wpcf7-mail-sent-ng
+    alert-info()
+
+  &.wpcf7-spam-warning,
+  &.wpcf7-spam-blocked
+    alert-warning()
+
+  &.wpcf7-validation-errors
+    alert-danger()

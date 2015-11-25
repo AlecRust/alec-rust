@@ -12,10 +12,6 @@ label
   font-weight bold
   margin-bottom 3px
 
-// Contact form input wrappers
-.contact-form div
-  margin-bottom 1em
-
 // Text inputs
 input[type="text"],
 input[type="email"],
@@ -39,7 +35,7 @@ textarea
     box-shadow 0 0 8px rgba(208, 208, 208, .60)
 
 // Submit button wrapper
-.contact-submit,
+// TODO: Is this used?
 .form-submit
   text-align center
   margin-bottom 15px
@@ -52,3 +48,21 @@ input[type="submit"],
 // Form error
 .form-error
   alert()
+
+// Contact Form 7
+div.wpcf7
+  div
+    margin-bottom 1em
+
+  label span
+    color $gray-light
+    font-weight normal
+
+  .wpcf7-not-valid-tip
+    font-size 80%
+    color $state-error-text
+    margin-bottom 10px
+
+  img.ajax-loader
+    display block
+    margin 10px auto
