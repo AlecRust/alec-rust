@@ -64,16 +64,15 @@
     </div>
 
     <footer class="entry-meta">
-      <p class="author visuallyhidden">By Alec Rust</p>
+      <p class="timestamp">
+        <?php alecrust_posted_on(); ?>
+      </p>
       <?php if ( function_exists( 'sharing_display' ) && in_category( 'Blog' ) ) echo sharing_display(); ?>
       <?php if ( comments_open() ) : ?>
         <p class="comments-link">
           <?php comments_popup_link( __( 'Leave a reply' ), __( '1 Reply' ), __( '% Replies' ) ); ?>
         </p>
       <?php endif; ?>
-      <p class="timestamp">
-        <?php alecrust_posted_on(); ?>
-      </p>
     </footer>
 
     <?php edit_post_link( __( 'Edit' ), '<aside class="edit-link">', '</aside>' ); ?>
