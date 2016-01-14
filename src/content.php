@@ -56,6 +56,9 @@
           </aside>
         <?php endif; ?>
 
+        <?php /* Render "Skills Used" section */ ?>
+        <?php alecrust_skills_used(); ?>
+
       <?php endif; ?>
 
     </div>
