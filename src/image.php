@@ -53,7 +53,7 @@ get_header(); ?>
       <footer class="entry-meta">
         <?php edit_post_link( __( 'Edit' ), '<aside class="edit-link">', '</aside>' ); ?>
         <p class="timestamp visuallyhidden">
-          <?php alecrust_entry_meta(); ?>
+          <?php alecrust_posted_on(); ?>
         </p>
       </footer>
 

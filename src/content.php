@@ -69,7 +69,7 @@
         </p>
       <?php endif; ?>
       <p class="timestamp">
-        <?php alecrust_entry_meta(); ?>
+        <?php alecrust_posted_on(); ?>
       </p>
     </footer>
 

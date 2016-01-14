@@ -47,7 +47,7 @@ get_header(); ?>
 
       <footer class="entry-meta visuallyhidden">
         <p class="timestamp">
-          <?php alecrust_entry_meta(); ?>
+          <?php alecrust_posted_on(); ?>
         </p>
       </footer>
 

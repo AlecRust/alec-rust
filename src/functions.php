@@ -292,8 +292,8 @@ endif;
 /**
  * Prints HTML with meta information for current post
  */
-if ( ! function_exists( 'alecrust_entry_meta' ) ) :
-function alecrust_entry_meta() {
+if ( ! function_exists( 'alecrust_posted_on' ) ) :
+function alecrust_posted_on() {
   // Translators: used between list items, there is a space after the comma
   $categories_list = get_the_category_list( __( ', ' ) );
 
@@ -303,17 +303,27 @@ function alecrust_entry_meta() {
   // If Work or Project post
   // TODO: Add facility to output years range
   if ( in_category( array( 'work', 'projects' ) )) {
-    $date = sprintf( '<a href="%1$s"><time class="entry-date" datetime="%2$s">Year %2$s</time></a>',
+    $date = sprintf( '<a href="%1$s"><time class="entry-date published updated" datetime="%2$s">Year %2$s</time></a>',
       esc_url( get_permalink() ),
       esc_attr( get_the_date( 'Y' ) )
     );
   } else {
-    $date = sprintf( '<a href="%1$s" title="%2$s"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+    $date = sprintf( '<a href="%1$s" title="%2$s"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
       esc_url( get_permalink() ),
       esc_attr( get_the_time() ),
       esc_attr( get_the_date( 'c' ) ),
       esc_html( get_the_date() )
     );
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $date = sprintf('<a href="%1$s" title="%2$s"><time class="entry-date published" datetime="%3$s">%4$s</time> <span class="visuallyhidden">Updated <time class="updated" datetime="%5$s">%6$s</time></span>',
+        esc_url( get_permalink() ),
+        esc_attr( get_the_time() ),
+        esc_attr( get_the_date( 'c' ) ),
+        esc_html( get_the_date() ),
+        esc_attr( get_the_modified_date( 'c' ) ),
+        esc_html( get_the_modified_date() )
+      );
+    }
   }
 
   // Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name
