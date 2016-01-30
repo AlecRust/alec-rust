@@ -38,7 +38,7 @@ function alecrust_posted_on() {
   );
 
   if ( in_category( array( 'work', 'projects' ) )) {
-    echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">Year ' . $time_string . '</a>';
+    echo '<a href="' . esc_url( get_permalink() ) . '" class="posted-on entry-date published updated" rel="bookmark">Year ' . $time_string . '</a> <span class="byline visuallyhidden"> ' . $byline . '</span>';
   } else {
     echo '<span class="posted-on">' . $posted_on . '</span><span class="byline visuallyhidden"> ' . $byline . '</span>';
   }
