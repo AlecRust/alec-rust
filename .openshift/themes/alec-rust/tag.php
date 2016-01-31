@@ -4,8 +4,7 @@
  *
  * Used to display archive-type pages for posts in a tag
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 get_header(); ?>

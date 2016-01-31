@@ -7,8 +7,7 @@
  * handled by a callback to alecrust_comment() which is
  * located in functions.php
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 /*

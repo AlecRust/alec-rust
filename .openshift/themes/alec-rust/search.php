@@ -2,8 +2,7 @@
 /**
  * Template for displaying Search Results pages
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 get_header(); ?>

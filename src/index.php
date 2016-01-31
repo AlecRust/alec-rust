@@ -6,8 +6,7 @@
  * It is used to display a page when nothing more specific matches a query.
  * For example, it puts together the home page when no home.php file exists.
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 get_header(); ?>

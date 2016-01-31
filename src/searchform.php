@@ -2,8 +2,7 @@
 /**
  * Template for displaying search forms
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 ?>
   <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">

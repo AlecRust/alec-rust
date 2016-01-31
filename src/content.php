@@ -2,8 +2,7 @@
 /**
  * Default template for displaying content. Used for both single and index/archive/search
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 ?>
 

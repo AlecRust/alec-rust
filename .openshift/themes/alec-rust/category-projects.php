@@ -4,8 +4,7 @@
  *
  * Description: Projects Index page template
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 get_header(); ?>

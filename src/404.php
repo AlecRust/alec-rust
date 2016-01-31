@@ -2,8 +2,7 @@
 /**
  * Template for displaying 404 pages
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 get_header(); ?>

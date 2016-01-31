@@ -4,8 +4,7 @@
  *
  * Information on hooks, actions, and filters: http://codex.wordpress.org/Plugin_API
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 /**

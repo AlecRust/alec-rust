@@ -2,8 +2,7 @@
 /**
  * Template for displaying the header
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 ?><!doctype html>
 <html lang="en-GB">

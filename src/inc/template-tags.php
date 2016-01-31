@@ -2,8 +2,7 @@
 /**
  * Custom template tags.
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 
 if ( ! function_exists( 'alecrust_posted_on' ) ) :

@@ -2,8 +2,7 @@
 /**
  * Home page GitHub feed module
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 ?>
 

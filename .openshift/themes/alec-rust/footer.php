@@ -2,8 +2,7 @@
 /**
  * Template for displaying the footer
  *
- * @package WordPress
- * @subpackage Alec_Rust
+ * @package alec-rust
  */
 ?>
     </main>
