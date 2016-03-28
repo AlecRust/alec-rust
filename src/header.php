@@ -8,7 +8,6 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri() . '/favicon.ico'; ?>">
     <link rel="profile" href="http://gmpg.org/xfn/11">

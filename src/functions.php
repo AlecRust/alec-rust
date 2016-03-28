@@ -20,6 +20,9 @@ function alecrust_setup() {
   // Adds RSS feed links to <head> for posts and comments
   add_theme_support( 'automatic-feed-links' );
 
+  // Let WordPress manage the document title
+  add_theme_support( 'title-tag' );
+
   // This theme uses a custom image size for featured images, displayed on "standard" posts
   add_theme_support( 'post-thumbnails' );
 
@@ -75,38 +78,6 @@ function sidebar_widgets_init() {
   ));
 }
 add_action( 'widgets_init', 'sidebar_widgets_init' );
-
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function alecrust_wp_title( $title, $sep ) {
-  if ( is_feed() ) {
-    return $title;
-  }
-
-  global $page, $paged;
-
-  // Add the site name
-  $title .= get_bloginfo( 'name', 'display' );
-
-  // Add the site description for the front page
-  $site_description = get_bloginfo( 'description', 'display' );
-  if ( is_front_page() ) {
-    $title .= " $sep $site_description";
-  }
-
-  // Add a page number if necessary
-  if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-    $title .= " $sep " . sprintf( __( 'Page %s' ), max( $paged, $page ) );
-  }
-
-  return $title;
-}
-add_filter( 'wp_title', 'alecrust_wp_title', 10, 2 );
 
 /**
  * Registers theme menus

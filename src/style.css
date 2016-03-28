@@ -897,7 +897,6 @@ div.wpcf7 img.ajax-loader {
   }
   body.scrolling .global-header {
     -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
             transform: rotate(-90deg);
     top: 99px;
     left: -73px;
@@ -906,7 +905,6 @@ div.wpcf7 img.ajax-loader {
 @media only screen and (min-width: 1224px) {
   body.scrolling .global-header {
     -webkit-transform: rotate(0);
-        -ms-transform: rotate(0);
             transform: rotate(0);
     top: 0;
     left: -25px;
@@ -2474,7 +2472,6 @@ img#wpstats.focusable:focus {
   .img-polaroid,
   .wp-caption {
     -webkit-transform: rotate(4);
-        -ms-transform: rotate(4);
             transform: rotate(4);
     margin-bottom: 30px;
   }
