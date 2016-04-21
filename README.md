@@ -18,6 +18,24 @@ Deployed to [http://production-alecrust.rhcloud.com/](http://production-alecrust
     src/                                - Source files of WordPress theme
     ../data                             - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
 
+## Jenkins
+
+There is a Jenkins application running at https://jenkins-alecrust.rhcloud.com/. When pushes to this GitHub repo are made Jenkins is notified via a webhook and initiates a build on the `production-build` Jenkins project:
+
+https://jenkins-alecrust.rhcloud.com/job/production-build/
+
+After changes have been deployed the CloudFlare cache for the `alecrust.com` domain is purged as part of the build script.
+
+## NPM Scripts
+
+There are a few handy NPM scripts for your convenience:
+
+- `devon` - Switch CloudFlare's "Dev Mode" on for this domain
+- `devoff` - Switch CloudFlare's "Dev Mode" off for this domain
+- `deploy` - Push changes to OpenShift, triggering Jenkins build. Then runs `purgecache` below
+- `purgecache` - Purge CloudFlare's entire cache for this domain
+- `jenkins` - Run the [`jenkins_build.js`](misc/jenkins_build.js) deployment script
+
 ## Environment Variables
 
 Here are some common OpenShift environment variables:
