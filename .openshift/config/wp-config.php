@@ -32,6 +32,12 @@ define('SENDGRID_USERNAME', getenv('SENDGRID_USERNAME'));
 define('SENDGRID_PASSWORD', getenv('SENDGRID_PASSWORD'));
 define('SENDGRID_SEND_METHOD', 'api');
 
+/**
+ * AWS configuration with environment variables.
+ */
+define('AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID'));
+define('AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
+
 /*
 |--------------------------------------------------------------------------
 | WordPress Database Table Prefix
