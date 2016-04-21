@@ -1,7 +1,7 @@
 Alec Rust Personal Portfolio/Blog
 =================================
 
-Deployed to [http://alecrust-alecrust.rhcloud.com/](http://alecrust-alecrust.rhcloud.com/), public site at [http://www.alecrust.com/](http://www.alecrust.com/). Uses WordPress theme `alec-rust`.
+Deployed to [http://production-alecrust.rhcloud.com/](http://production-alecrust.rhcloud.com/), public site at [http://www.alecrust.com/](http://www.alecrust.com/). Uses WordPress theme `alec-rust`.
 
 ## Repo layout
 
