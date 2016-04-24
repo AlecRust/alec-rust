@@ -2964,9 +2964,12 @@ table th[class*="col-"] {
   margin: 0;
   padding-left: 0;
 }
+.tag-list .tag-list-item {
+  margin: 0 10px 10px 0;
+}
 .tag-list-item {
+  font-size: 13px;
   display: inline-block;
-  margin: 0 10px 5px 0;
 }
 .tag-list-item:last-child {
   margin-right: 0;
