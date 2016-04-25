@@ -41,7 +41,7 @@
       </aside>
     <?php } ?>
 
-    <aside class="global-social-links" role="complementary">
+    <aside class="global-social-links">
       <h1 class="visuallyhidden">Social Links</h1>
       <ul>
         <li class="github"><a href="https://github.com/AlecRust" title="GitHub">GitHub</a></li>
@@ -55,7 +55,7 @@
       </ul>
     </aside>
 
-    <footer class="global-footer" role="contentinfo">
+    <footer class="global-footer">
       <p>
         Copyright <time datetime="<?php echo date('Y'); ?>"><?php echo date('Y'); ?></time>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Alec Rust</a>

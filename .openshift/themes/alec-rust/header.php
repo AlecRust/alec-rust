@@ -24,7 +24,7 @@
       </p>
     <![endif]-->
 
-    <header class="global-header" role="banner">
+    <header class="global-header">
       <h1 class="global-header-logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Alec Rust Home" rel="home">
           <span>A</span>lec Rust
@@ -53,4 +53,4 @@
       ) ); ?>
     </nav>
 
-    <main class="global-content" role="main">
+    <main class="global-content">
