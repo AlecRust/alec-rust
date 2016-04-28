@@ -46,10 +46,10 @@
       <ul>
         <li class="github"><a href="https://github.com/AlecRust" title="GitHub">GitHub</a></li>
         <li class="twitter"><a href="https://twitter.com/AlecRust" title="Twitter">Twitter</a></li>
-        <li class="linkedin"><a href="http://uk.linkedin.com/in/alecrust/" title="LinkedIn">LinkedIn</a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com/in/alecrust/" title="LinkedIn">LinkedIn</a></li>
         <li class="googleplus"><a href="https://plus.google.com/+AlecRust" title="Google+">Google+</a></li>
-        <li class="quora"><a href="http://www.quora.com/Alec-Rust" title="Quora">Quora</a></li>
-        <li class="facebook"><a href="http://www.facebook.com/alec.rust" title="Facebook">Facebook</a></li>
+        <li class="quora"><a href="https://www.quora.com/profile/Alec-Rust" title="Quora">Quora</a></li>
+        <li class="facebook"><a href="https://www.facebook.com/alec.rust" title="Facebook">Facebook</a></li>
         <li class="lastfm"><a href="http://www.last.fm/user/ace5p1d0r" title="Last.fm">Last.fm</a></li>
         <li class="email"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" title="Email">Email</a></li>
       </ul>
