@@ -302,22 +302,6 @@ function get_parent_terms( $post_id = 0 ) {
 }
 
 /**
- * Add Google Analytics tracking snippet to footer
- */
-function ar_google_analytics() { ?>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-3217267-26', 'auto');
-    ga('send', 'pageview');
-  </script>
-<?php }
-add_action( 'wp_footer', 'ar_google_analytics' );
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
