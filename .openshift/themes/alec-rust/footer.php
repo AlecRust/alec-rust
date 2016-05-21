@@ -33,14 +33,6 @@
       <?php dynamic_sidebar( 'Blog Sidebar' ); ?>
     <?php } ?>
 
-    <?php // CV widget on About page ?>
-    <?php if ( is_page( 'about' ) ) { ?>
-      <aside class="widget">
-        <h1 class="widget-title">Looking for my CV?</h1>
-        <p><a href="http://static.alecrust.com/assets/Alec+Rust+CV.pdf" download="Alec Rust CV.pdf" class="button">Download as PDF</a></p>
-      </aside>
-    <?php } ?>
-
     <aside class="global-social-links">
       <h1 class="visuallyhidden">Social Links</h1>
       <ul>
