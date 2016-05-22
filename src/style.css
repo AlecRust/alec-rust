@@ -760,6 +760,33 @@ div.wpcf7 img.ajax-loader {
   }
 }
 
+/* WordPress */
+.alignleft,
+.alignright {
+  display: block;
+  margin-bottom: 20px;
+}
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alignnone {
+  margin: 5px 20px 20px 0;
+}
+@media (min-width: 480px) {
+  .alignleft {
+    float: left;
+    max-width: 35%;
+    margin: 0 20px 20px 0;
+  }
+  .alignright {
+    float: right;
+    max-width: 35%;
+    margin: 0 0 20px 20px;
+  }
+}
+
 /* Global */
 .global-content {
   position: relative;
@@ -940,24 +967,8 @@ div.wpcf7 img.ajax-loader {
 .logged-in .muted {
   opacity: 0.7;
 }
-.alignleft,
-.align-right {
-  margin-bottom: 20px;
-}
 .text-center {
   text-align: center;
-}
-@media only screen and (min-width: 480px) {
-  .alignleft {
-    float: left;
-    max-width: 35%;
-    margin: 0 20px 20px 0;
-  }
-  .alignright {
-    float: right;
-    max-width: 35%;
-    margin: 0 0 20px 20px;
-  }
 }
 .global-navigation {
   margin-bottom: 20px;
@@ -1243,24 +1254,8 @@ div.wpcf7 img.ajax-loader {
 .logged-in .muted {
   opacity: 0.7;
 }
-.alignleft,
-.align-right {
-  margin-bottom: 20px;
-}
 .text-center {
   text-align: center;
-}
-@media only screen and (min-width: 480px) {
-  .alignleft {
-    float: left;
-    max-width: 35%;
-    margin: 0 20px 20px 0;
-  }
-  .alignright {
-    float: right;
-    max-width: 35%;
-    margin: 0 0 20px 20px;
-  }
 }
 .global-search {
   text-align: center;
@@ -1833,24 +1828,8 @@ div.wpcf7-response-output.wpcf7-mail-sent-ng {
 .logged-in .muted {
   opacity: 0.7;
 }
-.alignleft,
-.align-right {
-  margin-bottom: 20px;
-}
 .text-center {
   text-align: center;
-}
-@media only screen and (min-width: 480px) {
-  .alignleft {
-    float: left;
-    max-width: 35%;
-    margin: 0 20px 20px 0;
-  }
-  .alignright {
-    float: right;
-    max-width: 35%;
-    margin: 0 0 20px 20px;
-  }
 }
 .archive-header {
   padding: 0 20px 15px;
@@ -2152,24 +2131,8 @@ div.wpcf7-response-output.wpcf7-mail-sent-ng {
 .logged-in .muted {
   opacity: 0.7;
 }
-.alignleft,
-.align-right {
-  margin-bottom: 20px;
-}
 .text-center {
   text-align: center;
-}
-@media only screen and (min-width: 480px) {
-  .alignleft {
-    float: left;
-    max-width: 35%;
-    margin: 0 20px 20px 0;
-  }
-  .alignright {
-    float: right;
-    max-width: 35%;
-    margin: 0 0 20px 20px;
-  }
 }
 .timestamp {
   color: #737373;
