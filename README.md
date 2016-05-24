@@ -1,5 +1,4 @@
-Alec Rust Personal Portfolio/Blog
-=================================
+# Alec Rust Personal Portfolio/Blog [![Build Status](https://jenkins-alecrust.rhcloud.com/buildStatus/icon?job=production-build)](https://jenkins-alecrust.rhcloud.com/job/production-build/)
 
 Deployed to [http://production-alecrust.rhcloud.com/](http://production-alecrust.rhcloud.com/), public site at [http://www.alecrust.com/](http://www.alecrust.com/). Uses WordPress theme `alec-rust`.
 
