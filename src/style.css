@@ -668,6 +668,9 @@ textarea:focus {
   border-color: #a6a6a6;
   box-shadow: 0 0 8px rgba(208,208,208,0.6);
 }
+.form-group {
+  margin-bottom: 1em;
+}
 .form-submit {
   text-align: center;
   margin-bottom: 15px;
@@ -694,9 +697,6 @@ textarea:focus {
 .form-error .form-errors .form-error-message:last-child {
   margin-bottom: 0;
 }
-div.wpcf7 div {
-  margin-bottom: 1em;
-}
 div.wpcf7 label span {
   color: #999;
   font-weight: normal;
@@ -704,7 +704,6 @@ div.wpcf7 label span {
 div.wpcf7 .wpcf7-not-valid-tip {
   font-size: 80%;
   color: #b94a48;
-  margin-bottom: 10px;
 }
 div.wpcf7 img.ajax-loader {
   display: block;
