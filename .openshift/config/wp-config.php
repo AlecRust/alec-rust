@@ -56,11 +56,11 @@ $table_prefix  = 'wp_';
 |--------------------------------------------------------------------------
 |
 | Determine whether the administration panel should be viewed over SSL. We
-| prefer this off by default.
+| prefer this to be secure by default.
 |
 */
 
-define('FORCE_SSL_ADMIN', false);
+define('FORCE_SSL_ADMIN', true);
 
 /*
 |--------------------------------------------------------------------------
