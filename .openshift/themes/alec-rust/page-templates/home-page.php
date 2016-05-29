@@ -18,7 +18,7 @@ get_header(); ?>
   </article>
 
   <section class="module module-heros">
-    <h1><a href="<?php echo site_url('/work/'); ?>">Recent work</a>/<a href="<?php echo site_url('/projects/'); ?>">projects</a></h1>
+    <h2><a href="<?php echo site_url('/work/'); ?>">Recent work</a>/<a href="<?php echo site_url('/projects/'); ?>">projects</a></h2>
     <ul>
     <?php query_posts('category_name=work,projects&showposts=3'); ?>
     <?php while (have_posts()) : the_post(); ?>
@@ -43,7 +43,7 @@ get_header(); ?>
   </section>
 
   <section class="module module-list">
-    <h1><a href="<?php echo site_url('/blog/'); ?>">Recent blog posts</a></h1>
+    <h2><a href="<?php echo site_url('/blog/'); ?>">Recent blog posts</a></h2>
     <ul>
     <?php query_posts('category_name=blog&showposts=7'); ?>
     <?php while (have_posts()) : the_post(); ?>
@@ -54,7 +54,7 @@ get_header(); ?>
   </section>
 
   <section class="module module-thumbs">
-    <h1><a href="<?php echo site_url('/work/'); ?>">Companies I&rsquo;ve worked with</a></h1>
+    <h2><a href="<?php echo site_url('/work/'); ?>">Companies I&rsquo;ve worked with</a></h2>
     <ul>
       <li><a href="<?php echo site_url('/work/universal-music/'); ?>"><img src="https://static.alecrust.com/assets/images/company-thumb-universal-music.png" width="120" height="60" alt="Universal Music company logo"></a></li>
       <li><a href="<?php echo site_url('/work/bbc/'); ?>"><img src="https://static.alecrust.com/assets/images/company-thumb-bbc.png" width="120" height="60" alt="BBC company logo"></a></li>

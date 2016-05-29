@@ -64,8 +64,8 @@ function sidebar_widgets_init() {
     'id' => 'sidebar-1',
     'before_widget' => '<section class="module module-tweets">',
     'after_widget' => '<p class="view-more"><a href="https://twitter.com/AlecRust">View my Twitter profile</a></p></section>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>',
   ));
 
   register_sidebar(array(

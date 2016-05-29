@@ -7,7 +7,7 @@
 ?>
 
 <section class="module module-activity">
-  <h1><a href="https://github.com/AlecRust">Recent GitHub activity</a></h1>
+  <h2><a href="https://github.com/AlecRust">Recent GitHub activity</a></h2>
   <?php
     include_once(ABSPATH . WPINC . '/feed.php');
     $rss = fetch_feed('https://github.com/AlecRust.atom');
