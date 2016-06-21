@@ -121,6 +121,21 @@ require_once(getenv('OPENSHIFT_REPO_DIR') . '.openshift/openshift.inc');
 
 /*
 |--------------------------------------------------------------------------
+| WordPress Alternative Cron
+|--------------------------------------------------------------------------
+|
+| For information on the alternative WordPress Cron:
+| http://codex.wordpress.org/Editing_wp-config.php#Alternative_Cron
+|
+*/
+
+/**
+ * Enable the alternative WordPress Cron
+ */
+define('ALTERNATE_WP_CRON', true);
+
+/*
+|--------------------------------------------------------------------------
 | That's all, stop editing! Happy blogging.
 |--------------------------------------------------------------------------
 */
