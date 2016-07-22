@@ -589,7 +589,7 @@ input[type="submit"]:active,
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
+  padding: 15px 20px;
 }
 
 .alert h3 {
@@ -634,8 +634,7 @@ div.wpcf7-response-output {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
-  border: 0;
+  padding: 15px 20px;
   margin: 20px 0;
 }
 
@@ -723,7 +722,7 @@ textarea:focus {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
+  padding: 15px 20px;
 }
 
 .form-error h3 {
@@ -1925,7 +1924,7 @@ div.wpcf7 img.ajax-loader {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
+  padding: 15px 20px;
 }
 
 .alert h3 {
@@ -1970,8 +1969,7 @@ div.wpcf7-response-output {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
-  border: 0;
+  padding: 15px 20px;
   margin: 20px 0;
 }
 
@@ -2141,7 +2139,7 @@ div.wpcf7-response-output.wpcf7-mail-sent-ng {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
+  padding: 15px 20px;
 }
 
 .alert h3 {
@@ -2186,8 +2184,7 @@ div.wpcf7-response-output {
   color: #b94a48;
   background-color: #f2dede;
   margin-bottom: 20px;
-  padding: 8px 14px;
-  border: 0;
+  padding: 15px 20px;
   margin: 20px 0;
 }
 
