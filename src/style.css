@@ -448,7 +448,7 @@ html {
 
 body {
   color: #373737;
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #d8d8d8 url("assets/images/body-bg-tile.png") fixed;
@@ -1400,7 +1400,7 @@ div.wpcf7 img.ajax-loader {
 }
 
 .global-search-input {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
   border: 0;
   border-radius: 3px;
   box-shadow: inset 0 1px 4px #777;
@@ -3087,7 +3087,7 @@ div.sharedaddy.sd-sharing-enabled div.sd-block {
 div.sharedaddy.sd-sharing-enabled div.sd-block .sd-title {
   color: #737373;
   font-size: 13px;
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   width: auto;
   margin: 0 0 10px;

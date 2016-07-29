@@ -439,7 +439,7 @@ html {
 
 body {
   color: #373737;
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #d8d8d8 url("assets/images/body-bg-tile.png") fixed;
@@ -772,7 +772,7 @@ table th[class*="col-"] {
 
 body.mce-content-body {
   color: #373737;
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Myriad Pro", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background-color: #f9f9f9;
