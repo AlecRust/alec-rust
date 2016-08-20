@@ -121,6 +121,16 @@ require_once(getenv('OPENSHIFT_REPO_DIR') . '.openshift/openshift.inc');
 
 /*
 |--------------------------------------------------------------------------
+| Disable default WordPress cron
+|--------------------------------------------------------------------------
+|
+| We'll use the EasyCron plugin for this instead.
+|
+*/
+define('DISABLE_WP_CRON', 'true');
+
+/*
+|--------------------------------------------------------------------------
 | That's all, stop editing! Happy blogging.
 |--------------------------------------------------------------------------
 */
