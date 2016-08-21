@@ -10,11 +10,11 @@ get_header(); ?>
   <article class="post error404 no-results not-found">
 
     <header class="entry-header">
-      <h1 class="entry-title">Something bad happened.</h1>
+      <h1 class="entry-title">Sorry, that page doesn’t exist!</h1>
     </header>
 
     <div class="entry-content">
-      <p>Sorry, the page you&rsquo;re looking for can&rsquo;t be found. Perhaps searching can help? Alternatively go <a href="<?php echo esc_url( home_url( '/' ) ); ?>">back to the home page ></a></p>
+      <p>You can search this site using the box below, or <a href="<?php echo esc_url( home_url( '/' ) ); ?>">return to the homepage</a>.</p>
       <?php get_search_form(); ?>
     </div>
 
