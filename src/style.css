@@ -1416,6 +1416,7 @@ div.wpcf7 img.ajax-loader {
   transition: all 0.3s ease;
   color: #d8dada;
   background-color: #343434;
+  cursor: pointer;
   font-family: "stalin_oneregular", sans-serif;
   border: 0;
   border-radius: 3px;
