@@ -127,7 +127,7 @@ require_once(getenv('OPENSHIFT_REPO_DIR') . '.openshift/openshift.inc');
 | We'll use the EasyCron plugin for this instead.
 |
 */
-define('DISABLE_WP_CRON', 'true');
+define('DISABLE_WP_CRON', true);
 
 /*
 |--------------------------------------------------------------------------
