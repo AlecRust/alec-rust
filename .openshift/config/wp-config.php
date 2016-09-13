@@ -28,8 +28,7 @@
 /**
  * Code provided for users following SendGrid instructions linked above.
  */
-define('SENDGRID_USERNAME', getenv('SENDGRID_USERNAME'));
-define('SENDGRID_PASSWORD', getenv('SENDGRID_PASSWORD'));
+define('SENDGRID_API_KEY', getenv('SENDGRID_API_KEY'));
 define('SENDGRID_SEND_METHOD', 'api');
 
 /**
