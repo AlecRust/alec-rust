@@ -61,10 +61,10 @@
   });
 
   // Show search
-  $('.show-search a').click(function() {
+  $('.show-search a').click(function(event) {
+    event.preventDefault();
     $('.global-search').addClass('search-visible');
     $('.global-search-input').focus();
-    return false;
   });
 
   // Esc from search
@@ -75,9 +75,9 @@
   });
 
   // Show navigation
-  $('.show-navigation a').click(function() {
+  $('.show-navigation a').click(function(event) {
+    event.preventDefault();
     $('.global-navigation').addClass('navigation-visible');
-    return false;
   });
 
   // Open external links in new tab
