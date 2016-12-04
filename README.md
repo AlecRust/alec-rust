@@ -17,6 +17,13 @@ Deployed to [https://production-alecrust.rhcloud.com/](https://production-alecru
     src/                                - Source files of WordPress theme
     ../data                             - For persistent data (full path in environment var: OPENSHIFT_DATA_DIR)
 
+## Development
+
+[Docker Compose](https://docs.docker.com/compose/) is used to spin up a dev environment (`npm start`) based on [Visible WordPress Starter](https://github.com/visiblevc/wordpress-starter). See the Compose file at [docker-compose.yml](docker-compose.yml). You can access [wp-cli](http://wp-cli.org/) by running `npm run wp ...` e.g.
+
+    npm run wp plugin install <some-plugin>
+    npm run wp db import /data/database.sql
+
 ## NPM Scripts
 
 There are a few handy NPM scripts for your convenience:
