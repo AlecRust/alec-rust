@@ -2,8 +2,6 @@ version: '2'
 services:
   wordpress:
     image: visiblevc/wordpress:latest
-    links:
-      - db
     ports:
       - 6729:80
       - 443:443
@@ -14,7 +12,8 @@ services:
     environment:
       DB_NAME: alecrust
       DB_PASS: root
-      THEMES: alec-rust
+      THEMES: >-
+         [local]alec-rust
       PLUGINS: >-
         attachments,
         contact-form-7,
@@ -24,8 +23,6 @@ services:
       WP_DEBUG: 'true'
   db:
     image: mysql:5.7
-    ports:
-      - 3306:3306
     volumes:
       - data:/var/lib/mysql
     environment:
