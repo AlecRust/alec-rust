@@ -753,7 +753,7 @@ div.wpcf7 .wpcf7-not-valid-tip {
   color: #b94a48;
 }
 
-div.wpcf7 img.ajax-loader {
+div.wpcf7 .ajax-loader {
   display: block;
   margin: 10px auto;
 }
