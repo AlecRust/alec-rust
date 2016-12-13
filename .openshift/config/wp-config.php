@@ -63,6 +63,18 @@ define('FORCE_SSL_ADMIN', true);
 
 /*
 |--------------------------------------------------------------------------
+| WordPress support for SSL
+|--------------------------------------------------------------------------
+|
+| Set port to 443
+| https://make.wordpress.org/support/user-manual/web-publishing/https-for-wordpress/
+|
+*/
+
+$_SERVER['SERVER_PORT'] = 443;
+
+/*
+|--------------------------------------------------------------------------
 | WordPress Debugging Mode - MODIFICATION NOT RECOMMENDED (see below)
 |--------------------------------------------------------------------------
 |
