@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'alecrust_setup' );
  */
 function alecrust_scripts() {
   wp_enqueue_script( 'jquery' );
-  wp_enqueue_style( 'wpg-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'wpg-style', get_stylesheet_uri(), array(), '1.1.1' );
   wp_enqueue_script( 'wpg-script', get_template_directory_uri() . '/script.js', array(), '1.1.1', true );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
