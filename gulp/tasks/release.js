@@ -38,4 +38,4 @@ gulp.task('create-new-tag', ['commit-changes'], function (cb) {
   });
 });
 
-gulp.task('release', ['bump-version', 'commit-changes', 'create-new-tag']);
+gulp.task('release', ['create-new-tag']);
