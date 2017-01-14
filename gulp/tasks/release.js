@@ -20,7 +20,6 @@ gulp.task('bump-version', function () {
   .pipe(gulp.dest(function(file) {
     return file.base;
   }));
-  gulp.start('default');
 });
 
 gulp.task('commit-changes', function () {
