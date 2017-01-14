@@ -54,5 +54,3 @@ gulp.task('release', function (callback) {
       callback(error);
     });
 });
-
-gulp.task('release', ['create-new-tag']);
