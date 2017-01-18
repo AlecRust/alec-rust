@@ -139,7 +139,7 @@ function commitChanges() {
 
 function createNewTag(cb) {
   var version = getPackageJsonVersion();
-  git.tag(version, 'Created Tag for version: ' + version, function (error) {
+  return git.tag(version, 'Created Tag for version: ' + version, function (error) {
     if (error) {
       return cb(error);
     }
@@ -151,7 +151,7 @@ exports.scripts = scripts;
 exports.images = images;
 
 var styles = gulp.series(compileStylus, bemlint, processCss);
-var build = gulp.series(clean, gulp.parallel(styles, scripts, images), copy);
+var build = gulp.series(clean, styles, scripts, images, copy);
 
 gulp.task('watch', gulp.series(build, watch));
 gulp.task('release', gulp.series(bumpVersion, build, commitChanges, createNewTag));
