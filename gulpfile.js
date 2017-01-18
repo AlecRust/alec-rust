@@ -151,7 +151,7 @@ exports.scripts = scripts;
 exports.images = images;
 
 var styles = gulp.series(compileStylus, bemlint, processCss);
-var build = gulp.series(clean, styles, scripts, images, copy);
+var build = gulp.series(clean, gulp.parallel(styles, scripts, images), copy);
 
 gulp.task('watch', gulp.series(build, watch));
 gulp.task('release', gulp.series(bumpVersion, build, commitChanges, createNewTag));
