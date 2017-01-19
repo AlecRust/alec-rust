@@ -115,19 +115,14 @@ function watch() {
   gulp.watch('src/**/*.php', copy);
 }
 
-/**
- * Release new version
- */
 function bumpVersion() {
   return gulp.src([
     'package.json',
-    './src/assets/styles/style.styl',
-    './src/functions.php',
-  ])
+    'src/assets/styles/style.styl',
+    'src/functions.php',
+  ], { base: './' })
   .pipe(bump())
-  .pipe(gulp.dest(function(file) {
-    return file.base;
-  }));
+  .pipe(gulp.dest('./'));
 }
 
 function commitChanges() {
