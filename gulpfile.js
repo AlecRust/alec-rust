@@ -6,6 +6,7 @@ var del = require('del');
 var cache = require('gulp-cache');
 var imagemin = require('gulp-imagemin');
 var bump = require('gulp-bump');
+var touch = require('gulp-touch');
 var concat = require('gulp-concat');
 var stylus = require('gulp-stylus');
 var git = require('gulp-git');
@@ -122,7 +123,10 @@ function bumpVersion() {
     'src/functions.php',
   ], { base: './' })
   .pipe(bump())
-  .pipe(gulp.dest('./'));
+  .pipe(gulp.dest('./'))
+  // Touch the files to ensure changes are
+  // picked up by Git: https://git.io/vMNKZ
+  .pipe(touch());
 }
 
 function commitChanges() {
