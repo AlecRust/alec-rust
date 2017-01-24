@@ -34,7 +34,7 @@ add_action( 'after_setup_theme', 'alecrust_setup' );
  * Enqueue scripts and styles.
  */
 function alecrust_scripts() {
-  $theme_version = '1.1.2';
+  $theme_version = '1.1.3';
   wp_enqueue_script( 'jquery' );
   wp_enqueue_style( 'wpg-style', get_stylesheet_uri(), array(), $theme_version );
   wp_enqueue_script( 'wpg-script', get_template_directory_uri() . '/script.js', array(), $theme_version, true );
