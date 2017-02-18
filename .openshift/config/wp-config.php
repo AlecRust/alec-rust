@@ -26,10 +26,20 @@
 */
 
 /**
- * Code provided for users following SendGrid instructions linked above.
+ * SendGrid configuration with environment variables.
  */
 define('SENDGRID_API_KEY', getenv('SENDGRID_API_KEY'));
 define('SENDGRID_SEND_METHOD', 'api');
+
+/*
+|--------------------------------------------------------------------------
+| Amazon Web Services
+|--------------------------------------------------------------------------
+|
+| For configuration of Amazon Web Services plugin:
+| https://wordpress.org/plugins/amazon-web-services/
+|
+*/
 
 /**
  * AWS configuration with environment variables.
