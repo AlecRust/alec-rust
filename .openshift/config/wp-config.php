@@ -46,6 +46,7 @@ define('SENDGRID_SEND_METHOD', 'api');
  */
 define('AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID'));
 define('AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
+define('AS3CF_BUCKET', 'static.theoldbrewhouse.info');
 
 /*
 |--------------------------------------------------------------------------
