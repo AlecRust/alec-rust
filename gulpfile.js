@@ -16,7 +16,6 @@ var clip = require('gulp-clip-empty-files');
 var postcss = require('gulp-postcss');
 var bemLinter = require('postcss-bem-linter');
 var atImport = require('postcss-import');
-var at2x = require('postcss-at2x');
 var customProperties = require('postcss-custom-properties');
 var customMedia = require('postcss-custom-media');
 var calc = require('postcss-calc');
@@ -69,7 +68,6 @@ function processCss() {
   return gulp.src('./.temp/*.css')
     .pipe(postcss([
       atImport(),
-      at2x(),
       customProperties(),
       calc(),
       customMedia(),
