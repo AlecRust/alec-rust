@@ -132,7 +132,7 @@ function commitChanges() {
   var version = getPackageJsonVersion();
   return gulp.src('.')
     .pipe(git.add())
-    .pipe(git.commit('Release version ' + version));
+    .pipe(git.commit(version));
 }
 
 function createNewTag(cb) {
@@ -150,7 +150,7 @@ function pushChanges(cb) {
 
 function createRelease(done) {
   githubReleaser({
-    type: "oauth",
+    type: 'oauth',
     token: process.env.CONVENTIONAL_GITHUB_RELEASER_TOKEN
   }, done);
 }
