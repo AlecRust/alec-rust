@@ -86,6 +86,17 @@ $_SERVER['SERVER_PORT'] = 443;
 
 /*
 |--------------------------------------------------------------------------
+| Enable WordPress advanced cache
+|--------------------------------------------------------------------------
+|
+| This is set by WP Super Cache, but better to add it here so it's present immediately
+|
+*/
+
+define('WP_CACHE', true);
+
+/*
+|--------------------------------------------------------------------------
 | WordPress Debugging Mode - MODIFICATION NOT RECOMMENDED (see below)
 |--------------------------------------------------------------------------
 |
