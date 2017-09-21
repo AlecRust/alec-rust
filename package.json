@@ -10,7 +10,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "start": "docker-compose up",
+    "start": "docker-compose up -d && docker-compose logs -f wordpress",
     "devon": "cfcli devmode on -d alecrust.com",
     "devoff": "cfcli devmode off -d alecrust.com",
     "deploy": "git push -v production refs/heads/master:refs/heads/master; npm run purgecache",

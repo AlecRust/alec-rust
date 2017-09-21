@@ -1,7 +1,7 @@
-version: '2'
+version: '3'
 services:
   wordpress:
-    image: visiblevc/wordpress:latest
+    image: visiblevc/wordpress:0.15.2-php7.1
     ports:
       - 6729:80
       - 443:443
@@ -19,7 +19,7 @@ services:
         contact-form-7,
         sendgrid-email-delivery-simplified,
         zigtweets
-      SEARCH_REPLACE: https://www.alecrust.com,http://localhost:6729
+      URL_REPLACE: https://www.alecrust.com,http://localhost:6729
       WP_DEBUG: 'true'
   db:
     image: mysql:5.7
@@ -27,5 +27,11 @@ services:
       - data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 22222:80
 volumes:
-  data: {}
+  data:
