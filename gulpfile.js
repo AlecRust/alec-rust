@@ -1,8 +1,6 @@
 var gulp = require('gulp');
-var gulpIf = require('gulp-if');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-cssnano');
-var del = require('del');
 var cache = require('gulp-cache');
 var imagemin = require('gulp-imagemin');
 var bump = require('gulp-bump');
@@ -23,25 +21,18 @@ var calc = require('postcss-calc');
 var autoprefixer = require('autoprefixer');
 
 var paths = {
-  dist: './.openshift/themes/alec-rust',
   styles: {
-    src: 'src/assets/styles/**/*.styl',
-    dest: 'src',
+    src: 'assets/styles/**/*.styl',
     temp: './.temp'
   },
   scripts: {
-    src: 'src/assets/scripts/**/*.js',
-    dest: 'src'
+    src: 'assets/scripts/**/*.js'
   },
   images: {
-    src: 'src/assets/images/**/*',
-    dest: 'src/assets/images'
+    src: 'assets/images/**/*',
+    dest: 'assets/images'
   }
 };
-
-function clean() {
-  return del([ paths.dist ]);
-}
 
 function getPackageJsonVersion() {
   // Parse the JSON file instead of using require because require
@@ -74,13 +65,13 @@ function processCss() {
       customMedia(),
       autoprefixer()
     ]))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest('./'));
 }
 
 function scripts() {
   return gulp.src(paths.scripts.src)
     .pipe(concat('script.js'))
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulp.dest('./'));
 }
 
 function images() {
@@ -93,39 +84,23 @@ function images() {
     .pipe(gulp.dest(paths.images.dest));
 }
 
-function copy() {
-  return gulp.src([
-    'src/**/*',
-    '!src/assets/scripts',
-    '!src/assets/scripts/**',
-    '!src/assets/styles',
-    '!src/assets/styles/**'
-  ], {
-    dot: true
-  })
-  .pipe(gulpIf('*.js', uglify()))
-  .pipe(gulpIf('*.css', minifyCss()))
-  .pipe(gulp.dest(paths.dist));
-}
-
 function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.images.src, images);
-  gulp.watch('src/**/*.php', copy);
 }
 
 function bumpVersion() {
   return gulp.src([
     'package.json',
-    'src/assets/styles/style.styl',
-    'src/functions.php',
+    'assets/styles/style.styl',
+    'functions.php',
   ], { base: './' })
-  .pipe(bump())
-  .pipe(gulp.dest('./'))
-  // Touch the files to ensure changes are
-  // picked up by Git: https://git.io/vMNKZ
-  .pipe(touch());
+    .pipe(bump())
+    .pipe(gulp.dest('./'))
+    // Touch the files to ensure changes are
+    // picked up by Git: https://git.io/vMNKZ
+    .pipe(touch());
 }
 
 function commitChanges() {
@@ -155,12 +130,11 @@ function createRelease(done) {
   }, done);
 }
 
-exports.clean = clean;
 exports.scripts = scripts;
 exports.images = images;
 
 var styles = gulp.series(compileStylus, bemlint, processCss);
-var build = gulp.series(clean, gulp.parallel(styles, scripts, images), copy);
+var build = gulp.series(gulp.parallel(styles, scripts, images));
 
 gulp.task('watch', gulp.series(build, watch));
 gulp.task('release', gulp.series(bumpVersion, build, commitChanges, createNewTag, pushChanges, createRelease));

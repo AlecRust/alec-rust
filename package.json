@@ -11,10 +11,6 @@
   },
   "scripts": {
     "start": "docker-compose up -d && docker-compose logs -f wordpress",
-    "devon": "cfcli devmode on -d alecrust.com",
-    "devoff": "cfcli devmode off -d alecrust.com",
-    "deploy": "git push -v production refs/heads/master:refs/heads/master; npm run purgecache",
-    "purgecache": "cfcli purgecache -d alecrust.com",
     "wp": "wpcmd() { docker exec $(docker ps -lq) /bin/bash -c \"sudo -u www-data wp $(echo $@)\"; };wpcmd "
   },
   "dependencies": {
@@ -23,7 +19,6 @@
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "conventional-github-releaser": "^1.1.12",
-    "del": "^3.0.0",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-bump": "^2.7.0",
     "gulp-cache": "^0.4.6",
@@ -31,7 +26,6 @@
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-git": "^2.4.2",
-    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-postcss": "^7.0.0",
     "gulp-stylint": "^4.0.0",
