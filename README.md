@@ -1,6 +1,6 @@
 # Alec Rust WordPress Theme
 
-Theme `alec-rust` in use on the [Alec Rust](https://www.alecrust.com/) website. Designed to work with [GitHub Updater](https://github.com/afragen/github-updater).
+Theme `alec-rust` for use on the [Alec Rust](https://www.alecrust.com/) website. Designed to work with [GitHub Updater](https://github.com/afragen/github-updater).
 
 ## Prerequisites
 
