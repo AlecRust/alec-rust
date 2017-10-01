@@ -1,1 +1,10 @@
 * text=auto
+
+.gitattributes export-ignore
+.gitignore export-ignore
+.stylintrc export-ignore
+docker-compose.yml export-ignore
+gulpfile.js export-ignore
+package-lock.json export-ignore
+package.json export-ignore
+README.md export-ignore
