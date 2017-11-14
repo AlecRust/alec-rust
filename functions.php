@@ -288,6 +288,22 @@ function get_parent_terms( $post_id = 0 ) {
 }
 
 /**
+ * Send events to Google Analytics on form submission
+ */
+function ar_form_submitted() {
+?>
+  <script>
+    document.addEventListener('wpcf7mailsent', function(event) {
+      if (event.detail.contactFormId == '18') {
+        ga('send', 'event', 'Main Contact Form', 'submit');
+      }
+    }, false);
+  </script>
+<?php
+}
+add_action( 'wp_footer', 'ar_form_submitted' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
