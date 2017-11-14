@@ -68,9 +68,9 @@ function watch() {
 function bumpVersion() {
   return (
     gulp.src(['package.json', 'assets/styles/style.styl', 'functions.php'], {
-      base: './'
-    })
-      .pipe(bump())
+        base: './'
+      })
+      .pipe(bump({ keys: ['version', 'stable tag'] }))
       .pipe(gulp.dest('./'))
       // Touch the files to ensure changes are
       // picked up by Git: https://git.io/vMNKZ
