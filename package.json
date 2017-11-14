@@ -17,10 +17,10 @@
     "normalize.css": "^7.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
-    "conventional-github-releaser": "^1.1.12",
+    "autoprefixer": "^7.1.6",
+    "conventional-github-releaser": "^2.0.0",
     "gulp": "gulpjs/gulp#4.0",
-    "gulp-bump": "^2.7.0",
+    "gulp-bump": "^2.8.0",
     "gulp-clip-empty-files": "^0.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -30,10 +30,10 @@
     "gulp-stylus": "^2.6.0",
     "gulp-touch": "^1.0.1",
     "gulp-uglify": "^3.0.0",
-    "postcss-bem-linter": "^3.0.0",
-    "postcss-calc": "^6.0.0",
+    "postcss-bem-linter": "^3.1.0",
+    "postcss-calc": "^6.0.1",
     "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.1.0",
+    "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0"
   },
   "eslintConfig": {
