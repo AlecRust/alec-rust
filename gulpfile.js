@@ -82,7 +82,7 @@ function commitChanges() {
   var version = getPackageJsonVersion();
   return gulp.src('.')
     .pipe(git.add())
-    .pipe(git.commit(version));
+    .pipe(git.commit('Release version ' + version));
 }
 
 function createNewTag(cb) {
