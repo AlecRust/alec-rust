@@ -1,7 +1,7 @@
 version: '3'
 services:
   wordpress:
-    image: visiblevc/wordpress:0.15.2-php7.1
+    image: visiblevc/wordpress:latest
     ports:
       - 6729:80
       - 443:443
@@ -12,14 +12,12 @@ services:
     environment:
       DB_NAME: alecrust
       DB_PASS: root
-      THEMES: >-
-         [local]alec-rust
       PLUGINS: >-
         attachments,
         contact-form-7,
         sendgrid-email-delivery-simplified,
         zigtweets
-      URL_REPLACE: https://www.alecrust.com,http://localhost:6729
+      URL_REPLACE: http://localhost:6729
       WP_DEBUG: 'true'
   db:
     image: mysql:5.7
