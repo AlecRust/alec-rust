@@ -14,27 +14,27 @@
     "wp": "wpcmd() { docker exec $(docker ps -lq) /bin/bash -c \"sudo -u www-data wp $(echo $@)\"; };wpcmd "
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^8.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
-    "conventional-github-releaser": "^2.0.0",
+    "autoprefixer": "^8.2.0",
+    "conventional-github-releaser": "^2.0.2",
     "gulp": "gulpjs/gulp#4.0",
-    "gulp-bump": "^2.8.0",
+    "gulp-bump": "^3.1.0",
     "gulp-clip-empty-files": "^0.1.2",
     "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-git": "^2.4.2",
-    "gulp-postcss": "^7.0.0",
-    "gulp-stylint": "^4.0.0",
-    "gulp-stylus": "^2.6.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-git": "^2.5.2",
+    "gulp-postcss": "^7.0.1",
+    "gulp-stylint": "^4.0.1",
+    "gulp-stylus": "^2.7.0",
     "gulp-touch": "^1.0.1",
     "gulp-uglify": "^3.0.0",
     "postcss-bem-linter": "^3.1.0",
     "postcss-calc": "^6.0.1",
     "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0"
+    "postcss-custom-properties": "^7.0.0",
+    "postcss-import": "^11.1.0"
   },
   "eslintConfig": {
     "env": {
